@@ -16,12 +16,15 @@
  *   CLAUDE_CODE_OAUTH_TOKEN Claude CLI OAuth token (Max subscription)
  */
 
-// NOTE on Arbeitnow: a previous version of this script also called the
-// Arbeitnow job-board API as a fallback. In practice their `tags[]=vue` query
-// parameter is silently ignored server-side, so the endpoint returns a generic
-// EU job feed (~0% Vue matches) that just inflated the reject counters. Until
-// we find a working text/tag filter, Arbeitnow is disabled — JSearch's free
-// tier (200 req/month) is enough for the daily run.
+// NOTE on sources:
+// - JSearch (RapidAPI): US-biased but has the best text search. Run first.
+// - Arbeitnow: EU/Germany-focused feed (single page, ~100 jobs). Their
+//   tags[]=vue query is broken server-side so we fetch the general feed
+//   and filter for Vue client-side. Yield is low (~1 Vue job per page on
+//   an average day) but the EU coverage complements JSearch nicely.
+// - Remotive was evaluated and dropped: their free API now returns ~20
+//   jobs total worldwide (they gate the real feed behind a $5k/mo paid
+//   tier). Kept out of the pipeline rather than burning a request on it.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -128,6 +131,47 @@ async function fetchJSearch(query) {
     }));
   } catch (err) {
     console.warn(`[jsearch] ${query} → ${err.message}`);
+    return [];
+  }
+}
+
+async function fetchArbeitnow() {
+  const url = 'https://www.arbeitnow.com/api/job-board-api';
+  try {
+    const res = await fetch(url);
+    if (!res.ok) {
+      console.warn(`[arbeitnow] ${res.status}`);
+      return [];
+    }
+    const json = await res.json();
+    const all = (json.data ?? []).map((j) => {
+      const locationLabel = j.location || (j.remote ? 'Remote' : '');
+      const descWithLocation = `${j.description ?? ''}\n\nLocation: ${locationLabel}`;
+      return {
+        source: 'arbeitnow',
+        title: j.title ?? '',
+        company: j.company_name ?? '',
+        companyLogo: undefined,
+        location: locationLabel || 'EU',
+        remotePolicy: j.remote ? 'remote' : 'uncertain',
+        isRemoteStructured: j.remote === true,
+        postedAt: j.created_at
+          ? new Date(j.created_at * 1000).toISOString()
+          : new Date().toISOString(),
+        salaryMin: undefined,
+        salaryMax: undefined,
+        applyUrl: j.url ?? '',
+        rawDescription: descWithLocation,
+      };
+    });
+    // Client-side Vue pre-filter — Arbeitnow returns 100+ mixed jobs and
+    // we don't want the reject counters inflated with non-Vue noise.
+    return all.filter((raw) => {
+      const haystack = `${raw.title} ${stripHtml(raw.rawDescription)}`.toLowerCase();
+      return VUE_KEYWORDS.some((k) => haystack.includes(k));
+    });
+  } catch (err) {
+    console.warn(`[arbeitnow] ${err.message}`);
     return [];
   }
 }
@@ -316,6 +360,9 @@ async function main() {
     console.log(`  jsearch "${q}" → ${results.length}`);
     rawAll.push(...results);
   }
+  const arbeitnowResults = await fetchArbeitnow();
+  console.log(`  arbeitnow vue-filtered → ${arbeitnowResults.length}`);
+  rawAll.push(...arbeitnowResults);
   // Stage 1: hard filters
   const rejected = { 'no-vue': 0, 'blocked-location': 0, 'no-remote-signal': 0, stale: 0, junior: 0 };
   const survived = [];

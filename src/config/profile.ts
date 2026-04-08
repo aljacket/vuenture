@@ -13,24 +13,31 @@ export const PROFILE = {
 } as const;
 
 /**
- * JSearch queries. Tuned against Alfonso's actual CV:
- *   - no dedicated "Nuxt" query (he isn't a Nuxt expert; Nuxt-required roles
- *     are a red flag, not a target)
- *   - explicit Capacitor/Ionic query (his real mobile specialization)
- *   - explicit Tech Lead query (he has led a team of 3)
- *   - AI-assisted development query (Claude Code / MCP is a real asset)
+ * JSearch queries, split by country target. Tuned against Alfonso's CV.
  *
- * 7 queries × ~21 working days = ~147 requests/month, under the JSearch
- * free-tier cap of 200/month with headroom for manual re-runs.
+ * Global queries use JSearch's default country index (US-based) and catch
+ * worldwide / EU-friendly remote jobs. Spain queries pass country=es to
+ * reach Indeed.es and Spain-based companies (Capitole, PrimeIT, etc.)
+ * that the default JSearch index misses entirely. Two of the ES queries
+ * are in Spanish because many Spain-local JDs are not written in English
+ * (Alfonso speaks Spanish C1).
+ *
+ * 9 queries × ~21 working days = ~189 requests/month, under the JSearch
+ * free-tier cap of 200/month.
  */
-export const QUERIES = [
+export const GLOBAL_QUERIES = [
   'Senior Vue.js developer remote',
   'Senior Vue 3 TypeScript frontend remote Europe',
   'Senior Vue.js Tailwind Pinia frontend remote',
   'Senior Vue.js Capacitor Ionic mobile developer remote',
   'Vue.js frontend technical lead remote',
-  'Senior Vue.js Vitest Composition API remote',
   'Vue.js senior frontend AI assisted development remote',
+] as const;
+
+export const SPAIN_QUERIES = [
+  'Vue.js developer remote',
+  'Desarrollador Vue.js senior teletrabajo',
+  'Programador frontend Vue senior remoto',
 ] as const;
 
 /** F1 — Vue stack is a HARD requirement. At least one of these must appear. */

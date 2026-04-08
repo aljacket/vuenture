@@ -55,16 +55,31 @@ const ROOT = path.resolve(__dirname, '..');
 
 // --- Config (mirrors src/config/profile.ts — keep in sync) ------------------
 
-// 7 queries tuned to Alfonso's real CV (Vue + Capacitor/Ionic + AI tooling,
-// NOT Nuxt). ~147 req/month under the 200/mo JSearch free tier.
-const QUERIES = [
+// JSearch query set split by country target.
+//
+// - Global queries use JSearch's default country (US-indexed). They catch
+//   the worldwide/EU remote market including WWR/LinkedIn/Glassdoor jobs.
+// - ES queries pass country=es and target the Spanish market directly —
+//   this is the only way to reach Indeed.es, InfoJobs-aggregated postings,
+//   and Spain-based companies like Capitole/PrimeIT that the default
+//   JSearch index misses entirely. Two of them are in Spanish because
+//   many Spain-local JDs are not in English.
+//
+// 9 queries × ~21 working days = ~189 req/month, under the 200/mo free
+// tier with a small buffer for manual re-runs.
+const GLOBAL_QUERIES = [
   'Senior Vue.js developer remote',
   'Senior Vue 3 TypeScript frontend remote Europe',
   'Senior Vue.js Tailwind Pinia frontend remote',
   'Senior Vue.js Capacitor Ionic mobile developer remote',
   'Vue.js frontend technical lead remote',
-  'Senior Vue.js Vitest Composition API remote',
   'Vue.js senior frontend AI assisted development remote',
+];
+
+const SPAIN_QUERIES = [
+  'Vue.js developer remote',
+  'Desarrollador Vue.js senior teletrabajo',
+  'Programador frontend Vue senior remoto',
 ];
 
 const VUE_KEYWORDS = ['vue', 'vuejs', 'vue.js', 'vue 3', 'vue3', 'nuxt'];
@@ -115,7 +130,7 @@ const DATE_POSTED = IS_MONDAY ? 'week' : '3days';
 
 // --- Fetchers ----------------------------------------------------------------
 
-async function fetchJSearch(query) {
+async function fetchJSearch(query, country = null) {
   const key = process.env.JSEARCH_KEY;
   if (!key) {
     console.warn('[jsearch] JSEARCH_KEY missing — skipping');
@@ -126,6 +141,7 @@ async function fetchJSearch(query) {
   url.searchParams.set('num_pages', '1');
   url.searchParams.set('date_posted', DATE_POSTED);
   url.searchParams.set('employment_types', 'FULLTIME');
+  if (country) url.searchParams.set('country', country);
   try {
     const res = await fetch(url, {
       headers: {
@@ -134,7 +150,7 @@ async function fetchJSearch(query) {
       },
     });
     if (!res.ok) {
-      console.warn(`[jsearch] ${query} → ${res.status}`);
+      console.warn(`[jsearch ${country ?? 'global'}] ${query} → ${res.status}`);
       return [];
     }
     const json = await res.json();
@@ -535,9 +551,14 @@ async function main() {
 
   // Stage 0: fetch
   const rawAll = [];
-  for (const q of QUERIES) {
+  for (const q of GLOBAL_QUERIES) {
     const results = await fetchJSearch(q);
-    console.log(`  jsearch "${q}" → ${results.length}`);
+    console.log(`  jsearch [global] "${q}" → ${results.length}`);
+    rawAll.push(...results);
+  }
+  for (const q of SPAIN_QUERIES) {
+    const results = await fetchJSearch(q, 'es');
+    console.log(`  jsearch [es] "${q}" → ${results.length}`);
     rawAll.push(...results);
   }
   const wwrResults = await fetchWeWorkRemotely();

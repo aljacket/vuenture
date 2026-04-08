@@ -17,14 +17,26 @@
  */
 
 // NOTE on sources:
-// - JSearch (RapidAPI): US-biased but has the best text search. Run first.
+// - JSearch (RapidAPI): US-biased but with the best text search AND
+//   aggregates Indeed/LinkedIn/Glassdoor/ZipRecruiter under the hood.
+//   Our primary source.
 // - Arbeitnow: EU/Germany-focused feed (single page, ~100 jobs). Their
 //   tags[]=vue query is broken server-side so we fetch the general feed
-//   and filter for Vue client-side. Yield is low (~1 Vue job per page on
-//   an average day) but the EU coverage complements JSearch nicely.
-// - Remotive was evaluated and dropped: their free API now returns ~20
-//   jobs total worldwide (they gate the real feed behind a $5k/mo paid
-//   tier). Kept out of the pipeline rather than burning a request on it.
+//   and filter for Vue client-side.
+// - RemoteOK: public JSON feed (~100 jobs per request). Their tag=vue
+//   filter returns nothing because jobs are tagged with generic labels
+//   ("front end") rather than stack names, so we also filter client-side.
+// - Jobicy: smaller feed but their `tag=vue` parameter does real
+//   server-side filtering — cheap to keep in the loop.
+//
+// Evaluated and rejected:
+// - Remotive: free API returns ~20 jobs total worldwide ($5k/mo for
+//   real feed). Dropped.
+// - Himalayas: 99K jobs total but a hard limit=20 per request and no
+//   working text/category filter. Exhaustive pagination isn't feasible.
+// - Indeed: killed their public Publisher API in 2023; now enterprise
+//   partnership only. Not a concern in practice because JSearch already
+//   aggregates Indeed results under the hood.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -131,6 +143,91 @@ async function fetchJSearch(query) {
     }));
   } catch (err) {
     console.warn(`[jsearch] ${query} → ${err.message}`);
+    return [];
+  }
+}
+
+async function fetchRemoteOk() {
+  // RemoteOK requires a descriptive User-Agent and a backlink in the
+  // dashboard per their ToS. The first array element is a legal/meta
+  // notice, the rest are real jobs.
+  try {
+    const res = await fetch('https://remoteok.com/api', {
+      headers: {
+        'User-Agent': 'vuenture/1.0 (https://github.com/aljacket/vuenture)',
+      },
+    });
+    if (!res.ok) {
+      console.warn(`[remoteok] ${res.status}`);
+      return [];
+    }
+    const arr = await res.json();
+    const jobs = Array.isArray(arr) ? arr.slice(1) : [];
+    const all = jobs.map((j) => {
+      const descWithLocation = `${j.description ?? ''}\n\nLocation: ${j.location ?? ''}`;
+      return {
+        source: 'remoteok',
+        title: j.position ?? '',
+        company: j.company ?? '',
+        companyLogo: j.company_logo ?? j.logo ?? undefined,
+        location: j.location || 'Remote',
+        // RemoteOK's whole raison d'être is remote, so every posting is
+        // remote-friendly by definition.
+        remotePolicy: 'remote',
+        isRemoteStructured: true,
+        postedAt: j.date
+          ? new Date(j.date).toISOString()
+          : j.epoch
+            ? new Date(j.epoch * 1000).toISOString()
+            : new Date().toISOString(),
+        salaryMin: typeof j.salary_min === 'number' ? j.salary_min : undefined,
+        salaryMax: typeof j.salary_max === 'number' ? j.salary_max : undefined,
+        applyUrl: j.apply_url ?? j.url ?? '',
+        rawDescription: descWithLocation,
+      };
+    });
+    // Pre-filter for Vue to avoid inflating the reject counters with
+    // the ~95% of RemoteOK that isn't frontend at all.
+    return all.filter((raw) => {
+      const haystack = `${raw.title} ${stripHtml(raw.rawDescription)}`.toLowerCase();
+      return VUE_KEYWORDS.some((k) => haystack.includes(k));
+    });
+  } catch (err) {
+    console.warn(`[remoteok] ${err.message}`);
+    return [];
+  }
+}
+
+async function fetchJobicy() {
+  // Jobicy's `tag=vue` actually does server-side filtering (unlike most
+  // other boards where we have to pull the full feed and filter locally).
+  try {
+    const res = await fetch('https://jobicy.com/api/v2/remote-jobs?count=50&tag=vue');
+    if (!res.ok) {
+      console.warn(`[jobicy] ${res.status}`);
+      return [];
+    }
+    const json = await res.json();
+    return (json.jobs ?? []).map((j) => {
+      const geo = j.jobGeo ?? '';
+      const descWithLocation = `${j.jobDescription ?? ''}\n\nLocation: ${geo}`;
+      return {
+        source: 'jobicy',
+        title: j.jobTitle ?? '',
+        company: j.companyName ?? '',
+        companyLogo: j.companyLogo ?? undefined,
+        location: geo || 'Remote',
+        remotePolicy: 'remote',
+        isRemoteStructured: true,
+        postedAt: j.pubDate ?? new Date().toISOString(),
+        salaryMin: typeof j.annualSalaryMin === 'number' ? j.annualSalaryMin : undefined,
+        salaryMax: typeof j.annualSalaryMax === 'number' ? j.annualSalaryMax : undefined,
+        applyUrl: j.url ?? '',
+        rawDescription: descWithLocation,
+      };
+    });
+  } catch (err) {
+    console.warn(`[jobicy] ${err.message}`);
     return [];
   }
 }
@@ -360,6 +457,12 @@ async function main() {
     console.log(`  jsearch "${q}" → ${results.length}`);
     rawAll.push(...results);
   }
+  const remoteOkResults = await fetchRemoteOk();
+  console.log(`  remoteok vue-filtered → ${remoteOkResults.length}`);
+  rawAll.push(...remoteOkResults);
+  const jobicyResults = await fetchJobicy();
+  console.log(`  jobicy tag=vue → ${jobicyResults.length}`);
+  rawAll.push(...jobicyResults);
   const arbeitnowResults = await fetchArbeitnow();
   console.log(`  arbeitnow vue-filtered → ${arbeitnowResults.length}`);
   rawAll.push(...arbeitnowResults);

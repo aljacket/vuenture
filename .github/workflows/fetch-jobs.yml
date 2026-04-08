@@ -24,15 +24,19 @@ jobs:
         run: npm install -g @anthropic-ai/claude-code
 
       - name: Verify claude CLI
-        env:
-          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: claude --version
 
       - name: Fetch & score jobs
         env:
           JSEARCH_KEY: ${{ secrets.JSEARCH_KEY }}
-          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-        run: node scripts/fetchJobs.mjs
+          # Raw secret may contain trailing/embedded newlines from a sloppy
+          # paste in the GitHub Secrets UI. The Claude CLI puts the token
+          # straight into an Authorization header, and HTTP headers can't
+          # contain \n — so we strip CR/LF before exporting.
+          CLAUDE_CODE_OAUTH_TOKEN_RAW: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          export CLAUDE_CODE_OAUTH_TOKEN="$(printf '%s' "$CLAUDE_CODE_OAUTH_TOKEN_RAW" | tr -d '\r\n')"
+          node scripts/fetchJobs.mjs
 
       - name: Commit jobs.json
         run: |

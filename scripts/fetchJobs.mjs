@@ -210,6 +210,25 @@ function hasClaudeCli() {
   }
 }
 
+/**
+ * Warm up the Claude CLI with a trivial call so the first real scoring
+ * doesn't eat the cold-start latency (auth handshake, session init). If
+ * this fails we still continue — the per-job call will just retry with
+ * its own timeout.
+ */
+function warmupClaude() {
+  try {
+    execFileSync('claude', ['-p', 'Reply with the single word: ok'], {
+      encoding: 'utf8',
+      timeout: 180_000,
+      stdio: ['ignore', 'ignore', 'ignore'],
+    });
+    console.log('  [claude warmup] ok');
+  } catch (err) {
+    console.warn(`  [claude warmup] failed: ${err.message}`);
+  }
+}
+
 function fallbackScore(raw) {
   // Deterministic heuristic used when the `claude` CLI is unavailable
   // (e.g. local dev without Max, or OAuth token missing). Keeps the pipeline
@@ -241,12 +260,14 @@ function scoreWithClaude(raw, promptPath) {
     stripHtml(raw.rawDescription).slice(0, 6000),
   ].join('\n');
 
+  const prompt = `Read the scoring instructions at ${promptPath} and score the job below. Return strict JSON only.\n\n---\n\n${jd}`;
+
   try {
-    const stdout = execFileSync(
-      'claude',
-      ['-p', `Read the scoring instructions at ${promptPath} and score the job below. Return strict JSON only.\n\n---\n\n${jd}`, '--output-format', 'text'],
-      { encoding: 'utf8', timeout: 90_000, maxBuffer: 4 * 1024 * 1024 }
-    );
+    const stdout = execFileSync('claude', ['-p', prompt], {
+      encoding: 'utf8',
+      timeout: 180_000,
+      maxBuffer: 4 * 1024 * 1024,
+    });
     const match = stdout.match(/\{[\s\S]*\}/);
     if (!match) throw new Error('no JSON in claude output');
     const parsed = JSON.parse(match[0]);
@@ -260,7 +281,14 @@ function scoreWithClaude(raw, promptPath) {
       red_flags: Array.isArray(parsed.red_flags) ? parsed.red_flags.slice(0, 6) : [],
     };
   } catch (err) {
-    console.warn(`[claude] "${raw.title}" → ${err.message}; falling back to heuristic`);
+    // Show whatever the CLI actually wrote to stderr — this is the only
+    // way to diagnose CI failures where all we see is "Command failed".
+    const stderr = err.stderr ? String(err.stderr).trim().slice(0, 600) : '';
+    const stdout = err.stdout ? String(err.stdout).trim().slice(0, 300) : '';
+    console.warn(`[claude] "${raw.title}" → ${err.message}`);
+    if (stderr) console.warn(`  stderr: ${stderr}`);
+    if (stdout) console.warn(`  stdout: ${stdout}`);
+    console.warn('  falling back to heuristic');
     return fallbackScore(raw);
   }
 }
@@ -302,6 +330,7 @@ async function main() {
   // Stage 3: score
   const useCli = hasClaudeCli();
   console.log(`  scoring with ${useCli ? 'claude CLI' : 'heuristic fallback'}`);
+  if (useCli) warmupClaude();
   const promptPath = path.join(ROOT, 'scripts', 'scoringPrompt.md');
   const scored = deduped.map((raw) => {
     const score = useCli ? scoreWithClaude(raw, promptPath) : fallbackScore(raw);

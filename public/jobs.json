@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-08T18:10:18.418Z",
+  "fetchedAt": "2026-04-08T18:15:08.986Z",
   "jobs": [
     {
       "id": "035bf23b474b",
@@ -50,31 +50,6 @@
       }
     },
     {
-      "id": "e1965e8086be",
-      "title": "Full Stack Developer with .Net Skills (remote from Europe)",
-      "company": "AlmavivA de Belgique",
-      "companyLogo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh-5q3HRytj-vJ_CAUVmu_OWcC2j8Puzekpfh2&s=0",
-      "location": "Remote",
-      "remotePolicy": "remote",
-      "postedAt": "2026-04-08T11:00:00.000Z",
-      "tags": [
-        "Vue.js",
-        "TypeScript"
-      ],
-      "applyUrl": "https://jobgether.com/offer/69d63c6eaba5fafcee018934-full-stack-developer-with-.net-skills-remote-from-europe",
-      "source": "jsearch",
-      "rawDescription": "This a Full Remote job, the offer is available from: Europe DESCRIPTION OF THE TASKS: • Write and debug web frontend code in SPA frameworks, such as Vue.js and Angular. • Manage the front-end build configuration and the appropriate npm tasks. • Work with Typescript and modern web development. • Write CSS and HTML by using SASS and Semantic UI. • Participate in the .NET implementation of a micro-services solution, being able to write backend code in a reliable, scalable, secure and testable way, implementing resilient integrations, satisfying requirements and service level agreements. • Deploy and manage services on Kubernetes. • Implement validation mechanisms as unit and integration tests for both back-end and front-end code. • Implement OAUTH authentication mechanisms. • Liaise with other technical Teams in order to push new features / changes to production. Write and maintain technical documentation of the solution implemented. Account for secure coding practices, as well as logging and auditing features. REQUIREMENTS: More than 12 years in IT More than 5 years of experience in Software Development More than 3 years of experience in front-end Development with Vuejs and Typescript More than 1 year of experience on debugging Angular codebase More than 5 years of experience in back-end Development in Microsoft .NET (C#) and .NET Core More than 3 years of experience with highly scalable systems and microservices More than 3 years of experience working in a team. following Agile/SCRUM methodology procedures and disciplines. More than 3 years of experience in developing applications that publish and consume messages via AMQP, including handling message routing, queuing, and error handling. More than 3 years of experience on estimating the work to be done upon request. Good knowledge of SDLC best practices Good knowledge of the design, documentation and development of full stack solutions Excellent knowledge of the design and development of back-end components (REST API",
-      "score": {
-        "overall": 64,
-        "stack_match": 70,
-        "location_ok": true,
-        "seniority_fit": "senior",
-        "ai_bonus": 0,
-        "reason": "Heuristic score (claude CLI unavailable). Regex-based stack match; not LLM-judged.",
-        "red_flags": []
-      }
-    },
-    {
       "id": "5b2981e2cf6a",
       "title": "Senior Full Stack Developer (Laravel + Vue.js)",
       "company": "Hireza",
@@ -103,7 +78,7 @@
       "id": "0fc889d2f523",
       "title": "Lead Full-Stack Developer (NestJS + Vue.js + MySQL) — Digital Signage / DOOH - Contract to Hire",
       "company": "Hireza",
-      "location": "Remote",
+      "location": "NL",
       "remotePolicy": "remote",
       "postedAt": "2026-04-06T00:00:00.000Z",
       "tags": [
@@ -111,7 +86,7 @@
         "TypeScript",
         "Node.js"
       ],
-      "applyUrl": "https://hireza.wuaze.com/job/lead-full-stack-developer-nestjs-vue-js-mysql-digital-signage-dooh-contract-to-hire",
+      "applyUrl": "https://hireza.wuaze.com/job/lead-full-stack-developer-nestjs-vue-js-mysql-digital-signage-dooh-contract-to-hire?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
       "source": "jsearch",
       "rawDescription": "We need a Lead Full-Stack Developer to maintain and improve our digital signage / DOOH platform. This is not a rebuild — we need someone to fix bugs, maintain the system, and make incremental updates to existing modules. Tech Stack • Backend: NestJS (Node.js / TypeScript) • Frontend: Vue.js • Database: MySQL • Analytics: Google BigQuery • Auth: Auth0 • Payments: Stripe • Email: SendGrid • Push/Storage: Firebase Cloud Messaging + Firebase Storage • Chat: Twilio • Hosting: DigitalOcean What you will do • Fix bugs and improve stability across the web platform (Vue + NestJS) • Maintain and extend APIs (NestJS + MySQL) • Maintain integrations (Auth0, Stripe, SendGrid, Firebase, BigQuery, Twilio) • Support deployments and keep staging/production stable (DigitalOcean) • Write basic documentation as you go (setup, deployments, key modules) • Work with a second developer (you will review PRs and control releases) Requirements • Strong NestJS + TypeScript experience • Strong Vue.js experience • Solid MySQL experience • Comfortable working in an existing codebase • Fluent English (written + spoken) Budget / Process • Budget: US$1,000/month (long-term if it works out) • Mandatory 2-week paid trial • All work via GitHub PRs + tickets • Daily update: Yesterday / Today / Blockers To apply Please send: 1. Your GitHub / portfolio 2. 1–2 examples of NestJS + Vue.js work you shipped 3. Your timezone + availability 4. Answer this: How would you stabilise an existing platform you didn’t build? Apply tot his job",
       "score": {

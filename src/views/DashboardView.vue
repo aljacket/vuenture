@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { useJobs } from '@/composables/useJobs';
 import { useJobFilter } from '@/composables/useJobFilter';
 import { useFilterStore } from '@/stores/jobStore';
@@ -8,11 +8,13 @@ import JobCard from '@/components/JobCard.vue';
 import FilterBar from '@/components/FilterBar.vue';
 import SkeletonCard from '@/components/SkeletonCard.vue';
 
-const { jobs, fetchedAt, loading, error, load } = useJobs();
+const { jobs, needsReview, fetchedAt, loading, error, load } = useJobs();
 const filterStore = useFilterStore();
 const { filters } = storeToRefs(filterStore);
 
 const visible = useJobFilter(jobs, filters);
+const visibleNeedsReview = useJobFilter(needsReview, filters);
+const showNeedsReview = ref(false);
 
 const fetchedRelative = computed(() => {
   if (!fetchedAt.value) return '—';
@@ -77,6 +79,26 @@ onMounted(load);
       <div v-else class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         <JobCard v-for="job in visible" :key="job.id" :job="job" />
       </div>
+
+      <!-- Needs review (safety net for jobs Claude flagged as location-incompatible) -->
+      <section v-if="!loading && !error && visibleNeedsReview.length" class="mt-12">
+        <button
+          class="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-brand-600"
+          @click="showNeedsReview = !showNeedsReview"
+        >
+          <span class="inline-block transition-transform" :class="showNeedsReview ? 'rotate-90' : ''">▸</span>
+          Needs review · {{ visibleNeedsReview.length }}
+          <span class="text-xs font-normal text-slate-400">
+            (Claude flagged location as incompatible — double-check in case of false positives)
+          </span>
+        </button>
+        <div
+          v-if="showNeedsReview"
+          class="mt-4 grid grid-cols-1 gap-4 opacity-70 md:grid-cols-2 lg:grid-cols-3"
+        >
+          <JobCard v-for="job in visibleNeedsReview" :key="job.id" :job="job" />
+        </div>
+      </section>
     </main>
 
     <footer class="mx-auto max-w-6xl px-6 pb-10 pt-6 text-center text-xs text-slate-500">

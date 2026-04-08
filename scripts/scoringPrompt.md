@@ -37,9 +37,17 @@ You MUST return a JSON object with exactly these fields:
   - `0` — No Vue at all (this job should never reach you; flag it)
 
 - **`location_ok`** (boolean):
-  - `true` if the employer clearly accepts a full-remote worker based in Spain (explicit "worldwide", "EU", "EMEA", "European timezone", "CET", "Spain" are all positives)
-  - `false` if the role is US-only, UK-only, APAC, LATAM-only, requires relocation, or is onsite
-  - When genuinely ambiguous, default to `true` and add "remote policy unclear" to `red_flags`
+  - `true` if the employer explicitly accepts workers from Spain, EU, EMEA, European timezones, or "worldwide" / "global" / "anywhere"
+  - `false` when the JD names a specific country or region in a **gating context** that excludes Spain. Watch especially for phrasings like:
+    - "open to candidates in USA/US/Canada/UK/LATAM/APAC"
+    - "candidates must be (based|located|residents|citizens) in X"
+    - "must be authorized to work in X"
+    - "must overlap with Pacific/Eastern/PST/EST business hours"
+    - "applicants in North America only"
+    - The fact that a JD also says "remote" does NOT override these gating phrases — "remote in the US" is still a rejection.
+  - **Important exception:** if the JD mentions a US/UK/etc. office but clearly says "fully remote worldwide" or "we hire globally", that's `true`.
+  - Only when there is NO location signal at all (neither positive nor gating), default to `true` and add "remote policy unclear" to `red_flags`.
+  - When in doubt between ambiguity and exclusion, prefer `false` — the user has a safety net to review these.
 
 - **`seniority_fit`**: one of `junior`, `mid`, `senior`, `lead+`. Alfonso wants `senior` or `lead+`.
 

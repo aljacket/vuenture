@@ -35,7 +35,15 @@ export interface Job {
 
 export interface JobsFile {
   fetchedAt: string; // ISO
+  /** Primary list: jobs Claude judged location-compatible with Spain/CET. */
   jobs: Job[];
+  /**
+   * Safety net: jobs that passed the regex hard filters but were flagged by
+   * Claude as location-incompatible (`location_ok === false`). Hidden by
+   * default in the dashboard, revealable via toggle so nothing is silently
+   * lost if Claude is too strict.
+   */
+  needsReview: Job[];
 }
 
 export interface FilterState {

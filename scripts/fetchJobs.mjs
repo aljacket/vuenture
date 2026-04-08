@@ -50,6 +50,22 @@ const LOCATION_BLOCKERS = [
   'must relocate', 'on-site only', 'onsite only', 'no remote',
 ];
 
+/**
+ * Regex blockers for gating phrases that substring matching can't catch.
+ * These run as a cheap pre-filter before Claude scoring so we don't waste
+ * CLI calls on obvious rejections. Claude is still the final judge for
+ * anything that slips through.
+ */
+const LOCATION_BLOCKER_PATTERNS = [
+  /open to candidates? (only )?in (the )?(usa|u\.?s\.?|united states|canada|uk|united kingdom)\b/i,
+  /candidates? must be (based|located|residents?|citizens?) in (the )?(usa|u\.?s\.?|united states|canada|uk)\b/i,
+  /must be authorized to work in (the )?(usa|u\.?s\.?|united states|canada|uk)\b/i,
+  /(must|need to) (reside|live|be based) in (the )?(usa|u\.?s\.?|united states|north america)\b/i,
+  /\b(pst|pacific|est|eastern|cst|central) (time|timezone|time zone|hours?) (required|only)\b/i,
+  /\bu\.?s\.? (residents?|citizens?) only\b/i,
+  /\bnorth america(n)? (only|residents?)\b/i,
+];
+
 const LOCATION_ACCEPTORS = [
   'remote', 'fully remote', 'worldwide', 'global',
   'europe', ' eu ', 'emea', 'spain', 'cet',
@@ -135,8 +151,9 @@ function passesHardFilters(raw) {
   // Always reject if there's an explicit blocker, even when the structured
   // flag says remote — sometimes the platform says "remote" but the JD body
   // clarifies "US only".
-  const blocked = LOCATION_BLOCKERS.some((k) => desc.includes(k));
-  if (blocked) return { ok: false, reason: 'blocked-location' };
+  const blockedByString = LOCATION_BLOCKERS.some((k) => desc.includes(k));
+  const blockedByPattern = LOCATION_BLOCKER_PATTERNS.some((re) => re.test(desc));
+  if (blockedByString || blockedByPattern) return { ok: false, reason: 'blocked-location' };
   // Trust the source's structured signal first (JSearch gives us job_is_remote
   // as a boolean). Only fall back to keyword matching when the source doesn't
   // know — many JDs never literally say "remote" in the description body even
@@ -306,15 +323,35 @@ async function main() {
     };
   });
 
-  // Sort by overall desc
-  scored.sort((a, b) => b.score.overall - a.score.overall);
+  // Stage 3.5 — split by Claude's location verdict.
+  // location_ok === false → "needs review" safety-net bucket (hidden by
+  // default in the UI, revealable via toggle). Everything else goes to the
+  // primary list.
+  const primary = [];
+  const needsReview = [];
+  for (const j of scored) {
+    if (j.score.location_ok === false) {
+      needsReview.push(j);
+    } else {
+      primary.push(j);
+    }
+  }
+  console.log(`  split by location_ok: ${primary.length} primary / ${needsReview.length} needs review`);
+
+  // Sort each bucket by overall desc
+  primary.sort((a, b) => b.score.overall - a.score.overall);
+  needsReview.sort((a, b) => b.score.overall - a.score.overall);
 
   // Write
   const publicDir = path.join(ROOT, 'public');
   fs.mkdirSync(publicDir, { recursive: true });
-  const out = { fetchedAt: new Date().toISOString(), jobs: scored };
+  const out = {
+    fetchedAt: new Date().toISOString(),
+    jobs: primary,
+    needsReview,
+  };
   fs.writeFileSync(path.join(publicDir, 'jobs.json'), JSON.stringify(out, null, 2));
-  console.log(`✓ wrote public/jobs.json with ${scored.length} jobs`);
+  console.log(`✓ wrote public/jobs.json — ${primary.length} primary, ${needsReview.length} needs review`);
 }
 
 main().catch((err) => {

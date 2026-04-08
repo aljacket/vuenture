@@ -13,31 +13,78 @@ export const PROFILE = {
 } as const;
 
 /**
- * JSearch queries, split by country target. Tuned against Alfonso's CV.
+ * Skills matrix — modular, per-skill proficiency level. The scoring prompt
+ * and (in future) the query builder read this at runtime, so bumping a
+ * backend skill from 'none' to 'learning'/'basic'/'strong' automatically
+ * softens penalties and (eventually) opens new query angles.
  *
- * Global queries use JSearch's default country index (US-based) and catch
- * worldwide / EU-friendly remote jobs. Spain queries pass country=es to
- * reach Indeed.es and Spain-based companies (Capitole, PrimeIT, etc.)
- * that the default JSearch index misses entirely. Two of the ES queries
- * are in Spanish because many Spain-local JDs are not written in English
- * (Alfonso speaks Spanish C1).
+ * Levels:
+ *   'expert'   — differentiator, reward explicit bonuses
+ *   'strong'   — full production confidence
+ *   'basic'    — can contribute, neutral signal
+ *   'learning' — actively studying, small penalty instead of red flag
+ *   'none'     — no experience, red flag if required as core stack
  *
- * 9 queries × ~21 working days = ~189 requests/month, under the JSearch
- * free-tier cap of 200/month.
+ * Keep in sync with `SKILLS` in scripts/fetchJobs.mjs.
  */
-export const GLOBAL_QUERIES = [
-  'Senior Vue.js developer remote',
-  'Senior Vue 3 TypeScript frontend remote Europe',
-  'Senior Vue.js Tailwind Pinia frontend remote',
-  'Senior Vue.js Capacitor Ionic mobile developer remote',
-  'Vue.js frontend technical lead remote',
-  'Vue.js senior frontend AI assisted development remote',
-] as const;
+export const SKILLS = {
+  // Frontend — always on
+  vue: 'expert',
+  typescript: 'strong',
+  tailwind: 'strong',
+  pinia: 'strong',
+  capacitor_ionic: 'expert',
 
-export const SPAIN_QUERIES = [
-  'Vue.js developer remote',
-  'Desarrollador Vue.js senior teletrabajo',
-  'Programador frontend Vue senior remoto',
+  // Backend — modular, bump when you gain experience
+  node: 'learning',      // actively studying (Apr 2026)
+  laravel: 'none',       // planned: upcoming course
+  php: 'none',
+  python: 'none',
+  django: 'none',
+  java: 'none',
+  dotnet: 'none',
+  nestjs: 'none',
+  express: 'none',
+} as const;
+
+export type SkillLevel = 'expert' | 'strong' | 'basic' | 'learning' | 'none';
+
+/**
+ * JSearch queries as (query, country) pairs. `country: null` = the default
+ * global/US index (English, worldwide remote). Country codes target Indeed
+ * national indexes that the global index misses.
+ *
+ * Country selection was driven by a market-yield probe (Apr 2026):
+ *   ES: 10 · IT: 10 · PT: 8 · DE: 2 · FR: 1 · NL/IE/GB: 0 (dropped).
+ *
+ * Alfonso speaks Italian (native) and Spanish (C1) so local-language
+ * queries are included for those two markets. PT/DE use English because
+ * Portuguese/German JDs are usually cross-posted in English.
+ *
+ * 9 queries × ~21 working days = ~189 req/month, under the 200/mo cap.
+ */
+export const JSEARCH_QUERIES = [
+  // Global index (English, worldwide remote). "Frontend" keyword is
+  // explicit in every query to steer Indeed/JSearch away from the
+  // full-stack bias of generic "Vue.js developer" searches.
+  { query: 'Senior Vue.js frontend engineer remote', country: null },
+  { query: 'Vue.js Capacitor Ionic mobile frontend developer remote', country: null },
+  { query: 'Vue.js senior frontend AI assisted development remote', country: null },
+  // Spain — Alfonso lives here, speaks Spanish C1. Four queries because
+  // the Spanish market is the highest-relevance local market and each
+  // query variant surfaces a different slice of Indeed.es.
+  { query: 'Vue.js frontend developer remote', country: 'es' },
+  { query: 'Programador frontend Vue senior remoto', country: 'es' },
+  { query: 'Desarrollador Vue senior teletrabajo España', country: 'es' },
+  { query: 'Programador Vue remoto', country: 'es' },
+  // Italy — highest raw yield in the probe, Alfonso is Italian native
+  { query: 'Vue.js frontend developer remote', country: 'it' },
+  { query: 'Frontend developer Vue.js senior remoto', country: 'it' },
+  // Portugal — Lisbon tech hub, English-friendly
+  { query: 'Vue.js frontend developer remote', country: 'pt' },
+  // Germany was dropped — probe returned 1-2 results only and the query
+  // budget was better spent on additional ES variants above.
+  // 10 queries × ~21 working days = ~210 req/month, within JSearch free tier.
 ] as const;
 
 /** F1 — Vue stack is a HARD requirement. At least one of these must appear. */

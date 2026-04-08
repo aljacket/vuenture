@@ -1,31 +1,195 @@
 {
-  "fetchedAt": "2026-04-08T18:58:06.857Z",
+  "fetchedAt": "2026-04-08T22:08:23.345Z",
   "jobs": [
     {
-      "id": "035bf23b474b",
-      "title": "Senior Software Engineer Python Django PostgreSQL and Vue.js",
-      "company": "Jobflarely",
-      "location": "Remote",
-      "remotePolicy": "remote",
-      "postedAt": "2026-04-06T00:00:00.000Z",
+      "id": "dec1c89bc8c1",
+      "title": "Full stack Developer VUE JS",
+      "company": "agap2 Italia",
+      "location": "Latina, IT",
+      "remotePolicy": "uncertain",
+      "postedAt": "2026-04-08T22:01:10.516Z",
+      "tags": [
+        "Vue.js",
+        "TypeScript"
+      ],
+      "applyUrl": "https://it.jooble.org/rjdp/-923434687056937404?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "source": "jsearch",
+      "rawDescription": "AGAP2 è un gruppo europeo di consulenza ingegneristica e operativa facente parte del Gruppo MoOngy . Siamo alla ricerca di un/una Senior Full Stack Developer qualificato/a, con esperienza nello sviluppo di applicazioni web moderne e scalabili. La figura sarà coinvolta in tutte le fasi del ciclo di vita del software, dalla progettazione all’implementazione, lavorando in un contesto agile e collaborativo. Progettare, sviluppare e mantenere applicazioni web full stack Collaborare con team cross-funzionali (UX/UI, DevOps, Product Owner) Contribuire alla definizione dell’architettura software Ottimizzare le performance e garantire la qualità delle applicazioni Supportare e guidare sviluppatori più junior Familiarità con metodologie Agile / sviluppo iterativo Ottima conoscenza di TypeScript js Esperienza con database PostgreSQL e scrittura di query SQL Front-end: Esperienza con TypeScript Ottima conoscenza di Vue.js 3 Inoltre, teniamo fede ai nostri impegni prestando attenzione alle risorse appartenenti alle categorie protette ai sensi degli articoli 1 e 18 della Legge 68/99. I dati personali saranno trattati in conformità alle disposizioni contenute nel regolamento UE 2016/679.",
+      "score": {
+        "overall": 84,
+        "stack_match": 85,
+        "location_ok": true,
+        "seniority_fit": "senior",
+        "ai_bonus": 0,
+        "reason": "Strong Vue 3 + TypeScript senior full-stack fit with mentoring responsibilities. Italian-language role in EU/CET timezone aligns with profile. Remote status not explicitly stated—verify before applying.",
+        "red_flags": [
+          "Remote policy unclear"
+        ]
+      }
+    },
+    {
+      "id": "650d8c62a97e",
+      "title": "Vue.js Frontend Engineer for AI Apps - Hybrid/Remote",
+      "company": "Techyon",
+      "location": "IT",
+      "remotePolicy": "uncertain",
+      "postedAt": "2026-04-08T22:01:10.516Z",
       "tags": [
         "Vue.js"
       ],
-      "applyUrl": "https://jobflarely.liveblog365.com/job/senior-software-engineer-python-django-postgresql-and-vue-js",
+      "applyUrl": "https://it.jooble.org/jdp/-8677195801165087518?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
       "source": "jsearch",
-      "rawDescription": "The Senior Software Engineer develops, tests, and maintains applications using Python, Django, PostgreSQL, and Vue.js within our AWS-centric SaaS environment. While primarily focused on full-stack development, familiarity with DevOps practices supports efficient development and release processes. This role requires strong problem-solving skills and the ability to work across all aspects of a multi-tiered architecture. The ideal candidate is self-motivated, detail-oriented, adaptable, customer-focused, and eager to mentor team members. They identify areas for improvement and act on them. You will collaborate with engineers, managers, product management, and operations to deliver solutions that meet customer, business, and technical requirements. Key Responsibilities Development and Architecture â ¢ Design, develop, and maintain full-stack applications â ¢ Perform code and design reviews with the development team â ¢ Develop and maintain automated testing frameworks â ¢ Design and implement monitoring and alerting solutions â ¢ Monitor and remediate security vulnerabilities (dependency CVEs, infrastructure misconfigurations) DevOps and Infrastructure â ¢ Design and implement CI/CD pipelines and infrastructure automation â ¢ Manage release processes and develop release documentation â ¢ Ensure team adherence to development and release best practices â ¢ Manage and maintain Kubernetes clusters and containerized workloads â ¢ Update and maintain AWS infrastructure, including networking, security groups, and cloud resources Collaboration and Improvement â ¢ Participate in Agile ceremonies and collaborate daily with the delivery team â ¢ Track and improve developer experience â ¢ Introduce new tools and practices to improve how the team builds and ships software â ¢ Master and help the team adopt AI-assisted development tools such as Claude Code and GitH Required Qualifications â ¢ Bachelorâ s degree in Computer Science, Engineering, Mathematics, or related field (or equiv",
+      "rawDescription": "Una società di reclutamento leader cerca un Front End Developer da inserire nel team per progettare interfacce web moderne per soluzioni software innovative basate su Intelligenza Artificiale. Se sta pensando di inviare una candidatura, si ricordi di premere il pulsante apposito dopo aver letto l'intera descrizione. Ci si aspetta che il candidato lavori a stretto contatto con altri sviluppatori e project manager per realizzare prodotti digitali efficaci e intuitivi. Sono richieste competenze nello sviluppo frontend, preferibilmente con Vue.js e interesse per progetti che integrano servizi di AI. La posizione offre un regime di lavoro ibrido a Siena. xrdbqlu #J-18808-Ljbffr Per questa posizione sono disponibili opzioni di lavoro da remoto/a casa.",
       "score": {
-        "overall": 42,
-        "stack_match": 40,
+        "overall": 76,
+        "stack_match": 75,
         "location_ok": true,
         "seniority_fit": "senior",
-        "ai_bonus": 20,
-        "reason": "Vue.js is listed but is clearly secondary to Python/Django backend work, which dominates the JD; the role is 70%+ backend/DevOps including Kubernetes, AWS infra, and CI/CD pipelines that go well beyond Alfonso's Node basics. Strong AI tooling bonus for explicit Claude Code mention, but wrong primary stack.",
+        "ai_bonus": 10,
+        "reason": "Vue.js is explicitly preferred for AI-focused frontend work. Italy location with remote options is acceptable from Spain (EU, same CET timezone), but seniority is ambiguous and technical stack details are sparse.",
         "red_flags": [
-          "Python/Django backend heavy",
-          "Kubernetes/AWS infra required",
-          "Vue only secondary stack",
-          "DevOps ownership expected"
+          "Seniority level not explicit",
+          "Minimal technical stack details",
+          "Likely on-site component in Siena",
+          "Recruitment firm posting, not direct"
+        ]
+      }
+    },
+    {
+      "id": "0e45ac7fc734",
+      "title": "Senior Full Stack Developer (Kotlin, Vue.js) (Remote, Full-Time) [AS197]",
+      "company": "Hireza",
+      "location": "SE",
+      "remotePolicy": "remote",
+      "postedAt": "2026-04-08T00:00:00.000Z",
+      "tags": [
+        "Vue.js"
+      ],
+      "applyUrl": "https://hireza.wuaze.com/job/senior-full-stack-developer-kotlin-vue-js-remote-full-time-as197-3?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "source": "jsearch",
+      "rawDescription": "About Smart Working At Smart Working, we believe your job should not only look right on paper but also feel right every day. This isn’t just another remote opportunity - it’s about finding where you truly belong, no matter where you are. From day one, you’re welcomed into a genuine community that values your growth and well-being. Our mission is simple: to break down geographic barriers and connect skilled professionals with outstanding global teams and products for full-time, long-term roles. We help you discover meaningful work with teams that invest in your success, where you’re empowered to grow personally and professionally. Join one of the highest-rated workplaces on Glassdoor and experience what it means to thrive in a truly remote-first world. About the role We are looking for a Senior Full Stack Developer to join a long-term engineering initiative focused on building and evolving business-critical systems. This role is suited to a genuine senior engineer who is comfortable taking ownership, working across the stack, and contributing to architectural and delivery decisions. You will play a key role in developing and maintaining scalable applications using Kotlin on the backend and Vue.js on the frontend, working as part of a collaborative engineering team while maintaining a high degree of autonomy. Responsibilities • Design, build, and maintain full-stack features using Kotlin and Vue.js • Take ownership of complex technical tasks from implementation through to production • Contribute to system design and technical decision-making appropriate to a senior-level role • Collaborate closely with other engineers and stakeholders to deliver reliable, maintainable solutions • Ensure high standards of code quality, performance, and reliability across the stack • Support ongoing improvements to existing systems as part of a long-term product roadmap Requirements • 6+ years total professional software development experience (senior-level expectation) • Kotlin: 3+ yea",
+      "score": {
+        "overall": 50,
+        "stack_match": 65,
+        "location_ok": true,
+        "seniority_fit": "senior",
+        "ai_bonus": 0,
+        "reason": "Strong Vue.js fit (6+ years, explicitly primary) and senior-level remote Sweden role, but Kotlin backend is a major blocker—Alfonso has zero JVM experience and the role mandates 3+ years Kotlin as a core full-stack responsibility, not optional.",
+        "red_flags": [
+          "Kotlin backend 3+ years required",
+          "no JVM experience",
+          "full-stack Kotlin not learnable on the job"
+        ]
+      }
+    },
+    {
+      "id": "bda3d2751416",
+      "title": "Full Stack Developer: Java/Spring & Vue — Remote & Growth",
+      "company": "Realnaut",
+      "location": "Remote · ES",
+      "remotePolicy": "uncertain",
+      "postedAt": "2026-04-08T22:00:45.191Z",
+      "tags": [
+        "Vue.js"
+      ],
+      "applyUrl": "https://es.jooble.org/jdp/4659179526844062441",
+      "source": "jsearch",
+      "rawDescription": "Una empresa de tecnología innovadora en Albacete busca un Full Stack Developer con experiencia en Java y Vue.js. Desplácese hacia abajo para encontrar una descripción detallada de este trabajo y lo que se espera de los candidatos. Envíe su solicitud haciendo clic en el botón \"Solicitar\". Participarás en un equipo ágil trabajando en arquitecturas de microservicios y desarrollo de APIs. Se valoraran conocimientos en Cloud y Angular. La empresa ofrece un entorno de trabajo colaborativo, formación continua, conciliación familiar y un salario competitivo que incluye retribución flexible y seguro médico. xbhjioe #J-18808-Ljbffr Hay opciones de teletrabajo/trabajo desde casa disponibles para este puesto.",
+      "score": {
+        "overall": 50,
+        "stack_match": 65,
+        "location_ok": true,
+        "seniority_fit": "senior",
+        "ai_bonus": 0,
+        "reason": "Vue.js is explicitly primary on the frontend side, matching Alfonso's core expertise. However, Java/Spring is equally required as a PRIMARY backend skill—Alfonso has zero Java experience, making this a fundamental full-stack mismatch. The heavy microservices/APIs focus suggests backend load will be significant.",
+        "red_flags": [
+          "Java backend primary requirement",
+          "Full-stack role, heavy backend focus",
+          "TypeScript not mentioned for frontend",
+          "Angular also valued (unclear if co-primary)",
+          "Seniority level not stated",
+          "No AI tooling mentioned"
+        ]
+      }
+    },
+    {
+      "id": "6329a66f464c",
+      "title": "Remote Senior Full-Stack Developer - Java & Vue.js",
+      "company": "Altro",
+      "location": "Roma, IT",
+      "remotePolicy": "uncertain",
+      "postedAt": "2026-04-08T22:01:10.516Z",
+      "tags": [
+        "Vue.js"
+      ],
+      "applyUrl": "https://it.jooble.org/jdp/-7348748642512893049?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "source": "jsearch",
+      "rawDescription": "An IT consultancy company is seeking a Full Stack Java/Vue.js Developer with over 5 years of experience. Massimizzi le sue possibilità di successo assicurandosi che il suo CV e le sue competenze corrispondano ai requisiti di questa posizione. The position offers remote work and aims to provide a stimulating environment for professional growth. Candidates should possess strong skills in Java and Vue.js. Interested applicants are encouraged to send their CVs ensuring they meet the qualifications outlined in the ad. This role is open to all genders and emphasizes compliance with personal data processing laws. xrdbqlu #J-18808-Ljbffr Per questa posizione sono disponibili opzioni di lavoro da remoto/a casa.",
+      "score": {
+        "overall": 45,
+        "stack_match": 60,
+        "location_ok": true,
+        "seniority_fit": "senior",
+        "ai_bonus": 0,
+        "reason": "Vue.js is primary in title, matching seniority level, but Java backend is core and Alfonso lacks Java experience. No TypeScript, Tailwind, or modern tooling mentioned—suggests potentially legacy stack.",
+        "red_flags": [
+          "Java backend (no Alfonso experience)",
+          "TypeScript not mentioned",
+          "Modern Vue tooling absent"
+        ]
+      }
+    },
+    {
+      "id": "23b98f60f6ed",
+      "title": "Senior Vue Js Developer - FULL REMOTE",
+      "company": "Selefor",
+      "location": "Roma, IT",
+      "remotePolicy": "uncertain",
+      "postedAt": "2026-04-08T22:01:10.516Z",
+      "tags": [
+        "Vue.js"
+      ],
+      "applyUrl": "https://it.jooble.org/rjdp/4928761065955072817?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "source": "jsearch",
+      "rawDescription": "Siamo una software house italiana attiva dal 1998, composta da un team di 25 professionisti. Progettiamo e sviluppiamo gestionali complessi web-based , rivolgendoci principalmente a casse edili e scuole edili su tutto il territorio nazionale. Lavoriamo con tecnologie moderne e architetture all'avanguardia, credendo in un approccio pragmatico, agile e collaborativo, dove ogni sviluppatore è protagonista del successo dei nostri progetti. Sarai il referente tecnico per le attività di DevOps o per la sicurezza del software. Hai almeno 5 anni di esperienza consolidata nello sviluppo software. Hai un'eccellente padronanza di C#, JavaScript framework (es. Angular, React, Vue.js) e MS SQL. Possiedi competenze solide in almeno una tra DevOps o Sicurezza Informatica. Sei analitico, autonomo nella gestione dei progetti e orientato alla qualità. Flessibilità organizzativa: possibilità di lavorare fino al 100% da remoto (previsti solo due incontri annuali per team building, a giugno e dicembre). Contratto a tempo indeterminato.",
+      "score": {
+        "overall": 45,
+        "stack_match": 55,
+        "location_ok": true,
+        "seniority_fit": "senior",
+        "ai_bonus": 0,
+        "reason": "Title emphasizes Vue.js, but the core stack is C# + MS SQL backend (outside Alfonso's expertise). Full remote with only 2 annual Italy meetings is viable given native Italian fluency, but the .NET focus makes this a poor technical fit.",
+        "red_flags": [
+          "C# backend is core requirement",
+          "Vue secondary to framework options",
+          "DevOps/Security skills also required"
+        ]
+      }
+    },
+    {
+      "id": "d355704e88b7",
+      "title": "Remote Senior Full-Stack Developer - Java & Vue.js",
+      "company": "Esprimo S.r.l.",
+      "location": "IT",
+      "remotePolicy": "uncertain",
+      "postedAt": "2026-04-08T22:01:10.516Z",
+      "tags": [
+        "Vue.js"
+      ],
+      "applyUrl": "https://it.jooble.org/jdp/7848351767317360571?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "source": "jsearch",
+      "rawDescription": "An IT consultancy company is seeking a Full Stack Java/Vue.js Developer with over 5 years of experience. Massimizzi le sue possibilità di successo assicurandosi che il suo CV e le sue competenze corrispondano ai requisiti di questa posizione. The position offers remote work and aims to provide a stimulating environment for professional growth. Candidates should possess strong skills in Java and Vue.js. Interested applicants are encouraged to send their CVs ensuring they meet the qualifications outlined in the ad. This role is open to all genders and emphasizes compliance with personal data processing laws. xrdbqlu #J-18808-Ljbffr Per questa posizione sono disponibili opzioni di lavoro da remoto/a casa.",
+      "score": {
+        "overall": 45,
+        "stack_match": 60,
+        "location_ok": true,
+        "seniority_fit": "senior",
+        "ai_bonus": 0,
+        "reason": "Vue.js matches Alfonso's expertise, but this full-stack role centers on Java backend work—a language Alfonso doesn't know. Strong mismatch on backend despite senior seniority and remote availability from Italy (CET-compatible).",
+        "red_flags": [
+          "Java backend required",
+          "No TypeScript mentioned",
+          "Full-stack Java focus"
         ]
       }
     },
@@ -33,58 +197,191 @@
       "id": "7a79b55874b1",
       "title": "Senior Full Stack Developer (Kotlin, Vue.js) (Remote, Full-Time) [AS197]",
       "company": "Remotica",
-      "location": "Remote",
+      "location": "DE",
       "remotePolicy": "remote",
       "postedAt": "2026-04-05T00:00:00.000Z",
       "tags": [
         "Vue.js"
       ],
-      "applyUrl": "https://remotica.totalh.net/job/senior-full-stack-developer-kotlin-vue-js-remote-full-time-as197-2",
+      "applyUrl": "https://remotica.totalh.net/job/senior-full-stack-developer-kotlin-vue-js-remote-full-time-as197-2?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
       "source": "jsearch",
       "rawDescription": "Senior Full Stack Developer (Kotlin, Vue.js) (Remote, Full-Time) [AS197] About Smart Working At Smart Working, we believe your job should not only look right on paper but also feel right every day. This isnt just another remote opportunity - its about finding where you truly belong, no matter where you are. From day one, youre welcomed into a genuine community that values your growth and well-being. Our mission is simple: to break down geographic barriers and connect skilled professionals with outstanding global teams and products for full-time, long-term roles. We help you discover meaningful work with teams that invest in your success, where youre empowered to grow personally and professionally.Join one of the highest-rated workplaces on Glassdoor and experience what it means to thrive in a truly remote-first world. About the role We are looking for a Senior Full Stack Developer to join a long-term engineering initiative focused on building and evolving business-critical systems. This role is suited to a genuine senior engineer who is comfortable taking ownership, working across the stack, and contributing to architectural and delivery decisions. You will play a key role in developing and maintaining scalable applications using Kotlin on the backend and Vue.js on the frontend, working as part of a collaborative engineering team while maintaining a high degree of autonomy.Responsibilities • Design, build, and maintain full-stack features using Kotlin and Vue.js • Take ownership of complex technical tasks from implementation through to production • Contribute to system design and technical decision-making appropriate to a senior-level role • Collaborate closely with other engineers and stakeholders to deliver reliable, maintainable solutions • Ensure high standards of code quality, performance, and reliability across the stack • Support ongoing improvements to existing systems as part of a long-term product roadmap Requirements • 6+ years total professional software",
       "score": {
-        "overall": 38,
-        "stack_match": 60,
+        "overall": 40,
+        "stack_match": 55,
         "location_ok": true,
         "seniority_fit": "senior",
         "ai_bonus": 0,
-        "reason": "Vue.js is a genuine primary requirement with 3+ years expected, but the role is equally weighted toward Kotlin backend—a serious mismatch for Alfonso's frontend specialization; no TypeScript, Tailwind, Pinia, or Nuxt are mentioned anywhere in the JD.",
+        "reason": "Vue.js expertise matches perfectly at senior level (3+ years production). However, the role requires 3+ years of Kotlin backend experience, which you lack—a major blocker for this full-stack position.",
         "red_flags": [
-          "Kotlin backend 3yr required",
-          "no TypeScript mentioned",
-          "full-stack not frontend-specialist",
-          "IST-based shifts — India-targeted remote"
+          "Kotlin backend expertise required, not in skill set"
         ]
       }
     },
     {
-      "id": "0fc889d2f523",
-      "title": "Lead Full-Stack Developer (NestJS + Vue.js + MySQL) — Digital Signage / DOOH - Contract to Hire",
-      "company": "Hireza",
-      "location": "NL",
-      "remotePolicy": "remote",
-      "postedAt": "2026-04-06T00:00:00.000Z",
+      "id": "b2cbd2aea9c5",
+      "title": "Full-Stack Developer - Vue.js (Remote)",
+      "company": "Altro",
+      "companyLogo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxZcedD_3dF93ViStyNIWTQoxuaUqovO_AbE5a&s=0",
+      "location": "Roma, IT",
+      "remotePolicy": "uncertain",
+      "postedAt": "2026-04-08T22:01:02.250Z",
+      "tags": [
+        "Vue.js"
+      ],
+      "applyUrl": "https://it.talent.com/view?id=614099754226485529&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "source": "jsearch",
+      "rawDescription": "Una società di consulenza informatica cerca un Full Stack Developer per sviluppare un tool in ambito Credit Insurance. Il candidato ideale ha solida esperienza in Vue.js per il front-end e buone competenze in Java per il back-end. Lavorerà in modalità full remote, in un ambiente collaborativo e innovativo, con un forte focus sulla qualità. È richiesta una laurea o diploma tecnico e almeno 4 anni di esperienza nel ruolo, insieme a competenze in database Oracle e microservizi. Se sei appassionato di tecnologia e desideri crescere, candidati ora! J-18808-Ljbffr",
+      "score": {
+        "overall": 38,
+        "stack_match": 60,
+        "location_ok": true,
+        "seniority_fit": "mid",
+        "ai_bonus": 0,
+        "reason": "Vue.js is primary and a strong match, but this full-stack role demands heavy Java backend work — Alfonso has no Java experience, making the backend requirement a significant barrier. Italian-language role (Rome, remote) is linguistically and timezone-compatible.",
+        "red_flags": [
+          "Java backend required, no experience",
+          "Oracle database requirement",
+          "Microservices architecture"
+        ]
+      }
+    },
+    {
+      "id": "21cb017c027c",
+      "title": "Remote Fullstack Developer (Vue/.NET)",
+      "company": "Journi Limited",
+      "location": "Remote · ES",
+      "remotePolicy": "uncertain",
+      "postedAt": "2026-04-08T22:00:47.406Z",
+      "tags": [],
+      "applyUrl": "https://es.jooble.org/jdp/-5227433867572674850",
+      "source": "jsearch",
+      "rawDescription": "A leading technology consultancy is looking for a Fullstack Developer with expertise in .Net and Vue. In this fully remote role, you will develop and maintain web applications, collaborating with the development team to deliver innovative solutions. Candidates should have demonstrable experience in web development, solid knowledge of relevant technologies, and the ability to work both autonomously and in a team. Enjoy a flexible working environment while creating impactful digital solutions. #J-18808-Ljbffr",
+      "score": {
+        "overall": 35,
+        "stack_match": 60,
+        "location_ok": true,
+        "seniority_fit": "mid",
+        "ai_bonus": 0,
+        "reason": "Vue is present and fully remote in Spain, but .NET is a core fullstack requirement where Alfonso has no experience. Seniority is unclear.",
+        "red_flags": [
+          ".NET backend required (no experience)",
+          "Seniority not specified",
+          "TypeScript not mentioned"
+        ]
+      }
+    },
+    {
+      "id": "974ac86242a5",
+      "title": "Full Stack Developer - Remote or Milano, Agile + Vue/React",
+      "company": "ABS srl",
+      "location": "Roma, IT",
+      "remotePolicy": "uncertain",
+      "postedAt": "2026-04-08T22:01:10.516Z",
+      "tags": [],
+      "applyUrl": "https://it.jooble.org/jdp/-7696091466175008451?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "source": "jsearch",
+      "rawDescription": "Un'importante azienda tecnologica è alla ricerca di un Full Stack Developer per ampliare il proprio team. Dopo aver letto questa descrizione, invii il suo CV e le eventuali informazioni aggiuntive richieste facendo clic sul pulsante di candidatura. La persona selezionata lavorerà a Milano o in modalità full remote e sarà responsabile dell'analisi e dello sviluppo di applicazioni web. Si richiedono da 1 a 3 anni di esperienza nello sviluppo web, conoscenze di SQL Server e sistemi di versioning. Un ambiente dinamico e collaborativo attende la persona giusta. xrdbqlu #J-18808-Ljbffr Per questa posizione sono disponibili opzioni di lavoro da remoto/a casa.",
+      "score": {
+        "overall": 30,
+        "stack_match": 55,
+        "location_ok": true,
+        "seniority_fit": "mid",
+        "ai_bonus": 0,
+        "reason": "Job lists Vue/React without clear primacy, requires only 1–3 years (mid-level experience), and provides minimal technical depth. While full remote + Italy is location-compatible, the seniority mismatch and ambiguous frontend positioning make this unsuitable for a senior engineer.",
+        "red_flags": [
+          "1–3 years required (mid-level)",
+          "Vue/React not Vue-primary",
+          "SQL Server backend required",
+          "Vague job description",
+          "No modern tooling mentioned"
+        ]
+      }
+    },
+    {
+      "id": "650da39db50b",
+      "title": "Front-end Developer Vue.js (Full remote)",
+      "company": "Assist-x",
+      "location": "Frosinone, IT",
+      "remotePolicy": "uncertain",
+      "postedAt": "2026-04-08T22:01:02.251Z",
       "tags": [
         "Vue.js",
         "TypeScript",
-        "Node.js"
+        "GraphQL"
       ],
-      "applyUrl": "https://hireza.wuaze.com/job/lead-full-stack-developer-nestjs-vue-js-mysql-digital-signage-dooh-contract-to-hire?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "applyUrl": "https://it.jooble.org/rjdp/2040059451498377829?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
       "source": "jsearch",
-      "rawDescription": "We need a Lead Full-Stack Developer to maintain and improve our digital signage / DOOH platform. This is not a rebuild — we need someone to fix bugs, maintain the system, and make incremental updates to existing modules. Tech Stack • Backend: NestJS (Node.js / TypeScript) • Frontend: Vue.js • Database: MySQL • Analytics: Google BigQuery • Auth: Auth0 • Payments: Stripe • Email: SendGrid • Push/Storage: Firebase Cloud Messaging + Firebase Storage • Chat: Twilio • Hosting: DigitalOcean What you will do • Fix bugs and improve stability across the web platform (Vue + NestJS) • Maintain and extend APIs (NestJS + MySQL) • Maintain integrations (Auth0, Stripe, SendGrid, Firebase, BigQuery, Twilio) • Support deployments and keep staging/production stable (DigitalOcean) • Write basic documentation as you go (setup, deployments, key modules) • Work with a second developer (you will review PRs and control releases) Requirements • Strong NestJS + TypeScript experience • Strong Vue.js experience • Solid MySQL experience • Comfortable working in an existing codebase • Fluent English (written + spoken) Budget / Process • Budget: US$1,000/month (long-term if it works out) • Mandatory 2-week paid trial • All work via GitHub PRs + tickets • Daily update: Yesterday / Today / Blockers To apply Please send: 1. Your GitHub / portfolio 2. 1–2 examples of NestJS + Vue.js work you shipped 3. Your timezone + availability 4. Answer this: How would you stabilise an existing platform you didn’t build? Apply tot his job",
+      "rawDescription": "Milano | Full Remote Tipologia di Contratto: Collaborazione Freelance o Contratto Determinato Di seguito, troverà un'analisi completa di tutti i requisiti per i potenziali candidati e le istruzioni su come candidarsi. Frontend / Full Stack Software Developer In Assist-x, quando realizziamo un prodotto, fra le nostre priorità c’è quella di sviluppare codice e infrastrutture all’avanguardia, allineate con i moderni stack tecnologici e seguendo le best practice di sviluppo per garantire manutenibilità e scalabilità del software nel lungo periodo. Cerchiamo un Frontend Software Developer capace di contribuire allo sviluppo di soluzioni software di alta qualità. La figura lavorerà in sinergia con i team di product design, UX/UI e Backend per tradurre i requisiti in soluzioni affidabili e scalabili. Siamo aperti a profili mid ma anche junior purché ragionevolmente autonomi. Descrizione dell’azienda Assist-x è una giovane realtà tech specializzata nell’offrire soluzioni software, AI e infrastruttura cloud ad aziende che necessitano di innovare il proprio business o sviluppare prodotti da lanciare sul mercato. Sviluppo, implementazione e manutenzione di interfacce web e mobile utilizzando React e React Native. Gestione avanzata dello stato dell’applicazione (Zustand, Context API) Integrazione con le API RESTful o GraphQL fornite dal backend. Collaborazione costante con UI/UX designer e sviluppatori backend per garantire un’integrazione fluida e la migliore esperienza utente (UX) possibile. Ottima padronanza di JavaScript (ES6+), TypeScript e npm. Comprovata esperienza nello sviluppo di componenti riutilizzabili con React e React Native. Solida base nei linguaggi web fondamentali (HTML5, CSS3/SASS, architettura del DOM) e approccio Mobile First / Responsive Design. Conoscenza dei principi fondanti del Software Engineering (Clean Code, design pattern). Gradita conoscenza del framework Vue.js. js per interfacciarsi meglio con il team backend. Familiarità con Docker, containeri",
       "score": {
-        "overall": 22,
-        "stack_match": 40,
+        "overall": 28,
+        "stack_match": 35,
         "location_ok": true,
-        "seniority_fit": "lead+",
+        "seniority_fit": "mid",
         "ai_bonus": 0,
-        "reason": "Vue.js is present but this is a genuinely full-stack role with NestJS as a co-primary requirement — a poor fit given Alfonso's basic Node.js depth. The $1,000/month budget is far below his €45K–€80K target regardless of seniority fit.",
+        "reason": "React and React Native are the primary stack; Vue.js is only 'gradita conoscenza' (nice-to-have), violating Alfonso's Vue-primary requirement. The role explicitly welcomes mid and junior candidates, not senior/lead+.",
         "red_flags": [
-          "NestJS backend heavy",
-          "budget $1K/month far below range",
-          "remote policy unclear",
-          "Vue version unspecified",
-          "no Tailwind/Pinia/Nuxt"
+          "React primary, Vue only nice-to-have",
+          "Mid/junior seniority explicitly welcomed",
+          "React Native, not Capacitor/Ionic",
+          "Zustand/Context instead of Pinia/Vuex",
+          "No AI tooling mentioned"
+        ]
+      }
+    },
+    {
+      "id": "7062f5703d72",
+      "title": "Remote Web Developer — Node/React/Vue, Grow Your Skills",
+      "company": "Altro",
+      "companyLogo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxZcedD_3dF93ViStyNIWTQoxuaUqovO_AbE5a&s=0",
+      "location": "Roma, IT",
+      "remotePolicy": "uncertain",
+      "postedAt": "2026-04-08T22:01:02.250Z",
+      "tags": [],
+      "applyUrl": "https://it.talent.com/view?id=613955185079951152&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "source": "jsearch",
+      "rawDescription": "A technology solutions company in Italy seeks a Junior Software Developer with at least 4-5 years of experience in IT. Tutti i potenziali candidati sono incoraggiati a leggere l'intera descrizione del lavoro prima di candidarsi. Ideal candidates are passionate about programming and eager to learn new technologies. While specific responsibilities are not detailed, the role offers a dynamic work environment with opportunities to tackle challenging projects for major clients. Teamwork and excellent problem-solving skills are essential. Enjoy continuous personal and technical development in this collaborative setting. xrdbqlu #J-18808-Ljbffr Per questa posizione sono disponibili opzioni di lavoro da remoto/a casa.",
+      "score": {
+        "overall": 25,
+        "stack_match": 50,
+        "location_ok": true,
+        "seniority_fit": "junior",
+        "ai_bonus": 0,
+        "reason": "Junior-level role (despite 4–5 years language) with Vue listed as one option alongside React/Node, no clear primary. Vague description omits TypeScript, modern tooling, or concrete tech details. Not a fit for a senior engineer seeking specialization.",
+        "red_flags": [
+          "Junior seniority title, not senior/lead",
+          "Vue not clearly primary stack",
+          "Confusing junior + 4–5 years contradiction",
+          "Vague description, missing tech specifics",
+          "No TypeScript or AI tooling mentioned"
+        ]
+      }
+    },
+    {
+      "id": "fe110bcdae70",
+      "title": "Remote Full-Stack Developer — Vue/Nuxt + NestJS",
+      "company": "Istituto Formativo Aladia",
+      "location": "IT",
+      "remotePolicy": "uncertain",
+      "postedAt": "2026-04-08T22:01:10.516Z",
+      "tags": [
+        "Nuxt"
+      ],
+      "applyUrl": "https://it.jooble.org/jdp/1123239225776745848?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "source": "jsearch",
+      "rawDescription": "Una piattaforma di e-learning sta cercando uno Sviluppatore Full Stack per creare applicazioni web scalabili. I candidati sono invitati a leggere attentamente tutti gli elementi di questo annuncio. La preghiamo di inviare la sua candidatura tempestivamente. Questo ruolo richiede competenze in VueJS, NuxtJS, NestJS, e MongoDB. Offriamo benefits come opportunità di apprendimento continuo e un ambiente di lavoro collaborativo e internazionale. La posizione è full-time con orario dalle 08:00 alle 17:00 CET e permette un lavoro remoto a livello nazionale ed europeo. xrdbqlu #J-18808-Ljbffr Per questa posizione sono disponibili opzioni di lavoro da remoto/a casa.",
+      "score": {
+        "overall": 15,
+        "stack_match": 50,
+        "location_ok": true,
+        "seniority_fit": "mid",
+        "ai_bonus": 0,
+        "reason": "Vue is primary and well-matched, but the role demands both deep Nuxt expertise (which Alfonso lacks in production) and NestJS backend work as a core responsibility. NestJS is outside his current skillset (basic Node only), making this a full-stack overreach.",
+        "red_flags": [
+          "NestJS backend required, not in skill set",
+          "Deep Nuxt expertise required",
+          "Full-stack role, not frontend-focused",
+          "Seniority level unclear"
         ]
       }
     }
@@ -94,62 +391,62 @@
       "id": "2755bf5d6950",
       "title": "Senior Software Engineer - Python, Django, PostgreSQL, and Vue.js",
       "company": "Ghx",
-      "location": "Remote",
+      "location": "US",
       "remotePolicy": "remote",
       "postedAt": "2026-04-06T00:00:00.000Z",
       "salaryMin": 114000,
       "salaryMax": 152000,
       "tags": [
-        "Vue.js"
+        "Vue.js",
+        "Claude Code"
       ],
-      "applyUrl": "https://jooble.org/jdp/-1220916382994127347",
+      "applyUrl": "https://jooble.org/jdp/-1220916382994127347?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
       "source": "jsearch",
       "rawDescription": "The Senior Software Engineer develops, tests, and maintains applications using Python, Django, PostgreSQL, and Vue.js within our AWS-centric SaaS environment. While primarily focused on full-stack development, familiarity with DevOps practices supports efficient development and release processes. This role requires strong problem-solving skills and the ability to work across all aspects of a multi-tiered architecture. The ideal candidate is self-motivated, detail-oriented, adaptable, customer-focused, and eager to mentor team members. They identify areas for improvement and act on them. You will collaborate with engineers, managers, product management, and operations to deliver solutions that meet customer, business, and technical requirements. Key Responsibilities Development and Architecture • Design, develop, and maintain full-stack applications • Perform code and design reviews with the development team • Develop and maintain automated testing frameworks • Design and implement monitoring and alerting solutions • Monitor and remediate security vulnerabilities (dependency CVEs, infrastructure misconfigurations) DevOps and Infrastructure • Design and implement CI/CD pipelines and infrastructure automation • Manage release processes and develop release documentation • Ensure team adherence to development and release best practices • Manage and maintain Kubernetes clusters and containerized workloads • Update and maintain AWS infrastructure, including networking, security groups, and cloud resources Collaboration and Improvement • Participate in Agile ceremonies and collaborate daily with the delivery team • Track and improve developer experience • Introduce new tools and practices to improve how the team builds and ships software • Master and help the team adopt AI-assisted development tools such as Claude Code and GitH Required Qualifications • Bachelor’s degree in Computer Science, Engineering, Mathematics, or related field (or equivalent experience) • 5+ years of",
       "score": {
-        "overall": 38,
-        "stack_match": 30,
+        "overall": 45,
+        "stack_match": 50,
         "location_ok": false,
         "seniority_fit": "senior",
         "ai_bonus": 10,
-        "reason": "Vue.js is listed but clearly secondary to Python/Django backend — this is a full-stack role heavily weighted toward DevOps, Kubernetes, and AWS infrastructure. Salary is USD and the company operates in North America, with no indication Spain-based remote workers are accepted.",
+        "reason": "Django/Python is the primary focus with Vue.js secondary, and the heavy backend work is outside Alfonso's expertise as a Vue specialist. The US location also excludes Spain-based work.",
         "red_flags": [
-          "Vue secondary to Python/Django",
-          "heavy DevOps/Kubernetes scope",
-          "US-centric salary (USD)",
-          "no EU/Spain remote signal",
-          "Node.js-style backend depth required",
-          "AWS infra management expected"
+          "US location only",
+          "Python/Django backend primary",
+          "DevOps/Kubernetes significant",
+          "Vue.js secondary to full-stack"
         ]
       }
     },
     {
-      "id": "5b2981e2cf6a",
-      "title": "Senior Full Stack Developer (Laravel + Vue.js)",
+      "id": "e6efb723f642",
+      "title": "Senior Front-end Engineer - REMOTE - VUE.JS",
       "company": "Hireza",
-      "location": "Remote",
+      "location": "ZA",
       "remotePolicy": "remote",
-      "postedAt": "2026-04-06T00:00:00.000Z",
+      "postedAt": "2026-04-08T00:00:00.000Z",
       "tags": [
         "Vue.js",
-        "TypeScript",
-        "Tailwind"
+        "Nuxt",
+        "GraphQL"
       ],
-      "applyUrl": "https://hireza.wuaze.com/job/senior-full-stack-developer-laravel-vue-js-4",
+      "applyUrl": "https://hireza.wuaze.com/job/senior-front-end-engineer-remote-vue-js-2?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
       "source": "jsearch",
-      "rawDescription": "About the Role:We're seeking a Senior Full Stack Developer to join our engineering team. You'll work across the entire stack, crafting performant APIs with Laravel and building dynamic, responsive interfaces with Vue.js. This role requires someone who can own features end-to-end, contribute to architectural decisions, and help mentor junior teammates.Our stack includes Laravel 12, Vue.js, MySQL, Redis, and TailwindCSS.What You'll Do: Develop, test, and maintain full-stack functionality using PHP 8.4 and Laravel 12.xBuild and consume RESTful APIs for internal and external applicationsUse wireframes and mockups to create responsive UIs using Vue.js 2.x+, and TailwindCSSImplement real-time features using WebSockets, Pusher, or Laravel BroadcastingDesign and optimize database schemas in MySQL; work with DynamoDB for appropriate workloadsManage AWS infrastructure including RDS, Lambda, CloudWatch, and related servicesDefine and maintain Infrastructure as Code using CloudFormation or AWS CDKBuild and maintain CI/CD pipelines using CodeBuild and CodePipelineProvide high-quality code reviews and help enforce team standardsPartner with product and engineering to develop and refine featuresDocument workflows, APIs, architecture decisions, and technical standardsMentor mid-level developers and contribute to team knowledge sharingWhat We're Looking For:6+ years of professional software development experience5+ years of hands-on experience with Laravel/PHP4+ years of hands-on experience with Vue.jsHighly proficient in modern PHP 8.x, unit testing, and RESTful API designStrong understanding of MySQL—schema design, optimization, and migrationsExperience with NoSQL databasesExperience with AWS services (RDS, Lambda, CloudWatch, S3, ElastiCache)Experience with Infrastructure as Code (CloudFormation or CDK)Solid command of Git workflows, branching strategies, and code review processesStrong awareness of security best practices and data consistencyExperience with testing frameworks (P",
+      "rawDescription": "YOUR ROLE We need someone like you to help create software solutions that help millions of users make informed decisions. If you’re looking to make an impact while leveraging groundbreaking technologies, this is the place for you. At Launch Potato you will be an integral member of the LP Tech Team where you will have the opportunity to lead our technical path and be empowered to drive our products. Our team has built groundbreaking technology that helps us understand our millions of users and helps them reach their personal goals every day across our portfolio of brands. On any given day you might be working on our proprietary platform creating solutions that improve the UIs we use to visualize and manage our data. Or you might be improving the user experience on one of our owned and operated sites by launching a new product. Whatever it may be, you will be making an impact! You will be working cross-functionally with passionate, extremely smart individuals with tons of opportunities for learning, growth, and mentorship. We are an extremely fun and tight-knit team (our company retreats are fabulous), so we are very selective about who we hire to ensure our company values remain high. As part of the LP Tech Team, will have access to the best tools to remove any blockers and enable your success. On a typical day you might: • Develop javascript component-based plugins • Write front end code for dashboards that allow non-technical users to intuitively interact with data • Collaborate with product managers, designers, stakeholders, anyone to help create the best product possible • Coach and mentor other engineers on best practices • Research new technologies and prototype potential solutions • Lead discussions about project architecture and technical feasibility • Build internal tools used to increase team productivity Our current tech stack: • Frontend languages and Libraries • HTML5/Javascript, • jQuery, Vue.js, React, Node.js, GraphQL • CSS Grid, flexbox, bootstrap, m",
       "score": {
-        "overall": 28,
+        "overall": 35,
         "stack_match": 55,
         "location_ok": false,
         "seniority_fit": "senior",
         "ai_bonus": 0,
-        "reason": "Vue.js + Tailwind are present but this is a Laravel/PHP-first role demanding 5+ years backend depth Alfonso doesn't have; 401K benefits and US-style insurance package strongly indicate US-employee-only hiring despite the 'remote' label.",
+        "reason": "Vue.js is listed in title and mentioned in stack, but alongside React and jQuery without clear primacy. Django/Python backend is core to the role—Alfonso has only basic Node experience. Location explicitly ZA with ambiguous remote scope.",
         "red_flags": [
-          "Laravel/PHP backend heavy",
-          "US benefits (401K) suggest US-only",
-          "Vue 2.x+ not Vue 3",
-          "TypeScript only preferred",
-          "AWS infrastructure/IaC required"
+          "Location: South Africa (not EU/EMEA/worldwide)",
+          "Python/Django backend required",
+          "Vue not clearly primary framework",
+          "TypeScript not mentioned",
+          "Bootstrap instead of Tailwind",
+          "Job description incomplete (cuts mid-sentence)"
         ]
       }
     }

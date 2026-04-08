@@ -55,32 +55,107 @@ const ROOT = path.resolve(__dirname, '..');
 
 // --- Config (mirrors src/config/profile.ts — keep in sync) ------------------
 
-// JSearch query set split by country target.
+// JSearch queries structured as (query, country) pairs. The country tells
+// JSearch which national index to hit; `null` = the default global/US
+// index which still aggregates worldwide English-language remote jobs.
 //
-// - Global queries use JSearch's default country (US-indexed). They catch
-//   the worldwide/EU remote market including WWR/LinkedIn/Glassdoor jobs.
-// - ES queries pass country=es and target the Spanish market directly —
-//   this is the only way to reach Indeed.es, InfoJobs-aggregated postings,
-//   and Spain-based companies like Capitole/PrimeIT that the default
-//   JSearch index misses entirely. Two of them are in Spanish because
-//   many Spain-local JDs are not in English.
+// Country selection was driven by a market-yield probe (Apr 2026):
+//   ES: 10 jobs · IT: 10 jobs · PT: 8 jobs · DE: 2 jobs
+//   FR: 1 job · NL/IE/GB: 0 jobs  → dropped
 //
-// 9 queries × ~21 working days = ~189 req/month, under the 200/mo free
-// tier with a small buffer for manual re-runs.
-const GLOBAL_QUERIES = [
-  'Senior Vue.js developer remote',
-  'Senior Vue 3 TypeScript frontend remote Europe',
-  'Senior Vue.js Tailwind Pinia frontend remote',
-  'Senior Vue.js Capacitor Ionic mobile developer remote',
-  'Vue.js frontend technical lead remote',
-  'Vue.js senior frontend AI assisted development remote',
+// Alfonso speaks Italian (native) and Spanish (C1) so local-language
+// queries are included for those two markets. PT/DE use English only
+// because Portuguese/German JDs are usually cross-posted in English.
+//
+// 9 queries × ~21 working days = ~189 req/month, under the JSearch
+// 200/mo free tier cap with a small buffer.
+const JSEARCH_QUERIES = [
+  // Global index (English, worldwide remote). "Frontend" keyword is
+  // explicit in every query to steer Indeed/JSearch away from the
+  // full-stack bias of generic "Vue.js developer" searches.
+  { query: 'Senior Vue.js frontend engineer remote', country: null },
+  { query: 'Vue.js Capacitor Ionic mobile frontend developer remote', country: null },
+  { query: 'Vue.js senior frontend AI assisted development remote', country: null },
+  // Spain — Alfonso lives here, speaks Spanish C1. Four queries because
+  // the Spanish market is the highest-relevance local market and each
+  // query variant surfaces a different slice of Indeed.es.
+  { query: 'Vue.js frontend developer remote', country: 'es' },
+  { query: 'Programador frontend Vue senior remoto', country: 'es' },
+  { query: 'Desarrollador Vue senior teletrabajo España', country: 'es' },
+  { query: 'Programador Vue remoto', country: 'es' },
+  // Italy — highest raw yield in the probe, Alfonso is Italian native
+  { query: 'Vue.js frontend developer remote', country: 'it' },
+  { query: 'Frontend developer Vue.js senior remoto', country: 'it' },
+  // Portugal — Lisbon tech hub, English-friendly
+  { query: 'Vue.js frontend developer remote', country: 'pt' },
+  // Germany was dropped — probe returned 1-2 results only and the query
+  // budget was better spent on additional ES variants above.
+  // 10 queries × ~21 working days = ~210 req/month, within JSearch free tier.
 ];
 
-const SPAIN_QUERIES = [
-  'Vue.js developer remote',
-  'Desarrollador Vue.js senior teletrabajo',
-  'Programador frontend Vue senior remoto',
-];
+// Skills matrix — mirror of SKILLS in src/config/profile.ts. Keep in sync.
+// Drives the dynamic backend context injected into the scoring prompt, so
+// bumping a backend skill from 'none' to 'learning'/'basic'/'strong'
+// automatically softens penalties next run.
+const SKILLS = {
+  // Frontend — always on
+  vue: 'expert',
+  typescript: 'strong',
+  tailwind: 'strong',
+  pinia: 'strong',
+  capacitor_ionic: 'expert',
+  // Backend — modular, bump when you gain experience
+  node: 'learning',      // actively studying (Apr 2026)
+  laravel: 'none',       // planned: upcoming course
+  php: 'none',
+  python: 'none',
+  django: 'none',
+  java: 'none',
+  dotnet: 'none',
+  nestjs: 'none',
+  express: 'none',
+};
+
+const FRONTEND_SKILL_NAMES = new Set([
+  'vue', 'typescript', 'tailwind', 'pinia', 'capacitor_ionic',
+]);
+
+/**
+ * Build the dynamic "backend skills context" block that gets substituted
+ * into scoringPrompt.md. Grouping by level lets the LLM apply the right
+ * penalty/bonus without us hardcoding per-skill rules in the prompt.
+ */
+function buildBackendContext(skills) {
+  const groups = { expert: [], strong: [], basic: [], learning: [], none: [] };
+  for (const [name, level] of Object.entries(skills)) {
+    if (FRONTEND_SKILL_NAMES.has(name)) continue;
+    if (groups[level]) groups[level].push(name);
+  }
+
+  const lines = [];
+  if (groups.strong.length || groups.expert.length) {
+    const strong = [...groups.expert, ...groups.strong].join(', ');
+    lines.push(
+      `- **Strong backend skills (target full-stack roles):** ${strong}. A full-stack role combining Vue + any of these is a TARGET role; give +5 bonus on \`overall\`.`
+    );
+  }
+  if (groups.basic.length) {
+    lines.push(
+      `- **Basic backend skills (neutral):** ${groups.basic.join(', ')}. Can contribute to light backend tasks. Neutral signal, no bonus or penalty.`
+    );
+  }
+  if (groups.learning.length) {
+    lines.push(
+      `- **Currently learning (acceptable, mild positive):** ${groups.learning.join(', ')}. Alfonso is actively studying these. Jobs that mention them as part of a Vue-led full-stack role are NEUTRAL to slightly positive ("growth opportunity") — do NOT treat as a red flag. Only penalize (-5) if the role expects deep/senior expertise in them from day one.`
+    );
+  }
+  if (groups.none.length) {
+    lines.push(
+      `- **No experience (red flag if core stack):** ${groups.none.join(', ')}. Jobs that require these as a MAJOR part of the backend work should be penalized -15 on \`overall\` and added to \`red_flags\`. Jobs that merely mention them as "nice to have" or as one tool in a larger stack are neutral.`
+    );
+  }
+  return lines.join('\n');
+}
 
 const VUE_KEYWORDS = ['vue', 'vuejs', 'vue.js', 'vue 3', 'vue3', 'nuxt'];
 
@@ -154,20 +229,30 @@ async function fetchJSearch(query, country = null) {
       return [];
     }
     const json = await res.json();
-    return (json.data ?? []).map((j) => ({
-      source: 'jsearch',
-      title: j.job_title ?? '',
-      company: j.employer_name ?? '',
-      companyLogo: j.employer_logo ?? undefined,
-      location: [j.job_city, j.job_country].filter(Boolean).join(', ') || 'Remote',
-      remotePolicy: j.job_is_remote ? 'remote' : 'uncertain',
-      isRemoteStructured: j.job_is_remote === true,
-      postedAt: j.job_posted_at_datetime_utc ?? new Date().toISOString(),
-      salaryMin: j.job_min_salary ?? undefined,
-      salaryMax: j.job_max_salary ?? undefined,
-      applyUrl: j.job_apply_link ?? '',
-      rawDescription: j.job_description ?? '',
-    }));
+    return (json.data ?? []).map((j) => {
+      // city/country in the JSearch payload are unreliable (Indeed often
+      // omits them on aggregator-reposted listings). Fall back to the
+      // country code we *queried with* so a job pulled from country=es
+      // at minimum surfaces as "Remote · ES" in the UI.
+      const structuredLoc = [j.job_city, j.job_country].filter(Boolean).join(', ');
+      const queryHint = country ? country.toUpperCase() : '';
+      const location = structuredLoc || (queryHint ? `Remote · ${queryHint}` : 'Remote');
+      return {
+        source: 'jsearch',
+        sourceCountry: country ?? null, // tracked for dedupe + UI hints
+        title: j.job_title ?? '',
+        company: j.employer_name ?? '',
+        companyLogo: j.employer_logo ?? undefined,
+        location,
+        remotePolicy: j.job_is_remote ? 'remote' : 'uncertain',
+        isRemoteStructured: j.job_is_remote === true,
+        postedAt: j.job_posted_at_datetime_utc ?? new Date().toISOString(),
+        salaryMin: j.job_min_salary ?? undefined,
+        salaryMax: j.job_max_salary ?? undefined,
+        applyUrl: j.job_apply_link ?? '',
+        rawDescription: j.job_description ?? '',
+      };
+    });
   } catch (err) {
     console.warn(`[jsearch] ${query} → ${err.message}`);
     return [];
@@ -432,6 +517,57 @@ function makeId(raw) {
   return crypto.createHash('sha1').update(key).digest('hex').slice(0, 12);
 }
 
+/**
+ * Merge two variants of the same job (same company + title, different
+ * sources/queries). Keep the richest field value from each side so that
+ * e.g. a Madrid-tagged variant wins its `location` field over a bland
+ * "Remote" fallback, and a salary-tagged variant keeps its numbers.
+ *
+ * Ordering: `a` is the existing entry, `b` is the newcomer. Neither is
+ * "preferred" — we just pick the better-quality value per field.
+ */
+function mergeRawJobs(a, b) {
+  const pickRicher = (va, vb, fallback) => {
+    const isWeak = (v) => !v || v === fallback;
+    if (isWeak(va) && !isWeak(vb)) return vb;
+    return va;
+  };
+  // Location quality ladder: empty/Remote < "Remote · XX" < "City, Country".
+  // The richer variant (more specific) always wins.
+  const locationQuality = (v) => {
+    if (!v || v === 'Remote') return 0;
+    if (/^Remote\s*·/.test(v)) return 1;
+    return 2;
+  };
+  const pickRicherLocation = (va, vb) =>
+    locationQuality(vb) > locationQuality(va) ? vb : va;
+  // For postedAt, keep the more recent timestamp (better freshness signal).
+  const pickNewer = (va, vb) => {
+    const ta = new Date(va).getTime();
+    const tb = new Date(vb).getTime();
+    if (!Number.isFinite(ta)) return vb;
+    if (!Number.isFinite(tb)) return va;
+    return tb > ta ? vb : va;
+  };
+  // For the description, keep the longer one — usually the fuller variant.
+  const pickLonger = (va, vb) => ((vb?.length ?? 0) > (va?.length ?? 0) ? vb : va);
+
+  return {
+    ...a,
+    companyLogo: a.companyLogo ?? b.companyLogo,
+    sourceCountry: a.sourceCountry ?? b.sourceCountry,
+    location: pickRicherLocation(a.location, b.location),
+    // If either source says the role is structurally remote, trust it.
+    remotePolicy: a.remotePolicy === 'remote' || b.remotePolicy === 'remote' ? 'remote' : a.remotePolicy,
+    isRemoteStructured: a.isRemoteStructured || b.isRemoteStructured,
+    postedAt: pickNewer(a.postedAt, b.postedAt),
+    salaryMin: a.salaryMin ?? b.salaryMin,
+    salaryMax: a.salaryMax ?? b.salaryMax,
+    applyUrl: a.applyUrl || b.applyUrl,
+    rawDescription: pickLonger(a.rawDescription, b.rawDescription),
+  };
+}
+
 // --- Tagging -----------------------------------------------------------------
 
 function extractTags(desc) {
@@ -551,14 +687,9 @@ async function main() {
 
   // Stage 0: fetch
   const rawAll = [];
-  for (const q of GLOBAL_QUERIES) {
-    const results = await fetchJSearch(q);
-    console.log(`  jsearch [global] "${q}" → ${results.length}`);
-    rawAll.push(...results);
-  }
-  for (const q of SPAIN_QUERIES) {
-    const results = await fetchJSearch(q, 'es');
-    console.log(`  jsearch [es] "${q}" → ${results.length}`);
+  for (const { query, country } of JSEARCH_QUERIES) {
+    const results = await fetchJSearch(query, country);
+    console.log(`  jsearch [${country ?? 'global'}] "${query}" → ${results.length}`);
     rawAll.push(...results);
   }
   const wwrResults = await fetchWeWorkRemotely();
@@ -586,11 +717,21 @@ async function main() {
   }
   console.log(`  hard filters: kept ${survived.length}, rejected`, rejected);
 
-  // Stage 2: dedupe
+  // Stage 2: dedupe + merge. Same job can appear across multiple sources
+  // or across multiple JSearch queries (global + country index) with
+  // different completeness — e.g. the global query returns `city=null`
+  // while the country=es query returns `city=Madrid, country=ES`. Naive
+  // "first seen wins" dedup loses the richer variant, so we merge per
+  // field keeping the best value from each source.
   const seen = new Map();
   for (const raw of survived) {
     const id = makeId(raw);
-    if (!seen.has(id)) seen.set(id, { ...raw, id });
+    const existing = seen.get(id);
+    if (!existing) {
+      seen.set(id, { ...raw, id });
+      continue;
+    }
+    seen.set(id, mergeRawJobs(existing, raw));
   }
   const deduped = Array.from(seen.values());
   console.log(`  deduped: ${deduped.length}`);
@@ -599,9 +740,13 @@ async function main() {
   const useCli = hasClaudeCli();
   console.log(`  scoring with ${useCli ? 'claude CLI' : 'heuristic fallback'}`);
   if (useCli) warmupClaude();
-  const scoringInstructions = fs.readFileSync(
+  const scoringTemplate = fs.readFileSync(
     path.join(ROOT, 'scripts', 'scoringPrompt.md'),
     'utf8'
+  );
+  const scoringInstructions = scoringTemplate.replace(
+    '{{BACKEND_SKILLS_CONTEXT}}',
+    buildBackendContext(SKILLS)
   );
   const scored = deduped.map((raw) => {
     const score = useCli ? scoreWithClaude(raw, scoringInstructions) : fallbackScore(raw);

@@ -19,11 +19,16 @@
 // NOTE on sources:
 // - JSearch (RapidAPI): US-biased but with the best text search AND
 //   aggregates Indeed/LinkedIn/Glassdoor/ZipRecruiter under the hood.
-//   Our primary source.
-// - WeWorkRemotely: the `remote-programming-jobs` RSS feed is the single
-//   best Vue-yield source we've found (~8% Vue hits on a random day, most
-//   of them "Anywhere in the World"). Parsed with regex — the feed shape
-//   is stable and the dep cost of a real XML parser isn't worth it.
+//   Multi-country queries (ES/IT/PT) hit national Indeed indexes.
+// - vuejobs.com: the official Vue community job board. RSS feed at /feed,
+//   ~90 items, every posting is Vue by definition (zero filter cost).
+//   Highest signal-to-noise of any source we have.
+// - Duunitori (FI): public JSON API at /api/v1/jobentries?search=vue.
+//   Small (~20 items) and Finnish-language but it's the only Nordic
+//   source with a real API — fills the Scandinavia gap left by JSearch.
+// - WeWorkRemotely: the `remote-programming-jobs` RSS feed. Parsed with
+//   regex — the feed shape is stable and the dep cost of a real XML
+//   parser isn't worth it.
 // - Arbeitnow: EU/Germany-focused feed (single page, ~100 jobs). Their
 //   tags[]=vue query is broken server-side so we fetch the general feed
 //   and filter for Vue client-side.
@@ -50,72 +55,23 @@ import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
+import {
+  SKILLS,
+  JSEARCH_QUERIES,
+  VUE_KEYWORDS,
+  LOCATION_BLOCKERS,
+  LOCATION_ACCEPTORS,
+  JUNIOR_TITLE_PATTERNS,
+  TAG_KEYWORDS,
+} from '../src/config/profile.shared.js';
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 
-// --- Config (mirrors src/config/profile.ts — keep in sync) ------------------
-
-// JSearch queries structured as (query, country) pairs. The country tells
-// JSearch which national index to hit; `null` = the default global/US
-// index which still aggregates worldwide English-language remote jobs.
-//
-// Country selection was driven by a market-yield probe (Apr 2026):
-//   ES: 10 jobs · IT: 10 jobs · PT: 8 jobs · DE: 2 jobs
-//   FR: 1 job · NL/IE/GB: 0 jobs  → dropped
-//
-// Alfonso speaks Italian (native) and Spanish (C1) so local-language
-// queries are included for those two markets. PT/DE use English only
-// because Portuguese/German JDs are usually cross-posted in English.
-//
-// 9 queries × ~21 working days = ~189 req/month, under the JSearch
-// 200/mo free tier cap with a small buffer.
-const JSEARCH_QUERIES = [
-  // Global index (English, worldwide remote). "Frontend" keyword is
-  // explicit in every query to steer Indeed/JSearch away from the
-  // full-stack bias of generic "Vue.js developer" searches.
-  { query: 'Senior Vue.js frontend engineer remote', country: null },
-  { query: 'Vue.js Capacitor Ionic mobile frontend developer remote', country: null },
-  { query: 'Vue.js senior frontend AI assisted development remote', country: null },
-  // Spain — Alfonso lives here, speaks Spanish C1. Four queries because
-  // the Spanish market is the highest-relevance local market and each
-  // query variant surfaces a different slice of Indeed.es.
-  { query: 'Vue.js frontend developer remote', country: 'es' },
-  { query: 'Programador frontend Vue senior remoto', country: 'es' },
-  { query: 'Desarrollador Vue senior teletrabajo España', country: 'es' },
-  { query: 'Programador Vue remoto', country: 'es' },
-  // Italy — highest raw yield in the probe, Alfonso is Italian native
-  { query: 'Vue.js frontend developer remote', country: 'it' },
-  { query: 'Frontend developer Vue.js senior remoto', country: 'it' },
-  // Portugal — Lisbon tech hub, English-friendly
-  { query: 'Vue.js frontend developer remote', country: 'pt' },
-  // Germany was dropped — probe returned 1-2 results only and the query
-  // budget was better spent on additional ES variants above.
-  // 10 queries × ~21 working days = ~210 req/month, within JSearch free tier.
-];
-
-// Skills matrix — mirror of SKILLS in src/config/profile.ts. Keep in sync.
-// Drives the dynamic backend context injected into the scoring prompt, so
-// bumping a backend skill from 'none' to 'learning'/'basic'/'strong'
-// automatically softens penalties next run.
-const SKILLS = {
-  // Frontend — always on
-  vue: 'expert',
-  typescript: 'strong',
-  tailwind: 'strong',
-  pinia: 'strong',
-  capacitor_ionic: 'expert',
-  // Backend — modular, bump when you gain experience
-  node: 'learning',      // actively studying (Apr 2026)
-  laravel: 'none',       // planned: upcoming course
-  php: 'none',
-  python: 'none',
-  django: 'none',
-  java: 'none',
-  dotnet: 'none',
-  nestjs: 'none',
-  express: 'none',
-};
-
+// Skills listed here are *frontend* and therefore excluded from the
+// "backend skills context" block that buildBackendContext() injects
+// into the scoring prompt. Keep in sync with the frontend-group of
+// SKILLS in src/config/profile.shared.js.
 const FRONTEND_SKILL_NAMES = new Set([
   'vue', 'typescript', 'tailwind', 'pinia', 'capacitor_ionic',
 ]);
@@ -157,19 +113,12 @@ function buildBackendContext(skills) {
   return lines.join('\n');
 }
 
-const VUE_KEYWORDS = ['vue', 'vuejs', 'vue.js', 'vue 3', 'vue3', 'nuxt'];
-
-const LOCATION_BLOCKERS = [
-  'us only', 'usa only', 'u.s. only', 'us citizens only',
-  'uk only', 'canada only', 'latam only', 'apac only',
-  'must relocate', 'on-site only', 'onsite only', 'no remote',
-];
-
 /**
  * Regex blockers for gating phrases that substring matching can't catch.
  * These run as a cheap pre-filter before Claude scoring so we don't waste
  * CLI calls on obvious rejections. Claude is still the final judge for
- * anything that slips through.
+ * anything that slips through. Kept local (not shared) because they are
+ * only used by the hard-filter stage inside this script.
  */
 const LOCATION_BLOCKER_PATTERNS = [
   /open to candidates? (only )?in (the )?(usa|u\.?s\.?|united states|canada|uk|united kingdom)\b/i,
@@ -181,22 +130,12 @@ const LOCATION_BLOCKER_PATTERNS = [
   /\bnorth america(n)? (only|residents?)\b/i,
 ];
 
-const LOCATION_ACCEPTORS = [
-  'remote', 'fully remote', 'worldwide', 'global',
-  'europe', ' eu ', 'emea', 'spain', 'cet',
-  'european timezone', 'european hours', 'work from anywhere',
-];
-
-const JUNIOR_PATTERNS = [
-  /\bjunior\b/i, /\bentry.level\b/i, /\bintern(ship)?\b/i,
-  /\btrainee\b/i, /\bgraduate\b/i,
-];
-
-const TAG_KEYWORDS = [
-  'Vue.js', 'Vue 3', 'TypeScript', 'Tailwind', 'Pinia', 'Vuex',
-  'Vite', 'Vitest', 'Capacitor', 'Ionic', 'Composition API',
-  'Claude Code', 'MCP', 'Nuxt', 'GraphQL', 'Node.js',
-];
+// Sources whose feed/search is Vue-only by construction. We trust their
+// server-side filter and skip our local F1 Vue keyword check, otherwise
+// short snippets that don't literally contain "vue" get rejected even
+// though the source guarantees Vue (e.g. vuejobs.com /feed, jobicy
+// tag=vue, duunitori search=vue).
+const VUE_TRUSTED_SOURCES = new Set(['vuejobs', 'jobicy', 'duunitori']);
 
 // Monday run uses a wider window to bridge the weekend gap.
 const IS_MONDAY = new Date().getUTCDay() === 1;
@@ -416,6 +355,104 @@ async function fetchJobicy() {
   }
 }
 
+async function fetchVueJobs() {
+  // vuejobs.com is the official Vue community job board. Single RSS
+  // endpoint, ~90 items at a time, every posting is Vue by definition
+  // (no client-side keyword filter needed). Description body has a
+  // structured "Employer:" + "Location:" prefix we can pull out.
+  try {
+    const res = await fetch('https://vuejobs.com/feed', {
+      headers: {
+        'User-Agent': 'vuenture/1.0 (https://github.com/aljacket/vuenture)',
+      },
+    });
+    if (!res.ok) {
+      console.warn(`[vuejobs] ${res.status}`);
+      return [];
+    }
+    const xml = await res.text();
+    const items = xml.match(/<item>[\s\S]*?<\/item>/g) ?? [];
+    return items.map((item) => {
+      const title = decodeHtmlEntities(extractTag(item, 'title'));
+      const link = extractTag(item, 'link');
+      const pubDate = extractTag(item, 'pubDate');
+      const descRaw = decodeHtmlEntities(extractTag(item, 'description'));
+      const descText = stripHtml(descRaw);
+
+      // Pull "Employer: X" and "Location: Y" out of the description body —
+      // vuejobs always emits them as the first two paragraphs.
+      const employerMatch = descText.match(/Employer:\s*([^\n]+?)(?=\s*Location:|\s*$|\s{2,})/i);
+      const locationMatch = descText.match(/Location:\s*([^\n]+?)(?=\s{2,}|$)/i);
+      const company = employerMatch ? employerMatch[1].trim() : 'Unknown';
+      const location = locationMatch ? locationMatch[1].trim() : 'Remote';
+
+      return {
+        source: 'vuejobs',
+        sourceCountry: null,
+        title,
+        company,
+        companyLogo: undefined,
+        location,
+        remotePolicy: 'remote', // vuejobs is a remote-first board
+        isRemoteStructured: true,
+        postedAt: pubDate ? new Date(pubDate).toISOString() : new Date().toISOString(),
+        salaryMin: undefined,
+        salaryMax: undefined,
+        applyUrl: link,
+        rawDescription: descText,
+      };
+    });
+  } catch (err) {
+    console.warn(`[vuejobs] ${err.message}`);
+    return [];
+  }
+}
+
+async function fetchDuunitori() {
+  // Duunitori is the largest Finnish job board. Their public JSON API
+  // returns ~20 results per "vue" search; descriptions are short snippets
+  // (the full JD lives on the slug page) and most are in Finnish, but
+  // since the search ran server-side we trust the Vue tag and skip the
+  // client-side keyword filter.
+  try {
+    const res = await fetch('https://duunitori.fi/api/v1/jobentries?search=vue', {
+      headers: {
+        'User-Agent': 'vuenture/1.0 (https://github.com/aljacket/vuenture)',
+      },
+    });
+    if (!res.ok) {
+      console.warn(`[duunitori] ${res.status}`);
+      return [];
+    }
+    const json = await res.json();
+    return (json.results ?? []).map((j) => {
+      const city = j.municipality_name || '';
+      const location = city ? `${city}, FI` : 'Remote · FI';
+      const descWithMeta = `${j.descr ?? ''}\n\nLocation: ${location}`;
+      return {
+        source: 'duunitori',
+        sourceCountry: 'fi',
+        title: j.heading ?? '',
+        company: j.company_name ?? 'Unknown',
+        companyLogo: undefined,
+        location,
+        // Duunitori has no remote flag — assume hybrid by default and let
+        // the location filter / Claude reading sort out remote vs onsite.
+        remotePolicy: 'uncertain',
+        isRemoteStructured: false,
+        postedAt: j.date_posted ?? new Date().toISOString(),
+        salaryMin: undefined,
+        salaryMax: undefined,
+        applyUrl: j.slug ? `https://duunitori.fi/tyopaikat/${j.slug}` : '',
+        rawDescription: descWithMeta,
+      };
+    });
+  } catch (err) {
+    console.warn(`[duunitori] ${err.message}`);
+    return [];
+  }
+}
+
 async function fetchArbeitnow() {
   const url = 'https://www.arbeitnow.com/api/job-board-api';
   try {
@@ -468,9 +505,13 @@ function passesHardFilters(raw) {
   const desc = stripHtml(raw.rawDescription).toLowerCase();
   const haystack = `${title} ${desc}`;
 
-  // F1: Vue stack
-  const hasVue = VUE_KEYWORDS.some((k) => haystack.includes(k));
-  if (!hasVue) return { ok: false, reason: 'no-vue' };
+  // F1: Vue stack — skip for sources whose feed/search is Vue-only by
+  // construction (their server-side filter is more reliable than our
+  // regex against a short snippet that may not literally contain "vue").
+  if (!VUE_TRUSTED_SOURCES.has(raw.source)) {
+    const hasVue = VUE_KEYWORDS.some((k) => haystack.includes(k));
+    if (!hasVue) return { ok: false, reason: 'no-vue' };
+  }
 
   // F2: location
   // Always reject if there's an explicit blocker, even when the structured
@@ -494,7 +535,7 @@ function passesHardFilters(raw) {
   if (!Number.isFinite(age) || age > MAX_AGE_MS) return { ok: false, reason: 'stale' };
 
   // F4: anti-junior (title-only)
-  if (JUNIOR_PATTERNS.some((re) => re.test(raw.title))) {
+  if (JUNIOR_TITLE_PATTERNS.some((re) => re.test(raw.title))) {
     return { ok: false, reason: 'junior' };
   }
 
@@ -692,6 +733,12 @@ async function main() {
     console.log(`  jsearch [${country ?? 'global'}] "${query}" → ${results.length}`);
     rawAll.push(...results);
   }
+  const vueJobsResults = await fetchVueJobs();
+  console.log(`  vuejobs feed → ${vueJobsResults.length}`);
+  rawAll.push(...vueJobsResults);
+  const duunitoriResults = await fetchDuunitori();
+  console.log(`  duunitori search=vue → ${duunitoriResults.length}`);
+  rawAll.push(...duunitoriResults);
   const wwrResults = await fetchWeWorkRemotely();
   console.log(`  wwr vue-filtered → ${wwrResults.length}`);
   rawAll.push(...wwrResults);

@@ -12,7 +12,7 @@
 4. **Location/timezone is permissive.** F2 accepts anything remote-compatible with Spain/CET: EU, EMEA, "European hours", worldwide. Rejects US-only, UK-only, APAC, LATAM-only, relocation-required. Spanish-language (Spain/LATAM-Spanish) and Italian-language (Italy) roles are also in scope — Alfonso speaks Spanish C1 and is native Italian.
 5. **Do not overclaim Node.js.** Alfonso's Node depth is basic. Do not rank backend-heavy roles favorably.
 6. **Use `claude` CLI, not the Anthropic API.** Alfonso has a Max subscription; API calls are extra cost, CLI is included. All LLM calls in this repo go through the CLI, and we use Haiku (`claude-haiku-4-5-20251001`) for scoring to preserve coding-session quota.
-7. **Config is the source of truth.** `src/config/profile.ts` and the constants at the top of `scripts/fetchJobs.mjs` must stay in sync. When you change one, check the other.
+7. **Config is the source of truth.** Shared constants (skills matrix, JSearch queries, Vue/location/junior keywords, tags) live in `src/config/profile.shared.js` and are imported by both `scripts/fetchJobs.mjs` and `src/config/profile.ts`. Edit them in one place only. Frontend-only values (`PROFILE`, `SkillLevel` type) live in `profile.ts`. TypeScript types for the shared file live in `profile.shared.d.ts` — keep literal types in sync if you add/rename shared exports.
 
 ## Architecture
 

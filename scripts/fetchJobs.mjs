@@ -216,9 +216,14 @@ function hasClaudeCli() {
  * this fails we still continue — the per-job call will just retry with
  * its own timeout.
  */
+// Scoring is a simple extract-and-classify task, so we use Haiku. It burns
+// far less of the Max quota than Sonnet/Opus with no measurable quality loss
+// on this prompt — keeps coding-session headroom free for the user.
+const CLAUDE_MODEL = 'claude-haiku-4-5-20251001';
+
 function warmupClaude() {
   try {
-    execFileSync('claude', ['-p', 'Reply with the single word: ok'], {
+    execFileSync('claude', ['--model', CLAUDE_MODEL, '-p', 'Reply with the single word: ok'], {
       encoding: 'utf8',
       timeout: 180_000,
       stdio: ['ignore', 'ignore', 'ignore'],
@@ -257,7 +262,10 @@ function scoreWithClaude(raw, scoringInstructions) {
     `Location: ${raw.location}`,
     `Posted: ${raw.postedAt}`,
     '',
-    stripHtml(raw.rawDescription).slice(0, 6000),
+    // 2500 char is enough to capture stack + location signals; the rest of
+    // a JD is usually fluff (benefits, about-us, values) that just inflates
+    // token usage without changing the score.
+    stripHtml(raw.rawDescription).slice(0, 2500),
   ].join('\n');
 
   // NOTE: we inline the scoring instructions directly instead of asking Claude
@@ -266,7 +274,7 @@ function scoreWithClaude(raw, scoringInstructions) {
   const prompt = `${scoringInstructions}\n\n---\n\n${jd}`;
 
   try {
-    const stdout = execFileSync('claude', ['-p', prompt], {
+    const stdout = execFileSync('claude', ['--model', CLAUDE_MODEL, '-p', prompt], {
       encoding: 'utf8',
       timeout: 180_000,
       maxBuffer: 4 * 1024 * 1024,

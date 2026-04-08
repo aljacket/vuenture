@@ -2,15 +2,17 @@
 
 **Owner.** Alfonso Cavalieri (@aljacket) — Senior Frontend Engineer, Valencia, Spain (CET).
 **Stack.** Vue 3 + TypeScript + Tailwind + Pinia + Vite.
-**What it is.** Personal job-search dashboard. GitHub Actions cron fetches jobs from JSearch + Arbeitnow once per working day, applies hard filters, scores survivors with the `claude` CLI, commits `public/jobs.json`. The Vue frontend reads the static JSON.
+**What it is.** Personal job-search dashboard. GitHub Actions cron fetches jobs from JSearch + WeWorkRemotely + RemoteOK + Jobicy + Arbeitnow once per working day, applies hard filters, scores survivors with the `claude` CLI, commits `public/jobs.json`. The Vue frontend reads the static JSON.
 
 ## Hard rules
 
 1. **Vue.js is a hard stack requirement.** F1 rejects anything without Vue/Nuxt in title or description. Do not weaken this — Alfonso is a Vue specialist.
-2. **Location/timezone is permissive.** F2 accepts anything remote-compatible with Spain/CET: EU, EMEA, "European hours", worldwide. Rejects US-only, UK-only, APAC, LATAM-only, relocation-required.
-3. **Do not overclaim Node.js.** Alfonso's Node depth is basic. Do not rank backend-heavy roles favorably.
-4. **Use `claude` CLI, not the Anthropic API.** Alfonso has a Max subscription; API calls are extra cost, CLI is included. All LLM calls in this repo go through the CLI.
-5. **Config is the source of truth.** `src/config/profile.ts` and the constants at the top of `scripts/fetchJobs.mjs` must stay in sync. When you change one, check the other.
+2. **Nuxt is NOT a skill Alfonso has.** `nuxt` stays in `VUE_KEYWORDS` only as a *detection* signal (jobs mentioning Nuxt are Vue-ecosystem jobs). He has never used it in production. Roles that demand *deep* Nuxt expertise are a red flag in the scoring prompt, not a target. Do not add Nuxt-specific JSearch queries, do not list Nuxt among "core requirements" in the scoring prompt.
+3. **Capacitor + Ionic is a real specialization.** Alfonso shipped hybrid iOS/Android apps at Metricool (2M+ users) and Sesame HR. Vue+Capacitor/Ionic roles should be ranked higher and there is a dedicated JSearch query for them.
+4. **Location/timezone is permissive.** F2 accepts anything remote-compatible with Spain/CET: EU, EMEA, "European hours", worldwide. Rejects US-only, UK-only, APAC, LATAM-only, relocation-required. Spanish-language (Spain/LATAM-Spanish) and Italian-language (Italy) roles are also in scope — Alfonso speaks Spanish C1 and is native Italian.
+5. **Do not overclaim Node.js.** Alfonso's Node depth is basic. Do not rank backend-heavy roles favorably.
+6. **Use `claude` CLI, not the Anthropic API.** Alfonso has a Max subscription; API calls are extra cost, CLI is included. All LLM calls in this repo go through the CLI, and we use Haiku (`claude-haiku-4-5-20251001`) for scoring to preserve coding-session quota.
+7. **Config is the source of truth.** `src/config/profile.ts` and the constants at the top of `scripts/fetchJobs.mjs` must stay in sync. When you change one, check the other.
 
 ## Architecture
 

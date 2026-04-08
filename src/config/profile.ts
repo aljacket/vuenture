@@ -12,13 +12,25 @@ export const PROFILE = {
   salary: { minEUR: 45_000, maxEUR: 80_000 },
 } as const;
 
-/** Claude CLI queries — 5 queries × 1 page = 110 req/month, under the 200/mo free tier. */
+/**
+ * JSearch queries. Tuned against Alfonso's actual CV:
+ *   - no dedicated "Nuxt" query (he isn't a Nuxt expert; Nuxt-required roles
+ *     are a red flag, not a target)
+ *   - explicit Capacitor/Ionic query (his real mobile specialization)
+ *   - explicit Tech Lead query (he has led a team of 3)
+ *   - AI-assisted development query (Claude Code / MCP is a real asset)
+ *
+ * 7 queries × ~21 working days = ~147 requests/month, under the JSearch
+ * free-tier cap of 200/month with headroom for manual re-runs.
+ */
 export const QUERIES = [
   'Senior Vue.js developer remote',
-  'Senior Vue frontend developer remote Europe',
-  'Vue 3 TypeScript senior developer remote',
-  'Vue.js Nuxt.js senior frontend remote EU',
-  'Senior frontend engineer Vue Tailwind Pinia remote',
+  'Senior Vue 3 TypeScript frontend remote Europe',
+  'Senior Vue.js Tailwind Pinia frontend remote',
+  'Senior Vue.js Capacitor Ionic mobile developer remote',
+  'Vue.js frontend technical lead remote',
+  'Senior Vue.js Vitest Composition API remote',
+  'Vue.js senior frontend AI assisted development remote',
 ] as const;
 
 /** F1 — Vue stack is a HARD requirement. At least one of these must appear. */
@@ -79,16 +91,18 @@ export const JUNIOR_TITLE_PATTERNS = [
 export const TAG_KEYWORDS = [
   'Vue.js',
   'Vue 3',
-  'Nuxt',
   'TypeScript',
   'Tailwind',
   'Pinia',
+  'Vuex',
   'Vite',
   'Vitest',
   'Capacitor',
   'Ionic',
+  'Composition API',
+  'Claude Code',
+  'MCP',
+  'Nuxt',
   'GraphQL',
   'Node.js',
-  'AWS',
-  'Playwright',
 ] as const;

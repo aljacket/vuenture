@@ -20,6 +20,10 @@
 // - JSearch (RapidAPI): US-biased but with the best text search AND
 //   aggregates Indeed/LinkedIn/Glassdoor/ZipRecruiter under the hood.
 //   Our primary source.
+// - WeWorkRemotely: the `remote-programming-jobs` RSS feed is the single
+//   best Vue-yield source we've found (~8% Vue hits on a random day, most
+//   of them "Anywhere in the World"). Parsed with regex — the feed shape
+//   is stable and the dep cost of a real XML parser isn't worth it.
 // - Arbeitnow: EU/Germany-focused feed (single page, ~100 jobs). Their
 //   tags[]=vue query is broken server-side so we fetch the general feed
 //   and filter for Vue client-side.
@@ -35,8 +39,10 @@
 // - Himalayas: 99K jobs total but a hard limit=20 per request and no
 //   working text/category filter. Exhaustive pagination isn't feasible.
 // - Indeed: killed their public Publisher API in 2023; now enterprise
-//   partnership only. Not a concern in practice because JSearch already
-//   aggregates Indeed results under the hood.
+//   partnership only. JSearch already covers Indeed under the hood.
+// - RemoteRocketship: /api returns 403 and their robots.txt explicitly
+//   Disallows /api. Their business model is gated browsing/screening;
+//   scraping HTML would be fragile and unfriendly. Don't add.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -49,12 +55,16 @@ const ROOT = path.resolve(__dirname, '..');
 
 // --- Config (mirrors src/config/profile.ts — keep in sync) ------------------
 
+// 7 queries tuned to Alfonso's real CV (Vue + Capacitor/Ionic + AI tooling,
+// NOT Nuxt). ~147 req/month under the 200/mo JSearch free tier.
 const QUERIES = [
   'Senior Vue.js developer remote',
-  'Senior Vue frontend developer remote Europe',
-  'Vue 3 TypeScript senior developer remote',
-  'Vue.js Nuxt.js senior frontend remote EU',
-  'Senior frontend engineer Vue Tailwind Pinia remote',
+  'Senior Vue 3 TypeScript frontend remote Europe',
+  'Senior Vue.js Tailwind Pinia frontend remote',
+  'Senior Vue.js Capacitor Ionic mobile developer remote',
+  'Vue.js frontend technical lead remote',
+  'Senior Vue.js Vitest Composition API remote',
+  'Vue.js senior frontend AI assisted development remote',
 ];
 
 const VUE_KEYWORDS = ['vue', 'vuejs', 'vue.js', 'vue 3', 'vue3', 'nuxt'];
@@ -93,8 +103,9 @@ const JUNIOR_PATTERNS = [
 ];
 
 const TAG_KEYWORDS = [
-  'Vue.js', 'Vue 3', 'Nuxt', 'TypeScript', 'Tailwind', 'Pinia',
-  'Vite', 'Vitest', 'Capacitor', 'Ionic', 'GraphQL', 'Node.js',
+  'Vue.js', 'Vue 3', 'TypeScript', 'Tailwind', 'Pinia', 'Vuex',
+  'Vite', 'Vitest', 'Capacitor', 'Ionic', 'Composition API',
+  'Claude Code', 'MCP', 'Nuxt', 'GraphQL', 'Node.js',
 ];
 
 // Monday run uses a wider window to bridge the weekend gap.
@@ -143,6 +154,78 @@ async function fetchJSearch(query) {
     }));
   } catch (err) {
     console.warn(`[jsearch] ${query} → ${err.message}`);
+    return [];
+  }
+}
+
+function decodeHtmlEntities(s) {
+  return s
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&apos;/g, "'")
+    .replace(/&amp;/g, '&')
+    .replace(/&nbsp;/g, ' ');
+}
+
+function extractTag(item, tag) {
+  // Handles both <tag>value</tag> and <tag><![CDATA[value]]></tag>.
+  const re = new RegExp(`<${tag}>(?:<!\\[CDATA\\[([\\s\\S]*?)\\]\\]>|([\\s\\S]*?))<\\/${tag}>`, 'i');
+  const m = item.match(re);
+  if (!m) return '';
+  return (m[1] ?? m[2] ?? '').trim();
+}
+
+async function fetchWeWorkRemotely() {
+  // The "remote-programming-jobs" category is the narrowest feed that still
+  // reliably carries Vue postings. WWR doesn't expose a JSON API, just RSS,
+  // but the feed shape has been stable for years so a regex parse is fine.
+  const url = 'https://weworkremotely.com/categories/remote-programming-jobs.rss';
+  try {
+    const res = await fetch(url, {
+      headers: {
+        'User-Agent': 'vuenture/1.0 (https://github.com/aljacket/vuenture)',
+      },
+    });
+    if (!res.ok) {
+      console.warn(`[wwr] ${res.status}`);
+      return [];
+    }
+    const xml = await res.text();
+    const items = xml.match(/<item>[\s\S]*?<\/item>/g) ?? [];
+    const all = items.map((item) => {
+      const title = decodeHtmlEntities(extractTag(item, 'title'));
+      const region = decodeHtmlEntities(extractTag(item, 'region'));
+      const link = extractTag(item, 'link');
+      const pubDate = extractTag(item, 'pubDate');
+      const descRaw = decodeHtmlEntities(extractTag(item, 'description'));
+      // WWR often prefixes "Company: Title" — split on the first colon.
+      const colonIdx = title.indexOf(':');
+      const company = colonIdx > 0 ? title.slice(0, colonIdx).trim() : 'Unknown';
+      const jobTitle = colonIdx > 0 ? title.slice(colonIdx + 1).trim() : title;
+      const descWithLocation = `${descRaw}\n\nLocation: ${region}`;
+      return {
+        source: 'wwr',
+        title: jobTitle,
+        company,
+        companyLogo: undefined,
+        location: region || 'Remote',
+        remotePolicy: 'remote',
+        isRemoteStructured: true,
+        postedAt: pubDate ? new Date(pubDate).toISOString() : new Date().toISOString(),
+        salaryMin: undefined,
+        salaryMax: undefined,
+        applyUrl: link,
+        rawDescription: descWithLocation,
+      };
+    });
+    return all.filter((raw) => {
+      const haystack = `${raw.title} ${stripHtml(raw.rawDescription)}`.toLowerCase();
+      return VUE_KEYWORDS.some((k) => haystack.includes(k));
+    });
+  } catch (err) {
+    console.warn(`[wwr] ${err.message}`);
     return [];
   }
 }
@@ -457,6 +540,9 @@ async function main() {
     console.log(`  jsearch "${q}" → ${results.length}`);
     rawAll.push(...results);
   }
+  const wwrResults = await fetchWeWorkRemotely();
+  console.log(`  wwr vue-filtered → ${wwrResults.length}`);
+  rawAll.push(...wwrResults);
   const remoteOkResults = await fetchRemoteOk();
   console.log(`  remoteok vue-filtered → ${remoteOkResults.length}`);
   rawAll.push(...remoteOkResults);

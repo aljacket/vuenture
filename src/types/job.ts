@@ -27,7 +27,7 @@ export interface Job {
   salaryMax?: number;
   tags: string[];
   applyUrl: string;
-  source: 'jsearch' | 'arbeitnow' | 'remoteok' | 'jobicy';
+  source: 'jsearch' | 'arbeitnow' | 'remoteok' | 'jobicy' | 'wwr';
   rawDescription: string;
   score: JobScore;
   bookmarked?: boolean;

@@ -39,5 +39,13 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           git add public/jobs.json
-          git diff --staged --quiet || git commit -m "chore: daily job fetch $(date -u +%Y-%m-%d)"
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "chore: daily job fetch $(date -u +%Y-%m-%d)"
+          # Rebase on top of any commits that landed during the run before
+          # pushing — prevents "rejected (fetch first)" when a human pushes
+          # to main while the Action is scoring jobs.
+          git pull --rebase origin main
           git push

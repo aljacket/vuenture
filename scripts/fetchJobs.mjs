@@ -250,7 +250,7 @@ function fallbackScore(raw) {
   };
 }
 
-function scoreWithClaude(raw, promptPath) {
+function scoreWithClaude(raw, scoringInstructions) {
   const jd = [
     `# ${raw.title}`,
     `Company: ${raw.company}`,
@@ -260,7 +260,10 @@ function scoreWithClaude(raw, promptPath) {
     stripHtml(raw.rawDescription).slice(0, 6000),
   ].join('\n');
 
-  const prompt = `Read the scoring instructions at ${promptPath} and score the job below. Return strict JSON only.\n\n---\n\n${jd}`;
+  // NOTE: we inline the scoring instructions directly instead of asking Claude
+  // to Read() the file. In non-interactive CI mode the CLI won't auto-approve
+  // filesystem tools, so "read this file and then score" silently fails.
+  const prompt = `${scoringInstructions}\n\n---\n\n${jd}`;
 
   try {
     const stdout = execFileSync('claude', ['-p', prompt], {
@@ -331,9 +334,12 @@ async function main() {
   const useCli = hasClaudeCli();
   console.log(`  scoring with ${useCli ? 'claude CLI' : 'heuristic fallback'}`);
   if (useCli) warmupClaude();
-  const promptPath = path.join(ROOT, 'scripts', 'scoringPrompt.md');
+  const scoringInstructions = fs.readFileSync(
+    path.join(ROOT, 'scripts', 'scoringPrompt.md'),
+    'utf8'
+  );
   const scored = deduped.map((raw) => {
-    const score = useCli ? scoreWithClaude(raw, promptPath) : fallbackScore(raw);
+    const score = useCli ? scoreWithClaude(raw, scoringInstructions) : fallbackScore(raw);
     return {
       id: raw.id,
       title: raw.title,

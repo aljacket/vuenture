@@ -1,84 +1,67 @@
 {
-  "fetchedAt": "2026-04-08T18:52:36.251Z",
+  "fetchedAt": "2026-04-08T18:58:06.857Z",
   "jobs": [
     {
       "id": "035bf23b474b",
       "title": "Senior Software Engineer Python Django PostgreSQL and Vue.js",
       "company": "Jobflarely",
-      "location": "FR",
+      "location": "Remote",
       "remotePolicy": "remote",
       "postedAt": "2026-04-06T00:00:00.000Z",
       "tags": [
         "Vue.js"
       ],
-      "applyUrl": "https://jobflarely.liveblog365.com/job/senior-software-engineer-python-django-postgresql-and-vue-js?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "applyUrl": "https://jobflarely.liveblog365.com/job/senior-software-engineer-python-django-postgresql-and-vue-js",
       "source": "jsearch",
       "rawDescription": "The Senior Software Engineer develops, tests, and maintains applications using Python, Django, PostgreSQL, and Vue.js within our AWS-centric SaaS environment. While primarily focused on full-stack development, familiarity with DevOps practices supports efficient development and release processes. This role requires strong problem-solving skills and the ability to work across all aspects of a multi-tiered architecture. The ideal candidate is self-motivated, detail-oriented, adaptable, customer-focused, and eager to mentor team members. They identify areas for improvement and act on them. You will collaborate with engineers, managers, product management, and operations to deliver solutions that meet customer, business, and technical requirements. Key Responsibilities Development and Architecture â ¢ Design, develop, and maintain full-stack applications â ¢ Perform code and design reviews with the development team â ¢ Develop and maintain automated testing frameworks â ¢ Design and implement monitoring and alerting solutions â ¢ Monitor and remediate security vulnerabilities (dependency CVEs, infrastructure misconfigurations) DevOps and Infrastructure â ¢ Design and implement CI/CD pipelines and infrastructure automation â ¢ Manage release processes and develop release documentation â ¢ Ensure team adherence to development and release best practices â ¢ Manage and maintain Kubernetes clusters and containerized workloads â ¢ Update and maintain AWS infrastructure, including networking, security groups, and cloud resources Collaboration and Improvement â ¢ Participate in Agile ceremonies and collaborate daily with the delivery team â ¢ Track and improve developer experience â ¢ Introduce new tools and practices to improve how the team builds and ships software â ¢ Master and help the team adopt AI-assisted development tools such as Claude Code and GitH Required Qualifications â ¢ Bachelorâ s degree in Computer Science, Engineering, Mathematics, or related field (or equiv",
       "score": {
-        "overall": 69,
-        "stack_match": 70,
+        "overall": 42,
+        "stack_match": 40,
         "location_ok": true,
         "seniority_fit": "senior",
-        "ai_bonus": 15,
-        "reason": "Heuristic score (claude CLI unavailable). Regex-based stack match; not LLM-judged.",
-        "red_flags": []
+        "ai_bonus": 20,
+        "reason": "Vue.js is listed but is clearly secondary to Python/Django backend work, which dominates the JD; the role is 70%+ backend/DevOps including Kubernetes, AWS infra, and CI/CD pipelines that go well beyond Alfonso's Node basics. Strong AI tooling bonus for explicit Claude Code mention, but wrong primary stack.",
+        "red_flags": [
+          "Python/Django backend heavy",
+          "Kubernetes/AWS infra required",
+          "Vue only secondary stack",
+          "DevOps ownership expected"
+        ]
       }
     },
     {
-      "id": "2755bf5d6950",
-      "title": "Senior Software Engineer - Python, Django, PostgreSQL, and Vue.js",
-      "company": "Ghx",
-      "location": "US",
+      "id": "7a79b55874b1",
+      "title": "Senior Full Stack Developer (Kotlin, Vue.js) (Remote, Full-Time) [AS197]",
+      "company": "Remotica",
+      "location": "Remote",
       "remotePolicy": "remote",
-      "postedAt": "2026-04-06T00:00:00.000Z",
-      "salaryMin": 114000,
-      "salaryMax": 152000,
+      "postedAt": "2026-04-05T00:00:00.000Z",
       "tags": [
         "Vue.js"
       ],
-      "applyUrl": "https://jooble.org/jdp/-1220916382994127347?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "applyUrl": "https://remotica.totalh.net/job/senior-full-stack-developer-kotlin-vue-js-remote-full-time-as197-2",
       "source": "jsearch",
-      "rawDescription": "The Senior Software Engineer develops, tests, and maintains applications using Python, Django, PostgreSQL, and Vue.js within our AWS-centric SaaS environment. While primarily focused on full-stack development, familiarity with DevOps practices supports efficient development and release processes. This role requires strong problem-solving skills and the ability to work across all aspects of a multi-tiered architecture. The ideal candidate is self-motivated, detail-oriented, adaptable, customer-focused, and eager to mentor team members. They identify areas for improvement and act on them. You will collaborate with engineers, managers, product management, and operations to deliver solutions that meet customer, business, and technical requirements. Key Responsibilities Development and Architecture • Design, develop, and maintain full-stack applications • Perform code and design reviews with the development team • Develop and maintain automated testing frameworks • Design and implement monitoring and alerting solutions • Monitor and remediate security vulnerabilities (dependency CVEs, infrastructure misconfigurations) DevOps and Infrastructure • Design and implement CI/CD pipelines and infrastructure automation • Manage release processes and develop release documentation • Ensure team adherence to development and release best practices • Manage and maintain Kubernetes clusters and containerized workloads • Update and maintain AWS infrastructure, including networking, security groups, and cloud resources Collaboration and Improvement • Participate in Agile ceremonies and collaborate daily with the delivery team • Track and improve developer experience • Introduce new tools and practices to improve how the team builds and ships software • Master and help the team adopt AI-assisted development tools such as Claude Code and GitH Required Qualifications • Bachelor’s degree in Computer Science, Engineering, Mathematics, or related field (or equivalent experience) • 5+ years of",
+      "rawDescription": "Senior Full Stack Developer (Kotlin, Vue.js) (Remote, Full-Time) [AS197] About Smart Working At Smart Working, we believe your job should not only look right on paper but also feel right every day. This isnt just another remote opportunity - its about finding where you truly belong, no matter where you are. From day one, youre welcomed into a genuine community that values your growth and well-being. Our mission is simple: to break down geographic barriers and connect skilled professionals with outstanding global teams and products for full-time, long-term roles. We help you discover meaningful work with teams that invest in your success, where youre empowered to grow personally and professionally.Join one of the highest-rated workplaces on Glassdoor and experience what it means to thrive in a truly remote-first world. About the role We are looking for a Senior Full Stack Developer to join a long-term engineering initiative focused on building and evolving business-critical systems. This role is suited to a genuine senior engineer who is comfortable taking ownership, working across the stack, and contributing to architectural and delivery decisions. You will play a key role in developing and maintaining scalable applications using Kotlin on the backend and Vue.js on the frontend, working as part of a collaborative engineering team while maintaining a high degree of autonomy.Responsibilities • Design, build, and maintain full-stack features using Kotlin and Vue.js • Take ownership of complex technical tasks from implementation through to production • Contribute to system design and technical decision-making appropriate to a senior-level role • Collaborate closely with other engineers and stakeholders to deliver reliable, maintainable solutions • Ensure high standards of code quality, performance, and reliability across the stack • Support ongoing improvements to existing systems as part of a long-term product roadmap Requirements • 6+ years total professional software",
       "score": {
-        "overall": 69,
-        "stack_match": 70,
-        "location_ok": true,
-        "seniority_fit": "senior",
-        "ai_bonus": 15,
-        "reason": "Heuristic score (claude CLI unavailable). Regex-based stack match; not LLM-judged.",
-        "red_flags": []
-      }
-    },
-    {
-      "id": "5b2981e2cf6a",
-      "title": "Senior Full Stack Developer (Laravel + Vue.js)",
-      "company": "Hireza",
-      "location": "FR",
-      "remotePolicy": "remote",
-      "postedAt": "2026-04-06T00:00:00.000Z",
-      "tags": [
-        "Vue.js",
-        "TypeScript",
-        "Tailwind"
-      ],
-      "applyUrl": "https://hireza.wuaze.com/job/senior-full-stack-developer-laravel-vue-js-4?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "source": "jsearch",
-      "rawDescription": "About the Role:We're seeking a Senior Full Stack Developer to join our engineering team. You'll work across the entire stack, crafting performant APIs with Laravel and building dynamic, responsive interfaces with Vue.js. This role requires someone who can own features end-to-end, contribute to architectural decisions, and help mentor junior teammates.Our stack includes Laravel 12, Vue.js, MySQL, Redis, and TailwindCSS.What You'll Do: Develop, test, and maintain full-stack functionality using PHP 8.4 and Laravel 12.xBuild and consume RESTful APIs for internal and external applicationsUse wireframes and mockups to create responsive UIs using Vue.js 2.x+, and TailwindCSSImplement real-time features using WebSockets, Pusher, or Laravel BroadcastingDesign and optimize database schemas in MySQL; work with DynamoDB for appropriate workloadsManage AWS infrastructure including RDS, Lambda, CloudWatch, and related servicesDefine and maintain Infrastructure as Code using CloudFormation or AWS CDKBuild and maintain CI/CD pipelines using CodeBuild and CodePipelineProvide high-quality code reviews and help enforce team standardsPartner with product and engineering to develop and refine featuresDocument workflows, APIs, architecture decisions, and technical standardsMentor mid-level developers and contribute to team knowledge sharingWhat We're Looking For:6+ years of professional software development experience5+ years of hands-on experience with Laravel/PHP4+ years of hands-on experience with Vue.jsHighly proficient in modern PHP 8.x, unit testing, and RESTful API designStrong understanding of MySQL—schema design, optimization, and migrationsExperience with NoSQL databasesExperience with AWS services (RDS, Lambda, CloudWatch, S3, ElastiCache)Experience with Infrastructure as Code (CloudFormation or CDK)Solid command of Git workflows, branching strategies, and code review processesStrong awareness of security best practices and data consistencyExperience with testing frameworks (P",
-      "score": {
-        "overall": 64,
-        "stack_match": 70,
+        "overall": 38,
+        "stack_match": 60,
         "location_ok": true,
         "seniority_fit": "senior",
         "ai_bonus": 0,
-        "reason": "Heuristic score (claude CLI unavailable). Regex-based stack match; not LLM-judged.",
-        "red_flags": []
+        "reason": "Vue.js is a genuine primary requirement with 3+ years expected, but the role is equally weighted toward Kotlin backend—a serious mismatch for Alfonso's frontend specialization; no TypeScript, Tailwind, Pinia, or Nuxt are mentioned anywhere in the JD.",
+        "red_flags": [
+          "Kotlin backend 3yr required",
+          "no TypeScript mentioned",
+          "full-stack not frontend-specialist",
+          "IST-based shifts — India-targeted remote"
+        ]
       }
     },
     {
       "id": "0fc889d2f523",
       "title": "Lead Full-Stack Developer (NestJS + Vue.js + MySQL) — Digital Signage / DOOH - Contract to Hire",
       "company": "Hireza",
-      "location": "Remote",
+      "location": "NL",
       "remotePolicy": "remote",
       "postedAt": "2026-04-06T00:00:00.000Z",
       "tags": [
@@ -86,42 +69,89 @@
         "TypeScript",
         "Node.js"
       ],
-      "applyUrl": "https://hireza.wuaze.com/job/lead-full-stack-developer-nestjs-vue-js-mysql-digital-signage-dooh-contract-to-hire",
+      "applyUrl": "https://hireza.wuaze.com/job/lead-full-stack-developer-nestjs-vue-js-mysql-digital-signage-dooh-contract-to-hire?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
       "source": "jsearch",
       "rawDescription": "We need a Lead Full-Stack Developer to maintain and improve our digital signage / DOOH platform. This is not a rebuild — we need someone to fix bugs, maintain the system, and make incremental updates to existing modules. Tech Stack • Backend: NestJS (Node.js / TypeScript) • Frontend: Vue.js • Database: MySQL • Analytics: Google BigQuery • Auth: Auth0 • Payments: Stripe • Email: SendGrid • Push/Storage: Firebase Cloud Messaging + Firebase Storage • Chat: Twilio • Hosting: DigitalOcean What you will do • Fix bugs and improve stability across the web platform (Vue + NestJS) • Maintain and extend APIs (NestJS + MySQL) • Maintain integrations (Auth0, Stripe, SendGrid, Firebase, BigQuery, Twilio) • Support deployments and keep staging/production stable (DigitalOcean) • Write basic documentation as you go (setup, deployments, key modules) • Work with a second developer (you will review PRs and control releases) Requirements • Strong NestJS + TypeScript experience • Strong Vue.js experience • Solid MySQL experience • Comfortable working in an existing codebase • Fluent English (written + spoken) Budget / Process • Budget: US$1,000/month (long-term if it works out) • Mandatory 2-week paid trial • All work via GitHub PRs + tickets • Daily update: Yesterday / Today / Blockers To apply Please send: 1. Your GitHub / portfolio 2. 1–2 examples of NestJS + Vue.js work you shipped 3. Your timezone + availability 4. Answer this: How would you stabilise an existing platform you didn’t build? Apply tot his job",
       "score": {
-        "overall": 64,
-        "stack_match": 70,
+        "overall": 22,
+        "stack_match": 40,
         "location_ok": true,
-        "seniority_fit": "senior",
+        "seniority_fit": "lead+",
         "ai_bonus": 0,
-        "reason": "Heuristic score (claude CLI unavailable). Regex-based stack match; not LLM-judged.",
-        "red_flags": []
-      }
-    },
-    {
-      "id": "7a79b55874b1",
-      "title": "Senior Full Stack Developer (Kotlin, Vue.js) (Remote, Full-Time) [AS197]",
-      "company": "Remotica",
-      "location": "DE",
-      "remotePolicy": "remote",
-      "postedAt": "2026-04-05T00:00:00.000Z",
-      "tags": [
-        "Vue.js"
-      ],
-      "applyUrl": "https://remotica.totalh.net/job/senior-full-stack-developer-kotlin-vue-js-remote-full-time-as197-2?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "source": "jsearch",
-      "rawDescription": "Senior Full Stack Developer (Kotlin, Vue.js) (Remote, Full-Time) [AS197] About Smart Working At Smart Working, we believe your job should not only look right on paper but also feel right every day. This isnt just another remote opportunity - its about finding where you truly belong, no matter where you are. From day one, youre welcomed into a genuine community that values your growth and well-being. Our mission is simple: to break down geographic barriers and connect skilled professionals with outstanding global teams and products for full-time, long-term roles. We help you discover meaningful work with teams that invest in your success, where youre empowered to grow personally and professionally.Join one of the highest-rated workplaces on Glassdoor and experience what it means to thrive in a truly remote-first world. About the role We are looking for a Senior Full Stack Developer to join a long-term engineering initiative focused on building and evolving business-critical systems. This role is suited to a genuine senior engineer who is comfortable taking ownership, working across the stack, and contributing to architectural and delivery decisions. You will play a key role in developing and maintaining scalable applications using Kotlin on the backend and Vue.js on the frontend, working as part of a collaborative engineering team while maintaining a high degree of autonomy.Responsibilities • Design, build, and maintain full-stack features using Kotlin and Vue.js • Take ownership of complex technical tasks from implementation through to production • Contribute to system design and technical decision-making appropriate to a senior-level role • Collaborate closely with other engineers and stakeholders to deliver reliable, maintainable solutions • Ensure high standards of code quality, performance, and reliability across the stack • Support ongoing improvements to existing systems as part of a long-term product roadmap Requirements • 6+ years total professional software",
-      "score": {
-        "overall": 54,
-        "stack_match": 70,
-        "location_ok": true,
-        "seniority_fit": "senior",
-        "ai_bonus": 0,
-        "reason": "Heuristic score (claude CLI unavailable). Regex-based stack match; not LLM-judged.",
-        "red_flags": []
+        "reason": "Vue.js is present but this is a genuinely full-stack role with NestJS as a co-primary requirement — a poor fit given Alfonso's basic Node.js depth. The $1,000/month budget is far below his €45K–€80K target regardless of seniority fit.",
+        "red_flags": [
+          "NestJS backend heavy",
+          "budget $1K/month far below range",
+          "remote policy unclear",
+          "Vue version unspecified",
+          "no Tailwind/Pinia/Nuxt"
+        ]
       }
     }
   ],
-  "needsReview": []
+  "needsReview": [
+    {
+      "id": "2755bf5d6950",
+      "title": "Senior Software Engineer - Python, Django, PostgreSQL, and Vue.js",
+      "company": "Ghx",
+      "location": "Remote",
+      "remotePolicy": "remote",
+      "postedAt": "2026-04-06T00:00:00.000Z",
+      "salaryMin": 114000,
+      "salaryMax": 152000,
+      "tags": [
+        "Vue.js"
+      ],
+      "applyUrl": "https://jooble.org/jdp/-1220916382994127347",
+      "source": "jsearch",
+      "rawDescription": "The Senior Software Engineer develops, tests, and maintains applications using Python, Django, PostgreSQL, and Vue.js within our AWS-centric SaaS environment. While primarily focused on full-stack development, familiarity with DevOps practices supports efficient development and release processes. This role requires strong problem-solving skills and the ability to work across all aspects of a multi-tiered architecture. The ideal candidate is self-motivated, detail-oriented, adaptable, customer-focused, and eager to mentor team members. They identify areas for improvement and act on them. You will collaborate with engineers, managers, product management, and operations to deliver solutions that meet customer, business, and technical requirements. Key Responsibilities Development and Architecture • Design, develop, and maintain full-stack applications • Perform code and design reviews with the development team • Develop and maintain automated testing frameworks • Design and implement monitoring and alerting solutions • Monitor and remediate security vulnerabilities (dependency CVEs, infrastructure misconfigurations) DevOps and Infrastructure • Design and implement CI/CD pipelines and infrastructure automation • Manage release processes and develop release documentation • Ensure team adherence to development and release best practices • Manage and maintain Kubernetes clusters and containerized workloads • Update and maintain AWS infrastructure, including networking, security groups, and cloud resources Collaboration and Improvement • Participate in Agile ceremonies and collaborate daily with the delivery team • Track and improve developer experience • Introduce new tools and practices to improve how the team builds and ships software • Master and help the team adopt AI-assisted development tools such as Claude Code and GitH Required Qualifications • Bachelor’s degree in Computer Science, Engineering, Mathematics, or related field (or equivalent experience) • 5+ years of",
+      "score": {
+        "overall": 38,
+        "stack_match": 30,
+        "location_ok": false,
+        "seniority_fit": "senior",
+        "ai_bonus": 10,
+        "reason": "Vue.js is listed but clearly secondary to Python/Django backend — this is a full-stack role heavily weighted toward DevOps, Kubernetes, and AWS infrastructure. Salary is USD and the company operates in North America, with no indication Spain-based remote workers are accepted.",
+        "red_flags": [
+          "Vue secondary to Python/Django",
+          "heavy DevOps/Kubernetes scope",
+          "US-centric salary (USD)",
+          "no EU/Spain remote signal",
+          "Node.js-style backend depth required",
+          "AWS infra management expected"
+        ]
+      }
+    },
+    {
+      "id": "5b2981e2cf6a",
+      "title": "Senior Full Stack Developer (Laravel + Vue.js)",
+      "company": "Hireza",
+      "location": "Remote",
+      "remotePolicy": "remote",
+      "postedAt": "2026-04-06T00:00:00.000Z",
+      "tags": [
+        "Vue.js",
+        "TypeScript",
+        "Tailwind"
+      ],
+      "applyUrl": "https://hireza.wuaze.com/job/senior-full-stack-developer-laravel-vue-js-4",
+      "source": "jsearch",
+      "rawDescription": "About the Role:We're seeking a Senior Full Stack Developer to join our engineering team. You'll work across the entire stack, crafting performant APIs with Laravel and building dynamic, responsive interfaces with Vue.js. This role requires someone who can own features end-to-end, contribute to architectural decisions, and help mentor junior teammates.Our stack includes Laravel 12, Vue.js, MySQL, Redis, and TailwindCSS.What You'll Do: Develop, test, and maintain full-stack functionality using PHP 8.4 and Laravel 12.xBuild and consume RESTful APIs for internal and external applicationsUse wireframes and mockups to create responsive UIs using Vue.js 2.x+, and TailwindCSSImplement real-time features using WebSockets, Pusher, or Laravel BroadcastingDesign and optimize database schemas in MySQL; work with DynamoDB for appropriate workloadsManage AWS infrastructure including RDS, Lambda, CloudWatch, and related servicesDefine and maintain Infrastructure as Code using CloudFormation or AWS CDKBuild and maintain CI/CD pipelines using CodeBuild and CodePipelineProvide high-quality code reviews and help enforce team standardsPartner with product and engineering to develop and refine featuresDocument workflows, APIs, architecture decisions, and technical standardsMentor mid-level developers and contribute to team knowledge sharingWhat We're Looking For:6+ years of professional software development experience5+ years of hands-on experience with Laravel/PHP4+ years of hands-on experience with Vue.jsHighly proficient in modern PHP 8.x, unit testing, and RESTful API designStrong understanding of MySQL—schema design, optimization, and migrationsExperience with NoSQL databasesExperience with AWS services (RDS, Lambda, CloudWatch, S3, ElastiCache)Experience with Infrastructure as Code (CloudFormation or CDK)Solid command of Git workflows, branching strategies, and code review processesStrong awareness of security best practices and data consistencyExperience with testing frameworks (P",
+      "score": {
+        "overall": 28,
+        "stack_match": 55,
+        "location_ok": false,
+        "seniority_fit": "senior",
+        "ai_bonus": 0,
+        "reason": "Vue.js + Tailwind are present but this is a Laravel/PHP-first role demanding 5+ years backend depth Alfonso doesn't have; 401K benefits and US-style insurance package strongly indicate US-employee-only hiring despite the 'remote' label.",
+        "red_flags": [
+          "Laravel/PHP backend heavy",
+          "US benefits (401K) suggest US-only",
+          "Vue 2.x+ not Vue 3",
+          "TypeScript only preferred",
+          "AWS infrastructure/IaC required"
+        ]
+      }
+    }
+  ]
 }

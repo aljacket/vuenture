@@ -4,5 +4,5 @@
 
 @layer base {
   html { scroll-behavior: smooth; }
-  body { @apply bg-brand-100 text-ink-900; }
+  body { @apply bg-canvas text-ink-900; }
 }

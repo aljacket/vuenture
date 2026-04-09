@@ -377,14 +377,18 @@ async function fetchVueJobs() {
       const link = extractTag(item, 'link');
       const pubDate = extractTag(item, 'pubDate');
       const descRaw = decodeHtmlEntities(extractTag(item, 'description'));
-      const descText = stripHtml(descRaw);
 
-      // Pull "Employer: X" and "Location: Y" out of the description body —
-      // vuejobs always emits them as the first two paragraphs.
-      const employerMatch = descText.match(/Employer:\s*([^\n]+?)(?=\s*Location:|\s*$|\s{2,})/i);
-      const locationMatch = descText.match(/Location:\s*([^\n]+?)(?=\s{2,}|$)/i);
+      // Parse the structured Employer/Location fields against the RAW HTML
+      // (before stripHtml flattens everything). vuejobs always emits them
+      // as the first two <p><strong>...</strong></p> paragraphs, and many
+      // postings ALSO mention "Location:" inside the Highlights body — if
+      // we parsed against the flat text we'd capture the wrong one.
+      const employerMatch = descRaw.match(/<strong>\s*Employer:\s*<\/strong>\s*([^<\n]+)/i);
+      const locationMatch = descRaw.match(/<strong>\s*Location:\s*<\/strong>\s*([^<\n]+)/i);
       const company = employerMatch ? employerMatch[1].trim() : 'Unknown';
       const location = locationMatch ? locationMatch[1].trim() : 'Remote';
+
+      const descText = stripHtml(descRaw);
 
       return {
         source: 'vuejobs',
@@ -436,10 +440,13 @@ async function fetchDuunitori() {
         company: j.company_name ?? 'Unknown',
         companyLogo: undefined,
         location,
-        // Duunitori has no remote flag — assume hybrid by default and let
-        // the location filter / Claude reading sort out remote vs onsite.
-        remotePolicy: 'uncertain',
-        isRemoteStructured: false,
+        // Duunitori doesn't expose a structured remote flag and the
+        // Finnish snippet rarely contains "etätyö", so the F2 keyword
+        // check would nuke them all. Trust the source and let Claude
+        // judge remote/onsite from the JD body — the budget cost is
+        // ~20 extra Haiku scoring calls per run, negligible.
+        remotePolicy: 'remote',
+        isRemoteStructured: true,
         postedAt: j.date_posted ?? new Date().toISOString(),
         salaryMin: undefined,
         salaryMax: undefined,

@@ -51,4 +51,5 @@ export interface FilterState {
   typescriptRequired: boolean;
   aiToolingBonus: boolean;
   capacitorBonus: boolean;
+  bookmarkedOnly: boolean;
 }

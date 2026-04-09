@@ -8,6 +8,7 @@ export const useFilterStore = defineStore('filters', () => {
     typescriptRequired: false,
     aiToolingBonus: false,
     capacitorBonus: false,
+    bookmarkedOnly: false,
   });
 
   function toggle(key: keyof FilterState) {

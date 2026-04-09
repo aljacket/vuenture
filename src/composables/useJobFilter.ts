@@ -1,10 +1,14 @@
 import { computed, type Ref } from 'vue';
 import type { Job, FilterState } from '@/types/job';
 import { PROFILE } from '@/config/profile';
+import { useBookmarks } from '@/composables/useBookmarks';
 
 export function useJobFilter(jobs: Ref<Job[]>, filters: Ref<FilterState>) {
+  const { isBookmarked } = useBookmarks();
   return computed<Job[]>(() => {
     return jobs.value.filter((j) => {
+      if (filters.value.bookmarkedOnly && !isBookmarked(j.id)) return false;
+
       const desc = j.rawDescription.toLowerCase();
 
       if (filters.value.salaryFilter) {

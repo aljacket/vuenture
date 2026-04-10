@@ -22,23 +22,24 @@
  *   'none'     — no experience, red flag if required as core stack
  */
 export const SKILLS = {
-  // Frontend — always on
+  // Frontend & cross-platform
   vue: 'expert',
-  typescript: 'strong',
-  tailwind: 'strong',
-  pinia: 'strong',
-  capacitor_ionic: 'expert',
+  typescript: 'expert',
+  tailwind: 'expert',
+  capacitor: 'expert',
 
-  // Backend — modular, bump when you gain experience
-  node: 'learning',      // actively studying (Apr 2026)
-  laravel: 'none',       // planned: upcoming course
-  php: 'none',
-  python: 'none',
-  django: 'none',
-  java: 'none',
-  dotnet: 'none',
-  nestjs: 'none',
-  express: 'none',
+  // AI-enhanced development
+  claude_code: 'expert',
+  claude_skills: 'expert',
+  claude_agents: 'expert',
+
+  // Frontend tooling
+  vitest: 'strong',
+  figma: 'strong',
+  pinia: 'strong',
+
+  // Backend — add skills here as you learn them
+  node: 'basic',
 };
 
 /**
@@ -47,13 +48,14 @@ export const SKILLS = {
  * national indexes that the global index misses.
  *
  * Country selection was driven by a market-yield probe (Apr 2026):
- *   ES: 10 · IT: 10 · PT: 8 · DE: 2 · FR: 1 · NL/IE/GB: 0 (dropped).
+ *   ES: 10 · PT: 8 · DE: 2 · FR: 1 · NL/IE/GB: 0 (dropped).
+ *   IT was dropped (Apr 2026) — Alfonso is not targeting the Italian market.
  *
- * Alfonso speaks Italian (native) and Spanish (C1) so local-language
- * queries are included for those two markets. PT/DE use English because
- * Portuguese/German JDs are usually cross-posted in English.
+ * Alfonso speaks Spanish (C1) so local-language queries are included
+ * for Spain. PT uses English because Portuguese JDs are usually
+ * cross-posted in English.
  *
- * 10 queries × ~21 working days = ~210 req/month, within JSearch free tier.
+ * 8 queries × ~21 working days = ~168 req/month, within JSearch free tier.
  */
 export const JSEARCH_QUERIES = [
   // Global index (English, worldwide remote). "Frontend" keyword is
@@ -69,9 +71,6 @@ export const JSEARCH_QUERIES = [
   { query: 'Programador frontend Vue senior remoto', country: 'es' },
   { query: 'Desarrollador Vue senior teletrabajo España', country: 'es' },
   { query: 'Programador Vue remoto', country: 'es' },
-  // Italy — highest raw yield in the probe, Alfonso is Italian native
-  { query: 'Vue.js frontend developer remote', country: 'it' },
-  { query: 'Frontend developer Vue.js senior remoto', country: 'it' },
   // Portugal — Lisbon tech hub, English-friendly
   { query: 'Vue.js frontend developer remote', country: 'pt' },
   // Germany was dropped — probe returned 1-2 results only and the query
@@ -125,7 +124,6 @@ export const LOCATION_ACCEPTORS = [
   'etätyö',     // Finnish: remote work
   'etänä',      // Finnish: remotely
   'teletrabajo', // Spanish
-  'lavoro da remoto', // Italian
 ];
 
 /** F4 — anti-junior. Title-only check. */

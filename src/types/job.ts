@@ -6,8 +6,6 @@ export interface JobScore {
   /** Is the employer OK with a Spain/CET-based full-remote worker? */
   location_ok: boolean;
   seniority_fit: 'junior' | 'mid' | 'senior' | 'lead+';
-  /** 0–20 bonus when the role mentions AI tooling (Claude/Copilot/LLM/MCP/etc). */
-  ai_bonus: number;
   /** 2-line human-readable explanation. */
   reason: string;
   /** Short red-flag phrases, shown as chips on the card. */
@@ -27,7 +25,7 @@ export interface Job {
   salaryMax?: number;
   tags: string[];
   applyUrl: string;
-  source: 'jsearch' | 'arbeitnow' | 'remoteok' | 'jobicy' | 'wwr' | 'vuejobs' | 'duunitori';
+  source: 'jsearch' | 'arbeitnow' | 'remoteok' | 'jobicy' | 'wwr' | 'vuejobs' | 'duunitori' | 'infojobs' | 'adzuna';
   rawDescription: string;
   score: JobScore;
   bookmarked?: boolean;

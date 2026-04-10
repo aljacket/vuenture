@@ -5,15 +5,19 @@
  * Runs in GitHub Actions (or locally with `npm run fetch-jobs`).
  *
  * Pipeline:
- *   1. Query JSearch + Arbeitnow
+ *   1. Query JSearch + Arbeitnow + InfoJobs + Adzuna
  *   2. Stage 1 — hard regex filters (Vue / location / freshness / anti-junior)
  *   3. Stage 2 — deduplicate by normalize(company + title)
  *   4. Stage 3 — pipe each survivor into `claude` CLI for scoring
  *   5. Sort by score.overall, write public/jobs.json
  *
  * Secrets expected (env):
- *   JSEARCH_KEY             RapidAPI key for JSearch
- *   CLAUDE_CODE_OAUTH_TOKEN Claude CLI OAuth token (Max subscription)
+ *   JSEARCH_KEY                RapidAPI key for JSearch
+ *   INFOJOBS_CLIENT_ID         InfoJobs API app client ID
+ *   INFOJOBS_CLIENT_SECRET     InfoJobs API app client secret
+ *   ADZUNA_APP_ID              Adzuna API app ID
+ *   ADZUNA_APP_KEY             Adzuna API app key
+ *   CLAUDE_CODE_OAUTH_TOKEN    Claude CLI OAuth token (Max subscription)
  */
 
 // NOTE on sources:
@@ -37,6 +41,15 @@
 //   ("front end") rather than stack names, so we also filter client-side.
 // - Jobicy: smaller feed but their `tag=vue` parameter does real
 //   server-side filtering — cheap to keep in the loop.
+//
+// - InfoJobs (ES): the #1 Spanish job board. Public API with Basic Auth
+//   (client_id + client_secret). List endpoint /api/1/offer returns
+//   `requirementMin` (2500 chars) used as description. Keyword search
+//   for vue/vuejs/vue.js with country=espana. Deduped internally.
+//
+// - Adzuna (ES): multi-country job search API with native Spain index.
+//   Free tier, query-param auth (app_id + app_key). Searches for vue
+//   in category=it-jobs. Note: description is truncated to ~500 chars.
 //
 // Evaluated and rejected:
 // - Remotive: free API returns ~20 jobs total worldwide ($5k/mo for
@@ -68,46 +81,45 @@ import {
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 
-// Skills listed here are *frontend* and therefore excluded from the
-// "backend skills context" block that buildBackendContext() injects
-// into the scoring prompt. Keep in sync with the frontend-group of
-// SKILLS in src/config/profile.shared.js.
-const FRONTEND_SKILL_NAMES = new Set([
-  'vue', 'typescript', 'tailwind', 'pinia', 'capacitor_ionic',
-]);
-
 /**
- * Build the dynamic "backend skills context" block that gets substituted
- * into scoringPrompt.md. Grouping by level lets the LLM apply the right
- * penalty/bonus without us hardcoding per-skill rules in the prompt.
+ * Build the dynamic skills context block that gets substituted into
+ * scoringPrompt.md as {{SKILLS_CONTEXT}}. Groups ALL skills by level
+ * so the LLM scores based on the full, current skills matrix.
+ *
+ * Adding or bumping a skill in SKILLS automatically changes scoring
+ * on the next run — no prompt edits needed.
  */
-function buildBackendContext(skills) {
+function buildSkillsContext(skills) {
   const groups = { expert: [], strong: [], basic: [], learning: [], none: [] };
   for (const [name, level] of Object.entries(skills)) {
-    if (FRONTEND_SKILL_NAMES.has(name)) continue;
-    if (groups[level]) groups[level].push(name);
+    const label = name.replace(/_/g, ' ');
+    if (groups[level]) groups[level].push(label);
   }
 
   const lines = [];
-  if (groups.strong.length || groups.expert.length) {
-    const strong = [...groups.expert, ...groups.strong].join(', ');
+  if (groups.expert.length) {
     lines.push(
-      `- **Strong backend skills (target full-stack roles):** ${strong}. A full-stack role combining Vue + any of these is a TARGET role; give +5 bonus on \`overall\`.`
+      `- **Expert (differentiators — reward matches heavily):** ${groups.expert.join(', ')}. A role that matches multiple expert skills is the highest-value target. Each expert skill present in the JD adds +10 to \`stack_match\`.`
+    );
+  }
+  if (groups.strong.length) {
+    lines.push(
+      `- **Strong (production confidence):** ${groups.strong.join(', ')}. Each strong skill present in the JD adds +5 to \`stack_match\`.`
     );
   }
   if (groups.basic.length) {
     lines.push(
-      `- **Basic backend skills (neutral):** ${groups.basic.join(', ')}. Can contribute to light backend tasks. Neutral signal, no bonus or penalty.`
+      `- **Basic (can contribute, neutral):** ${groups.basic.join(', ')}. Neutral signal — no bonus or penalty. Only penalize (-10) if the role expects deep/senior expertise in these.`
     );
   }
   if (groups.learning.length) {
     lines.push(
-      `- **Currently learning (acceptable, mild positive):** ${groups.learning.join(', ')}. Alfonso is actively studying these. Jobs that mention them as part of a Vue-led full-stack role are NEUTRAL to slightly positive ("growth opportunity") — do NOT treat as a red flag. Only penalize (-5) if the role expects deep/senior expertise in them from day one.`
+      `- **Currently learning (mild positive):** ${groups.learning.join(', ')}. Jobs mentioning these as part of the role are neutral to slightly positive. Only penalize (-5) if deep expertise is expected from day one.`
     );
   }
   if (groups.none.length) {
     lines.push(
-      `- **No experience (red flag if core stack):** ${groups.none.join(', ')}. Jobs that require these as a MAJOR part of the backend work should be penalized -15 on \`overall\` and added to \`red_flags\`. Jobs that merely mention them as "nice to have" or as one tool in a larger stack are neutral.`
+      `- **No experience (red flag if core stack):** ${groups.none.join(', ')}. Jobs requiring these as a MAJOR part of the work should be penalized -15 on \`overall\` and added to \`red_flags\`. Merely "nice to have" mentions are neutral.`
     );
   }
   return lines.join('\n');
@@ -143,6 +155,178 @@ const MAX_AGE_MS = (IS_MONDAY ? 168 : 96) * 60 * 60 * 1000;
 const DATE_POSTED = IS_MONDAY ? 'week' : '3days';
 
 // --- Fetchers ----------------------------------------------------------------
+
+/**
+ * InfoJobs — dominant Spanish job board. Public API with Basic Auth.
+ * Uses the list endpoint (/api/1/offer) with keyword search.
+ * `requirementMin` (2500 chars) is used as description since the list
+ * endpoint doesn't return the full `description` field.
+ *
+ * Env: INFOJOBS_CLIENT_ID + INFOJOBS_CLIENT_SECRET
+ */
+async function fetchInfoJobs() {
+  const clientId = process.env.INFOJOBS_CLIENT_ID;
+  const clientSecret = process.env.INFOJOBS_CLIENT_SECRET;
+  if (!clientId || !clientSecret) {
+    console.warn('[infojobs] INFOJOBS_CLIENT_ID or INFOJOBS_CLIENT_SECRET missing — skipping');
+    return [];
+  }
+
+  const auth = Buffer.from(`${clientId}:${clientSecret}`).toString('base64');
+  const headers = { Authorization: `Basic ${auth}` };
+
+  // Build publishedMin for freshness (same window as JSearch)
+  const publishedMin = new Date(Date.now() - MAX_AGE_MS).toISOString();
+
+  // Search queries — keyword variations to maximize coverage
+  const queries = ['vue', 'vuejs', 'vue.js'];
+  const allJobs = [];
+
+  for (const q of queries) {
+    try {
+      let page = 1;
+      let totalPages = 1;
+      while (page <= totalPages && page <= 5) {
+        const params = new URLSearchParams({
+          q,
+          country: 'espana',
+          maxResults: '50',
+          page: String(page),
+          order: 'updated-desc',
+          publishedMin,
+        });
+        const url = `https://api.infojobs.net/api/1/offer?${params}`;
+        const res = await fetch(url, { headers });
+        if (!res.ok) {
+          console.warn(`[infojobs] q="${q}" page=${page} → ${res.status}`);
+          break;
+        }
+        const json = await res.json();
+        totalPages = json.totalPages ?? 1;
+        const offers = json.offers ?? [];
+        for (const o of offers) {
+          const city = o.city ?? '';
+          const province = o.province?.value ?? '';
+          const location = [city, province].filter(Boolean).join(', ') || 'Spain';
+          const desc = o.requirementMin ?? '';
+          const title = o.title ?? '';
+
+          allJobs.push({
+            source: 'infojobs',
+            title,
+            company: o.author?.name ?? '',
+            companyLogo: undefined,
+            location,
+            remotePolicy: /remoto|teletrabajo|remote/i.test(`${title} ${desc} ${location}`)
+              ? 'remote'
+              : 'uncertain',
+            isRemoteStructured: false,
+            postedAt: o.published ?? new Date().toISOString(),
+            salaryMin: undefined,
+            salaryMax: undefined,
+            applyUrl: o.link ?? '',
+            rawDescription: `${title}\n\n${desc}\n\nLocation: ${location}`,
+          });
+        }
+        page++;
+      }
+    } catch (err) {
+      console.warn(`[infojobs] q="${q}" → ${err.message}`);
+    }
+  }
+
+  // Dedupe within InfoJobs results (same job may appear for multiple query keywords)
+  const seen = new Set();
+  return allJobs.filter((j) => {
+    const key = `${j.company}::${j.title}`.toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+/**
+ * Adzuna — multi-country job search API. Free tier, query-param auth.
+ * Searches Spain (es) by default with category=it-jobs.
+ * Note: `description` is truncated to ~500 chars by the API.
+ *
+ * Env: ADZUNA_APP_ID + ADZUNA_APP_KEY
+ */
+async function fetchAdzuna() {
+  const appId = process.env.ADZUNA_APP_ID;
+  const appKey = process.env.ADZUNA_APP_KEY;
+  if (!appId || !appKey) {
+    console.warn('[adzuna] ADZUNA_APP_ID or ADZUNA_APP_KEY missing — skipping');
+    return [];
+  }
+
+  const maxDaysOld = IS_MONDAY ? 7 : 4;
+  const queries = ['vue developer', 'vue.js frontend', 'vuejs'];
+  const allJobs = [];
+
+  for (const q of queries) {
+    try {
+      let page = 1;
+      let totalPages = 1;
+      while (page <= totalPages && page <= 5) {
+        const params = new URLSearchParams({
+          app_id: appId,
+          app_key: appKey,
+          results_per_page: '50',
+          what: q,
+          category: 'it-jobs',
+          max_days_old: String(maxDaysOld),
+          sort_by: 'date',
+        });
+        const url = `https://api.adzuna.com/v1/api/jobs/es/search/${page}?${params}`;
+        const res = await fetch(url);
+        if (!res.ok) {
+          console.warn(`[adzuna] q="${q}" page=${page} → ${res.status}`);
+          break;
+        }
+        const json = await res.json();
+        const count = json.count ?? 0;
+        totalPages = Math.ceil(count / 50);
+        const results = json.results ?? [];
+        for (const r of results) {
+          const title = (r.title ?? '').replace(/<\/?strong>/gi, '');
+          const desc = (r.description ?? '').replace(/<\/?strong>/gi, '');
+          const location = r.location?.display_name ?? 'Spain';
+          const company = r.company?.display_name ?? '';
+
+          allJobs.push({
+            source: 'adzuna',
+            title,
+            company,
+            companyLogo: undefined,
+            location,
+            remotePolicy: /remote|remoto|teletrabajo/i.test(`${title} ${desc} ${location}`)
+              ? 'remote'
+              : 'uncertain',
+            isRemoteStructured: false,
+            postedAt: r.created ?? new Date().toISOString(),
+            salaryMin: r.salary_is_predicted === '1' ? undefined : r.salary_min,
+            salaryMax: r.salary_is_predicted === '1' ? undefined : r.salary_max,
+            applyUrl: r.redirect_url ?? '',
+            rawDescription: `${title}\n\n${desc}\n\nLocation: ${location}`,
+          });
+        }
+        page++;
+      }
+    } catch (err) {
+      console.warn(`[adzuna] q="${q}" → ${err.message}`);
+    }
+  }
+
+  // Dedupe within Adzuna results
+  const seen = new Set();
+  return allJobs.filter((j) => {
+    const key = `${j.company}::${j.title}`.toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
 
 async function fetchJSearch(query, country = null) {
   const key = process.env.JSEARCH_KEY;
@@ -663,18 +847,17 @@ function fallbackScore(raw) {
   // (e.g. local dev without Max, or OAuth token missing). Keeps the pipeline
   // running end-to-end so the dashboard still has data.
   const desc = raw.rawDescription.toLowerCase();
-  const hasTS = desc.includes('typescript');
-  const hasAI = /claude|copilot|cursor|llm|mcp|ai.assisted/.test(desc);
-  const aiBonus = hasAI ? 15 : 0;
-  const stack = desc.includes('vue') && (desc.includes('nuxt') || desc.includes('vue 3')) ? 90 : 70;
-  const overall = Math.min(100, Math.round(stack * 0.7 + (hasTS ? 15 : 5) + aiBonus));
+  // Count expert skill matches
+  const expertHits = ['vue', 'typescript', 'tailwind', 'capacitor', 'claude'].filter(s => desc.includes(s)).length;
+  const strongHits = ['vitest', 'figma', 'pinia'].filter(s => desc.includes(s)).length;
+  const stack = Math.min(100, expertHits * 10 + strongHits * 5 + (desc.includes('vue') ? 40 : 0));
+  const overall = Math.min(100, stack);
   return {
     overall,
     stack_match: stack,
     location_ok: true,
     seniority_fit: 'senior',
-    ai_bonus: aiBonus,
-    reason: 'Heuristic score (claude CLI unavailable). Regex-based stack match; not LLM-judged.',
+    reason: 'Heuristic score (claude CLI unavailable). Regex-based skill match; not LLM-judged.',
     red_flags: [],
   };
 }
@@ -711,7 +894,6 @@ function scoreWithClaude(raw, scoringInstructions) {
       stack_match: Number(parsed.stack_match) || 0,
       location_ok: Boolean(parsed.location_ok),
       seniority_fit: parsed.seniority_fit ?? 'senior',
-      ai_bonus: Number(parsed.ai_bonus) || 0,
       reason: String(parsed.reason ?? '').slice(0, 400),
       red_flags: Array.isArray(parsed.red_flags) ? parsed.red_flags.slice(0, 6) : [],
     };
@@ -758,6 +940,12 @@ async function main() {
   const arbeitnowResults = await fetchArbeitnow();
   console.log(`  arbeitnow vue-filtered → ${arbeitnowResults.length}`);
   rawAll.push(...arbeitnowResults);
+  const infojobsResults = await fetchInfoJobs();
+  console.log(`  infojobs vue-search → ${infojobsResults.length}`);
+  rawAll.push(...infojobsResults);
+  const adzunaResults = await fetchAdzuna();
+  console.log(`  adzuna es vue-search → ${adzunaResults.length}`);
+  rawAll.push(...adzunaResults);
   // Stage 1: hard filters
   const rejected = { 'no-vue': 0, 'blocked-location': 0, 'no-remote-signal': 0, stale: 0, junior: 0 };
   const survived = [];
@@ -799,8 +987,8 @@ async function main() {
     'utf8'
   );
   const scoringInstructions = scoringTemplate.replace(
-    '{{BACKEND_SKILLS_CONTEXT}}',
-    buildBackendContext(SKILLS)
+    '{{SKILLS_CONTEXT}}',
+    buildSkillsContext(SKILLS)
   );
   const scored = deduped.map((raw) => {
     const score = useCli ? scoreWithClaude(raw, scoringInstructions) : fallbackScore(raw);

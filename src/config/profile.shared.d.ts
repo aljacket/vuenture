@@ -32,6 +32,7 @@ export const JSEARCH_QUERIES: ReadonlyArray<{
 
 export const VUE_KEYWORDS: readonly string[];
 export const LOCATION_BLOCKERS: readonly string[];
+export const LOCATION_COUNTRY_BLOCKERS: readonly string[];
 export const LOCATION_ACCEPTORS: readonly string[];
 export const JUNIOR_TITLE_PATTERNS: readonly RegExp[];
 export const TAG_KEYWORDS: readonly string[];

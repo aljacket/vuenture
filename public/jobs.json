@@ -2,33 +2,6 @@
   "fetchedAt": "2026-04-10T07:49:02.377Z",
   "jobs": [
     {
-      "id": "dec1c89bc8c1",
-      "title": "Full stack Developer VUE JS",
-      "company": "agap2 Italia",
-      "location": "Latina, IT",
-      "remotePolicy": "uncertain",
-      "postedAt": "2026-04-10T07:29:40.808Z",
-      "tags": [
-        "Vue.js",
-        "TypeScript"
-      ],
-      "applyUrl": "https://it.jooble.org/rjdp/-923434687056937404?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "source": "jsearch",
-      "rawDescription": "AGAP2 è un gruppo europeo di consulenza ingegneristica e operativa facente parte del Gruppo MoOngy . Siamo alla ricerca di un/una Senior Full Stack Developer qualificato/a, con esperienza nello sviluppo di applicazioni web moderne e scalabili. La figura sarà coinvolta in tutte le fasi del ciclo di vita del software, dalla progettazione all’implementazione, lavorando in un contesto agile e collaborativo. Progettare, sviluppare e mantenere applicazioni web full stack Collaborare con team cross-funzionali (UX/UI, DevOps, Product Owner) Contribuire alla definizione dell’architettura software Ottimizzare le performance e garantire la qualità delle applicazioni Supportare e guidare sviluppatori più junior Familiarità con metodologie Agile / sviluppo iterativo Ottima conoscenza di TypeScript js Esperienza con database PostgreSQL e scrittura di query SQL Front-end: Esperienza con TypeScript Ottima conoscenza di Vue.js 3 Inoltre, teniamo fede ai nostri impegni prestando attenzione alle risorse appartenenti alle categorie protette ai sensi degli articoli 1 e 18 della Legge 68/99. I dati personali saranno trattati in conformità alle disposizioni contenute nel regolamento UE 2016/679.",
-      "score": {
-        "overall": 80,
-        "stack_match": 78,
-        "location_ok": true,
-        "seniority_fit": "senior",
-        "ai_bonus": 0,
-        "reason": "Excellent Vue 3 + TypeScript senior match with tech lead mentoring responsibilities. Backend framework unclear (PostgreSQL/SQL required but tech stack not specified) — location and remote policy need clarification.",
-        "red_flags": [
-          "backend framework not specified",
-          "remote policy unclear"
-        ]
-      }
-    },
-    {
       "id": "82afa02f83d5",
       "title": "Full Stack Developer (m/w/d) - AI-First PropTech",
       "company": "Immovara GmbH",
@@ -81,85 +54,6 @@
           "Tech stack unclear (TypeScript, Tailwind)",
           "Hybrid in Siena, not fully remote",
           "Recruitment agency posting"
-        ]
-      }
-    },
-    {
-      "id": "b2cbd2aea9c5",
-      "title": "Full-Stack Developer - Vue.js (Remote)",
-      "company": "Altro",
-      "companyLogo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxZcedD_3dF93ViStyNIWTQoxuaUqovO_AbE5a&s=0",
-      "location": "Roma, IT",
-      "remotePolicy": "uncertain",
-      "postedAt": "2026-04-10T07:29:36.958Z",
-      "tags": [
-        "Vue.js"
-      ],
-      "applyUrl": "https://it.talent.com/view?id=614099754226485529&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "source": "jsearch",
-      "rawDescription": "Una società di consulenza informatica cerca un Full Stack Developer per sviluppare un tool in ambito Credit Insurance. Il candidato ideale ha solida esperienza in Vue.js per il front-end e buone competenze in Java per il back-end. Lavorerà in modalità full remote, in un ambiente collaborativo e innovativo, con un forte focus sulla qualità. È richiesta una laurea o diploma tecnico e almeno 4 anni di esperienza nel ruolo, insieme a competenze in database Oracle e microservizi. Se sei appassionato di tecnologia e desideri crescere, candidati ora! J-18808-Ljbffr",
-      "score": {
-        "overall": 55,
-        "stack_match": 65,
-        "location_ok": true,
-        "seniority_fit": "senior",
-        "ai_bonus": 0,
-        "reason": "Vue.js front-end is an excellent fit for Alfonso, and the Italian remote role with CET timezone is ideal. However, Java backend is explicitly required—Alfonso has no Java experience, making this a growth opportunity only if willing to learn Java from scratch.",
-        "red_flags": [
-          "Java backend required",
-          "Oracle database required"
-        ]
-      }
-    },
-    {
-      "id": "6329a66f464c",
-      "title": "Remote Senior Full-Stack Developer - Java & Vue.js",
-      "company": "Altro",
-      "location": "Roma, IT",
-      "remotePolicy": "uncertain",
-      "postedAt": "2026-04-10T07:29:40.808Z",
-      "tags": [
-        "Vue.js"
-      ],
-      "applyUrl": "https://it.jooble.org/jdp/-7348748642512893049?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "source": "jsearch",
-      "rawDescription": "An IT consultancy company is seeking a Full Stack Java/Vue.js Developer with over 5 years of experience. Massimizzi le sue possibilità di successo assicurandosi che il suo CV e le sue competenze corrispondano ai requisiti di questa posizione. The position offers remote work and aims to provide a stimulating environment for professional growth. Candidates should possess strong skills in Java and Vue.js. Interested applicants are encouraged to send their CVs ensuring they meet the qualifications outlined in the ad. This role is open to all genders and emphasizes compliance with personal data processing laws. xrdbqlu #J-18808-Ljbffr Per questa posizione sono disponibili opzioni di lavoro da remoto/a casa.",
-      "score": {
-        "overall": 55,
-        "stack_match": 70,
-        "location_ok": true,
-        "seniority_fit": "senior",
-        "ai_bonus": 0,
-        "reason": "Vue.js primary is a good fit, and Italy-based remote work aligns with your location/language preferences (native Italian speaker), but the strong Java backend requirement for this full-stack consultancy role is a major gap—your backend experience is Node-only.",
-        "red_flags": [
-          "Strong Java backend required"
-        ]
-      }
-    },
-    {
-      "id": "3a9ffe9a9990",
-      "title": "Remote Frontend Developer | TS/JS, Cloud & CI/CD",
-      "company": "Altro",
-      "location": "Giuliano di Roma, IT",
-      "remotePolicy": "uncertain",
-      "postedAt": "2026-04-10T07:29:36.958Z",
-      "tags": [
-        "TypeScript"
-      ],
-      "applyUrl": "https://it.jooble.org/jdp/1413009328423664704?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "source": "jsearch",
-      "rawDescription": "Un'importante società multinazionale cerca un Front End Developer esperto per lo sviluppo di applicazioni web moderne. Dopo aver letto questa descrizione, invii il suo CV e le eventuali informazioni aggiuntive richieste facendo clic sul pulsante di candidatura. Il candidato ideale ha una forte competenza in framework front-end come Angular o Vue e una buona padronanza di TypeScript e JavaScript moderno. Il lavoro è in modalità remota e implica la progettazione e implementazione di soluzioni in ambienti cloud. Sono richieste anche conoscenze su Docker e Kubernetes per il deployment. xrdbqlu Questa posizione offre un contratto a tempo determinato o partita IVA. #J-18808-Ljbffr Per questa posizione sono disponibili opzioni di lavoro da remoto/a casa.",
-      "score": {
-        "overall": 45,
-        "stack_match": 55,
-        "location_ok": true,
-        "seniority_fit": "senior",
-        "ai_bonus": 0,
-        "reason": "Vue is co-equal with Angular, not primary, with heavy Docker/Kubernetes emphasis suggesting full-stack/DevOps work. Positive: Italian-language remote role, senior level, TypeScript strong match.",
-        "red_flags": [
-          "Angular or Vue (not Vue-primary)",
-          "Docker/Kubernetes deployment required",
-          "Full-stack DevOps emphasis"
         ]
       }
     },
@@ -218,35 +112,6 @@
       }
     },
     {
-      "id": "23b98f60f6ed",
-      "title": "Senior Vue Js Developer - FULL REMOTE",
-      "company": "Selefor",
-      "location": "Roma, IT",
-      "remotePolicy": "uncertain",
-      "postedAt": "2026-04-10T07:29:40.808Z",
-      "tags": [
-        "Vue.js"
-      ],
-      "applyUrl": "https://it.jooble.org/rjdp/4928761065955072817?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "source": "jsearch",
-      "rawDescription": "Siamo una software house italiana attiva dal 1998, composta da un team di 25 professionisti. Progettiamo e sviluppiamo gestionali complessi web-based , rivolgendoci principalmente a casse edili e scuole edili su tutto il territorio nazionale. Lavoriamo con tecnologie moderne e architetture all'avanguardia, credendo in un approccio pragmatico, agile e collaborativo, dove ogni sviluppatore è protagonista del successo dei nostri progetti. Sarai il referente tecnico per le attività di DevOps o per la sicurezza del software. Hai almeno 5 anni di esperienza consolidata nello sviluppo software. Hai un'eccellente padronanza di C#, JavaScript framework (es. Angular, React, Vue.js) e MS SQL. Possiedi competenze solide in almeno una tra DevOps o Sicurezza Informatica. Sei analitico, autonomo nella gestione dei progetti e orientato alla qualità. Flessibilità organizzativa: possibilità di lavorare fino al 100% da remoto (previsti solo due incontri annuali per team building, a giugno e dicembre). Contratto a tempo indeterminato.",
-      "score": {
-        "overall": 35,
-        "stack_match": 55,
-        "location_ok": true,
-        "seniority_fit": "senior",
-        "ai_bonus": 0,
-        "reason": "Title promises 'Senior Vue Js' but the JD lists Vue as interchangeable with React/Angular and requires excellent C# and MS SQL mastery as core stack. Primary responsibility is DevOps or cybersecurity, not hands-on Vue development—backend stack mismatch makes this a poor fit despite full-remote location in CET timezone.",
-        "red_flags": [
-          "C# mastery required, not in Alfonso's stack",
-          "Vue listed as one option among React/Angular",
-          "DevOps or Cybersecurity as primary responsibility",
-          "MS SQL backend requirement",
-          "No TypeScript or modern Vue tooling mentioned"
-        ]
-      }
-    },
-    {
       "id": "fe110bcdae70",
       "title": "Remote Full-Stack Developer — Vue/Nuxt + NestJS",
       "company": "Istituto Formativo Aladia",
@@ -270,35 +135,6 @@
           "Nuxt expertise required",
           "NestJS backend (no experience)",
           "Seniority level not explicit"
-        ]
-      }
-    },
-    {
-      "id": "650da39db50b",
-      "title": "Front-end Developer Vue.js (Full remote)",
-      "company": "Assist-x",
-      "location": "Frosinone, IT",
-      "remotePolicy": "uncertain",
-      "postedAt": "2026-04-10T07:29:36.958Z",
-      "tags": [
-        "Vue.js",
-        "TypeScript",
-        "GraphQL"
-      ],
-      "applyUrl": "https://it.jooble.org/rjdp/2040059451498377829?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "source": "jsearch",
-      "rawDescription": "Milano | Full Remote Tipologia di Contratto: Collaborazione Freelance o Contratto Determinato Di seguito, troverà un'analisi completa di tutti i requisiti per i potenziali candidati e le istruzioni su come candidarsi. Frontend / Full Stack Software Developer In Assist-x, quando realizziamo un prodotto, fra le nostre priorità c’è quella di sviluppare codice e infrastrutture all’avanguardia, allineate con i moderni stack tecnologici e seguendo le best practice di sviluppo per garantire manutenibilità e scalabilità del software nel lungo periodo. Cerchiamo un Frontend Software Developer capace di contribuire allo sviluppo di soluzioni software di alta qualità. La figura lavorerà in sinergia con i team di product design, UX/UI e Backend per tradurre i requisiti in soluzioni affidabili e scalabili. Siamo aperti a profili mid ma anche junior purché ragionevolmente autonomi. Descrizione dell’azienda Assist-x è una giovane realtà tech specializzata nell’offrire soluzioni software, AI e infrastruttura cloud ad aziende che necessitano di innovare il proprio business o sviluppare prodotti da lanciare sul mercato. Sviluppo, implementazione e manutenzione di interfacce web e mobile utilizzando React e React Native. Gestione avanzata dello stato dell’applicazione (Zustand, Context API) Integrazione con le API RESTful o GraphQL fornite dal backend. Collaborazione costante con UI/UX designer e sviluppatori backend per garantire un’integrazione fluida e la migliore esperienza utente (UX) possibile. Ottima padronanza di JavaScript (ES6+), TypeScript e npm. Comprovata esperienza nello sviluppo di componenti riutilizzabili con React e React Native. Solida base nei linguaggi web fondamentali (HTML5, CSS3/SASS, architettura del DOM) e approccio Mobile First / Responsive Design. Conoscenza dei principi fondanti del Software Engineering (Clean Code, design pattern). Gradita conoscenza del framework Vue.js. js per interfacciarsi meglio con il team backend. Familiarità con Docker, containeri",
-      "score": {
-        "overall": 30,
-        "stack_match": 32,
-        "location_ok": true,
-        "seniority_fit": "mid",
-        "ai_bonus": 0,
-        "reason": "Job title says Vue.js, but the description emphasizes React/React Native primary with Vue merely as 'nice to have'. The posting explicitly targets junior-to-mid profiles—below Alfonso's senior level—and uses React Native rather than his Capacitor/Ionic specialization.",
-        "red_flags": [
-          "Vue nice-to-have, React primary",
-          "Junior-to-mid level target",
-          "React Native instead of Capacitor"
         ]
       }
     },
@@ -387,33 +223,6 @@
       }
     },
     {
-      "id": "3ac7d9741347",
-      "title": "Front end developer",
-      "company": "GSDH",
-      "location": "Remote",
-      "remotePolicy": "remote",
-      "postedAt": "2026-04-09T00:00:00.000Z",
-      "tags": [],
-      "applyUrl": "https://vuejobs.com/jobs/gsdh-front-end-developer?utm_source=rssfeed",
-      "source": "vuejobs",
-      "rawDescription": "Employer: GSDH Location: Remote About At the factory our mission is to simplify creative performance production at scale. We do this to free up time for our clients which they in turn can utilize to their highest...",
-      "score": {
-        "overall": 15,
-        "stack_match": 0,
-        "location_ok": true,
-        "seniority_fit": "mid",
-        "ai_bonus": 0,
-        "reason": "Job description is incomplete and cuts off mid-sentence. No mention of Vue.js, TypeScript, or any core tech stack requirements visible in the provided text. Cannot reliably assess fit.",
-        "red_flags": [
-          "description truncated/incomplete",
-          "Vue.js not mentioned",
-          "tech stack unknown",
-          "seniority level unclear",
-          "no details on tools or frameworks"
-        ]
-      }
-    },
-    {
       "id": "dad6c85fdc09",
       "title": "Desarrollador/A Back Python + Vue.Js, Madrid",
       "company": "Gfr Technologies Se",
@@ -464,83 +273,6 @@
           "Vue co-equal with React/Node",
           "Sparse job description",
           "Contradictory seniority messaging"
-        ]
-      }
-    },
-    {
-      "id": "ed7f720950b8",
-      "title": "Remote Web Developer — Node/React/Vue, Grow Your Skills",
-      "company": "Vuau is a brand of Advizetech srls",
-      "location": "Giuliano di Roma, IT",
-      "remotePolicy": "uncertain",
-      "postedAt": "2026-04-10T07:29:36.958Z",
-      "tags": [],
-      "applyUrl": "https://it.jooble.org/jdp/7640748979570401402?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "source": "jsearch",
-      "rawDescription": "A technology solutions company in Italy seeks a Junior Software Developer with at least 4-5 years of experience in IT. Tutti i potenziali candidati sono incoraggiati a leggere l'intera descrizione del lavoro prima di candidarsi. Ideal candidates are passionate about programming and eager to learn new technologies. While specific responsibilities are not detailed, the role offers a dynamic work environment with opportunities to tackle challenging projects for major clients. Teamwork and excellent problem-solving skills are essential. Enjoy continuous personal and technical development in this collaborative setting. xrdbqlu #J-18808-Ljbffr Per questa posizione sono disponibili opzioni di lavoro da remoto/a casa.",
-      "score": {
-        "overall": 5,
-        "stack_match": 40,
-        "location_ok": true,
-        "seniority_fit": "junior",
-        "ai_bonus": 0,
-        "reason": "Junior-level role directly contradicts Alfonso's senior/lead+ requirement. Vue is one of three equal frameworks (React/Node also prominent), not a Vue-primary role. Vague JD lacks specific responsibilities or tech stack clarity.",
-        "red_flags": [
-          "Junior role contradicts senior requirement",
-          "Vue not primary, equals React/Node",
-          "Node.js prominent, Alfonso has basic Node",
-          "Vague job description, no details",
-          "Contradictory junior + 4-5 years experience"
-        ]
-      }
-    },
-    {
-      "id": "a38b57c201d1",
-      "title": "Sr Python Engineer",
-      "company": "cargosprint",
-      "location": "Remote",
-      "remotePolicy": "remote",
-      "postedAt": "2026-04-09T07:06:38.000Z",
-      "tags": [],
-      "applyUrl": "https://vuejobs.com/jobs/cargosprint-sr-python-engineer?utm_source=rssfeed",
-      "source": "vuejobs",
-      "rawDescription": "Employer: cargosprint Location: Remote Empowering the people that make global commerce happen. About CargoSprint CargoSprint is made up of a world-class team of highly motivated individuals who are passionate about tran...",
-      "score": {
-        "overall": 5,
-        "stack_match": 0,
-        "location_ok": true,
-        "seniority_fit": "senior",
-        "ai_bonus": 0,
-        "reason": "Backend Python engineer role with zero Vue.js requirement. Violates Alfonso's hard stack filter (F1: Vue.js is non-negotiable). Senior level is correct but the specialization is entirely wrong.",
-        "red_flags": [
-          "Python backend, no Vue.js",
-          "Backend-focused role",
-          "Violates hard filter F1"
-        ]
-      }
-    },
-    {
-      "id": "c8e3328da90d",
-      "title": "Senior QA Engineer (Automation / Fullstack)",
-      "company": "Fundraise Up",
-      "location": "PL",
-      "remotePolicy": "remote",
-      "postedAt": "2026-04-08T11:26:03.000Z",
-      "tags": [],
-      "applyUrl": "https://vuejobs.com/jobs/fundraise-up-senior-qa-engineer-automation-fullstack-2?utm_source=rssfeed",
-      "source": "vuejobs",
-      "rawDescription": "Employer: Fundraise Up Location: PL Highlights: Location: Remote (CET hours preferred) Compensation: €4,400 - €5,500 Gross + stock options Language: Russian-speaking team About Fundraise Up We’re Fundraise Up - a glo...",
-      "score": {
-        "overall": 0,
-        "stack_match": 0,
-        "location_ok": true,
-        "seniority_fit": "senior",
-        "ai_bonus": 0,
-        "reason": "This is a QA automation engineer role, not a frontend development position. Alfonso is a Vue.js/TypeScript frontend specialist, not a test automation engineer—wrong career track entirely.",
-        "red_flags": [
-          "QA automation role, not frontend development",
-          "No Vue.js or frontend framework involvement",
-          "Russian-speaking team, language barrier potential"
         ]
       }
     }
@@ -720,84 +452,6 @@
       }
     },
     {
-      "id": "641d4afd8dbf",
-      "title": "Senior Fullstack Engineer - ComparaJá",
-      "company": "ComparaJá",
-      "location": "Lisbon, Lisboa, PT",
-      "remotePolicy": "remote",
-      "postedAt": "2026-04-07T10:02:23.000Z",
-      "tags": [],
-      "applyUrl": "https://vuejobs.com/jobs/comparaja-senior-fullstack-engineer-comparaja?utm_source=rssfeed",
-      "source": "vuejobs",
-      "rawDescription": "Employer: ComparaJá Location: Lisbon, Lisboa, PT Senior Fullstack Engineer | ComparaJá.pt – Lisbon (Onsite) Job Summary We are looking for a highly skilled and experienced Senior Fullstack Engineer to drive the architecture and d...",
-      "score": {
-        "overall": 25,
-        "stack_match": 30,
-        "location_ok": false,
-        "seniority_fit": "senior",
-        "ai_bonus": 0,
-        "reason": "Onsite role in Lisbon requires relocation from Valencia, contradicting Alfonso's remote-work requirement. Job description is heavily truncated, preventing full stack assessment and Vue.js confirmation.",
-        "red_flags": [
-          "Onsite in Lisbon, not remote",
-          "Relocation required from Spain",
-          "Job description severely truncated",
-          "No Vue.js mention visible"
-        ]
-      }
-    },
-    {
-      "id": "11729b6838aa",
-      "title": "Développeur Fullstack - Python / Angular (H/F)",
-      "company": "Devoteam",
-      "location": "Levallois-Perret, FR",
-      "remotePolicy": "remote",
-      "postedAt": "2026-04-07T09:58:16.000Z",
-      "tags": [],
-      "applyUrl": "https://vuejobs.com/jobs/devoteam-developpeur-fullstack-python-angular-h-f?utm_source=rssfeed",
-      "source": "vuejobs",
-      "rawDescription": "Employer: Devoteam Location: Levallois-Perret, FR Description de l'entreprise Devoteam G Cloud a pour mission de conseiller et d'accompagner les sociétés dans leur transformation digitale avec les solutions Google Cloud. Avec plus...",
-      "score": {
-        "overall": 15,
-        "stack_match": 0,
-        "location_ok": false,
-        "seniority_fit": "mid",
-        "ai_bonus": 0,
-        "reason": "No Vue.js (hard requirement) — this is Angular + Python fullstack. On-site in France, not compatible with Spain-based remote work.",
-        "red_flags": [
-          "No Vue.js",
-          "Angular primary stack",
-          "Python backend heavy",
-          "On-site in France required"
-        ]
-      }
-    },
-    {
-      "id": "de55775522bb",
-      "title": "Senior Software Engineer",
-      "company": "Prolific",
-      "location": "London, GB | GB",
-      "remotePolicy": "remote",
-      "postedAt": "2026-04-07T06:48:12.000Z",
-      "tags": [],
-      "applyUrl": "https://vuejobs.com/jobs/prolific-senior-software-engineer-5?utm_source=rssfeed",
-      "source": "vuejobs",
-      "rawDescription": "Employer: Prolific Location: London, GB | GB Senior Software Engineer Engineering Prolific Prolific is not just another player in the AI space – we are the architects of the human data infrastructure that's reshaping the land...",
-      "score": {
-        "overall": 15,
-        "stack_match": 0,
-        "location_ok": false,
-        "seniority_fit": "senior",
-        "ai_bonus": 0,
-        "reason": "Location listed as London, GB with no explicit remote-worldwide or Spain-inclusive statement. Job description is truncated; cannot assess Vue fit, TypeScript, or tech stack. Title matches seniority, but location is likely a hard blocker.",
-        "red_flags": [
-          "Location: London, GB — likely UK-based or office-required",
-          "No remote policy stated",
-          "Job description truncated — missing full details",
-          "No Vue or tech stack visible in description"
-        ]
-      }
-    },
-    {
       "id": "4d85d4027b02",
       "title": "Full-stack Developer - Tieto Tech Consulting (m/f/d)",
       "company": "Tieto",
@@ -825,31 +479,6 @@
           "Finnish language required",
           "Location: Jyväskylä, Finland; no remote signal",
           "Likely mid-level seniority"
-        ]
-      }
-    },
-    {
-      "id": "16d0c0414cd7",
-      "title": "CWT QiK Engineer",
-      "company": "travelhrportal",
-      "location": "Manila, PH",
-      "remotePolicy": "remote",
-      "postedAt": "2026-04-10T00:00:00.000Z",
-      "tags": [],
-      "applyUrl": "https://vuejobs.com/jobs/travelhrportal-cwt-qik-engineer?utm_source=rssfeed",
-      "source": "vuejobs",
-      "rawDescription": "Employer: travelhrportal Location: Manila, PH Amex GBT is a place where colleagues find inspiration in travel as a force for good and – through their work – can make an impact on our industry. We’re here to help our colleagues...",
-      "score": {
-        "overall": 0,
-        "stack_match": 0,
-        "location_ok": false,
-        "seniority_fit": "mid",
-        "ai_bonus": 0,
-        "reason": "Philippines is APAC and explicitly rejected per location filter F2 (Spain/CET compatible timezones only). No Vue.js visible in truncated posting.",
-        "red_flags": [
-          "APAC location (Philippines)",
-          "office-based Manila",
-          "no Vue.js apparent"
         ]
       }
     }

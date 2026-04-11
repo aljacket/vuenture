@@ -25,8 +25,9 @@
 //   aggregates Indeed/LinkedIn/Glassdoor/ZipRecruiter under the hood.
 //   Multi-country queries (ES/IT/PT) hit national Indeed indexes.
 // - vuejobs.com: the official Vue community job board. RSS feed at /feed,
-//   ~90 items, every posting is Vue by definition (zero filter cost).
-//   Highest signal-to-noise of any source we have.
+//   ~90 items. Despite the domain, the feed is NOT Vue-only — it mixes
+//   in generic Python/Java/.NET/Angular/QA posts — so F1 runs on it like
+//   every other source.
 // - Duunitori (FI): public JSON API at /api/v1/jobentries?search=vue.
 //   Small (~20 items) and Finnish-language but it's the only Nordic
 //   source with a real API — fills the Scandinavia gap left by JSearch.
@@ -73,6 +74,7 @@ import {
   JSEARCH_QUERIES,
   VUE_KEYWORDS,
   LOCATION_BLOCKERS,
+  LOCATION_COUNTRY_BLOCKERS,
   LOCATION_ACCEPTORS,
   JUNIOR_TITLE_PATTERNS,
   TAG_KEYWORDS,
@@ -145,9 +147,16 @@ const LOCATION_BLOCKER_PATTERNS = [
 // Sources whose feed/search is Vue-only by construction. We trust their
 // server-side filter and skip our local F1 Vue keyword check, otherwise
 // short snippets that don't literally contain "vue" get rejected even
-// though the source guarantees Vue (e.g. vuejobs.com /feed, jobicy
-// tag=vue, duunitori search=vue).
-const VUE_TRUSTED_SOURCES = new Set(['vuejobs', 'jobicy', 'duunitori']);
+// though the source guarantees Vue (e.g. jobicy tag=vue, duunitori
+// search=vue).
+//
+// NOTE: vuejobs.com was *removed* from this list (Apr 2026). Their /feed
+// is a generic board feed that also lists Python/Django, Java, .NET,
+// Angular and QA roles — trusting it was letting obvious non-Vue jobs
+// through Stage 1. F1 will now run on vuejobs entries like any other
+// source, which is fine because real Vue posts there always mention
+// "Vue" in title or description.
+const VUE_TRUSTED_SOURCES = new Set(['jobicy', 'duunitori']);
 
 // Monday run uses a wider window to bridge the weekend gap.
 const IS_MONDAY = new Date().getUTCDay() === 1;
@@ -711,6 +720,14 @@ function passesHardFilters(raw) {
   const blockedByString = LOCATION_BLOCKERS.some((k) => desc.includes(k));
   const blockedByPattern = LOCATION_BLOCKER_PATTERNS.some((re) => re.test(desc));
   if (blockedByString || blockedByPattern) return { ok: false, reason: 'blocked-location' };
+  // Country-level blocker: match against the structured location field
+  // ("City, CC" suffix). JSearch happily marks IT-located roles as
+  // job_is_remote=true, so the desc-level check above doesn't catch them.
+  const locRaw = (raw.location ?? '').trim();
+  const blockedByCountry = LOCATION_COUNTRY_BLOCKERS.some((cc) =>
+    new RegExp(`(?:,\\s*|·\\s*)${cc}\\b`, 'i').test(locRaw)
+  );
+  if (blockedByCountry) return { ok: false, reason: 'blocked-country' };
   // Trust the source's structured signal first (JSearch gives us job_is_remote
   // as a boolean). Only fall back to keyword matching when the source doesn't
   // know — many JDs never literally say "remote" in the description body even
@@ -947,7 +964,7 @@ async function main() {
   console.log(`  adzuna es vue-search → ${adzunaResults.length}`);
   rawAll.push(...adzunaResults);
   // Stage 1: hard filters
-  const rejected = { 'no-vue': 0, 'blocked-location': 0, 'no-remote-signal': 0, stale: 0, junior: 0 };
+  const rejected = { 'no-vue': 0, 'blocked-location': 0, 'blocked-country': 0, 'no-remote-signal': 0, stale: 0, junior: 0 };
   const survived = [];
   for (const raw of rawAll) {
     const verdict = passesHardFilters(raw);

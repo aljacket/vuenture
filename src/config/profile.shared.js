@@ -105,6 +105,18 @@ export const LOCATION_BLOCKERS = [
   'no remote',
 ];
 
+/**
+ * F2 — country codes that reject a job regardless of its remote flag.
+ * Matched against the *structured* location string (e.g. "Roma, IT"), not
+ * against the free-text description — otherwise we'd nuke legit pan-EU
+ * roles that happen to mention Italy in a list of supported countries.
+ *
+ * IT was dropped Apr 2026 — Alfonso is not targeting the Italian market,
+ * but JSearch's `job_is_remote === true` was letting IT-located listings
+ * through Stage 1 anyway.
+ */
+export const LOCATION_COUNTRY_BLOCKERS = ['IT'];
+
 /** F2 — positive signals that confirm the role accepts a Spain/CET worker. */
 export const LOCATION_ACCEPTORS = [
   'remote',

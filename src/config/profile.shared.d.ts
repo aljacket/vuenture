@@ -36,3 +36,10 @@ export const LOCATION_COUNTRY_BLOCKERS: readonly string[];
 export const LOCATION_ACCEPTORS: readonly string[];
 export const JUNIOR_TITLE_PATTERNS: readonly RegExp[];
 export const TAG_KEYWORDS: readonly string[];
+
+// companies.shared.js
+export interface CompanyEntry {
+  readonly name: string;
+  readonly ats: 'greenhouse' | 'ashby' | 'lever';
+  readonly slug: string;
+}

@@ -5,7 +5,7 @@
  * Runs in GitHub Actions (or locally with `npm run fetch-jobs`).
  *
  * Pipeline:
- *   1. Query JSearch + Arbeitnow + InfoJobs + Adzuna
+ *   1. Query JSearch + Arbeitnow + InfoJobs + Adzuna + companies watchlist
  *   2. Stage 1 — hard regex filters (Vue / location / freshness / anti-junior)
  *   3. Stage 2 — deduplicate by normalize(company + title)
  *   4. Stage 3 — pipe each survivor into `claude` CLI for scoring
@@ -79,6 +79,8 @@ import {
   JUNIOR_TITLE_PATTERNS,
   TAG_KEYWORDS,
 } from '../src/config/profile.shared.js';
+
+import { COMPANIES_WATCHLIST } from '../src/config/companies.shared.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -694,6 +696,117 @@ async function fetchArbeitnow() {
   }
 }
 
+// --- Companies watchlist (ATS adapters) --------------------------------------
+
+const FE_TITLE_RE =
+  /frontend|front[- ]?end|ui (engineer|developer)|web (developer|engineer)|vue|nuxt|javascript|typescript|full[- ]?stack/i;
+
+function atsGreenhouse(slug) {
+  return async (companyName) => {
+    const url = `https://boards-api.greenhouse.io/v1/boards/${slug}/jobs?content=true`;
+    const res = await fetch(url, {
+      headers: { 'User-Agent': 'vuenture/1.0 (https://github.com/aljacket/vuenture)' },
+    });
+    if (!res.ok) return [];
+    const { jobs = [] } = await res.json();
+    return jobs.filter((j) => FE_TITLE_RE.test(j.title)).map((j) => ({
+      source: 'watchlist',
+      title: j.title ?? '',
+      company: companyName,
+      companyLogo: undefined,
+      location: j.location?.name || 'Remote',
+      remotePolicy: /remote/i.test(j.location?.name ?? '') ? 'remote' : 'uncertain',
+      isRemoteStructured: /remote/i.test(j.location?.name ?? ''),
+      postedAt: j.updated_at ? new Date(j.updated_at).toISOString() : new Date().toISOString(),
+      salaryMin: undefined,
+      salaryMax: undefined,
+      applyUrl: j.absolute_url ?? '',
+      rawDescription: `${j.title}\n\n${stripHtml(j.content ?? '')}\n\nLocation: ${j.location?.name ?? ''}`,
+    }));
+  };
+}
+
+function atsAshby(slug) {
+  return async (companyName) => {
+    const url = `https://api.ashbyhq.com/posting-api/job-board/${slug}`;
+    const res = await fetch(url, {
+      headers: { 'User-Agent': 'vuenture/1.0 (https://github.com/aljacket/vuenture)' },
+    });
+    if (!res.ok) return [];
+    const { jobs = [] } = await res.json();
+    return jobs.filter((j) => FE_TITLE_RE.test(j.title)).map((j) => {
+      const loc = j.location || '';
+      const secondaryLocs = (j.secondaryLocations ?? []).map((s) => s.location).join(', ');
+      const fullLoc = secondaryLocs ? `${loc} (+ ${secondaryLocs})` : loc;
+      return {
+        source: 'watchlist',
+        title: j.title ?? '',
+        company: companyName,
+        companyLogo: undefined,
+        location: fullLoc || 'Remote',
+        remotePolicy: j.isRemote ? 'remote' : 'uncertain',
+        isRemoteStructured: j.isRemote === true,
+        postedAt: j.publishedDate ? new Date(j.publishedDate).toISOString() : new Date().toISOString(),
+        salaryMin: undefined,
+        salaryMax: undefined,
+        applyUrl: j.jobUrl ?? '',
+        rawDescription: `${j.title}\n\n${stripHtml(j.descriptionHtml ?? '')}\n\nLocation: ${fullLoc}`,
+      };
+    });
+  };
+}
+
+function atsLever(slug) {
+  return async (companyName) => {
+    const url = `https://api.lever.co/v0/postings/${slug}?mode=json`;
+    const res = await fetch(url, {
+      headers: { 'User-Agent': 'vuenture/1.0 (https://github.com/aljacket/vuenture)' },
+    });
+    if (!res.ok) return [];
+    const postings = await res.json();
+    if (!Array.isArray(postings)) return [];
+    return postings.filter((j) => FE_TITLE_RE.test(j.text)).map((j) => {
+      const loc = j.categories?.location ?? '';
+      return {
+        source: 'watchlist',
+        title: j.text ?? '',
+        company: companyName,
+        companyLogo: undefined,
+        location: loc || 'Remote',
+        remotePolicy: /remote/i.test(loc) ? 'remote' : 'uncertain',
+        isRemoteStructured: /remote/i.test(loc),
+        postedAt: j.createdAt ? new Date(j.createdAt).toISOString() : new Date().toISOString(),
+        salaryMin: undefined,
+        salaryMax: undefined,
+        applyUrl: j.hostedUrl ?? '',
+        rawDescription: `${j.text}\n\n${stripHtml(j.description ?? '')}\n\nLocation: ${loc}`,
+      };
+    });
+  };
+}
+
+const ATS_ADAPTERS = { greenhouse: atsGreenhouse, ashby: atsAshby, lever: atsLever };
+
+async function fetchCompanies() {
+  const results = [];
+  for (const entry of COMPANIES_WATCHLIST) {
+    const adapterFactory = ATS_ADAPTERS[entry.ats];
+    if (!adapterFactory) {
+      console.warn(`[watchlist] unknown ATS "${entry.ats}" for ${entry.name}`);
+      continue;
+    }
+    try {
+      const adapter = adapterFactory(entry.slug);
+      const jobs = await adapter(entry.name);
+      console.log(`  watchlist ${entry.name} (${entry.ats}/${entry.slug}) → ${jobs.length} FE roles`);
+      results.push(...jobs);
+    } catch (err) {
+      console.warn(`[watchlist] ${entry.name} → ${err.message}`);
+    }
+  }
+  return results;
+}
+
 // --- Stage 1: hard filters ---------------------------------------------------
 
 function stripHtml(s) {
@@ -963,6 +1076,9 @@ async function main() {
   const adzunaResults = await fetchAdzuna();
   console.log(`  adzuna es vue-search → ${adzunaResults.length}`);
   rawAll.push(...adzunaResults);
+  const watchlistResults = await fetchCompanies();
+  console.log(`  watchlist total → ${watchlistResults.length} FE roles`);
+  rawAll.push(...watchlistResults);
   // Stage 1: hard filters
   const rejected = { 'no-vue': 0, 'blocked-location': 0, 'blocked-country': 0, 'no-remote-signal': 0, stale: 0, junior: 0 };
   const survived = [];

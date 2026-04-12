@@ -785,7 +785,35 @@ function atsLever(slug) {
   };
 }
 
-const ATS_ADAPTERS = { greenhouse: atsGreenhouse, ashby: atsAshby, lever: atsLever };
+function atsRecruitee(slug) {
+  return async (companyName) => {
+    const url = `https://${slug}.recruitee.com/api/offers/`;
+    const res = await fetch(url, {
+      headers: { 'User-Agent': 'vuenture/1.0 (https://github.com/aljacket/vuenture)' },
+    });
+    if (!res.ok) return [];
+    const { offers = [] } = await res.json();
+    return offers.filter((j) => FE_TITLE_RE.test(j.title)).map((j) => {
+      const loc = j.location || '';
+      return {
+        source: 'watchlist',
+        title: j.title ?? '',
+        company: companyName,
+        companyLogo: undefined,
+        location: loc || 'Remote',
+        remotePolicy: /remote/i.test(loc) ? 'remote' : 'uncertain',
+        isRemoteStructured: /remote/i.test(loc),
+        postedAt: j.created_at ? new Date(j.created_at).toISOString() : new Date().toISOString(),
+        salaryMin: undefined,
+        salaryMax: undefined,
+        applyUrl: j.careers_url ?? '',
+        rawDescription: `${j.title}\n\n${stripHtml(j.description ?? '')}\n\nLocation: ${loc}`,
+      };
+    });
+  };
+}
+
+const ATS_ADAPTERS = { greenhouse: atsGreenhouse, ashby: atsAshby, lever: atsLever, recruitee: atsRecruitee };
 
 async function fetchCompanies() {
   const results = [];

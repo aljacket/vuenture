@@ -40,6 +40,6 @@ export const TAG_KEYWORDS: readonly string[];
 // companies.shared.js
 export interface CompanyEntry {
   readonly name: string;
-  readonly ats: 'greenhouse' | 'ashby' | 'lever';
+  readonly ats: 'greenhouse' | 'ashby' | 'lever' | 'recruitee';
   readonly slug: string;
 }

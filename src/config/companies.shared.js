@@ -40,6 +40,7 @@ export const COMPANIES_WATCHLIST = [
   { name: 'Pennylane', ats: 'ashby', slug: 'pennylane' },
   { name: 'Voodoo', ats: 'ashby', slug: 'voodoo' },
   { name: 'Lunar', ats: 'ashby', slug: 'lunar' },
+  { name: 'Reedsy', ats: 'ashby', slug: 'reedsy' },
 
   // ─── Lever ─────────────────────────────────────────────────────
   { name: 'Hostinger', ats: 'lever', slug: 'hostinger' },
@@ -55,6 +56,7 @@ export const COMPANIES_WATCHLIST = [
 
   // ─── Recruitee ─────────────────────────────────────────────────
   { name: 'Livestorm', ats: 'recruitee', slug: 'livestorm' },
+  { name: 'MailerLite', ats: 'recruitee', slug: 'mailerlite' },
 
   // Workable entries removed — their v3 API is behind Cloudflare
   // (error 1015) and the v1 widget returns empty boards for most

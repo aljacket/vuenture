@@ -9,11 +9,13 @@
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "fetch-jobs": "node --env-file=.env scripts/fetchJobs.mjs",
+    "fetch-manager-jobs": "node --env-file=.env scripts/fetchManagerJobs.mjs",
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
     "pinia": "^2.1.7",
-    "vue": "^3.4.21"
+    "vue": "^3.4.21",
+    "vue-router": "^4.6.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.5",

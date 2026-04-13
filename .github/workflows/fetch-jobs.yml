@@ -26,7 +26,7 @@ jobs:
       - name: Verify claude CLI
         run: claude --version
 
-      - name: Fetch & score jobs
+      - name: Fetch & score Vue jobs
         env:
           JSEARCH_KEY: ${{ secrets.JSEARCH_KEY }}
           INFOJOBS_CLIENT_ID: ${{ secrets.INFOJOBS_CLIENT_ID }}
@@ -42,11 +42,18 @@ jobs:
           export CLAUDE_CODE_OAUTH_TOKEN="$(printf '%s' "$CLAUDE_CODE_OAUTH_TOKEN_RAW" | tr -d '\r\n')"
           node scripts/fetchJobs.mjs
 
-      - name: Commit jobs.json
+      - name: Fetch & score Manager jobs
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN_RAW: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          export CLAUDE_CODE_OAUTH_TOKEN="$(printf '%s' "$CLAUDE_CODE_OAUTH_TOKEN_RAW" | tr -d '\r\n')"
+          node scripts/fetchManagerJobs.mjs
+
+      - name: Commit job data
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add public/jobs.json
+          git add public/jobs.json public/manager-jobs.json
           if git diff --staged --quiet; then
             echo "No changes to commit"
             exit 0

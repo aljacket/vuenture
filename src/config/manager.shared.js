@@ -55,7 +55,8 @@ export const MANAGER_SKILLS = {
 export const MANAGER_TITLE_RE_SOURCE =
   'product\\s*(operations?\\s*)?manager|project\\s*manager|program\\s*manager|technical\\s*program\\s*manager|\\btpm\\b|delivery\\s*manager|operations\\s*manager|head\\s*of\\s*(product|operations|delivery|project)|chief\\s*of\\s*staff|scrum\\s*master';
 
-/** F2 — explicit geographic exclusions. */
+/** F2 — explicit geographic / work-mode exclusions.
+ *  Séverine is Valencia-based and wants FULL-REMOTE only (no hybrid, no on-site). */
 export const MANAGER_LOCATION_BLOCKERS = [
   'us only',
   'usa only',
@@ -68,27 +69,41 @@ export const MANAGER_LOCATION_BLOCKERS = [
   'must relocate',
   'on-site only',
   'onsite only',
+  'on site only',
   'no remote',
 ];
 
-/** F2 — positive signals that confirm the role accepts a Spain-based worker. */
+/** F2 — positive signals that confirm the role is FULL-REMOTE and accepts Spain.
+ *  Intentionally narrow: no bare city/country names (they match hybrid roles too). */
 export const MANAGER_LOCATION_ACCEPTORS = [
-  'remote',
   'fully remote',
   'full remote',
+  'full-remote',
+  'remote-first',
+  'remote first',
+  '100% remote',
+  'fully-remote',
+  'remote from spain',
+  'remote in spain',
+  'remote (spain)',
+  'remote, spain',
+  'remote - europe',
+  'remote (europe)',
+  'remote in europe',
+  'remote from europe',
+  'remote - emea',
+  'remote (emea)',
+  'remote in emea',
+  'remote, emea',
+  'remote - eu',
+  'remote in eu',
+  'remote (eu)',
   'worldwide',
-  'global',
-  'europe',
-  ' eu ',
-  'emea',
-  'spain',
-  'valencia',
-  'france',
-  'paris',
-  'cet',
-  'european timezone',
-  'european hours',
   'work from anywhere',
+  'work-from-anywhere',
+  'anywhere in europe',
+  'anywhere in the eu',
+  'anywhere in emea',
   'teletrabajo',
   'télétravail',
 ];

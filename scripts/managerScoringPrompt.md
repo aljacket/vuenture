@@ -15,7 +15,7 @@ The skills below are the ONLY ground truth. Score based on how well the job matc
 - **AI-native:** Expert with Claude Code, MCP servers, prompt engineering, Cursor. Roles that value AI tooling in product/ops workflows are a strong match.
 - **B2B SaaS specialist:** Enterprise client delivery, onboarding, cross-functional coordination across distributed teams.
 - **Entrepreneurial:** Founded root_ (web dev agency) — strong ops ownership, end-to-end business management, budget accountability.
-- **Location:** full-remote, must accept a Spain-based worker. CET ±3h working hours ideal. Hybrid in Valencia is also OK.
+- **Location:** FULL-REMOTE ONLY. Séverine is in Valencia (Spain) and will not relocate or commute. Hybrid roles (including "hybrid in Valencia" or "X days in the office") are a hard no. CET ±3h working hours ideal.
 - **Languages:** French (native), Spanish (fluent/bilingual), English (C1 professional). French-language roles and French companies are a strong match. Spanish-language roles are in scope.
 - **Seniority:** 5+ years. Senior / lead+ / head-of roles. Mid-level is acceptable if the scope is right. No junior/entry-level.
 - **Enterprise experience:** Delivered projects for clients with 2M+ users (ZooParc de Beauval), managed cross-functional teams of 7+, handled €100K+ budgets.
@@ -47,12 +47,11 @@ You MUST return a JSON object with exactly these fields:
   - Cap at 100.
 
 - **`location_ok`** (boolean):
-  - `true` if the employer explicitly accepts workers from Spain, EU, EMEA, European timezones, "worldwide" / "global" / "anywhere", or France.
-  - `true` for roles hybrid in Valencia.
-  - `true` for French-language or Spanish-language roles in EU.
-  - `false` when the JD names a specific country or region in a **gating context** that excludes Spain (e.g. "US only", "must be based in UK", "PST hours required").
+  - `true` ONLY if the role is FULL-REMOTE and accepts a Spain-based worker (EU / EMEA / European timezones / worldwide / work-from-anywhere / remote-first).
+  - `false` for hybrid roles, "X days in the office", on-site, or any wording that requires physical presence. This applies even if the office is in Valencia — Séverine will not commute.
+  - `false` when the JD names a specific country/region in a gating context that excludes Spain (e.g. "US only", "must be based in UK", "PST hours required").
   - "Remote" does NOT override gating phrases — "remote in the US" is still `false`.
-  - When there is NO location signal at all, default to `true` and add "remote policy unclear" to `red_flags`.
+  - When there is NO location signal at all, default to `false` and add "remote policy unclear" to `red_flags`.
 
 - **`seniority_fit`**: one of `junior`, `mid`, `senior`, `lead+`. Séverine wants `senior` or `lead+`. `mid` is acceptable.
 

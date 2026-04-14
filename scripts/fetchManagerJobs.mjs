@@ -19,7 +19,10 @@
 import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
-import { execFileSync } from 'node:child_process';
+import { execFile, execFileSync } from 'node:child_process';
+import { promisify } from 'node:util';
+
+const execFileAsync = promisify(execFile);
 import { fileURLToPath } from 'node:url';
 
 import {
@@ -46,6 +49,43 @@ const LOCATION_BLOCKER_PATTERNS = [
   /\b(pst|pacific)\s*(time\s*)?(hours?\s*)?only\b/i,
   /\bus\s*(citizens?|residents?|persons?)\s*only\b/i,
   /\bmust\s*be\s*(based|located)\s*in\s*(the\s*)?(us|usa|united\s*states|uk|united\s*kingdom|canada)\b/i,
+  // Hybrid / in-office patterns (full-remote only — Séverine is Valencia-based)
+  /\bhybrid\s+(work|working|role|position|model|setup|policy|arrangement|schedule|environment)\b/i,
+  /\b(work|working|role|position|model|setup|policy|schedule)\s*:?\s*hybrid\b/i,
+  /\bhybrid\s*\([^)]*(office|days?|week)[^)]*\)/i,
+  /\b\d+\s*days?\s*(per|a|\/)\s*week\s*(in|at)\s*(the\s*)?office\b/i,
+  /\b\d+\s*days?\s*(on[-\s]?site|in[-\s]?office|in\s*the\s*office)\b/i,
+  /\bin[-\s]?office\s+\d+\s*days?\b/i,
+  /\bmust\s+be\s+able\s+to\s+(come|commute)\s+to\s+(the\s+)?office\b/i,
+  // Remote gated to a single non-Spain country/region
+  /\bremote\s*[,\-–()\s]+(united\s*kingdom|uk|ireland|united\s*states|\bus\b|usa|canada|noram|latam|apac|australia|new\s*zealand|germany|netherlands|france|portugal|italy|poland|sweden|norway|denmark|finland|czech(?:ia)?)\b/i,
+  /\b(united\s*kingdom|uk|us|usa|united\s*states|noram|canada|latam|apac)\s*[-–]?\s*remote\b/i,
+  /\ball\s+(france|uk|united\s*kingdom|germany|netherlands|ireland|portugal|italy|poland)\s*\(\s*remote\s*\)/i,
+  /\bremote\s*\(\s*(france|uk|united\s*kingdom|germany|netherlands|ireland|portugal|italy|poland|us|usa|united\s*states|noram|canada)\s*\)/i,
+  /\bremote\s*in\s*(france|uk|united\s*kingdom|germany|netherlands|ireland|portugal|italy|poland|us|usa|united\s*states|noram|canada|ukraine)\b/i,
+  /\bremote\s*[-–,]\s*(france|uk|united\s*kingdom|germany|netherlands|ireland|portugal|italy|poland|us|usa|united\s*states|noram|canada)\b/i,
+];
+
+// Locations that look like a single city/country without an explicit full-remote phrase
+// → can't trust isRemoteStructured alone (some ATSes mark city-anchored roles as "remote").
+const SINGLE_CITY_LOCATION_RE = /^[A-Za-zÀ-ÿ .'-]+(,\s*[A-Za-zÀ-ÿ .'-]+)?$/;
+
+// Locations that are simply a non-Spain/non-EU-wide country
+const COUNTRY_GATED_LOCATION_RE = /^(remote[,\s-]+)?(united\s*kingdom|uk|united\s*states|usa?|canada|australia|new\s*zealand|japan|india|singapore|brazil|mexico|argentina|noram|latam|apac|ireland|germany|netherlands|france|portugal|italy|poland|sweden|norway|denmark|finland)$/i;
+
+// Strong positive signal: a full-remote keyword must appear somewhere.
+const FULL_REMOTE_REQUIRED_PATTERNS = [
+  /\bfull(y|-)?\s*remote\b/i,
+  /\bremote[- ]first\b/i,
+  /\b100\s*%\s*remote\b/i,
+  /\bwork\s+from\s+anywhere\b/i,
+  /\banywhere\s+in\s+(europe|the\s+eu|emea|the\s+world)\b/i,
+  /\bremote\s*[-–,()]\s*(europe|eu|emea|spain|worldwide|global)\b/i,
+  /\bremote\s+in\s+(europe|the\s+eu|emea|spain)\b/i,
+  /\bremote\s+from\s+(spain|europe|anywhere)\b/i,
+  /\bworldwide\s+remote\b/i,
+  /\bteletrabajo\b/i,
+  /\btélétravail\b/i,
 ];
 
 // ─── Helpers ────────────────────────────────────────────────────────────────
@@ -248,17 +288,36 @@ async function fetchCompanies() {
 
 function passesHardFilters(raw) {
   const desc = stripHtml(raw.rawDescription).toLowerCase();
+  const location = (raw.location ?? '').toLowerCase().trim();
 
-  // F2: location blockers
-  const blockedByString = MANAGER_LOCATION_BLOCKERS.some((k) => desc.includes(k));
-  const blockedByPattern = LOCATION_BLOCKER_PATTERNS.some((re) => re.test(desc));
+  // F2a: location blockers (hybrid / on-site / geo exclusions)
+  const blockedByString = MANAGER_LOCATION_BLOCKERS.some((k) => desc.includes(k) || location.includes(k));
+  const blockedByPattern = LOCATION_BLOCKER_PATTERNS.some((re) => re.test(desc) || re.test(location));
   if (blockedByString || blockedByPattern) return { ok: false, reason: 'blocked-location' };
 
-  // F2: positive remote/location signal
-  const acceptedByKeyword = MANAGER_LOCATION_ACCEPTORS.some(
-    (k) => desc.includes(k) || raw.title.toLowerCase().includes(k.trim())
-  );
-  const accepted = raw.isRemoteStructured === true || acceptedByKeyword;
+  // F2b: reject when the location field itself pins the role to a non-Spain country.
+  //      (e.g. "Dublin; Ireland", "Paris", "All France (remote)", "Remote, United Kingdom")
+  if (COUNTRY_GATED_LOCATION_RE.test(location.replace(/^remote[,\s-]+/, ''))) {
+    return { ok: false, reason: 'country-gated' };
+  }
+
+  // F2c: REQUIRE explicit full-remote signal. No city/country name on its own.
+  const title = raw.title.toLowerCase();
+  const haystack = `${title}\n${location}\n${desc}`;
+  const keywordHit = MANAGER_LOCATION_ACCEPTORS.some((k) => haystack.includes(k));
+  const patternHit = FULL_REMOTE_REQUIRED_PATTERNS.some((re) => re.test(haystack));
+
+  // ATS isRemote flag is only trusted if not paired with a single-city/country location
+  // (some ATSes — Ashby at Pennylane — mark Paris-anchored roles as isRemote=true).
+  const locationLooksAnchored =
+    location !== '' &&
+    !location.includes('remote') &&
+    !location.includes('anywhere') &&
+    !location.includes('worldwide') &&
+    SINGLE_CITY_LOCATION_RE.test(raw.location ?? '');
+  const trustStructuredFlag = raw.isRemoteStructured === true && !locationLooksAnchored;
+
+  const accepted = trustStructuredFlag || keywordHit || patternHit;
   if (!accepted) return { ok: false, reason: 'no-remote-signal' };
 
   // F3: freshness
@@ -324,7 +383,7 @@ function fallbackScore(raw) {
   };
 }
 
-function scoreWithClaude(raw, scoringInstructions) {
+async function scoreWithClaude(raw, scoringInstructions) {
   const jd = [
     `# ${raw.title}`,
     `Company: ${raw.company}`,
@@ -337,7 +396,7 @@ function scoreWithClaude(raw, scoringInstructions) {
   const prompt = `${scoringInstructions}\n\n---\n\n${jd}`;
 
   try {
-    const stdout = execFileSync('claude', ['--model', CLAUDE_MODEL, '-p', prompt], {
+    const { stdout } = await execFileAsync('claude', ['--model', CLAUDE_MODEL, '-p', prompt], {
       encoding: 'utf8',
       timeout: 180_000,
       maxBuffer: 4 * 1024 * 1024,
@@ -364,6 +423,21 @@ function scoreWithClaude(raw, scoringInstructions) {
   }
 }
 
+// Concurrency pool — run `worker(item, index)` with at most `limit` in flight.
+async function runPool(items, limit, worker) {
+  const results = new Array(items.length);
+  let cursor = 0;
+  const runners = Array.from({ length: Math.min(limit, items.length) }, async () => {
+    while (true) {
+      const i = cursor++;
+      if (i >= items.length) return;
+      results[i] = await worker(items[i], i);
+    }
+  });
+  await Promise.all(runners);
+  return results;
+}
+
 // ─── Main ───────────────────────────────────────────────────────────────────
 
 async function main() {
@@ -374,7 +448,7 @@ async function main() {
   console.log(`  total from ATS → ${rawAll.length} manager roles`);
 
   // Stage 1: hard filters
-  const rejected = { 'blocked-location': 0, 'no-remote-signal': 0, stale: 0 };
+  const rejected = { 'blocked-location': 0, 'country-gated': 0, 'no-remote-signal': 0, stale: 0 };
   const survived = [];
   for (const raw of rawAll) {
     const verdict = passesHardFilters(raw);
@@ -412,9 +486,14 @@ async function main() {
     '{{SKILLS_CONTEXT}}',
     buildSkillsContext(MANAGER_SKILLS)
   );
-  const scored = deduped.map((raw, i) => {
-    console.log(`  scoring [${i + 1}/${deduped.length}] ${raw.company} — ${raw.title}`);
-    const score = useCli ? scoreWithClaude(raw, scoringInstructions) : fallbackScore(raw);
+  const SCORING_CONCURRENCY = Number(process.env.MANAGER_SCORING_CONCURRENCY) || 4;
+  if (useCli) console.log(`  scoring concurrency: ${SCORING_CONCURRENCY}`);
+  let completed = 0;
+  const scoreStart = Date.now();
+  const scored = await runPool(deduped, useCli ? SCORING_CONCURRENCY : 1, async (raw) => {
+    const score = useCli ? await scoreWithClaude(raw, scoringInstructions) : fallbackScore(raw);
+    completed += 1;
+    console.log(`  scored [${completed}/${deduped.length}] ${raw.company} — ${raw.title} → ${score.overall}`);
     return {
       id: raw.id,
       title: raw.title,
@@ -432,6 +511,7 @@ async function main() {
       score,
     };
   });
+  console.log(`  scoring finished in ${Math.round((Date.now() - scoreStart) / 1000)}s`);
 
   // Split by location verdict
   const primary = [];

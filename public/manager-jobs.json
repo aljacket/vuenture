@@ -1,54 +1,50 @@
 {
-  "fetchedAt": "2026-04-14T10:28:43.048Z",
+  "fetchedAt": "2026-04-15T08:05:09.811Z",
   "jobs": [
     {
-      "id": "f306474a9b7d",
-      "title": "Group Product Manager, HR Core",
+      "id": "c66f8383a2fe",
+      "title": "Senior Implementations Program Manager",
       "company": "Remote.com",
       "location": "Remote-EMEA",
       "remotePolicy": "remote",
       "postedAt": "2026-04-13T12:59:23.000Z",
       "tags": [
-        "Roadmap",
         "B2B",
-        "SaaS"
+        "SaaS",
+        "AI"
       ],
-      "applyUrl": "https://job-boards.greenhouse.io/remotecom/jobs/7596525003",
+      "applyUrl": "https://job-boards.greenhouse.io/remotecom/jobs/7684296003",
       "source": "watchlist",
-      "rawDescription": "Group Product Manager, HR Core About Remote Remote is solving modern organizations’ biggest challenge – navigating global employment compliantly with ease. We make it possible for businesses of all sizes to recruit, pay, and manage international teams. With our core values at heart and future focused work culture, our team works tirelessly on ambitious problems, asynchronously, around the world. You can find Remoters working from 6 different continents (Antarctica left to go!) and all of our positions are fully remote. With Innovation as one of the core values, we have built Automation and AI capabilities into the requirements for every role. We encourage every member of the Remote team to bring their talents, experiences and culture to the table to help us build the best-in-class HR platform. &nbsp; If you are energetic, curious, motivated and ambitious, be part of our world. Apply now and define the future of work! The position This is an exciting time to join Remote and make a personal difference in the global employment space as a&nbsp; Group Product Manager. You'll have a massive impact on our organisation, and will help create opportunities for millions of people around the world. As a Group Product Manager , you will play a pivotal role in leading and overseeing the strategic direction and development of our payment products and services. Your primary responsibility will be to drive the vision, roadmap, and execution of our HR solutions, ensuring they align with the company's overall business goals and customer needs. You will collaborate closely with cross-functional teams including engineering, design, marketing, and customer support to deliver innovative and user-centric payment experiences. Requirements Extensive experience in product management, with a proven track record of managing teams and successful product launches. Proficiency in&nbsp; Cursor and/or Claude Code is required. You must be able to autonomously build, debug, and ship functional code/pr",
+      "rawDescription": "Senior Implementations Program Manager About Remote Remote is solving modern organizations’ biggest challenge – navigating global employment compliantly with ease. We make it possible for businesses of all sizes to recruit, pay, and manage international teams. With our core values at heart and future focused work culture, our team works tirelessly on ambitious problems, asynchronously, around the world. You can find Remoters working from 6 different continents (Antarctica left to go!) and all of our positions are fully remote. With Innovation as one of the core values, we have built Automation and AI capabilities into the requirements for every role. We encourage every member of the Remote team to bring their talents, experiences and culture to the table to help us build the best-in-class HR platform. &nbsp; If you are energetic, curious, motivated and ambitious, be part of our world. Apply now and define the future of work! What this job can offer you This is an exciting time to join Remote and make a personal difference in the global employment space as a Senior Implementations Program Manager - Embedded reporting to the GM, Remote Embedded. As Senior Implementations Program Manager, you will be responsible for delivering business outcomes (technical, commercial, and operational) and building the end-to-end implementations process for Remote Embedded partners. This role offers a high-impact opportunity to take direct ownership of transformative partnerships that are fundamental to Remote’s overarching business success. As a key driver of the Remote Embedded product, you will co-develop its long-term strategy and vision while maintaining the autonomy to steer product and service development with high velocity. The position provides significant visibility both internally and externally, requiring seamless collaboration across all functional areas and the ability to engage effectively with senior stakeholders to meet evolving partner needs. What you bring Experience ",
       "score": {
-        "overall": 91,
-        "stack_match": 95,
+        "overall": 76,
+        "stack_match": 75,
         "location_ok": true,
         "seniority_fit": "senior",
-        "reason": "Excellent PM fit: Séverine is expert in Claude Code and Cursor (explicitly required), and her B2B SaaS and strategic product management background directly match this Group PM scope. HR domain expertise is learnable for a strong product operator.",
+        "reason": "Excellent fit for her enterprise delivery and program management background. Implementations-focused role directly applies expert skills in project management, stakeholder coordination, process design, and B2B SaaS operations.",
         "red_flags": []
       }
     },
     {
-      "id": "1f9aa0fed158",
-      "title": "Senior Product Manager, Payroll",
-      "company": "Remote.com",
-      "location": "Remote-EMEA",
+      "id": "78ae85df1236",
+      "title": "Product Manager",
+      "company": "Linear",
+      "location": "North America",
       "remotePolicy": "remote",
-      "postedAt": "2026-04-13T12:59:23.000Z",
+      "postedAt": "2026-04-15T07:56:37.877Z",
       "tags": [
-        "Roadmap",
-        "Claude",
         "AI"
       ],
-      "applyUrl": "https://job-boards.greenhouse.io/remotecom/jobs/7534040003",
+      "applyUrl": "https://jobs.ashbyhq.com/linear/b7669c4b-eeca-421d-ba9a-d90203f6fcb2",
       "source": "watchlist",
-      "rawDescription": "Senior Product Manager, Payroll About Remote Remote is solving modern organizations’ biggest challenge – navigating global employment compliantly with ease. We make it possible for businesses of all sizes to recruit, pay, and manage international teams. With our core values at heart and future focused work culture, our team works tirelessly on ambitious problems, asynchronously, around the world. You can find Remoters working from 6 different continents (Antarctica left to go!) and all of our positions are fully remote. With Innovation as one of the core values, we have built Automation and AI capabilities into the requirements for every role. We encourage every member of the Remote team to bring their talents, experiences and culture to the table to help us build the best-in-class HR platform. &nbsp; If you are energetic, curious, motivated and ambitious, be part of our world. Apply now and define the future of work! What this job can offer you This is an exciting time to join Remote and make a personal difference in the global payroll space as our Senior Product Manager, Payroll . You will be tasked with developing a deep understanding of our customer's (external and internal) needs and pain points and working with cross-functional teams to design and implement solutions that provide an exceptional payroll experience. This includes being a leader in your development team and beyond, working with internal experts across multiple disciplines (operations, compliance, sales, product marketing etc.) to build a scalable payroll platform for 80+ markets around the world. What you bring Experience as a senior product manager working in a multi-product, high-growth scale-up company. Proficiency in&nbsp; Cursor &nbsp;and/or&nbsp; Claude Code &nbsp;is required. You must be able to autonomously build, debug, and ship functional code/prototypes, not just write specs. Strong understanding of end-to-end payroll processes and HR functions. Hands-on experience building payroll sof",
+      "rawDescription": "Product Manager At Linear, we're building the product development system for teams and agents. AI is fundamentally changing how software gets built, and we’re shaping the tools this new era requires. Founded in 2019, Linear has become the platform of choice for more than 25,000 companies (including OpenAI, Coinbase, and Ramp) to plan, build, and ship their products. Today, our team is distributed across North America and Europe, and we’re continuing to grow internationally. What unites us is relentless focus, fast execution, and a deep care for software craftsmanship. We're looking for a senior to staff level product manager to join the team. In this role, you'll be responsible for leading the development of products end-to-end, from conception through development and rollout. If you're excited to have a lot of ownership while remaining in the details day to day, this might be a great fit for you. Linear is a product-led company that focuses on both building and selling. It's up to you to bring together the building and selling sides of the company in order to create something that our customers will love. Location & work mode Linear is a remote-first company. This role is open to candidates based in North America or Europe time zones. You can work from anywhere within those regions. We value deep focus and async collaboration, with intentional moments to connect in person through team off-sites, optional co-working, and occasional travel. What you'll do Perform up-front discovery through user interviews, competitive research, data analysis, etc. and present findings to the team with conviction and rigor Help engineers and designers deeply understand user needs, empowering them to make great product decisions Craft messaging around upcoming features that resonates with users Enable sales and marketing teams to effectively communicate with and win with customers What we’re looking for 6+ years experience in the software industry Previous experience in engineering and",
       "score": {
-        "overall": 90,
-        "stack_match": 95,
+        "overall": 73,
+        "stack_match": 72,
         "location_ok": true,
         "seniority_fit": "senior",
-        "reason": "Excellent fit for PM responsibilities with explicit Claude Code/Cursor requirements and B2B SaaS focus; however, lacks payroll/HR domain expertise which is required.",
-        "red_flags": [
-          "requires payroll/HR domain knowledge"
-        ]
+        "reason": "Strong match on core PM and B2B SaaS expertise. AI tooling skills (Claude Code, prompt engineering) are valuable for Linear's AI-first platform.",
+        "red_flags": []
       }
     },
     {
@@ -67,87 +63,37 @@
       "source": "watchlist",
       "rawDescription": "Senior Product Manager, Integrations About Remote Remote is solving modern organizations’ biggest challenge – navigating global employment compliantly with ease. We make it possible for businesses of all sizes to recruit, pay, and manage international teams. With our core values at heart and future focused work culture, our team works tirelessly on ambitious problems, asynchronously, around the world. You can find Remoters working from 6 different continents (Antarctica left to go!) and all of our positions are fully remote. With Innovation as one of the core values, we have built Automation and AI capabilities into the requirements for every role. We encourage every member of the Remote team to bring their talents, experiences and culture to the table to help us build the best-in-class HR platform. &nbsp; If you are energetic, curious, motivated and ambitious, be part of our world. Apply now and define the future of work! The Position This is an exciting time to join Remote and make a difference in the global employment space as a Senior Product Manager, Customer Integrations&nbsp; &nbsp;In this role, you will sit at the unique intersection of Product Strategy and Partnerships . Your mission is to build a thriving ecosystem of integrations and partnerships for Remote’s HR Platform. You won’t just manage the \"how\" of our integrations; you will also drive the \"who\" and the \"why.\" You will be responsible for identifying high-impact partnership opportunities, pitching the Remote platform to external stakeholders, and building the technical bridges that allow our customers to manage recruitment, people and performance management without ever leaving their preferred tools. By blending technical API expertise with a sharp business mind, you will directly influence Remote’s market expansion and long-term defensibility. Key Responsibilities Architect the Integration Strategy: Define a roadmap that balances technical scalability with commercial growth. Strategic Business Dev",
       "score": {
-        "overall": 77,
-        "stack_match": 77,
+        "overall": 63,
+        "stack_match": 62,
         "location_ok": true,
         "seniority_fit": "senior",
-        "reason": "Core PM skills are a strong match (roadmap planning, cross-functional coordination, stakeholder management). Her B2B SaaS expertise and founder background (root_) support the partnership and integration strategy work.",
+        "reason": "Strong fit on core PM skills (strategy, cross-functional execution) and B2B SaaS expertise. Perfect location (fully remote, EMEA-friendly), company's AI emphasis aligns with her Claude Code strength, and integration/partnership strategy is learnable from her PM background.",
         "red_flags": []
       }
     },
     {
-      "id": "c66f8383a2fe",
-      "title": "Senior Implementations Program Manager",
+      "id": "f306474a9b7d",
+      "title": "Group Product Manager, HR Core",
       "company": "Remote.com",
       "location": "Remote-EMEA",
       "remotePolicy": "remote",
       "postedAt": "2026-04-13T12:59:23.000Z",
       "tags": [
-        "B2B",
-        "SaaS",
-        "AI"
-      ],
-      "applyUrl": "https://job-boards.greenhouse.io/remotecom/jobs/7684296003",
-      "source": "watchlist",
-      "rawDescription": "Senior Implementations Program Manager About Remote Remote is solving modern organizations’ biggest challenge – navigating global employment compliantly with ease. We make it possible for businesses of all sizes to recruit, pay, and manage international teams. With our core values at heart and future focused work culture, our team works tirelessly on ambitious problems, asynchronously, around the world. You can find Remoters working from 6 different continents (Antarctica left to go!) and all of our positions are fully remote. With Innovation as one of the core values, we have built Automation and AI capabilities into the requirements for every role. We encourage every member of the Remote team to bring their talents, experiences and culture to the table to help us build the best-in-class HR platform. &nbsp; If you are energetic, curious, motivated and ambitious, be part of our world. Apply now and define the future of work! What this job can offer you This is an exciting time to join Remote and make a personal difference in the global employment space as a Senior Implementations Program Manager - Embedded reporting to the GM, Remote Embedded. As Senior Implementations Program Manager, you will be responsible for delivering business outcomes (technical, commercial, and operational) and building the end-to-end implementations process for Remote Embedded partners. This role offers a high-impact opportunity to take direct ownership of transformative partnerships that are fundamental to Remote’s overarching business success. As a key driver of the Remote Embedded product, you will co-develop its long-term strategy and vision while maintaining the autonomy to steer product and service development with high velocity. The position provides significant visibility both internally and externally, requiring seamless collaboration across all functional areas and the ability to engage effectively with senior stakeholders to meet evolving partner needs. What you bring Experience ",
-      "score": {
-        "overall": 72,
-        "stack_match": 72,
-        "location_ok": true,
-        "seniority_fit": "senior",
-        "reason": "Strong match: Product Operations, Project Management, and enterprise delivery are core to her profile, and the role's focus on building implementations processes aligns directly. HR tech domain and PS methodology are new, but her B2B SaaS and technical bridge background support quick learning.",
-        "red_flags": [
-          "job posting incomplete"
-        ]
-      }
-    },
-    {
-      "id": "78ae85df1236",
-      "title": "Product Manager",
-      "company": "Linear",
-      "location": "North America",
-      "remotePolicy": "remote",
-      "postedAt": "2026-04-14T10:23:00.785Z",
-      "tags": [
-        "AI"
-      ],
-      "applyUrl": "https://jobs.ashbyhq.com/linear/b7669c4b-eeca-421d-ba9a-d90203f6fcb2",
-      "source": "watchlist",
-      "rawDescription": "Product Manager At Linear, we're building the product development system for teams and agents. AI is fundamentally changing how software gets built, and we’re shaping the tools this new era requires. Founded in 2019, Linear has become the platform of choice for more than 25,000 companies (including OpenAI, Coinbase, and Ramp) to plan, build, and ship their products. Today, our team is distributed across North America and Europe, and we’re continuing to grow internationally. What unites us is relentless focus, fast execution, and a deep care for software craftsmanship. We're looking for a senior to staff level product manager to join the team. In this role, you'll be responsible for leading the development of products end-to-end, from conception through development and rollout. If you're excited to have a lot of ownership while remaining in the details day to day, this might be a great fit for you. Linear is a product-led company that focuses on both building and selling. It's up to you to bring together the building and selling sides of the company in order to create something that our customers will love. Location & work mode Linear is a remote-first company. This role is open to candidates based in North America or Europe time zones. You can work from anywhere within those regions. We value deep focus and async collaboration, with intentional moments to connect in person through team off-sites, optional co-working, and occasional travel. What you'll do Perform up-front discovery through user interviews, competitive research, data analysis, etc. and present findings to the team with conviction and rigor Help engineers and designers deeply understand user needs, empowering them to make great product decisions Craft messaging around upcoming features that resonates with users Enable sales and marketing teams to effectively communicate with and win with customers What we’re looking for 6+ years experience in the software industry Previous experience in engineering and",
-      "score": {
-        "overall": 65,
-        "stack_match": 75,
-        "location_ok": true,
-        "seniority_fit": "senior",
-        "reason": "Your roadmap, PRD writing, and cross-functional coordination skills are strong, but this is a Product Manager role emphasizing user discovery and design taste—your expertise is in Product Operations, a fundamentally different function. The required engineering/design background is also a meaningful gap.",
-        "red_flags": [
-          "Product Manager role, not Product Operations",
-          "Emphasizes design taste and engineering background"
-        ]
-      }
-    },
-    {
-      "id": "51f2c59505fc",
-      "title": "Product Manager (ex-founder or ex-product engineer)",
-      "company": "PostHog",
-      "location": "Remote",
-      "remotePolicy": "remote",
-      "postedAt": "2026-04-14T10:23:00.731Z",
-      "tags": [
         "Roadmap",
-        "AI"
+        "B2B",
+        "SaaS"
       ],
-      "applyUrl": "https://jobs.ashbyhq.com/posthog/3c592b84-8b34-4ae4-ae23-cadce8f2212d",
+      "applyUrl": "https://job-boards.greenhouse.io/remotecom/jobs/7596525003",
       "source": "watchlist",
-      "rawDescription": "Product Manager (ex-founder or ex-product engineer) About PostHog We're shipping every product that companies need to run their business from their first day, to the day they IPO, and beyond. The operating system for folks who build software. We started with open-source product analytics, launched out of Y Combinator's W20 cohort . We've since shipped more than a dozen products , including: A built-in data warehouse , so users can query product and customer data together using custom SQL insights. A customer data platform , so they can send their data wherever they need with ease. PostHog AI , an AI-powered analyst that answers product questions, helps users find useful session recordings, and writes custom SQL queries. Next on the roadmap are CRM, workflow, revenue analytics, and support products. When we say every product that companies need to run their business, we really mean it! We are: Product-led . More than 100,000 companies have installed PostHog, mostly driven by word-of-mouth. We have intensely strong product-market fit. Default alive . Revenue is growing 10% MoM on average, and we're very efficient. We raise money to push ambition and grow faster, not to keep the lights on. Well-funded. We've raised more than $100m from some of the world's top investors . We're set up for a long, ambitious journey. We're focused on building an awesome product for end users, hiring exceptional teammates, shipping fast, and being as weird as possible . Product at PostHog Product management plays a slightly different role at PostHog than at most other companies and is incredibly important. Instead of micro-managing engineers, PMs are responsible for research , data , and setting high-level context across the organization. They work across multiple products to determine how products are being used, what the competitive landscape is like, and how users are feeling about PostHog. Using the usual PM jargon we could say PMs at PostHog are very discovery-focused and don’t engage",
+      "rawDescription": "Group Product Manager, HR Core About Remote Remote is solving modern organizations’ biggest challenge – navigating global employment compliantly with ease. We make it possible for businesses of all sizes to recruit, pay, and manage international teams. With our core values at heart and future focused work culture, our team works tirelessly on ambitious problems, asynchronously, around the world. You can find Remoters working from 6 different continents (Antarctica left to go!) and all of our positions are fully remote. With Innovation as one of the core values, we have built Automation and AI capabilities into the requirements for every role. We encourage every member of the Remote team to bring their talents, experiences and culture to the table to help us build the best-in-class HR platform. &nbsp; If you are energetic, curious, motivated and ambitious, be part of our world. Apply now and define the future of work! The position This is an exciting time to join Remote and make a personal difference in the global employment space as a&nbsp; Group Product Manager. You'll have a massive impact on our organisation, and will help create opportunities for millions of people around the world. As a Group Product Manager , you will play a pivotal role in leading and overseeing the strategic direction and development of our payment products and services. Your primary responsibility will be to drive the vision, roadmap, and execution of our HR solutions, ensuring they align with the company's overall business goals and customer needs. You will collaborate closely with cross-functional teams including engineering, design, marketing, and customer support to deliver innovative and user-centric payment experiences. Requirements Extensive experience in product management, with a proven track record of managing teams and successful product launches. Proficiency in&nbsp; Cursor and/or Claude Code is required. You must be able to autonomously build, debug, and ship functional code/pr",
       "score": {
-        "overall": 62,
-        "stack_match": 62,
+        "overall": 50,
+        "stack_match": 55,
         "location_ok": true,
         "seniority_fit": "senior",
-        "reason": "Strong ex-founder background and B2B SaaS expertise match PostHog's explicit criteria, with solid product thinking and cross-functional coordination skills. However, PostHog's discovery/research focus contrasts with Séverine's core ops and execution expertise.",
+        "reason": "Strong product strategy, roadmap planning, and B2B SaaS expertise with AI-native proficiency. However, the core requirement to 'autonomously build, debug, ship code' positions this as an engineer-PM hybrid; Séverine is a technical PM/ops specialist focused on strategy and cross-functional coordination, not hands-on development.",
         "red_flags": [
-          "emphasizes discovery/research over ops"
+          "Requires hands-on code shipping (engineer-PM hybrid)"
         ]
       }
     },
@@ -167,52 +113,53 @@
       "source": "watchlist",
       "rawDescription": "Group Product Manager - Fintech About Remote Remote is solving modern organizations’ biggest challenge – navigating global employment compliantly with ease. We make it possible for businesses of all sizes to recruit, pay, and manage international teams. With our core values at heart and future focused work culture, our team works tirelessly on ambitious problems, asynchronously, around the world. You can find Remoters working from 6 different continents (Antarctica left to go!) and all of our positions are fully remote. With Innovation as one of the core values, we have built Automation and AI capabilities into the requirements for every role. We encourage every member of the Remote team to bring their talents, experiences and culture to the table to help us build the best-in-class HR platform. &nbsp; If you are energetic, curious, motivated and ambitious, be part of our world. Apply now and define the future of work! The position This is an exciting time to join Remote and make a personal difference in the global employment space as a&nbsp; Group Product Manager , joining our Product Fintech team. You'll have a massive impact on our organization, and will help create opportunities for millions of people around the world. As a Group Product Manager for Fintech & Strategic Extensions area, you will play a pivotal role in leading and overseeing the strategic direction and development of our payment products and services. You’ll be the driving force behind the vision, roadmap, and delivery of our payment solutions—shaping how thousands of customers experience Remote. This role is both strategic and hands-on: you’ll roll up your sleeves, build alongside the team, and turn bold ideas into real impact. You’ll partner closely with engineering, design, marketing, and support to bring innovative, intuitive, and delightful payment experiences to life. Requirements Extensive and demonstrated product management experience, including leading teams and delivering successful produ",
       "score": {
-        "overall": 50,
-        "stack_match": 55,
+        "overall": 49,
+        "stack_match": 59,
+        "location_ok": true,
+        "seniority_fit": "lead+",
+        "reason": "Strong PM and AI tooling fit (Claude Code, Cursor expert), but you lack deep payments expertise and production-level coding ability—the role explicitly requires autonomously shipping code, not just specs. Your JavaScript is basic-level.",
+        "red_flags": [
+          "requires deep fintech/payments expertise",
+          "expects autonomous code shipping beyond specs",
+          "no payments product background demonstrated"
+        ]
+      }
+    },
+    {
+      "id": "51f2c59505fc",
+      "title": "Product Manager (ex-founder or ex-product engineer)",
+      "company": "PostHog",
+      "location": "Remote",
+      "remotePolicy": "remote",
+      "postedAt": "2026-04-15T07:56:37.834Z",
+      "tags": [
+        "Roadmap",
+        "AI"
+      ],
+      "applyUrl": "https://jobs.ashbyhq.com/posthog/3c592b84-8b34-4ae4-ae23-cadce8f2212d",
+      "source": "watchlist",
+      "rawDescription": "Product Manager (ex-founder or ex-product engineer) About PostHog We're shipping every product that companies need to run their business from their first day, to the day they IPO, and beyond. The operating system for folks who build software. We started with open-source product analytics, launched out of Y Combinator's W20 cohort . We've since shipped more than a dozen products , including: A built-in data warehouse , so users can query product and customer data together using custom SQL insights. A customer data platform , so they can send their data wherever they need with ease. PostHog AI , an AI-powered analyst that answers product questions, helps users find useful session recordings, and writes custom SQL queries. Next on the roadmap are CRM, workflow, revenue analytics, and support products. When we say every product that companies need to run their business, we really mean it! We are: Product-led . More than 100,000 companies have installed PostHog, mostly driven by word-of-mouth. We have intensely strong product-market fit. Default alive . Revenue is growing 10% MoM on average, and we're very efficient. We raise money to push ambition and grow faster, not to keep the lights on. Well-funded. We've raised more than $100m from some of the world's top investors . We're set up for a long, ambitious journey. We're focused on building an awesome product for end users, hiring exceptional teammates, shipping fast, and being as weird as possible . Product at PostHog Product management plays a slightly different role at PostHog than at most other companies and is incredibly important. Instead of micro-managing engineers, PMs are responsible for research , data , and setting high-level context across the organization. They work across multiple products to determine how products are being used, what the competitive landscape is like, and how users are feeling about PostHog. Using the usual PM jargon we could say PMs at PostHog are very discovery-focused and don’t engage",
+      "score": {
+        "overall": 40,
+        "stack_match": 40,
         "location_ok": true,
         "seniority_fit": "senior",
-        "reason": "Location and seniority are ideal, and PM fundamentals are strong. However, the role prioritizes hands-on engineering (autonomously shipping code) as a primary responsibility—misaligned with a PM/Ops profile. Deep fintech expertise is also absent.",
+        "reason": "Strong ex-founder background and B2B SaaS expertise fit the role's seniority and cultural requirements. However, PostHog's research-driven PM function (discovery-focused, no delivery) conflicts with her operations and execution strengths, and analytics expertise is core to the role but not her background.",
         "red_flags": [
-          "requires hands-on engineering as primary responsibility",
-          "deep payments expertise missing",
-          "engineering-focused PM not pure operations/strategy"
+          "Research-focused PM, not operations-driven",
+          "Analytics/data expertise required, not her background"
         ]
       }
     }
   ],
   "needsReview": [
     {
-      "id": "d3b88390ad37",
-      "title": "Chief of Staff to VP Engineering (x/f/m)",
-      "company": "Alan",
-      "location": "Paris, France",
-      "remotePolicy": "remote",
-      "postedAt": "2026-04-14T10:22:57.510Z",
-      "tags": [
-        "Claude",
-        "AI"
-      ],
-      "applyUrl": "https://jobs.ashbyhq.com/alan/20ecf640-e777-4e3c-a93a-a4a7eca91dd8",
-      "source": "watchlist",
-      "rawDescription": "Chief of Staff to VP Engineering (x/f/m) You. Better. With Alan. Alan is building a vertically integrated health partner that unites insurance and smart healthcare delivery into one seamless system. Our vision is to make prevention the new norm of care for all. Our mission: Help people live in good health to 100 while helping employers feel proud, turning health benefits from a cost centre into their most valuable investment. By connecting all aspects of care (private, public, and direct to consumer) we create the most member-centric healthcare experience, reducing claims costs while generating new monetization opportunities. We partner with tens of thousands of companies across France 🇫🇷, Spain 🇪🇸, Belgium 🇧🇪, and Canada 🇨🇦, serving over a million members. How we work: our Leadership Principles Mission is the Boss — We think long-term and are methodical optimists who take risks, seeking our mission's success above all else. Distributed Ownership — Accountable enlightened despots: everyone owns their decisions and results. Radical Transparency — All information is accessible and written-first, so everyone can make the best decisions asynchronously. Always Growing — Direct, positive, and caring feedback, combined with self-growth ownership. ⭐️ The Opportunity ⭐️ Technology is Alan's core engine. Every product, every country launch, every member interaction runs on what our 150+ engineers build across several countries. We move fast, with a lot of ownership, and are proud to tackle big problems. But as we scale we need someone to work directly with our VP Engineering and tech-leadership on the operational and strategic layer that makes this all possible. Some weeks you're in a room with AWS negotiating cloud infrastructure for a new country. Other weeks you're coordinating a GenAI Circle lunch or running a 150-person offsite. The common thread: you own things end-to-end, and your work directly shapes how engineering operates at Alan. ⭐️ Scope ⭐️ Strategic proj",
-      "score": {
-        "overall": 70,
-        "stack_match": 100,
-        "location_ok": false,
-        "seniority_fit": "lead+",
-        "reason": "Excellent fit on Product Operations, Project Management, Enterprise Delivery, and Cross-Functional Coordination (100 pts); GenAI/Anthropic partnerships align perfectly with Claude Code expertise. However, Paris office-based role conflicts with Séverine's remote-only requirement.",
-        "red_flags": [
-          "Paris office required, not remote"
-        ]
-      }
-    },
-    {
       "id": "e94b47ab6f2a",
       "title": "Product Manager - AI Customer Support",
       "company": "Alan",
       "location": "Paris, France; Lyon, France; Marseille, France; Bordeaux, France",
       "remotePolicy": "remote",
-      "postedAt": "2026-04-14T10:22:57.510Z",
+      "postedAt": "2026-04-15T07:56:33.666Z",
       "tags": [
         "Roadmap",
         "AI"
@@ -221,150 +168,42 @@
       "source": "watchlist",
       "rawDescription": "Product Manager - AI Customer Support You. Better. With Alan. Alan is building a vertically integrated health partner that unites insurance and smart healthcare delivery into one seamless system. Our vision is to make prevention the new norm of care for all. Our mission: Help people live in good health to 100 while helping employers feel proud, turning health benefits from a cost centre into their most valuable investment. By connecting all aspects of care (private, public, and direct to consumer) we create the most member-centric healthcare experience, reducing claims costs while generating new monetization opportunities. We partner with tens of thousands of companies across France 🇫🇷, Spain 🇪🇸, Belgium 🇧🇪, and Canada 🇨🇦, serving over a million members. How we work: our Leadership Principles Mission is the Boss — We think long-term and are methodical optimists who take risks, seeking our mission's success above all else. Distributed Ownership — Accountable enlightened despots: everyone owns their decisions and results. Radical Transparency — All information is accessible and written-first, so everyone can make the best decisions asynchronously. Always Growing — Direct, positive, and caring feedback, combined with self-growth ownership. ⭐️ The product manager role ⭐️ Product Managers at Alan are responsible for going deep on user needs, defining a product strategy, and turning it into a high impact product roadmap. You'll work closely with designers, engineers and ops to define the right product and implement it. You'll partner and align with all parts of the business: sales, customer care, insurance. AI Customer Support is amazing opportunity to have an impact: You'll own a product area at the frontier of AI, reinventing customer support by empowering Care teams with AI agents that automate a growing share of written and voice conversations. Working in the Support crew means expanding AI-powered experiences that today already resolve 50% of mobile interacti",
       "score": {
-        "overall": 45,
-        "stack_match": 85,
+        "overall": 70,
+        "stack_match": 100,
         "location_ok": false,
         "seniority_fit": "senior",
-        "reason": "Strong product management fit with AI product ownership and B2B SaaS expertise. Critical blocker: on-site role in France with no remote option; Séverine requires full-remote work from Valencia.",
+        "reason": "Expert PM fit: product strategy, enterprise B2B SaaS, and direct Claude Code/MCP expertise for AI tooling. Critical blocker—no remote option, location restricted to French cities. Séverine requires full-remote from Spain.",
         "red_flags": [
-          "On-site role in France, no remote option"
+          "Location gated to France, no remote signal"
         ]
       }
     },
     {
-      "id": "e08d8613b497",
-      "title": "Project Manager Key Accounts",
-      "company": "Pennylane",
-      "location": "Paris",
+      "id": "1f9aa0fed158",
+      "title": "Senior Product Manager, Payroll",
+      "company": "Remote.com",
+      "location": "Remote-South America",
       "remotePolicy": "remote",
-      "postedAt": "2026-04-14T10:23:00.672Z",
-      "tags": [
-        "Agile",
-        "B2B",
-        "SaaS"
-      ],
-      "applyUrl": "https://jobs.ashbyhq.com/pennylane/d669bfa7-e3cb-4b12-b0ac-7f0410c80972",
-      "source": "watchlist",
-      "rawDescription": "Project Manager Key Accounts Vous cherchez un environnement professionnel stimulant basé sur l'autonomie et la confiance ? Pennylane vous offre l'opportunité de grandir au sein d'une entreprise en pleine croissance. Ici, votre expertise contribuera directement à aider les entrepreneurs à reprendre le contrôle de leurs finances. Découvrez un lieu où vos compétences seront valorisées et où vous pourrez façonner l'avenir de la gestion financière. Notre vision Notre ambition est de devenir le logiciel de pilotage financier préféré des PMEs européennes. Nous aidons les entrepreneurs à se débarrasser des tâches chronophages liées à la comptabilité et à la finance, tout en leur donnant accès à des informations financières clés pour les aider à prendre les meilleures décisions pour leur entreprise. Parallèlement, nous aidons les cabinets d'expertise-comptable, en leur permettant de passer moins de temps sur des tâches redondantes et répétitives, et plus de temps sur la partie conseil et accompagnement de leurs clients. À propos de Pennylane Pennylane est une des FinTech à la plus forte croissance en France, et souhaite bientôt adresser le marché européen. En 5 ans d'existence, nous sommes parvenus à : 💻 Nous positionner sur le marché comme un éditeur de solution de comptabilité et de gestion financière innovant 💰 Lever un total de 400 millions d'euros, auprès d'investisseurs de renom, dont Sequoïa, le fonds phare de la Silicon Valley, connu pour avoir soutenu Google, Facebook, Airbnb, Stripe, Paypal et bien d'autres à leur début 👨‍👩‍👧‍👦 Passer de 7 cofondateurs à une équipe de 1000 collaborateurs, avec une note moyenne de 4,9/5 sur Glassdoor et 94% des évaluateurs Glassdoor qui recommanderaient PL à leurs proches! 🌍 Construire une équipe internationale composée de collaborateurs issus de 25 pays différents, avec une culture du télétravail très flexible 🤝 Gagner la confiance de milliers d'utilisateurs et obtenir d'excellents retours 🚀 Déjà plus de 900,000 TPE/PME et",
-      "score": {
-        "overall": 36,
-        "stack_match": 70,
-        "location_ok": false,
-        "seniority_fit": "mid",
-        "reason": "Strong Project Manager and B2B SaaS match with excellent cultural fit as a French company and Séverine's native language. However, the role is Paris-based with no explicit remote confirmation, which violates her hard requirement for full-remote work from Valencia.",
-        "red_flags": [
-          "Paris-based, remote unclear",
-          "Seniority level not clearly stated",
-          "Incomplete job description",
-          "Key Account scope undefined"
-        ]
-      }
-    },
-    {
-      "id": "9644a02acabf",
-      "title": "Senior Product Manager 🇫🇷",
-      "company": "Pennylane",
-      "location": "Paris",
-      "remotePolicy": "remote",
-      "postedAt": "2026-04-14T10:23:00.671Z",
+      "postedAt": "2026-04-13T12:59:23.000Z",
       "tags": [
         "Roadmap",
-        "AI",
-        "OKR"
-      ],
-      "applyUrl": "https://jobs.ashbyhq.com/pennylane/a4555925-195a-4a59-9367-fcaf27f2113d",
-      "source": "watchlist",
-      "rawDescription": "Senior Product Manager 🇫🇷 Are you looking to have an impact on the daily life of millions of entrepreneurs in France (and tomorrow in Europe)? Are you looking for a work environment that values trust, proactivity, and autonomy? Are our Product Principles aligned with your vision? Then Pennylane is the right place for you ! Our vision We aim to become the most beloved financial Operating System of French SMEs and Accounting Firms (and soon, European ones). We help entrepreneurs rid themselves of time-consuming tasks related to accounting and finance while providing them with access to key financial information to assist in making the best decisions for their business. About us Pennylane is one of the fastest growing Fintechs in France (and soon to be in Europe!) In 5 years of existence, we’ve managed to : 💻 Make ourselves known as a groundbreaking accounting and financial software for small businesses and their accountants 💰 Raise a total of €225 millions, including from Sequoia, the famous fund from the Silicon Valley who invested early in companies like Google, Facebook, Airbnb, Stripe, Paypal and much more... 👨‍👩‍👧‍👦 Grow from 7 cofounders to 850+ happy Pennylaners : we’re now recognized as one of the greatest places to work in France (and also remotely), with a 4.6/5 rating on Glassdoor . 🌍 Build an international environment with more than 25 nationalities, with a strong remote-friendly culture, where 30% of the employees are already working from all parts of Europe 🤝 Earn the trust of thousands of customers and accounting firms and obtain outstanding ratings 🚀 Already more than 700,000 small and medium-sized enterprises (SMEs) and over 4,500 accounting firms use Pennylane in France! WHY this position is of utmost importance to reach our mission While some companies count on marketing and sales to gain market share, we are a product-led company and are investing primarily in our platform. You’ll join a team with a highly strategic role and a great oppo",
-      "score": {
-        "overall": 35,
-        "stack_match": 65,
-        "location_ok": false,
-        "seniority_fit": "senior",
-        "reason": "Strong PM match at a quality French B2B SaaS company—expert skills across product strategy, cross-functional leadership, and roadmap planning align well. However, position listed in Paris with no explicit remote guarantee, failing Séverine's hard full-remote requirement.",
-        "red_flags": [
-          "Position located in Paris, remote unclear",
-          "No mention of AI/automation tooling",
-          "Fintech domain requires domain learning"
-        ]
-      }
-    },
-    {
-      "id": "9a07471f536f",
-      "title": "Team Lead Project Manager Key Accounts ",
-      "company": "Pennylane",
-      "location": "Paris",
-      "remotePolicy": "remote",
-      "postedAt": "2026-04-14T10:23:00.671Z",
-      "tags": [
-        "Agile",
-        "B2B",
-        "SaaS"
-      ],
-      "applyUrl": "https://jobs.ashbyhq.com/pennylane/a26c0153-b9de-416e-ac28-af8bc23b25d3",
-      "source": "watchlist",
-      "rawDescription": "Team Lead Project Manager Key Accounts Vous cherchez un environnement professionnel stimulant basé sur l'autonomie et la confiance ? Pennylane vous offre l'opportunité de grandir au sein d'une entreprise en pleine croissance. Ici, votre expertise contribuera directement à aider les entrepreneurs à reprendre le contrôle de leurs finances. Découvrez un lieu où vos compétences seront valorisées et où vous pourrez façonner l'avenir de la gestion financière. Notre vision Notre ambition est de devenir le logiciel de pilotage financier préféré des PMEs européennes. Nous aidons les entrepreneurs à se débarrasser des tâches chronophages liées à la comptabilité et à la finance, tout en leur donnant accès à des informations financières clés pour les aider à prendre les meilleures décisions pour leur entreprise. Parallèlement, nous aidons les cabinets d'expertise-comptable, en leur permettant de passer moins de temps sur des tâches redondantes et répétitives, et plus de temps sur la partie conseil et accompagnement de leurs clients. À propos de Pennylane Pennylane est une des FinTech à la plus forte croissance en France, et souhaite bientôt adresser le marché européen. En 5 ans d'existence, nous sommes parvenus à : 💻 Nous positionner sur le marché comme un éditeur de solution de comptabilité et de gestion financière innovant 💰 Lever un total de 400 millions d'euros, auprès d'investisseurs de renom, dont Sequoïa, le fonds phare de la Silicon Valley, connu pour avoir soutenu Google, Facebook, Airbnb, Stripe, Paypal et bien d'autres à leur début 👨‍👩‍👧‍👦 Passer de 7 cofondateurs à une équipe de 1000 collaborateurs, avec une note moyenne de 4,9/5 sur Glassdoor et 94% des évaluateurs Glassdoor qui recommanderaient PL à leurs proches! 🌍 Construire une équipe internationale composée de collaborateurs issus de 25 pays différents, avec une culture du télétravail très flexible 🤝 Gagner la confiance de milliers d'utilisateurs et obtenir d'excellents retours 🚀 Déjà plus de 900,000 ",
-      "score": {
-        "overall": 35,
-        "stack_match": 60,
-        "location_ok": false,
-        "seniority_fit": "senior",
-        "reason": "Senior PM/account management role at B2B SaaS FinTech matching Séverine's core skills: project management, stakeholder management, enterprise delivery. However, job is posted as Paris-based with no explicit full-remote option, making it inaccessible.",
-        "red_flags": [
-          "location: Paris only, not remote",
-          "job description incomplete/truncated"
-        ]
-      }
-    },
-    {
-      "id": "5226bd13ca53",
-      "title": "Team Lead - Project Managers Implémentation",
-      "company": "Pennylane",
-      "location": "Paris",
-      "remotePolicy": "remote",
-      "postedAt": "2026-04-14T10:23:00.671Z",
-      "tags": [
+        "Claude",
         "AI"
       ],
-      "applyUrl": "https://jobs.ashbyhq.com/pennylane/df112034-0c08-4992-bd63-25feb89016d9",
+      "applyUrl": "https://job-boards.greenhouse.io/remotecom/jobs/7559572003",
       "source": "watchlist",
-      "rawDescription": "Team Lead - Project Managers Implémentation Vous cherchez un environnement professionnel stimulant basé sur l'autonomie et la confiance ? Pennylane vous offre l'opportunité de grandir au sein d'une entreprise en pleine croissance. Ici, votre expertise contribuera directement à aider les entrepreneurs à reprendre le contrôle de leurs finances. Découvrez un lieu où vos compétences seront valorisées et où vous pourrez façonner l'avenir de la gestion financière. Notre vision Notre ambition est de devenir le logiciel de pilotage financier préféré des PMEs européennes. Nous aidons les entrepreneurs à se débarrasser des tâches chronophages liées à la comptabilité et à la finance, tout en leur donnant accès à des informations financières clés pour les aider à prendre les meilleures décisions pour leur entreprise. Parallèlement, nous aidons les cabinets d'expertise-comptable, en leur permettant de passer moins de temps sur des tâches redondantes et répétitives, et plus de temps sur la partie conseil et accompagnement de leurs clients. À propos de Pennylane Pennylane est une des FinTech à la plus forte croissance en France, et souhaite bientôt adresser le marché européen. En 5 ans d'existence, nous sommes parvenus à : 💻 Nous positionner sur le marché comme un éditeur de solution de comptabilité et de gestion financière innovant 💰 Lever un total de 400 millions d'euros, auprès d'investisseurs de renom, dont Sequoïa, le fonds phare de la Silicon Valley, connu pour avoir soutenu Google, Facebook, Airbnb, Stripe, Paypal et bien d'autres à leur début 👨‍👩‍👧‍👦 Passer de 7 cofondateurs à une équipe de 1000 collaborateurs, avec une note moyenne de 4,9/5 sur Glassdoor et 94% des évaluateurs Glassdoor qui recommanderaient PL à leurs proches! 🌍 Construire une équipe internationale composée de collaborateurs issus de 25 pays différents, avec une culture du télétravail très flexible 🤝 Gagner la confiance de milliers d'utilisateurs et obtenir d'excellents retours 🚀 Déjà plus de 900",
+      "rawDescription": "Senior Product Manager, Payroll About Remote Remote is solving modern organizations’ biggest challenge – navigating global employment compliantly with ease. We make it possible for businesses of all sizes to recruit, pay, and manage international teams. With our core values at heart and future focused work culture, our team works tirelessly on ambitious problems, asynchronously, around the world. You can find Remoters working from 6 different continents (Antarctica left to go!) and all of our positions are fully remote. With Innovation as one of the core values, we have built Automation and AI capabilities into the requirements for every role. We encourage every member of the Remote team to bring their talents, experiences and culture to the table to help us build the best-in-class HR platform. &nbsp; If you are energetic, curious, motivated and ambitious, be part of our world. Apply now and define the future of work! What this job can offer you This is an exciting time to join Remote and make a personal difference in the global payroll space as our Senior Product Manager, Payroll . You will be tasked with developing a deep understanding of our customer's (external and internal) needs and pain points and working with cross-functional teams to design and implement solutions that provide an exceptional payroll experience. This includes being a leader in your development team and beyond, working with internal experts across multiple disciplines (operations, compliance, sales, product marketing etc.) to build a scalable payroll platform for 80+ markets around the world. What you bring Experience as a senior product manager working in a multi-product, high-growth scale-up company. Proficiency in&nbsp; Cursor &nbsp;and/or&nbsp; Claude Code &nbsp;is required. You must be able to autonomously build, debug, and ship functional code/prototypes, not just write specs. Strong understanding of end-to-end payroll processes and HR functions. Hands-on experience building payroll sof",
       "score": {
-        "overall": 30,
-        "stack_match": 65,
-        "location_ok": false,
-        "seniority_fit": "lead+",
-        "reason": "Team Lead role directly matches your PM expertise and enterprise delivery background in B2B SaaS, but Paris location without explicit full-remote confirmation for Spain-based workers is a dealbreaker per your requirements.",
-        "red_flags": [
-          "Paris location, remote policy unclear",
-          "Job description incomplete",
-          "No salary information"
-        ]
-      }
-    },
-    {
-      "id": "df32d077a206",
-      "title": "Senior Product Manager",
-      "company": "MongoDB",
-      "location": "Dublin; Ireland",
-      "remotePolicy": "uncertain",
-      "postedAt": "2026-04-13T14:37:51.000Z",
-      "tags": [
-        "Roadmap",
-        "AI",
-        "Stakeholder"
-      ],
-      "applyUrl": "https://www.mongodb.com/careers/job/?gh_jid=7113803",
-      "source": "watchlist",
-      "rawDescription": "Senior Product Manager MongoDB empowers innovators to create, transform, and disrupt industries by unleashing the power of software and data. Atlas is at the heart of our AI-ready data foundation. Atlas is a best-in-class, fully managed, multi-cloud database service that simplifies the complexities of deploying and managing highly available database deployments across multiple regions and cloud providers. Atlas offers vertically and horizontally scalability, built-in automation for optimizing workloads and resources, advanced observability and security features, and unmatched data distribution with over 125 regions available globally across AWS, Google Cloud, and Azure.&nbsp; This team is at the forefront of innovation, having brought to life some of the most exciting features we’ve launched in the past, such as multi-cloud databases, predictive autoscaling, and intelligent workload management. Furthermore, this team will continue to play a critical role as the platform expands to where developers need it most: AI search and retrieval, application development, and more. This role can be based out of our Dublin office or remotely in the Ireland region. About the Role Product Managers on the Atlas team work side-by-side with engineering, design, marketing, and analytics to build scalability capabilities that our users trust and that work for the business. You’ll spend your time deeply understanding how customers grow their workloads, developing hypotheses about where scaling breaks down, and validating them with design solutions across Atlas and the MongoDB server. If you’re doing well, you will continuously be accelerating the rate at which our users can safely scale up, scale down, and horizontally scale their deployments. Our engineering teams are responsible for ensuring that clusters can scale seamlessly as demand changes — from automatic vertical scaling to horizontal auto-scaling — while keeping customer operations and workloads highly available and performant.",
-      "score": {
-        "overall": 25,
-        "stack_match": 60,
+        "overall": 55,
+        "stack_match": 90,
         "location_ok": false,
         "seniority_fit": "senior",
-        "reason": "Strong PM fit with clear cross-functional leadership scope, but 'remotely in the Ireland region' excludes Spain-based workers, and the role assumes deep database/infrastructure domain expertise she doesn't have.",
+        "reason": "Strong PM skill fit (product operations, roadmap, cross-functional leadership) and valued AI expertise (Claude Code, Cursor). However, the role is gated to South America timezone (excludes Spain), requires deep payroll domain knowledge Séverine lacks, and emphasizes autonomous coding suggesting an engineer-PM hybrid role.",
         "red_flags": [
-          "remote limited to Ireland region",
-          "database/infrastructure expertise assumed"
+          "Remote-South America location excludes Spain",
+          "Deep payroll/HR domain expertise required; gap here",
+          "Emphasizes autonomous code shipping and debugging",
+          "9-hour timezone misalignment vs. Spain"
         ]
       }
     },
@@ -374,7 +213,7 @@
       "company": "Pleo",
       "location": "London (+ Lisbon, Madrid)",
       "remotePolicy": "remote",
-      "postedAt": "2026-04-14T10:22:56.103Z",
+      "postedAt": "2026-04-15T07:56:29.727Z",
       "tags": [
         "B2B",
         "SaaS",
@@ -384,43 +223,92 @@
       "source": "watchlist",
       "rawDescription": "GTM Operations Manager Messy spend management is tricky business. And tedious processes are a lose-lose situation for all involved, not just finance. At Pleo, we're changing that. We build spend solutions that make managing money seamless, empowering, and surprisingly effective for finance teams and employees alike - with a vision to help all businesses ‘go beyond’. The word ‘Pleo’ actually means ‘more than you’d expect’, and living by that mantra has been the secret to our success over the last 10 years. Now, we’re at a pivotal moment in our journey; every move we make has a direct impact on our 40,000+ customers, our business, and our collective success. We need people who take pride in uncovering customer needs, who turn complex problems into simple solutions, challenge the way things are done (respectfully), and always aim high. With great ambitions driving us forward, we can’t say we’ve got this whole thing figured out. And frankly, that’s half the fun! What we can say is that we’re a driven, progressive, and, importantly, a kind bunch of 850+ people from over 100 nationalities, all committed to delivering the future of business spending, together. About the role We’re looking for a GTM Operations Manager to join the GTM Strategy & Programs team and help shape how we deliver value to customers at scale. This role is focused on sustainable revenue optimisation, with a primary emphasis on revenue retention and customer success, and broader scope across expansion and new business go-to-market initiatives. You’ll work at the intersection of GTM strategy, revenue operations, and technology, taking ideas from concept through to execution. You’ll identify where our customer and revenue motions can work better, design data-backed solutions, and build the operational systems required to launch and scale them. While Customer Success is your core lens, your remit spans the full GTM lifecycle. This is not a traditional operations role. You’ll operate with a GTM Engineer mi",
       "score": {
-        "overall": 10,
-        "stack_match": 50,
+        "overall": 52,
+        "stack_match": 82,
         "location_ok": false,
-        "seniority_fit": "mid",
-        "reason": "Your GTM operations background is relevant, but the role emphasizes Revenue Operations and data analytics—areas outside your core expertise. The location policy is unclear (multiple offices listed without explicit remote confirmation), and you require fully remote roles only.",
+        "seniority_fit": "senior",
+        "reason": "Strong operations and cross-functional coordination fit with AI/automation expertise and B2B SaaS background. Location policy unclear — London primary without explicit full-remote confirmation for Spain-based workers.",
         "red_flags": [
-          "location policy unclear — multiple offices listed",
-          "Revenue Operations focus vs. Product Operations expertise",
-          "data analytics/BI is core requirement",
-          "job description incomplete"
+          "location policy unclear, London primary, no explicit full-remote"
         ]
       }
     },
     {
-      "id": "00dd6319a94a",
-      "title": "Product Manager - Wizz",
-      "company": "Voodoo",
+      "id": "9644a02acabf",
+      "title": "Senior Product Manager 🇫🇷",
+      "company": "Pennylane",
       "location": "Paris",
       "remotePolicy": "remote",
-      "postedAt": "2026-04-14T10:23:02.668Z",
+      "postedAt": "2026-04-15T07:56:37.183Z",
       "tags": [
         "Roadmap",
-        "AI"
+        "AI",
+        "OKR"
       ],
-      "applyUrl": "https://jobs.ashbyhq.com/voodoo/ab22e7ad-8751-4d98-8640-7ccf6be0d6ec",
+      "applyUrl": "https://jobs.ashbyhq.com/pennylane/a4555925-195a-4a59-9367-fcaf27f2113d",
       "source": "watchlist",
-      "rawDescription": "Product Manager - Wizz About Voodoo Founded in 2013, Voodoo is a tech company that creates mobile games and apps with a mission to entertain the world. Gathering 800 employees, 7 billion downloads, and over 200 million active users, Voodoo is the #3 mobile publisher worldwide in terms of downloads after Google and Meta. Our portfolio includes chart-topping games like Mob Control and Block Jam, alongside popular apps such as BeReal and Wizz. Team Our Consumer Apps teams are at the forefront of crafting innovative and engaging apps for daily enjoyment. Our ambition extends beyond gaming to entertain a global audience. Millions of people around the world, especially in the US, download and use the apps we create. You'll be working on Wizz, a social app specifically designed for teens, boasting over 3 million monthly active users in the US and UK. Wizz is a friend-finding and chat app where young people can safely express themselves and connect with like-minded peers in an authentic, pressure-free environment. Unlike other social media platforms that focus on followers, posts, or passive consumption, Wizz offers young people a space to have meaningful 1:1 conversations with peers. As a member of a high-performing team of 20, you'll collaborate to further scale and enhance Wizz, fostering a spirit of goodwill and creativity. As Wizz continues its dynamic growth and development, we are seeking an ambitious Product Manager to join. Role Analyze Wizz's competitive environment and identify new business opportunities Report directly to CEO Combine analytics and user research to identify user drives, fuel ideation, and lead product improvements. Manage some product operations (e.g., CRM, Monetization) and solve problems as they arise. Contribute to high-level strategic decisions. Help define short and long-term roadmaps. Identify key metrics and take ownership for improving them. Profile You’re passionate about B2C mobile apps. A strong experience in a fast-paced environment (",
+      "rawDescription": "Senior Product Manager 🇫🇷 Are you looking to have an impact on the daily life of millions of entrepreneurs in France (and tomorrow in Europe)? Are you looking for a work environment that values trust, proactivity, and autonomy? Are our Product Principles aligned with your vision? Then Pennylane is the right place for you ! Our vision We aim to become the most beloved financial Operating System of French SMEs and Accounting Firms (and soon, European ones). We help entrepreneurs rid themselves of time-consuming tasks related to accounting and finance while providing them with access to key financial information to assist in making the best decisions for their business. About us Pennylane is one of the fastest growing Fintechs in France (and soon to be in Europe!) In 5 years of existence, we’ve managed to : 💻 Make ourselves known as a groundbreaking accounting and financial software for small businesses and their accountants 💰 Raise a total of €225 millions, including from Sequoia, the famous fund from the Silicon Valley who invested early in companies like Google, Facebook, Airbnb, Stripe, Paypal and much more... 👨‍👩‍👧‍👦 Grow from 7 cofounders to 850+ happy Pennylaners : we’re now recognized as one of the greatest places to work in France (and also remotely), with a 4.6/5 rating on Glassdoor . 🌍 Build an international environment with more than 25 nationalities, with a strong remote-friendly culture, where 30% of the employees are already working from all parts of Europe 🤝 Earn the trust of thousands of customers and accounting firms and obtain outstanding ratings 🚀 Already more than 700,000 small and medium-sized enterprises (SMEs) and over 4,500 accounting firms use Pennylane in France! WHY this position is of utmost importance to reach our mission While some companies count on marketing and sales to gain market share, we are a product-led company and are investing primarily in our platform. You’ll join a team with a highly strategic role and a great oppo",
       "score": {
-        "overall": 10,
-        "stack_match": 45,
+        "overall": 50,
+        "stack_match": 75,
         "location_ok": false,
         "seniority_fit": "senior",
-        "reason": "Role requires Paris on-site presence, which conflicts with Séverine's strict remote-only requirement. While PM fundamentals are present, B2C gaming doesn't align with her B2B SaaS specialization.",
+        "reason": "Excellent Product Manager fit with strong B2B SaaS experience match and fluent French language advantage. However, the role is listed as Paris-based without explicit full-remote confirmation, which blocks Séverine's remote-only Spain-based requirement.",
         "red_flags": [
-          "On-site Paris role, remote-only required",
-          "B2C gaming vs. B2B SaaS",
-          "No AI/automation focus"
+          "Location listed as Paris; remote policy for role unclear",
+          "Job description incomplete (cuts mid-sentence)"
+        ]
+      }
+    },
+    {
+      "id": "18cb282fe1ea",
+      "title": "Staff Technical Program Manager",
+      "company": "MongoDB",
+      "location": "Palo Alto; San Francisco; Seattle",
+      "remotePolicy": "uncertain",
+      "postedAt": "2026-04-14T19:48:55.000Z",
+      "tags": [
+        "AI",
+        "Stakeholder"
+      ],
+      "applyUrl": "https://www.mongodb.com/careers/job/?gh_jid=7739531",
+      "source": "watchlist",
+      "rawDescription": "Staff Technical Program Manager As a Staff Technical Program Manager, you will own the successful delivery of complex, cross-functional efforts. You will partner closely with stakeholders across the organization from Product, Engineering, Sales, Marketing HR, Legal, Finance and other teams across the business as needed to develop and execute against our overall product vision and business objectives, uncover solutions to technical challenges, and provide data-driven insights that power strategic decision-making for our organization. Position Expectations: Leverage technical acumen and analytical skills to drive technical programs forward and maximize business value delivery Recognize patterns in a sea of information and take action accordingly Develop a strategic approach to technical program management that balances agility and process. This involves discerning when to provide direct guidance and when to empower teams by establishing clear frameworks and guidelines for ongoing initiatives Build strategic partnerships with key stakeholder groups across the organization Expand knowledge into new domains as called upon Act as a mentor to junior TPMs and lead by example Embody MongoDB's core values and leadership principles The right candidate for this role will be: Experienced with 10+ years of working in a PMO and/or engineering organization leading complex cross-functional technical programs Experienced with 3+ years of IT and/or engineering background Experienced with managing large, complex technology-enabled programs supporting engineering stakeholders Experience working with full stack engineers and understanding the capabilities and processes required to bolster engineering excellence and productivity Able to partner with technical stakeholders in methodically breaking down engineering challenges to deliver against abstract goals Able to participate in technical design discussions and summarize trade-offs, outcomes, and next steps Capable of deep user empathy a",
+      "score": {
+        "overall": 35,
+        "stack_match": 70,
+        "location_ok": false,
+        "seniority_fit": "lead+",
+        "reason": "Strong match on TPM skills (project management, cross-functional coordination, enterprise delivery), but disqualified by US-only location. Job requires on-site presence in Palo Alto/San Francisco/Seattle with no remote flexibility.",
+        "red_flags": [
+          "US-only, no remote policy mentioned",
+          "10+ years required vs. 5+ years experience"
+        ]
+      }
+    },
+    {
+      "id": "d3b88390ad37",
+      "title": "Chief of Staff to VP Engineering (x/f/m)",
+      "company": "Alan",
+      "location": "Paris, France",
+      "remotePolicy": "remote",
+      "postedAt": "2026-04-15T07:56:33.666Z",
+      "tags": [
+        "Claude",
+        "AI"
+      ],
+      "applyUrl": "https://jobs.ashbyhq.com/alan/20ecf640-e777-4e3c-a93a-a4a7eca91dd8",
+      "source": "watchlist",
+      "rawDescription": "Chief of Staff to VP Engineering (x/f/m) You. Better. With Alan. Alan is building a vertically integrated health partner that unites insurance and smart healthcare delivery into one seamless system. Our vision is to make prevention the new norm of care for all. Our mission: Help people live in good health to 100 while helping employers feel proud, turning health benefits from a cost centre into their most valuable investment. By connecting all aspects of care (private, public, and direct to consumer) we create the most member-centric healthcare experience, reducing claims costs while generating new monetization opportunities. We partner with tens of thousands of companies across France 🇫🇷, Spain 🇪🇸, Belgium 🇧🇪, and Canada 🇨🇦, serving over a million members. How we work: our Leadership Principles Mission is the Boss — We think long-term and are methodical optimists who take risks, seeking our mission's success above all else. Distributed Ownership — Accountable enlightened despots: everyone owns their decisions and results. Radical Transparency — All information is accessible and written-first, so everyone can make the best decisions asynchronously. Always Growing — Direct, positive, and caring feedback, combined with self-growth ownership. ⭐️ The Opportunity ⭐️ Technology is Alan's core engine. Every product, every country launch, every member interaction runs on what our 150+ engineers build across several countries. We move fast, with a lot of ownership, and are proud to tackle big problems. But as we scale we need someone to work directly with our VP Engineering and tech-leadership on the operational and strategic layer that makes this all possible. Some weeks you're in a room with AWS negotiating cloud infrastructure for a new country. Other weeks you're coordinating a GenAI Circle lunch or running a 150-person offsite. The common thread: you own things end-to-end, and your work directly shapes how engineering operates at Alan. ⭐️ Scope ⭐️ Strategic proj",
+      "score": {
+        "overall": 35,
+        "stack_match": 65,
+        "location_ok": false,
+        "seniority_fit": "senior",
+        "reason": "Your operations and project management expertise align well with this Chief of Staff role, but the on-site Paris requirement is incompatible with your remote-only requirement from Valencia.",
+        "red_flags": [
+          "on-site in Paris, requires relocation",
+          "job description incomplete, full scope unclear"
         ]
       }
     },
@@ -430,7 +318,7 @@
       "company": "Voodoo",
       "location": "Paris",
       "remotePolicy": "remote",
-      "postedAt": "2026-04-14T10:23:02.668Z",
+      "postedAt": "2026-04-15T07:56:38.498Z",
       "tags": [
         "Roadmap",
         "B2B",
@@ -440,15 +328,286 @@
       "source": "watchlist",
       "rawDescription": "Lead Product Manager - Growth About Voodoo Founded in 2013, Voodoo is a tech company that creates mobile games and apps with a mission to entertain the world. Gathering 800 employees, 7 billion downloads, and over 200 million active users, Voodoo is the #3 mobile publisher worldwide in terms of downloads after Google and Meta. Our portfolio includes chart-topping games like Mob Control and Block Jam, alongside popular apps such as BeReal and Wizz. Team You will work within the Growth team, in cooperation with Engineering & Data teams, enabling our Growth operations to move faster, smarter, and at significantly greater scale. As Lead Product Manager you will be integrated in the VGP Team. VGP automates repetitive and high-volume growth tasks, starting with the distribution of over 25,000 creatives across multiple ad networks and campaigns per year, and continuously improves decision-making, performance monitoring, and playable ads production. The platform is evolving to integrate AI-driven campaign launches, bidding automation, and expanded network coverage. Role We’re looking for a Lead Product Manager to join our Growth team. In this role, you’ll build scalable automation systems at the intersection of Growth, AdTech, and AI. You will own the vision, roadmap, and delivery of the Voodoo Growth Platform (VGP), a strategic internal product that powers the automation of our user acquisition operations at scale. You will: Define and drive the long-term vision and roadmap of the Voodoo Growth Platform. Build scalable systems to automate campaign launches, creative uploads, and cross-network distribution. Lead the integration of AI-driven features to automate bidding strategies, campaign setup, and performance optimization. Partner closely with engineers and tech leads to design and deliver reliable, high-performance systems. Collaborate with Growth teams to deeply understand operational pain points and turn them into automation opportunities. Work with Product Managers a",
       "score": {
-        "overall": 10,
-        "stack_match": 45,
+        "overall": 32,
+        "stack_match": 62,
         "location_ok": false,
         "seniority_fit": "lead+",
-        "reason": "PM fundamentals align well with roadmap ownership, cross-functional leadership, and automation focus, but lacks Growth/AdTech specialization; Paris-based with no remote mentioned is a disqualifier.",
+        "reason": "Strong PM fit for the VGP automation platform, but B2C mobile gaming and AdTech domain are outside your B2B SaaS expertise. Paris location with no remote policy is a hard blocker for Valencia-based work.",
         "red_flags": [
-          "Paris-based role, no remote mentioned",
-          "Growth/AdTech specialization not in background",
-          "B2C mobile games, not B2B SaaS focus"
+          "Paris location, no remote policy stated",
+          "AdTech domain unfamiliar, core requirement",
+          "B2C gaming focus, not B2B SaaS"
+        ]
+      }
+    },
+    {
+      "id": "935446a309b8",
+      "title": "Senior Data Product Manager, Product Telemetry",
+      "company": "MongoDB",
+      "location": "New York City; Palo Alto; San Francisco",
+      "remotePolicy": "uncertain",
+      "postedAt": "2026-04-14T19:48:55.000Z",
+      "tags": [
+        "Agile",
+        "Roadmap",
+        "AI"
+      ],
+      "applyUrl": "https://www.mongodb.com/careers/job/?gh_jid=7428476",
+      "source": "watchlist",
+      "rawDescription": "Senior Data Product Manager, Product Telemetry Our Internal Data team is on a mission to power decisions and applications across MongoDB, oriented around the business areas of GTM, Product & Technology, Finance and HR. With this role, we are focusing on delivery of scalable, insightful, and impactful data products for our Product and Technology (P&T) teams - the org that builds MongoDB products for our external customers. These products drive smarter decisions, automate workflows, enable AI agents and deliver actionable insights that accelerate growth. If shaping the future of data-as-a-product excites you, then this opportunity is for you. As a Senior Data Product Manager on our Data team — which includes Data Pipeline/Platform Engineering, Data Architecture, and Data Governance — you will lead efforts to build, enhance, and scale the data products MongoDB employees use every day across a growing, high-impact company. You’ll deliver data products like data pipelines, datasets, reports/dashboards, APIs, ML models, playbooks, and frameworks while enhancing more traditional data management tools/services to power both AI and BI. These data products form the backbone of our internal data ecosystem and are instrumental in empowering teams to achieve their KPIs and innovate faster. In this role you will also have the opportunity to drive the vision and strategy for internal data as a product, with a focus on telemetry and product adoption/engagement/churn signals. By developing tools and systems that provide deep insights into how customers use or don’t use MongoDB’s products, you will empower teams to understand customer behaviors and improve the end-user experience. The goal is to enable data-driven decisions that enhance product design, drive customer value, and fuel innovation across the MongoDB portfolio. This role can be based out of our Palo Alto, San Francisco, or New York City office or remotely in the East Coast region. Responsibilities Lead Product Strategy an",
+      "score": {
+        "overall": 30,
+        "stack_match": 65,
+        "location_ok": false,
+        "seniority_fit": "senior",
+        "reason": "MongoDB values the strong PM skills Séverine has (roadmap planning, cross-functional leadership, B2B SaaS expertise), but the Data PM role requires specialized data infrastructure and ML expertise (medallion architecture, data pipelines, models) outside her product ops background. The East Coast location constraint is also incompatible with her Spain/CET timezone.",
+        "red_flags": [
+          "Remote limited to East Coast region, not EMEA",
+          "Data infrastructure/ML expertise required but lacking"
+        ]
+      }
+    },
+    {
+      "id": "5226bd13ca53",
+      "title": "Team Lead - Project Managers Implémentation",
+      "company": "Pennylane",
+      "location": "Paris",
+      "remotePolicy": "remote",
+      "postedAt": "2026-04-15T07:56:37.184Z",
+      "tags": [
+        "AI"
+      ],
+      "applyUrl": "https://jobs.ashbyhq.com/pennylane/df112034-0c08-4992-bd63-25feb89016d9",
+      "source": "watchlist",
+      "rawDescription": "Team Lead - Project Managers Implémentation Vous cherchez un environnement professionnel stimulant basé sur l'autonomie et la confiance ? Pennylane vous offre l'opportunité de grandir au sein d'une entreprise en pleine croissance. Ici, votre expertise contribuera directement à aider les entrepreneurs à reprendre le contrôle de leurs finances. Découvrez un lieu où vos compétences seront valorisées et où vous pourrez façonner l'avenir de la gestion financière. Notre vision Notre ambition est de devenir le logiciel de pilotage financier préféré des PMEs européennes. Nous aidons les entrepreneurs à se débarrasser des tâches chronophages liées à la comptabilité et à la finance, tout en leur donnant accès à des informations financières clés pour les aider à prendre les meilleures décisions pour leur entreprise. Parallèlement, nous aidons les cabinets d'expertise-comptable, en leur permettant de passer moins de temps sur des tâches redondantes et répétitives, et plus de temps sur la partie conseil et accompagnement de leurs clients. À propos de Pennylane Pennylane est une des FinTech à la plus forte croissance en France, et souhaite bientôt adresser le marché européen. En 5 ans d'existence, nous sommes parvenus à : 💻 Nous positionner sur le marché comme un éditeur de solution de comptabilité et de gestion financière innovant 💰 Lever un total de 400 millions d'euros, auprès d'investisseurs de renom, dont Sequoïa, le fonds phare de la Silicon Valley, connu pour avoir soutenu Google, Facebook, Airbnb, Stripe, Paypal et bien d'autres à leur début 👨‍👩‍👧‍👦 Passer de 7 cofondateurs à une équipe de 1000 collaborateurs, avec une note moyenne de 4,9/5 sur Glassdoor et 94% des évaluateurs Glassdoor qui recommanderaient PL à leurs proches! 🌍 Construire une équipe internationale composée de collaborateurs issus de 25 pays différents, avec une culture du télétravail très flexible 🤝 Gagner la confiance de milliers d'utilisateurs et obtenir d'excellents retours 🚀 Déjà plus de 900",
+      "score": {
+        "overall": 30,
+        "stack_match": 55,
+        "location_ok": false,
+        "seniority_fit": "lead+",
+        "reason": "Team Lead - Project Managers role is a strong PM/stakeholder-management fit in B2B SaaS; French company is culturally ideal. However, Paris on-site location is a hard blocker—Séverine requires full-remote only.",
+        "red_flags": [
+          "On-site in Paris, not remote"
+        ]
+      }
+    },
+    {
+      "id": "d419046e4df1",
+      "title": "Senior Product Manager, Developer Productivity",
+      "company": "Webflow",
+      "location": "CA Remote (BC & ON only); U.S. Remote",
+      "remotePolicy": "remote",
+      "postedAt": "2026-04-14T19:04:13.000Z",
+      "tags": [
+        "Roadmap",
+        "AI",
+        "Stakeholder"
+      ],
+      "applyUrl": "https://job-boards.greenhouse.io/webflow/jobs/7815489",
+      "source": "watchlist",
+      "rawDescription": "Senior Product Manager, Developer Productivity At Webflow, we’re building the world’s leading Agentic Web Marketing Platform, and we’re doing it as a remote-first company built on trust, transparency, and a whole lot of creativity. This work takes grit, because we move fast, without ever sacrificing craft or quality. Our mission is to bring development superpowers to everyone. We believe the future of the web — and work — is more open, more creative, and more equitable. And we’re here to build it together. We’re looking for a Senior Product Manager to partner with the Developer Productivity engineering team on the systems that make every Webflow engineer faster, more confident, and more effective. This team owns the developer experience end-to-end: CI/CD, build systems, internal tooling, developer environments, observability, and the feedback loops that tie it all together. The work is foundational — the kind of platform investment that compounds quietly and shows up in every team’s velocity. You’ll be the person who keeps it moving. This is also an explicitly AI-native role. You’ll be expected to embed AI into how this team works and builds — and help the broader engineering organization do the same. About the role: Location: Remote-first (United States; BC & ON, Canada) Full-time Permanent&nbsp; Exempt The cash compensation for this role is tailored to align with the cost of labor in different geographic markets. We've structured the base pay ranges for this role into zones for our geographic markets, and the specific base pay within the range will be determined by the candidate’s geographic location, job-related experience, knowledge, qualifications, and skills. United States &nbsp;(all figures cited below are in USD and pertain to workers in the United States) Zone A: $158,000 - $198,000 Zone B: $149,000 - $186,000 Zone C: $139,000 - $174,000 Canada&nbsp; (all figures cited below are in CAD and pertain to workers in the Canada) $180,000 - $225,000 This role is a",
+      "score": {
+        "overall": 25,
+        "stack_match": 75,
+        "location_ok": false,
+        "seniority_fit": "senior",
+        "reason": "Strong Product Manager fit with excellent AI expertise alignment, but location is a dealbreaker: Webflow restricts hiring to US and BC/ON Canada, explicitly excluding Spain. Séverine requires full-remote Spain-based work.",
+        "red_flags": [
+          "location restricted to North America only",
+          "excludes Spain and Europe workers",
+          "internal tooling focus vs external product",
+          "infrastructure domain unfamiliar (CI/CD, observability)"
+        ]
+      }
+    },
+    {
+      "id": "1ac94c3e2fa9",
+      "title": "Senior Product Manager, Account Protection",
+      "company": "MongoDB",
+      "location": "Alberta; British Columbia; Ontario; Quebec; Toronto",
+      "remotePolicy": "uncertain",
+      "postedAt": "2026-04-14T19:48:55.000Z",
+      "tags": [
+        "Roadmap",
+        "AI"
+      ],
+      "applyUrl": "https://www.mongodb.com/careers/job/?gh_jid=7523959",
+      "source": "watchlist",
+      "rawDescription": "Senior Product Manager, Account Protection The Security Product Management team is vital in safeguarding customer trust and making data security a market differentiator that enables MongoDB to succeed in enterprise and regulated industries. Our team's scope is broad and critical, covering a range of features, including Networking, IAM, Data Governance, Encryption, Compliance, and Auditing. This role can be based out of our Toronto office, or remotely in Canada.&nbsp; Responsibilities In this role, you will be a key member of security product management responsible for Account Protection and safeguarding customer trust at MongoDB Develop a robust vision for best-in-class security and identity threat management, from identification to remediation Build a vision for best-in class security features that identify, mitigate, and proactively prevent unauthorized attempts to access data Partner with engineering to develop a prioritized product roadmap and backlog to execute against that vision Deeply understand all aspects of the business - to ensure a business outcome aligned with our broader product, customer, and company goals Deepen our understanding of evolving threats and corresponding technologies in data security. Use customer inputs to serve as an expert and propose new innovations or best practices from the industry ​​Partner with engineering, legal, research, product marketing, support, sales, and security teams to deepen customer trust as they use MongoDB for their most critical data workloads Define and implement key performance indicators (KPIs) and success metrics for security initiatives, ensuring alignment with business objectives and product goals Requirements 5+ years of product management or equivalent experience in enterprise security or platforms Experience working with security focused engineers in a diverse team Domain expertise in threat detection, data security, or a related field Experience driving business results through influential leadership a",
+      "score": {
+        "overall": 25,
+        "stack_match": 65,
+        "location_ok": false,
+        "seniority_fit": "senior",
+        "reason": "Strong product management fundamentals, but two deal-breakers: the role is remote-restricted to Canada (Séverine is Spain-based and non-relocating), and it requires deep security domain expertise (threat detection, data security) which isn't in her background.",
+        "red_flags": [
+          "remote restricted to Canada",
+          "security domain expertise required",
+          "no AWS/Azure/GCP platform knowledge"
+        ]
+      }
+    },
+    {
+      "id": "f6cbd177a51e",
+      "title": "Senior Product Manager, Security",
+      "company": "MongoDB",
+      "location": "Alberta; British Columbia; Calgary; Edmonton; Manitoba; Montreal; Nova Scotia; Ontario; Quebec; Toronto; Vancouver",
+      "remotePolicy": "uncertain",
+      "postedAt": "2026-04-14T19:48:55.000Z",
+      "tags": [
+        "Roadmap",
+        "AI"
+      ],
+      "applyUrl": "https://www.mongodb.com/careers/job/?gh_jid=7651513",
+      "source": "watchlist",
+      "rawDescription": "Senior Product Manager, Security The Security Product Management team is vital in safeguarding customer trust and making data security a market differentiator that enables MongoDB to succeed in enterprise and regulated industries. Our team's scope is broad and critical, covering a range of features, including Networking, IAM, Data Governance, Encryption, Compliance, and Auditing. This role can be based out of our Toronto office or remotely in North America. Responsibilities In this role, you will be a key member of security product management making data security a market differentiator that enables MongoDB to succeed in enterprise and regulated industries Build a vision for best-in-class data security features such as Resource Policies, Secure by Default at MongoDB, and other security and privacy features that minimize exposure to unauthorized access and risk of data loss.&nbsp; Partner with engineering to develop a prioritized product roadmap and backlog to execute against that vision. Deeply understand all aspects of the business - to ensure a business outcome aligned with our broader product, customer, and company goals Deepen our understanding of evolving threats and corresponding technologies in data security. Use customer inputs to serve as an expert and propose new innovations or best practices from the industry ​​Partner with engineering, legal, research, product marketing, support, sales, and security teams to deepen customer trust as they use MongoDB for their most critical data workloads Define and implement key performance indicators (KPIs) and success metrics for security initiatives, ensuring alignment with business objectives and product goals Requirements 5+ years of product management or equivalent experience in enterprise security or platforms Experience working with security focused engineers in a diverse team Domain expertise in data security Experience driving business results through influential leadership across multiple partner teams includi",
+      "score": {
+        "overall": 25,
+        "stack_match": 55,
+        "location_ok": false,
+        "seniority_fit": "senior",
+        "reason": "Strong PM, roadmap, and cross-functional leadership fit for this B2B SaaS role. However, it requires data security domain expertise and is remote-in-North-America only—both incompatible with her background and Spain location.",
+        "red_flags": [
+          "data security domain expertise required",
+          "remote-in-north-america-only constraint"
+        ]
+      }
+    },
+    {
+      "id": "9a07471f536f",
+      "title": "Team Lead Project Manager Key Accounts ",
+      "company": "Pennylane",
+      "location": "Paris",
+      "remotePolicy": "remote",
+      "postedAt": "2026-04-15T07:56:37.184Z",
+      "tags": [
+        "Agile",
+        "B2B",
+        "SaaS"
+      ],
+      "applyUrl": "https://jobs.ashbyhq.com/pennylane/a26c0153-b9de-416e-ac28-af8bc23b25d3",
+      "source": "watchlist",
+      "rawDescription": "Team Lead Project Manager Key Accounts Vous cherchez un environnement professionnel stimulant basé sur l'autonomie et la confiance ? Pennylane vous offre l'opportunité de grandir au sein d'une entreprise en pleine croissance. Ici, votre expertise contribuera directement à aider les entrepreneurs à reprendre le contrôle de leurs finances. Découvrez un lieu où vos compétences seront valorisées et où vous pourrez façonner l'avenir de la gestion financière. Notre vision Notre ambition est de devenir le logiciel de pilotage financier préféré des PMEs européennes. Nous aidons les entrepreneurs à se débarrasser des tâches chronophages liées à la comptabilité et à la finance, tout en leur donnant accès à des informations financières clés pour les aider à prendre les meilleures décisions pour leur entreprise. Parallèlement, nous aidons les cabinets d'expertise-comptable, en leur permettant de passer moins de temps sur des tâches redondantes et répétitives, et plus de temps sur la partie conseil et accompagnement de leurs clients. À propos de Pennylane Pennylane est une des FinTech à la plus forte croissance en France, et souhaite bientôt adresser le marché européen. En 5 ans d'existence, nous sommes parvenus à : 💻 Nous positionner sur le marché comme un éditeur de solution de comptabilité et de gestion financière innovant 💰 Lever un total de 400 millions d'euros, auprès d'investisseurs de renom, dont Sequoïa, le fonds phare de la Silicon Valley, connu pour avoir soutenu Google, Facebook, Airbnb, Stripe, Paypal et bien d'autres à leur début 👨‍👩‍👧‍👦 Passer de 7 cofondateurs à une équipe de 1000 collaborateurs, avec une note moyenne de 4,9/5 sur Glassdoor et 94% des évaluateurs Glassdoor qui recommanderaient PL à leurs proches! 🌍 Construire une équipe internationale composée de collaborateurs issus de 25 pays différents, avec une culture du télétravail très flexible 🤝 Gagner la confiance de milliers d'utilisateurs et obtenir d'excellents retours 🚀 Déjà plus de 900,000 ",
+      "score": {
+        "overall": 25,
+        "stack_match": 50,
+        "location_ok": false,
+        "seniority_fit": "lead+",
+        "reason": "Strong PM credentials and B2B SaaS expertise, plus French company advantage. However, role is account/project management-focused rather than product operations, and Paris location contradicts Séverine's full-remote requirement despite the company's flexible culture.",
+        "red_flags": [
+          "Location listed as Paris, not remote",
+          "Account management focus, not operations"
+        ]
+      }
+    },
+    {
+      "id": "be09585dc5ec",
+      "title": "Marketing Analytics & Operations Manager",
+      "company": "MongoDB",
+      "location": "Dublin; Ireland",
+      "remotePolicy": "uncertain",
+      "postedAt": "2026-04-14T19:48:55.000Z",
+      "tags": [
+        "Roadmap",
+        "B2B",
+        "AI"
+      ],
+      "applyUrl": "https://www.mongodb.com/careers/job/?gh_jid=7604226",
+      "source": "watchlist",
+      "rawDescription": "Marketing Analytics & Operations Manager The Marketing Analytics Manager plays a crucial role within the broader Marketing Operations (MOps) team. This individual will take the lead on strategic global initiatives designed to sustain and enhance the team's effectiveness within the Marketing department and beyond. The primary focus is to serve as a strategic, trusted analytics partner to Marketing teams across the globe (Americas, EMEA, and APAC), delivering data-driven, actionable insights that shape marketing strategy and optimize campaign performance. This includes analyzing program impact, ROI, and forecasts, as well as building dashboards and custom reports to track trends and outcomes of marketing initiatives in alignment with company goals. This role will have a critical role in refining the overall go-to-market strategy by fostering cross-functional team collaboration and providing insightful recommendations.&nbsp; This role can be based out of our Dublin office or remotely in the Ireland region. Main Responsibilities Serve as the subject matter expert for all standard metrics, reporting, methodologies, processes, and domain knowledge for the marketing organization Analyze extensive marketing data and omni-channel interactions to make recommendations on optimal marketing mixes and ideal customer journeys Lead analytical deep dives to understand regional funnel drivers and opportunities for marketing performance improvement, including, but not limited to, global/regional marketing performance, marketing program ROI, and funnel analysis. Identify areas of opportunity and propose innovation and iterations Collaborate with internal marketing teams to understand pain points, providing data-driven insights and guidance Manage data-related quality, accuracy, and availability of our dashboards and reports Leverage AI tools to improve productivity and reduce time-to-insights Manage roadmaps, projects, stakeholders' needs, and prioritization in line with the company an",
+      "score": {
+        "overall": 20,
+        "stack_match": 32,
+        "location_ok": false,
+        "seniority_fit": "senior",
+        "reason": "Analytics-heavy marketing operations role requiring 3–5 years of hands-on marketing analytics and BI expertise (gaps in Séverine's background). Location restricted to Ireland region, incompatible with Spain-based remote work.",
+        "red_flags": [
+          "analytics-primary function, not operations-focused",
+          "requires marketing analytics/BI tools expertise",
+          "location: Ireland region only"
+        ]
+      }
+    },
+    {
+      "id": "a5b96d82aa8d",
+      "title": "Senior Product Manager - IT Go-to-Market AI",
+      "company": "MongoDB",
+      "location": "New York City; Palo Alto",
+      "remotePolicy": "uncertain",
+      "postedAt": "2026-04-14T19:48:55.000Z",
+      "tags": [
+        "Agile",
+        "Roadmap",
+        "SaaS"
+      ],
+      "applyUrl": "https://www.mongodb.com/careers/job/?gh_jid=7705474",
+      "source": "watchlist",
+      "rawDescription": "Senior Product Manager - IT Go-to-Market AI The IT Go-to-Market organization builds and operates the technology platforms that power Sales, Marketing, and Revenue Operations. These products enable scalable lead generation, pipeline management, deal execution, and revenue insights across the business. As a Senior Product Manager on the IT Go-to-Market (GTM) team, you will own internal technology products that support critical GTM capabilities such as CRM platforms, lead-to-quote workflows, sales productivity tools, and marketing automation systems. You will work closely with Sales, Marketing and RevOps&nbsp; teams to define product strategy, prioritize initiatives, and deliver solutions that improve seller productivity, accelerate deal execution, and enable data-driven decision-making. Responsibilities Product Strategy & Vision Define and communicate the product vision and roadmap for GTM technology platforms Translate business strategy and operational needs into scalable product capabilities Identify opportunities to improve seller productivity, marketing effectiveness, and revenue workflows through technology Align product strategy with enterprise architecture, security, and platform standards Product Lifecycle Ownership Own the end-to-end lifecycle of GTM products from discovery and requirements through delivery and continuous improvement Develop clear product requirements (PRDs), define success metrics, and track product adoption and impact Use user feedback and data insights to refine priorities and improve the product experience Stakeholder Engagement Partner with Sales, Marketing, RevOps, Finance, Security, and IT teams to understand pain points and identify opportunities Represent the voice of the user, ensuring solutions address real operational challenges Communicate priorities, trade-offs, timelines, and progress clearly to stakeholders and leadership Build strong partnerships with engineering teams, architects, and external vendors Roadmap & Delivery Own ",
+      "score": {
+        "overall": 20,
+        "stack_match": 70,
+        "location_ok": false,
+        "seniority_fit": "senior",
+        "reason": "Strong product management fit—senior-level PM in enterprise B2B SaaS with deep GTM platform focus aligns well with PRD writing, roadmap planning, and cross-functional stakeholder management. However, posting lists US-only locations (NYC/Palo Alto) with no remote policy, incompatible with Séverine's full-remote-only requirement from Spain.",
+        "red_flags": [
+          "US-based locations (NYC, Palo Alto)",
+          "No remote policy stated",
+          "Location blocks Spain timezone"
+        ]
+      }
+    },
+    {
+      "id": "6ea9591731e0",
+      "title": "Senior Technical Program Manager, App Modernization",
+      "company": "MongoDB",
+      "location": "Alberta; Ontario; Ottawa; Toronto",
+      "remotePolicy": "uncertain",
+      "postedAt": "2026-04-14T19:48:55.000Z",
+      "tags": [
+        "Jira",
+        "Roadmap",
+        "AI"
+      ],
+      "applyUrl": "https://www.mongodb.com/careers/job/?gh_jid=7683696",
+      "source": "watchlist",
+      "rawDescription": "Senior Technical Program Manager, App Modernization The Application Modernization Platform team aids developers in making the shift from relational databases to MongoDB, building toolkits that leverage AI to power seamless transitions.&nbsp; As a Senior Technical Program Manager, you will own the successful delivery of complex, cross-functional efforts for Application Modernization. You will partner closely with stakeholders across the organization from Engineering, Product, Product Design, and Field-facing teams to develop and execute against our overall product vision and business objectives, uncover solutions to technical challenges, and provide data-driven insights that power strategic decision-making. This remote position is open to candidates in Eastern and Central timezones. The right candidate for this role will be: Experienced with 5+ years of Software development background, preferably with experience with Java web services and with relational data modelling and SQL Familiar with tools and methodologies for code analysis, refactoring, and automated testing Able to partner with technical stakeholders in methodically breaking down engineering challenges to deliver against abstract goals Able to participate in technical design discussions and summarize trade-offs, outcomes, and next steps Skilled at communicating across a diverse set of engineers and stakeholders Capable of deep user empathy and adept at balancing product goals and engineering constraints to deliver impactful experiences Hyper-organized and capable of coordinating across multiple independent work streams and organizations A role model for effective execution practices, driven by an attuned sense of priority and urgency Able to leverage their experience in program delivery to influence improvements to our tools, operations, architecture Trained in working with project tracking software (JIRA is preferred) Familiar with MongoDB or a comparable technology Exposed to generative AI and Machine Lea",
+      "score": {
+        "overall": 20,
+        "stack_match": 55,
+        "location_ok": false,
+        "seniority_fit": "senior",
+        "reason": "Séverine's Project Management and Stakeholder Management expertise aligns with TPM responsibilities, but the role requires 5+ years of software development background (Java, SQL, relational databases) which is outside her PM/ops specialization. Position is geographically restricted to Eastern and Central Canadian timezones, excluding Europe.",
+        "red_flags": [
+          "Software engineering background required",
+          "Java, SQL, relational database expertise gap",
+          "Python scripting and business automation required"
+        ]
+      }
+    },
+    {
+      "id": "e08d8613b497",
+      "title": "Project Manager Key Accounts",
+      "company": "Pennylane",
+      "location": "Paris",
+      "remotePolicy": "remote",
+      "postedAt": "2026-04-15T07:56:37.185Z",
+      "tags": [
+        "Agile",
+        "B2B",
+        "SaaS"
+      ],
+      "applyUrl": "https://jobs.ashbyhq.com/pennylane/d669bfa7-e3cb-4b12-b0ac-7f0410c80972",
+      "source": "watchlist",
+      "rawDescription": "Project Manager Key Accounts Vous cherchez un environnement professionnel stimulant basé sur l'autonomie et la confiance ? Pennylane vous offre l'opportunité de grandir au sein d'une entreprise en pleine croissance. Ici, votre expertise contribuera directement à aider les entrepreneurs à reprendre le contrôle de leurs finances. Découvrez un lieu où vos compétences seront valorisées et où vous pourrez façonner l'avenir de la gestion financière. Notre vision Notre ambition est de devenir le logiciel de pilotage financier préféré des PMEs européennes. Nous aidons les entrepreneurs à se débarrasser des tâches chronophages liées à la comptabilité et à la finance, tout en leur donnant accès à des informations financières clés pour les aider à prendre les meilleures décisions pour leur entreprise. Parallèlement, nous aidons les cabinets d'expertise-comptable, en leur permettant de passer moins de temps sur des tâches redondantes et répétitives, et plus de temps sur la partie conseil et accompagnement de leurs clients. À propos de Pennylane Pennylane est une des FinTech à la plus forte croissance en France, et souhaite bientôt adresser le marché européen. En 5 ans d'existence, nous sommes parvenus à : 💻 Nous positionner sur le marché comme un éditeur de solution de comptabilité et de gestion financière innovant 💰 Lever un total de 400 millions d'euros, auprès d'investisseurs de renom, dont Sequoïa, le fonds phare de la Silicon Valley, connu pour avoir soutenu Google, Facebook, Airbnb, Stripe, Paypal et bien d'autres à leur début 👨‍👩‍👧‍👦 Passer de 7 cofondateurs à une équipe de 1000 collaborateurs, avec une note moyenne de 4,9/5 sur Glassdoor et 94% des évaluateurs Glassdoor qui recommanderaient PL à leurs proches! 🌍 Construire une équipe internationale composée de collaborateurs issus de 25 pays différents, avec une culture du télétravail très flexible 🤝 Gagner la confiance de milliers d'utilisateurs et obtenir d'excellents retours 🚀 Déjà plus de 900,000 TPE/PME et",
+      "score": {
+        "overall": 20,
+        "stack_match": 50,
+        "location_ok": false,
+        "seniority_fit": "senior",
+        "reason": "B2B SaaS FinTech with French cultural fit, but posted for Paris with no explicit remote confirmation—a dealbreaker for Valencia. Incomplete JD and ambiguous role scope limit proper assessment.",
+        "red_flags": [
+          "Location: Paris, no explicit remote",
+          "Role scope unclear—PM vs. Account Management"
         ]
       }
     },
@@ -458,7 +617,7 @@
       "company": "Voodoo",
       "location": "Paris",
       "remotePolicy": "remote",
-      "postedAt": "2026-04-14T10:23:02.668Z",
+      "postedAt": "2026-04-15T07:56:38.498Z",
       "tags": [
         "Roadmap",
         "AI",
@@ -468,16 +627,157 @@
       "source": "watchlist",
       "rawDescription": "Product Manager Gaming - Blitz About Voodoo Founded in 2013, Voodoo is a tech company that creates mobile games and apps with a mission to entertain the world. Gathering 800 employees, 7 billion downloads, and over 200 million active users, Voodoo is the #3 mobile publisher worldwide in terms of downloads after Google and Meta. Our portfolio includes chart-topping games like Mob Control and Block Jam, alongside popular apps such as BeReal and Wizz. Team Blitz is a gaming platform launched in 2021, allowing players to compete in mobile games for real cash prizes (head-up, tournaments, leagues, etc.). It is leveraging a unique game portfolio as well as exclusive games crafted for Blitz to engage users in a fun and rewarding way. We are looking for a talented Gaming Product Manager, deeply passionate about gameplay, level design, perfect visual pixel execution and top-notch look and feel, who will play a key role in the development of Blitz, our real-money gaming platform. Role Define a clear and cohesive gaming roadmap Deconstruct and analyze mobile games mechanics, understand what makes a game a success in Real Money Gaming Pitch and implement big features and new games with the team Work with the team on designing and balancing our games and maps Always back up your ideas with available data points and/or user feedbacks Be responsible for excellence in execution and look & feel Work on a portfolio of over 20 different gameplays Coordinate a team of 7 (Game Artists, Game Designers, Game developers) Profile 5+ years of experience as Product Manager in casual mobile games or strong consumer apps Experience in team coordination Strong sense of gameplay experience, and special attention to details Deep collaboration mindset, including excellent interpersonal skills, and a positive mindset towards receiving, acting on, and giving feedback Accountability, independence, and responsibility when given ownership over your work Communication skills in English, both written and ",
       "score": {
-        "overall": 8,
-        "stack_match": 18,
+        "overall": 18,
+        "stack_match": 35,
         "location_ok": false,
         "seniority_fit": "senior",
-        "reason": "Gaming PM role requiring deep gameplay mechanics expertise outside Séverine's B2B SaaS focus. Location is hybrid (Paris office, Fridays remote), not full-remote.",
+        "reason": "Location is a dealbreaker: the role is hybrid in Paris (4 days office) but Séverine is full-remote only. Additionally, the role requires mobile gaming expertise and domain knowledge she lacks; her strength is B2B SaaS product operations, not gaming mechanics.",
         "red_flags": [
-          "Hybrid role (Paris office, Fridays remote)",
-          "Gaming specialization outside B2B SaaS domain",
-          "Requires deep gameplay/game mechanics expertise",
-          "Real-money gaming platform not her background"
+          "Hybrid role, Paris office required",
+          "Mobile gaming domain, not B2B SaaS",
+          "Requires gameplay design expertise",
+          "No gaming product background"
+        ]
+      }
+    },
+    {
+      "id": "00dd6319a94a",
+      "title": "Product Manager - Wizz",
+      "company": "Voodoo",
+      "location": "Paris",
+      "remotePolicy": "remote",
+      "postedAt": "2026-04-15T07:56:38.498Z",
+      "tags": [
+        "Roadmap",
+        "AI"
+      ],
+      "applyUrl": "https://jobs.ashbyhq.com/voodoo/ab22e7ad-8751-4d98-8640-7ccf6be0d6ec",
+      "source": "watchlist",
+      "rawDescription": "Product Manager - Wizz About Voodoo Founded in 2013, Voodoo is a tech company that creates mobile games and apps with a mission to entertain the world. Gathering 800 employees, 7 billion downloads, and over 200 million active users, Voodoo is the #3 mobile publisher worldwide in terms of downloads after Google and Meta. Our portfolio includes chart-topping games like Mob Control and Block Jam, alongside popular apps such as BeReal and Wizz. Team Our Consumer Apps teams are at the forefront of crafting innovative and engaging apps for daily enjoyment. Our ambition extends beyond gaming to entertain a global audience. Millions of people around the world, especially in the US, download and use the apps we create. You'll be working on Wizz, a social app specifically designed for teens, boasting over 3 million monthly active users in the US and UK. Wizz is a friend-finding and chat app where young people can safely express themselves and connect with like-minded peers in an authentic, pressure-free environment. Unlike other social media platforms that focus on followers, posts, or passive consumption, Wizz offers young people a space to have meaningful 1:1 conversations with peers. As a member of a high-performing team of 20, you'll collaborate to further scale and enhance Wizz, fostering a spirit of goodwill and creativity. As Wizz continues its dynamic growth and development, we are seeking an ambitious Product Manager to join. Role Analyze Wizz's competitive environment and identify new business opportunities Report directly to CEO Combine analytics and user research to identify user drives, fuel ideation, and lead product improvements. Manage some product operations (e.g., CRM, Monetization) and solve problems as they arise. Contribute to high-level strategic decisions. Help define short and long-term roadmaps. Identify key metrics and take ownership for improving them. Profile You’re passionate about B2C mobile apps. A strong experience in a fast-paced environment (",
+      "score": {
+        "overall": 10,
+        "stack_match": 25,
+        "location_ok": false,
+        "seniority_fit": "mid",
+        "reason": "PM fundamentals and French fluency align well. However, the on-site Paris requirement is a dealbreaker since she requires full-remote, and B2C mobile + UX design don't match her B2B SaaS expertise.",
+        "red_flags": [
+          "On-site Paris office, not remote",
+          "B2C mobile domain, not B2B SaaS",
+          "UX design intuition required",
+          "Mid-level PM (not senior)"
+        ]
+      }
+    },
+    {
+      "id": "773420208551",
+      "title": "Program Manager, Commercial Compliance",
+      "company": "MongoDB",
+      "location": "New York City; United States",
+      "remotePolicy": "uncertain",
+      "postedAt": "2026-04-14T19:48:55.000Z",
+      "tags": [
+        "Jira",
+        "Roadmap",
+        "SaaS"
+      ],
+      "applyUrl": "https://www.mongodb.com/careers/job/?gh_jid=7768249",
+      "source": "watchlist",
+      "rawDescription": "Program Manager, Commercial Compliance Description: The Compliance team at MongoDB manages the strategy, execution, and maintenance of our global security certifications and regulatory requirements. We ensure that our cloud database products meet the rigorous security standards required by our customers in the most highly regulated industries worldwide. We act as the primary interface between external auditors and our internal Product, Engineering, and Legal teams. Our goal is to translate complex regulatory requirements into scalable operational processes, maintaining a compliant and audit-ready posture across our diverse portfolio. The Program Manager / Senior Analyst is a mid-to-senior level individual contributor role responsible for leading high-stakes audits and specialized compliance workstreams. Unlike the Analyst level, this role takes full ownership of complex international frameworks—such as IRAP and ENS High—and manages the relationship with our Financial Services customers during audit deep-dives. You will lead internal audit cadences and perform gap analyses for new market expansions. Responsibilities: Lead the end-to-end execution of specialized external audits (e.g., ENS High, IRAP, ISO 22301) and coordinate all phases from initial scoping to final certification Serve as the lead point of contact for Financial Services customer audits, facilitating meetings, responding to security questionnaires, and defending our control environment to external stakeholders Lead internal audit cadences and drive the POA&M tracking process, ensuring technical teams remediate findings within required SLAs Map new regulatory requirements to our central control framework, performing gap analyses to identify where existing controls can be leveraged for new certifications Conduct NIST CSF or similar maturity assessments to monitor the effectiveness of the Compliance Program and report findings to team leads Author and review customer-facing security documentation, ensurin",
+      "score": {
+        "overall": 5,
+        "stack_match": 20,
+        "location_ok": false,
+        "seniority_fit": "mid",
+        "reason": "This is a specialized GRC and compliance role requiring deep audit and regulatory expertise (ISO 27001, IRAP, ENS High). While Séverine has solid PM and stakeholder management skills, the role's core work—audit execution, regulatory framework mapping, compliance maturity assessments—falls outside her Product Operations background. The role is also US-based with no remote policy signal, incompatibl",
+        "red_flags": [
+          "GRC/compliance expertise required, not her specialty",
+          "Requires 7+ years IT audit experience",
+          "AWS/GCP/Azure security certifications knowledge",
+          "US-based, no remote/EMEA signal",
+          "Specialized compliance role, not Product Operations"
+        ]
+      }
+    },
+    {
+      "id": "e252d5b51624",
+      "title": "Program Manager, Public Sector Compliance",
+      "company": "MongoDB",
+      "location": "New York",
+      "remotePolicy": "uncertain",
+      "postedAt": "2026-04-14T19:48:55.000Z",
+      "tags": [
+        "Jira",
+        "Confluence",
+        "Roadmap"
+      ],
+      "applyUrl": "https://www.mongodb.com/careers/job/?gh_jid=7743718",
+      "source": "watchlist",
+      "rawDescription": "Program Manager, Public Sector Compliance The Program Manager / Senior Analyst (Public Sector) is a senior-level individual contributor role responsible for the lifecycle management of our most sensitive US government authorizations. This role acts as a lead for high-stakes workstreams involving FedRAMP High, DoD IL5+, CJIS, and ITAR. Unlike the Analyst level, this role takes full ownership of complex federal assessments and leads the continuous monitoring strategy for our Atlas for Government product. This role is a key resource for interpreting NIST 800-53 controls and translating them into technical requirements for our engineering teams. Responsibilities: Lead the end-to-end execution of federal assessments, coordinating with Third Party Assessment Organizations (3PAOs), agency sponsors, and the FedRAMP PMO Manage the federal continuous monitoring (ConMon) program, including the timely analysis and reporting of vulnerabilities and the maintenance of the POA&M Lead the annual update and technical review of core FedRAMP artifacts, including the System Security Plan (SSP), Contingency Plan (ISCP), and Incident Response Plan (IRP) Act as a technical advisor to Engineering and Operations teams to ensure cloud configurations (e.g., FIPS 140-2/140-3, boundary protection, and access control) meet federal and DoD IL5+ mandates Perform deep-dive gap analyses for new public sector requirements (such as CMMC or GovRAMP) and define the roadmap for technical remediation Directly support federal sales efforts by serving as a subject matter expert during customer security reviews and explaining our technical compliance posture to agency stakeholders Create and maintain high-impact Jira dashboards and presentations to provide leadership with visibility into public sector compliance health and project milestones Requirements: 5+ years in GRC, Technical Writing, or IT Audit, with a heavy focus on US Public Sector frameworks (FedRAMP, DoD SRG, CJIS) Deep understanding of NIST 800-5",
+      "score": {
+        "overall": 5,
+        "stack_match": 40,
+        "location_ok": false,
+        "seniority_fit": "senior",
+        "reason": "Requires US Citizenship (Séverine is Spanish — hard gate) and 5+ years GRC/FedRAMP/DoD expertise she lacks. NYC location with no remote policy also conflicts with Valencia-based requirement.",
+        "red_flags": [
+          "US citizenship required",
+          "Requires 5+ years GRC/compliance expertise"
+        ]
+      }
+    },
+    {
+      "id": "df32d077a206",
+      "title": "Senior Product Manager",
+      "company": "MongoDB",
+      "location": "Dublin; Ireland",
+      "remotePolicy": "uncertain",
+      "postedAt": "2026-04-14T19:48:55.000Z",
+      "tags": [
+        "Roadmap",
+        "AI",
+        "Stakeholder"
+      ],
+      "applyUrl": "https://www.mongodb.com/careers/job/?gh_jid=7113803",
+      "source": "watchlist",
+      "rawDescription": "Senior Product Manager MongoDB empowers innovators to create, transform, and disrupt industries by unleashing the power of software and data. Atlas is at the heart of our AI-ready data foundation. Atlas is a best-in-class, fully managed, multi-cloud database service that simplifies the complexities of deploying and managing highly available database deployments across multiple regions and cloud providers. Atlas offers vertically and horizontally scalability, built-in automation for optimizing workloads and resources, advanced observability and security features, and unmatched data distribution with over 125 regions available globally across AWS, Google Cloud, and Azure.&nbsp; This team is at the forefront of innovation, having brought to life some of the most exciting features we’ve launched in the past, such as multi-cloud databases, predictive autoscaling, and intelligent workload management. Furthermore, this team will continue to play a critical role as the platform expands to where developers need it most: AI search and retrieval, application development, and more. This role can be based out of our Dublin office or remotely in the Ireland region. About the Role Product Managers on the Atlas team work side-by-side with engineering, design, marketing, and analytics to build scalability capabilities that our users trust and that work for the business. You’ll spend your time deeply understanding how customers grow their workloads, developing hypotheses about where scaling breaks down, and validating them with design solutions across Atlas and the MongoDB server. If you’re doing well, you will continuously be accelerating the rate at which our users can safely scale up, scale down, and horizontally scale their deployments. Our engineering teams are responsible for ensuring that clusters can scale seamlessly as demand changes — from automatic vertical scaling to horizontal auto-scaling — while keeping customer operations and workloads highly available and performant.",
+      "score": {
+        "overall": 5,
+        "stack_match": 40,
+        "location_ok": false,
+        "seniority_fit": "senior",
+        "reason": "Senior PM role in B2B SaaS with matching cross-functional and stakeholder management skills, but location policy restricts remote to Ireland region (incompatible with Spain), and the infrastructure/platform specialization doesn't match Séverine's operations and client-delivery background.",
+        "red_flags": [
+          "Database infrastructure PM, not product operations",
+          "Requires specialized knowledge of distributed systems and scaling"
+        ]
+      }
+    },
+    {
+      "id": "1a9ee2aec77b",
+      "title": "Senior Program Manager, Public Sector Compliance",
+      "company": "MongoDB",
+      "location": "New York City",
+      "remotePolicy": "uncertain",
+      "postedAt": "2026-04-14T19:48:55.000Z",
+      "tags": [
+        "Jira",
+        "Confluence",
+        "Roadmap"
+      ],
+      "applyUrl": "https://www.mongodb.com/careers/job/?gh_jid=7740208",
+      "source": "watchlist",
+      "rawDescription": "Senior Program Manager, Public Sector Compliance The Compliance team at MongoDB manages the strategy, execution, and maintenance of our global security certifications and regulatory requirements. We ensure that our cloud database products meet the rigorous security standards required by our customers in the most highly regulated industries worldwide. The Senior Manager, Compliance (US Public Sector) leads the compliance efforts for our Atlas for Government product. Reporting to the Director of GRC, you will lead a specialized team of Program Managers and Analysts responsible for high-stakes US federal authorizations, including FedRAMP High, DoD IL5+, CJIS, ITAR, and CMMC. You are responsible for the end-to-end success of our public sector audit portfolio, driving high-impact initiatives, and maintaining an always-ready posture for continuous monitoring. This role will contribute to the long-term Compliance strategy, provide insights for Board-level reporting, and serve as a trusted advisor to internal stakeholders to ensure federal compliance scales alongside our product innovation. Responsibilities: Lead and mentor a team of senior individual contributors and analysts. Own the team’s resource allocation, performance management, and professional development, ensuring a high bar for technical execution within federal frameworks Oversee the end-to-end success of federal assessments, coordinating with Third Party Assessment Organizations (3PAOs), agency sponsors, and the FedRAMP PMO Lead the team driving the ConMon program for Atlas for Government, ensuring timely analysis of vulnerabilities and maintenance of artifacts like the POA&M and SSP Serve as the primary point of contact for Product, Engineering, and Legal leadership on federal requirements. Communicate the impact of NIST 800-53 mandates on product roadmaps and drive accountability for remediation Aggregate public sector metrics and audit outcomes to contribute to Board of Directors presentations and executive",
+      "score": {
+        "overall": 5,
+        "stack_match": 40,
+        "location_ok": false,
+        "seniority_fit": "senior",
+        "reason": "This is a compliance/GRC role requiring deep US federal expertise (FedRAMP, DoD IL5+) that Séverine lacks, and it is NYC-based with no remote option. Her PM and team leadership skills are strong, but the domain and location are not a fit.",
+        "red_flags": [
+          "NYC-based, no remote option",
+          "GRC domain, not Product Operations",
+          "US federal compliance expertise gap",
+          "FedRAMP/DoD IL5+ certification knowledge required"
         ]
       }
     },
@@ -487,7 +787,7 @@
       "company": "MongoDB",
       "location": "Austin; New York City; United States",
       "remotePolicy": "uncertain",
-      "postedAt": "2026-04-14T02:40:17.000Z",
+      "postedAt": "2026-04-14T19:48:55.000Z",
       "tags": [
         "AI",
         "Stakeholder"
@@ -496,15 +796,16 @@
       "source": "watchlist",
       "rawDescription": "Workforce Operations Manager The Opportunity This is a high-impact, strategic role designed for a professional to bridge the gap between Finance, Recruiting, and Business Operations. As the Workforce Insights Manager, you will serve as the primary advisor to the Director of Recruiting Operations on the feasibility, health and execution of our global hiring plan. You will move the organization from reactive headcount tracking to a predictive, data-driven model that ensures our recruiting capacity is always aligned with our business needs. This role requires a blend of financial, recruiting and data analysis acumen, operational auditing and the ability to influence senior leadership through data-driven storytelling. You will help to ensure that hiring goals are backed by a realistic operational plan. Key Responsibilities and Focus Areas Workforce Planning & FP&A Integration Strategic Reconciliations: Develop and own foundational recruiting forecast and capacity models. You will serve as the operational point of contact to FP&A analysts to ensure that hiring forecasts are aligned with Recruiting’s operational reality. Predictive Forecasting: Lead the development of hiring forecasts. You will provide the Recruiting Leadership Team (RLT) with the data and insights needed to advise Business Unit leaders on when to activate roles, when to defer hiring and how to reallocate capacity. Capacity Governance: Establish and maintain the standards for recruiting bandwidth. You will identify when business demand exceeds recruiter or interviewer capacity and provide the impact analysis used for trade-off discussions with senior stakeholders. Recruiting Intelligence & Process Optimization Root Cause Analysis: Conduct deep-dive audits into the recruiting lifecycle. You will identify specific friction points; such as late-stage requirement changes, interviewer misalignment or funnel drop-offs and quantify their impact on total hiring velocity. Productivity Modeling:&nbsp;Analyze activa",
       "score": {
-        "overall": 5,
-        "stack_match": 30,
+        "overall": 0,
+        "stack_match": 15,
         "location_ok": false,
         "seniority_fit": "senior",
-        "reason": "This is a Finance/Recruiting Operations role, not Product Operations; while Séverine has strong operational and cross-functional coordination skills, the role requires FP&A expertise and recruiting domain knowledge she lacks. The US-only location (Austin/NYC) is a hard blocker—she requires full-remote.",
+        "reason": "US-only role (Austin/NYC) disqualifying for Valencia-based Séverine. Domain mismatch: recruiting/HR operations vs. product/project management, with core requirements (FP&A, data analysis) outside her expertise matrix.",
         "red_flags": [
-          "US-only location; not remote",
-          "Finance/recruiting ops domain mismatch",
-          "FP&A expertise required (skill gap)"
+          "US-only location, no remote option",
+          "Recruiting/HR operations, not product management",
+          "Requires FP&A, financial planning expertise",
+          "Missing recruiting operations domain knowledge"
         ]
       }
     }

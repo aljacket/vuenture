@@ -102,29 +102,19 @@ function buildSkillsContext(skills) {
 
   const lines = [];
   if (groups.expert.length) {
-    lines.push(
-      `- **Expert (differentiators — reward matches heavily):** ${groups.expert.join(', ')}. A role that matches multiple expert skills is the highest-value target. Each expert skill present in the JD adds +10 to \`stack_match\`.`
-    );
+    lines.push(`- **Expert (+10 each):** ${groups.expert.join(', ')}`);
   }
   if (groups.strong.length) {
-    lines.push(
-      `- **Strong (production confidence):** ${groups.strong.join(', ')}. Each strong skill present in the JD adds +5 to \`stack_match\`.`
-    );
+    lines.push(`- **Strong (+5 each):** ${groups.strong.join(', ')}`);
   }
   if (groups.basic.length) {
-    lines.push(
-      `- **Basic (can contribute, neutral):** ${groups.basic.join(', ')}. Neutral signal — no bonus or penalty. Only penalize (-10) if the role expects deep/senior expertise in these.`
-    );
+    lines.push(`- **Basic (neutral, -10 if deep expertise required):** ${groups.basic.join(', ')}`);
   }
   if (groups.learning.length) {
-    lines.push(
-      `- **Currently learning (mild positive):** ${groups.learning.join(', ')}. Jobs mentioning these as part of the role are neutral to slightly positive. Only penalize (-5) if deep expertise is expected from day one.`
-    );
+    lines.push(`- **Learning (neutral, -5 if deep expertise required day one):** ${groups.learning.join(', ')}`);
   }
   if (groups.none.length) {
-    lines.push(
-      `- **No experience (red flag if core stack):** ${groups.none.join(', ')}. Jobs requiring these as a MAJOR part of the work should be penalized -15 on \`overall\` and added to \`red_flags\`. Merely "nice to have" mentions are neutral.`
-    );
+    lines.push(`- **None (-15 if core requirement, neutral if nice-to-have):** ${groups.none.join(', ')}`);
   }
   return lines.join('\n');
 }
@@ -1027,10 +1017,10 @@ function scoreWithClaude(raw, scoringInstructions) {
     `Location: ${raw.location}`,
     `Posted: ${raw.postedAt}`,
     '',
-    // 2500 char is enough to capture stack + location signals; the rest of
-    // a JD is usually fluff (benefits, about-us, values) that just inflates
-    // token usage without changing the score.
-    stripHtml(raw.rawDescription).slice(0, 2500),
+    // 2000 chars captures stack + location + seniority signals; the tail
+    // is usually benefits/values fluff that inflates tokens without
+    // changing the score.
+    stripHtml(raw.rawDescription).slice(0, 2000),
   ].join('\n');
 
   // NOTE: we inline the scoring instructions directly instead of asking Claude

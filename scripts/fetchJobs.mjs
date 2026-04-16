@@ -1044,9 +1044,13 @@ function passesHardFilters(raw) {
   const accepted = raw.isRemoteStructured === true || acceptedByKeyword;
   if (!accepted) return { ok: false, reason: 'no-remote-signal' };
 
-  // F3: freshness
-  const age = Date.now() - new Date(raw.postedAt).getTime();
-  if (!Number.isFinite(age) || age > MAX_AGE_MS) return { ok: false, reason: 'stale' };
+  // F3: freshness — skip for monthly sources (HN "Who is hiring?" posts
+  // throughout the month; Reddit uses t=week server-side).
+  const MONTHLY_SOURCES = new Set(['hackernews', 'reddit']);
+  if (!MONTHLY_SOURCES.has(raw.source)) {
+    const age = Date.now() - new Date(raw.postedAt).getTime();
+    if (!Number.isFinite(age) || age > MAX_AGE_MS) return { ok: false, reason: 'stale' };
+  }
 
   // F4: anti-junior (title-only)
   if (JUNIOR_TITLE_PATTERNS.some((re) => re.test(raw.title))) {

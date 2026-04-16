@@ -687,6 +687,92 @@ async function fetchArbeitnow() {
   }
 }
 
+async function fetchHackerNews() {
+  // HN "Ask HN: Who is hiring?" monthly thread. Posted by @whoishiring on
+  // the 1st of each month. Algolia HN API is free, no auth needed.
+  // Strategy:
+  //   1. Find the latest "Who is hiring?" thread by whoishiring
+  //   2. Search its comments for "vue" mentions
+  //   3. Parse the conventional first-line format: Company | Role | Location
+  try {
+    // Step 1: find the latest thread
+    const threadRes = await fetch(
+      'https://hn.algolia.com/api/v1/search_by_date?tags=ask_hn,author_whoishiring&hitsPerPage=3',
+      { headers: { 'User-Agent': 'vuenture/1.0 (https://github.com/aljacket/vuenture)' } }
+    );
+    if (!threadRes.ok) {
+      console.warn(`[hn] thread search → ${threadRes.status}`);
+      return [];
+    }
+    const threads = await threadRes.json();
+    const hiringThread = (threads.hits ?? []).find((h) =>
+      /who is hiring/i.test(h.title) && !/wants to be hired/i.test(h.title)
+    );
+    if (!hiringThread) {
+      console.warn('[hn] no "Who is hiring?" thread found');
+      return [];
+    }
+    console.log(`  [hn] found thread: ${hiringThread.title} (${hiringThread.num_comments} comments)`);
+
+    // Step 2: search comments for Vue mentions (Algolia paginates at 20)
+    const allComments = [];
+    let page = 0;
+    const maxPages = 3; // up to 60 Vue-mentioning comments
+    while (page < maxPages) {
+      const commentsRes = await fetch(
+        `https://hn.algolia.com/api/v1/search?tags=comment,story_${hiringThread.objectID}&query=vue&hitsPerPage=20&page=${page}`,
+        { headers: { 'User-Agent': 'vuenture/1.0 (https://github.com/aljacket/vuenture)' } }
+      );
+      if (!commentsRes.ok) break;
+      const commentsJson = await commentsRes.json();
+      const hits = commentsJson.hits ?? [];
+      allComments.push(...hits);
+      if (hits.length < 20) break;
+      page++;
+    }
+
+    // Step 3: parse each comment into a job entry
+    return allComments.map((c) => {
+      const html = c.comment_text ?? '';
+      const text = decodeHtmlEntities(stripHtml(html));
+
+      // HN convention: first line is "Company | Role | Location | ..."
+      const firstLine = text.split(/\n/)[0] ?? '';
+      const parts = firstLine.split('|').map((s) => s.trim());
+      const company = parts[0] || `hn:${c.author}`;
+      // Use second part as title if it looks like a role, otherwise use first line
+      const title = parts.length >= 2 ? parts.slice(0, 2).join(' — ') : firstLine.slice(0, 120);
+      const location = parts.find((p) =>
+        /remote|onsite|hybrid|europe|eu\b|worldwide|global|usa|uk|spain|germany|france/i.test(p)
+      ) || 'Unknown';
+
+      // Extract apply URL from the comment (first link found)
+      const urlMatch = html.match(/href="([^"]+)"/i) || html.match(/(https?:\/\/[^\s<"]+)/i);
+      const applyUrl = urlMatch
+        ? urlMatch[1].replace(/&#x2F;/g, '/').replace(/&amp;/g, '&')
+        : `https://news.ycombinator.com/item?id=${c.objectID}`;
+
+      return {
+        source: 'hackernews',
+        title: title.slice(0, 150),
+        company: company.slice(0, 80),
+        companyLogo: undefined,
+        location,
+        remotePolicy: /remote/i.test(`${firstLine} ${text.slice(0, 500)}`) ? 'remote' : 'uncertain',
+        isRemoteStructured: /\bremote\b/i.test(firstLine),
+        postedAt: c.created_at ?? new Date().toISOString(),
+        salaryMin: undefined,
+        salaryMax: undefined,
+        applyUrl,
+        rawDescription: `${title}\n\n${text.slice(0, 3000)}\n\nLocation: ${location}`,
+      };
+    });
+  } catch (err) {
+    console.warn(`[hn] ${err.message}`);
+    return [];
+  }
+}
+
 async function fetchReddit() {
   // Reddit public JSON API — no auth needed. We search three subreddits
   // for hiring posts mentioning Vue/frontend, using t=week to bridge
@@ -1185,6 +1271,9 @@ async function main() {
   const arbeitnowResults = await fetchArbeitnow();
   console.log(`  arbeitnow vue-filtered → ${arbeitnowResults.length}`);
   rawAll.push(...arbeitnowResults);
+  const hnResults = await fetchHackerNews();
+  console.log(`  hackernews who-is-hiring → ${hnResults.length}`);
+  rawAll.push(...hnResults);
   const redditResults = await fetchReddit();
   console.log(`  reddit vue-filtered → ${redditResults.length}`);
   rawAll.push(...redditResults);

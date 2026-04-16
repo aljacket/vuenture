@@ -1,139 +1,13 @@
 {
-  "fetchedAt": "2026-04-16T07:49:57.261Z",
+  "fetchedAt": "2026-04-16T14:50:59.643Z",
   "jobs": [
-    {
-      "id": "ca4c956c1650",
-      "title": "Staff LLM Interaction Engineer (Europe remote - TS/Vue/NodeJS)",
-      "company": "n8n",
-      "location": "Berlin Office (+ Albania, Bosnia, Bulgaria, Croatia, Czech Republic, Estonia, Hungary, Kosovo, Latvia, Lithuania, Moldova, Montenegro, Poland, Serbia, Romania, Slovakia, Slovenia, Ukraine, Denmark, Norway, Finland, Sweden, Greece, Italy, Portugal, Spain, London Office, United Kingdom, Austria, Belgium, France, Ireland, Netherlands)",
-      "remotePolicy": "remote",
-      "postedAt": "2026-04-16T07:30:18.545Z",
-      "tags": [
-        "TypeScript",
-        "Node.js"
-      ],
-      "applyUrl": "https://jobs.ashbyhq.com/n8n/5c1d1b67-604c-46b3-9c59-cfe0cd703688",
-      "source": "watchlist",
-      "rawDescription": "Staff LLM Interaction Engineer (Europe remote - TS/Vue/NodeJS) The AI orchestration of your wildest imagination. n8n is the open workflow orchestration platform built for the new era of AI. We give technical teams the freedom of code with the speed of no-code, so they can automate faster, smarter, and without limits. Backed by a fiercely inventive community and 500+ builder-approved integrations, we’re changing the way people bring systems together and scale ideas for impact. Since our founding in 2019, we’ve grown into a diverse team of over 220 - working across Europe and the US, connected by a shared builder spirit and with our centre of gravity in Berlin. Along the way, we’ve: Cultivated a community of more than 650,000 active developers and builders Earned 145k+ GitHub stars, making us one of the world’s Top 40 most popular projects Been ranked as one of Europe’s most promising privately held SaaS startups (4th in Sifted’s 2025 B2B SaaS Rising 100) Raised $240m to date, from Sequoia’s first German seed to our recent $180m Series C - bringing us to a $2.5bn valuation That’s the company we’ve built. Now we’d love to see what you can build. If you’re applying, try n8n out - whether you’re technical or not - and share a screenshot of your first workflow with us. The easiest place to start is here: app.n8n.cloud/register . We’re in a defining moment of an incredible journey. Come and build with us. The role As a Staff level LLM Interaction Engineer , you’ll help shape how n8n’s AI Workflow Builder works end-to-end. This staff level engineering role is focused on a critical product challenge: allowing both technical or less-technically proficient users of n8n to turn AI powered automated workflows into something they can rely on every day. That means building systems that consistently generate the right output, stay grounded in the user’s workflow, and improve quickly through iteration and evaluation. You’ll work on the orchestration layer between users, workflows, a",
-      "score": {
-        "overall": 73,
-        "stack_match": 20,
-        "location_ok": true,
-        "seniority_fit": "lead+",
-        "reason": "Staff-level role with perfect tech stack (Vue/TypeScript/Node) and Spain explicitly listed for location. AI orchestration domain aligns with Claude expertise. Incomplete job description limits full scope clarity.",
-        "red_flags": [
-          "Job description truncated mid-sentence"
-        ]
-      }
-    },
-    {
-      "id": "762cb6db34b0",
-      "title": "Senior Product Engineer (TS/NodeJS/Vue)",
-      "company": "n8n",
-      "location": "Berlin Office (+ Albania, Bulgaria, Bosnia, Croatia, Czech Republic, Estonia, Hungary, Kosovo, Latvia, Lithuania, Moldova, Montenegro, Poland, Romania, Serbia, Slovakia, Slovenia, Ukraine, Denmark, Finland, Norway, Sweden, Greece, Italy, Portugal, Spain, London Office, United Kingdom, Austria, Belgium, France, Germany, Ireland, Netherlands)",
-      "remotePolicy": "remote",
-      "postedAt": "2026-04-16T07:30:18.545Z",
-      "tags": [
-        "TypeScript",
-        "Node.js"
-      ],
-      "applyUrl": "https://jobs.ashbyhq.com/n8n/896c58a8-0388-4037-b265-82b15633a568",
-      "source": "watchlist",
-      "rawDescription": "Senior Product Engineer (TS/NodeJS/Vue) The AI orchestration of your wildest imagination. n8n is the open workflow orchestration platform built for the new era of AI. We give technical teams the freedom of code with the speed of no-code, so they can automate faster, smarter, and without limits. Backed by a fiercely inventive community and 500+ builder-approved integrations, we’re changing the way people bring systems together and scale ideas for impact. Since our founding in 2019, we’ve grown into a diverse team of over 220 - working across Europe and the US, connected by a shared builder spirit and with our centre of gravity in Berlin. Along the way, we’ve: Cultivated a community of more than 650,000 active developers and builders Earned 145k+ GitHub stars, making us one of the world’s Top 40 most popular projects Been ranked as one of Europe’s most promising privately held SaaS startups (4th in Sifted’s 2025 B2B SaaS Rising 100) Raised $240m to date, from Sequoia’s first German seed to our recent $180m Series C - bringing us to a $2.5bn valuation That’s the company we’ve built. Now we’d love to see what you can build. If you’re applying, try n8n out - whether you’re technical or not - and share a screenshot of your first workflow with us. The easiest place to start is here: app.n8n.cloud/register . We’re in a defining moment of an incredible journey. Come and build with us. 🎯 Your main goal will be to build and ship end-to-end TypeScript product features that customers feel in their workflows the same week - balancing speed, quality, and high security standards. To do so, you’ll own outcomes across the full stack and stay close to users, product, and metrics: End-to-end product ownership Own a product area surface from discovery to delivery, including iteration after launch. Ship high-quality features fast across the TypeScript stack, balancing UX, performance, and maintainability. Partner closely with Product to translate customer problems into clear scopes and ",
-      "score": {
-        "overall": 68,
-        "stack_match": 20,
-        "location_ok": true,
-        "seniority_fit": "senior",
-        "reason": "Perfect match on Vue and TypeScript expertise in a senior product-focused role with Spain explicitly supported. Main concern: Node.js is at basic level, but the role emphasizes product ownership and full-stack mobility over deep backend expertise, making the gap manageable.",
-        "red_flags": [
-          "Node.js at basic level, role requires solid backend capabilities"
-        ]
-      }
-    },
-    {
-      "id": "b37f9af2f107",
-      "title": "Senior Frontend Engineer - Remote Europe",
-      "company": "Reedsy",
-      "location": "United Kingdom (+ Poland, United Kingdom, Spain, Netherlands, Portugal, France, Remote)",
-      "remotePolicy": "remote",
-      "postedAt": "2026-04-16T07:30:24.689Z",
-      "tags": [
-        "Vue.js",
-        "TypeScript",
-        "Node.js"
-      ],
-      "applyUrl": "https://jobs.ashbyhq.com/reedsy/742cc4da-d230-4707-835f-58bebe8e4e5e",
-      "source": "watchlist",
-      "rawDescription": "Senior Frontend Engineer - Remote Europe We welcome applicants based anywhere in Europe. About Reedsy We’re here to give authors the tools and resources they need to create beautiful books. Our marketplace gathers the industry's best publishing professionals — the likes of Neil Gaiman's editor, Nora Roberts' book marketer, and GRRM’s cover designer. We’ve grown to a community of 5,000,000 authors, and transformed the way people write and publish their book. Want to hop on board and help us get to our next destination? Cool, keep reading! Responsibilities Develop high quality, responsive, mobile-friendly Vue.js apps Create amazing interactions and visualizations Work closely with our Back-end engineers and our UI designers Help bridge the gap between server and client (consuming RESTful APIs) Write unit and functional tests Requirements Professional experience with Vue.js A firm understanding of how to write maintainable and scalable CSS with Sass. Strong JavaScript fundamentals Experience with component-based front-end UI libraries. Understanding of MVC pattern and other object oriented concepts Experience with version control (Git and GitHub) Familiarity with agile development processes Exceptional communication skills Bonus Points A good dose of ambition, as well as a great sense of humour You strive for pixel perfection Experience optimizing JavaScript applications UX skills Knowledge of Node.js, TypeScript, Ruby, Ruby on Rails, Desktop Framework (e.g Electron), iOS Fluent in multiple languages. Reedsy welcomes applicants of all cultures and backgrounds. Benefits Work from home; Paid paternal and maternal leave; Annual team retreat Salary range: €60k – €90k Location: United Kingdom (+ Poland, United Kingdom, Spain, Netherlands, Portugal, France, Remote)",
-      "score": {
-        "overall": 60,
-        "stack_match": 45,
-        "location_ok": true,
-        "seniority_fit": "senior",
-        "reason": "Strong Vue-primary match with senior remote role explicitly accepting Spain. Requires Sass preprocessing instead of your Tailwind expertise; CSS fundamentals transfer easily.",
-        "red_flags": [
-          "Sass required (Tailwind specialist)"
-        ]
-      }
-    },
-    {
-      "id": "134d28fbcf0c",
-      "title": "Fullstack Developer (Vue/.Net) - Fully Remote (Europe)",
-      "company": "Confidential",
-      "location": "Remote · ES",
-      "remotePolicy": "uncertain",
-      "postedAt": "2026-04-16T07:29:56.746Z",
-      "tags": [],
-      "applyUrl": "https://bebee.com/es/jobs/fullstack-developer-vue-net-fully-remote-europe-confidential-avila--clickajo-379_23431349",
-      "source": "jsearch",
-      "rawDescription": "Fullstack Developer (Vue/.Net) - Fully Remote (Europe)Journi is a London-based technology consultancy where we partner with businesses to support their technology needs from strategy through delivery. We provide bespoke software development, digital transformation consulting, team augmentation, and ongoing technical support, helping clients build custom products and scale their capabilities quickl",
-      "score": {
-        "overall": 50,
-        "stack_match": 60,
-        "location_ok": true,
-        "seniority_fit": "senior",
-        "reason": "Vue is primary (expert skill match), but fullstack role requires .Net backend which is outside Alfonso's matrix. Location is Europe/Spain-friendly. Posting is incomplete—missing seniority level and full tech requirements.",
-        "red_flags": [
-          "job posting truncated",
-          "seniority level unclear",
-          ".Net backend not in skill matrix"
-        ]
-      }
-    },
-    {
-      "id": "6c0ff9feab3a",
-      "title": "Senior Vue Frontend Lead — 100% Remote, Flexible Hours",
-      "company": "knowmad mood",
-      "companyLogo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxZcedD_3dF93ViStyNIWTQoxuaUqovO_AbE5a&s=0",
-      "location": "Remote · ES",
-      "remotePolicy": "uncertain",
-      "postedAt": "2026-04-16T07:30:01.406Z",
-      "tags": [
-        "Vue.js"
-      ],
-      "applyUrl": "https://es.talent.com/view?id=614911200133392335",
-      "source": "jsearch",
-      "rawDescription": "Una empresa de desarrollo web busca un Desarrollador Frontend Senior para unirse a su equipo. Desplácese hacia abajo para encontrar los detalles completos de la oferta de trabajo, incluyendo la experiencia requerida y las funciones y tareas asociadas. Se requiere experiencia en el desarrollo de aplicaciones usando Vue.js, y capacidad para liderar interfaces complejas en un entorno 100% remoto.",
-      "score": {
-        "overall": 48,
-        "stack_match": 10,
-        "location_ok": true,
-        "seniority_fit": "senior",
-        "reason": "Perfect Vue.js match with genuine senior-level leadership opportunity in a remote, Spain-friendly role. Sparse job details and missing TypeScript mention create uncertainty about actual fit and compensation.",
-        "red_flags": [
-          "no TypeScript mentioned",
-          "no salary information"
-        ]
-      }
-    },
     {
       "id": "099762d0e4ac",
       "title": "Remote Vue.js Developer – JavaScript Framework Expert",
       "company": "Hireza",
       "location": "Remote",
       "remotePolicy": "remote",
-      "postedAt": "2026-04-15T00:00:00.000Z",
+      "postedAt": "2026-04-14T00:00:00.000Z",
       "tags": [
         "Vue.js",
         "Pinia",
@@ -143,15 +17,82 @@
       "source": "jsearch",
       "rawDescription": "Job Summary Houston Skilled Consultancy is seeking a highly skilled and detail-oriented Vue.js Developer to join our dynamic remote development team. As a JavaScript Framework Expert, you will be responsible for building and optimizing responsive, feature-rich front-end web applications. The ideal candidate will have a strong background in Vue.js and experience with modern development practices, working closely with UI/UX designers, backend developers, and project managers to deliver cutting-edge web solutions. Key Responsibilities • * Develop and maintain user-facing features using Vue.js • * Optimize components for maximum performance across a range of web-capable devices and browsers • * Collaborate with cross-functional teams including designers and backend developers to create seamless user experiences • * Translate UI/UX wireframes into high-quality, scalable code • * Implement and manage state management libraries such as Vuex or Pinia • * Conduct code reviews and maintain high-quality coding standards • * Ensure the technical feasibility of UI/UX designs and suggest improvements • * Debug and resolve performance bottlenecks, compatibility issues, and general bugs • * Stay updated with emerging trends in web technologies and frameworks • Required Skills and Qualifications • * Strong proficiency in JavaScript and Vue.js (2.x/3.x) • * Deep understanding of Vue CLI, Vue Router, and Vuex/Pinia • * Solid experience with RESTful APIs and asynchronous request handling • * Familiarity with HTML5, CSS3, SASS/SCSS, and responsive design principles • * Proficiency in Git and modern development workflows (CI/CD, Agile/Scrum) • * Experience with front-end testing frameworks such as Jest or Mocha • * Familiarity with webpack or other module bundlers • Experience • * Minimum 3+ years of professional experience in front-end development • * At least 2 years of hands-on experience specifically with Vue.js • * Proven track record of building scalable, high-performance web appli",
       "score": {
-        "overall": 45,
-        "stack_match": 70,
+        "overall": 85,
+        "stack_match": 85,
         "location_ok": true,
-        "seniority_fit": "mid",
-        "reason": "Strong Vue.js and Pinia match, but core hours (10 AM–6 PM IST / 5:30 AM–1:30 PM CET) create timezone friction for Spain-based work, and 3+ years requirement positions this as mid-level, not senior+.",
-        "red_flags": [
-          "core hours 5:30 AM-1:30 PM CET (10 AM-6 PM IST)",
-          "mid-level seniority (3+ years)"
-        ]
+        "seniority_fit": "senior",
+        "reason": "Vue.js is the primary framework matching Alfonso's core expertise. Pinia, responsive design, and testing fundamentals all align. Remote with no geographic restrictions.",
+        "red_flags": []
+      }
+    },
+    {
+      "id": "5763821c2f78",
+      "title": "Senior Frontend Developer | Vue.js",
+      "company": "Novaedge",
+      "location": "Remote",
+      "remotePolicy": "remote",
+      "postedAt": "2026-04-14T00:00:00.000Z",
+      "tags": [
+        "Vue.js",
+        "Vite",
+        "Node.js"
+      ],
+      "applyUrl": "https://novaedge.page.gd/job/senior-frontend-developer-vue-js",
+      "source": "jsearch",
+      "rawDescription": "About us We’re iubenda, the team turning compliance into a growth engine. We help over 110K businesses all around the world build trust, boost performance, and grow without limits. Now part of team.blue ( we’re scaling privacy tech with confidence, creativity, and a little bit of attitude. Join a team that moves fast, thinks big, and makes privacy feel exciting again! Mission & Core Purpose We’re looking for a brilliant and motivated Senior Vue.js Developer to join our team. You will report to our Head of Frontend and will be fully responsible for designing, developing and maintaining frontend applications through Vue.js and Vanilla. Key Responsibilities • Ensuring a high test coverage; • Migrating sections of Bootstrap/jQuery code in order to use Vue.js without regressions; • Lead Code Reviews and mentor colleagues; • Create a positive environment for the people around you, share knowledge with everyone, and help the team grow; • Collaborate with designers, other team leads, and stakeholders to understand business goals, analyze requirements and propose technical solutions. It won't just be about writing code. Experience & Skills • At least 7 years of experience in JavaScript and solid experience in Vue.js; • Ownership in managing projects and ensuring that everything goes as expected at a delivery level; • Great knowledge of modern bundlers (e.g. Webpack, Rollup, Vite), cross-browser compatibility issues and how to work around them; • Experience in Unit testing on JavaScript; • Experience with GitHub or GitLab and a solid understanding of Git core concepts; • Full professional proficiency in English; • Excellent communication and collaboration skills. Added Values • Experience in migrating existing codebases to Vue.js; • Experience with other frameworks (i.e. Angular, React or Svelte); • Experience with server-side technologies (i.e. Ruby on Rails, Node.js and PHP); • Basic understanding of server-side CSS pre-processing platforms (i.e. LESS, SASS); • Deep underst",
+      "score": {
+        "overall": 78,
+        "stack_match": 78,
+        "location_ok": true,
+        "seniority_fit": "senior",
+        "reason": "Perfect senior Vue.js fit: Vue is primary framework, bundler expertise (Vite/bundlers), testing and migration experience all match. Role includes leadership (mentoring, code reviews), architecture, and stakeholder collaboration. Remote-friendly with no geographic gating.",
+        "red_flags": []
+      }
+    },
+    {
+      "id": "b37f9af2f107",
+      "title": "Senior Frontend Engineer - Remote Europe",
+      "company": "Reedsy",
+      "location": "United Kingdom (+ Poland, United Kingdom, Spain, Netherlands, Portugal, France, Remote)",
+      "remotePolicy": "remote",
+      "postedAt": "2026-04-16T14:37:12.910Z",
+      "tags": [
+        "Vue.js",
+        "TypeScript",
+        "Node.js"
+      ],
+      "applyUrl": "https://jobs.ashbyhq.com/reedsy/742cc4da-d230-4707-835f-58bebe8e4e5e",
+      "source": "watchlist",
+      "rawDescription": "Senior Frontend Engineer - Remote Europe We welcome applicants based anywhere in Europe. About Reedsy We’re here to give authors the tools and resources they need to create beautiful books. Our marketplace gathers the industry's best publishing professionals — the likes of Neil Gaiman's editor, Nora Roberts' book marketer, and GRRM’s cover designer. We’ve grown to a community of 5,000,000 authors, and transformed the way people write and publish their book. Want to hop on board and help us get to our next destination? Cool, keep reading! Responsibilities Develop high quality, responsive, mobile-friendly Vue.js apps Create amazing interactions and visualizations Work closely with our Back-end engineers and our UI designers Help bridge the gap between server and client (consuming RESTful APIs) Write unit and functional tests Requirements Professional experience with Vue.js A firm understanding of how to write maintainable and scalable CSS with Sass. Strong JavaScript fundamentals Experience with component-based front-end UI libraries. Understanding of MVC pattern and other object oriented concepts Experience with version control (Git and GitHub) Familiarity with agile development processes Exceptional communication skills Bonus Points A good dose of ambition, as well as a great sense of humour You strive for pixel perfection Experience optimizing JavaScript applications UX skills Knowledge of Node.js, TypeScript, Ruby, Ruby on Rails, Desktop Framework (e.g Electron), iOS Fluent in multiple languages. Reedsy welcomes applicants of all cultures and backgrounds. Benefits Work from home; Paid paternal and maternal leave; Annual team retreat Salary range: €60k – €90k Location: United Kingdom (+ Poland, United Kingdom, Spain, Netherlands, Portugal, France, Remote)",
+      "score": {
+        "overall": 75,
+        "stack_match": 72,
+        "location_ok": true,
+        "seniority_fit": "senior",
+        "reason": "Strong Vue-primary senior role in Spain with remote Europe flexibility. Stack aligns well; TypeScript is bonus rather than core.",
+        "red_flags": []
+      }
+    },
+    {
+      "id": "6c0ff9feab3a",
+      "title": "Senior Vue Frontend Lead — 100% Remote, Flexible Hours",
+      "company": "knowmad mood",
+      "location": "Remote · ES",
+      "remotePolicy": "uncertain",
+      "postedAt": "2026-04-16T14:36:09.761Z",
+      "tags": [
+        "Vue.js"
+      ],
+      "applyUrl": "https://bebee.com/es/jobs/senior-vue-frontend-lead-100-remote-flexible-hours-knowmad-mood-madrid--joblooku-5835445",
+      "source": "jsearch",
+      "rawDescription": "Una empresa de desarrollo web busca un Desarrollador Frontend Senior para unirse a su equipo. Desplácese hacia abajo para encontrar los detalles completos de la oferta de trabajo, incluyendo la experiencia requerida y las funciones y tareas asociadas. Se requiere experiencia en el desarrollo de aplicaciones usando Vue.js, y capacidad para liderar interfaces complejas en un entorno 100% remoto.",
+      "score": {
+        "overall": 72,
+        "stack_match": 20,
+        "location_ok": true,
+        "seniority_fit": "lead+",
+        "reason": "Spanish-language Senior Vue Lead (100% remote, Spain-based, flexible hours). Perfect match on location, seniority, and primary tech; sparse posting leaves full stack unclear but no blockers.",
+        "red_flags": []
       }
     },
     {
@@ -160,7 +101,7 @@
       "company": "n8n",
       "location": "Berlin Office (+ Albania, Bosnia, Bulgaria, Croatia, Czech Republic, Estonia, Hungary, Kosovo, Latvia, Lithuania, Moldova, Montenegro, Poland, Serbia, Romania, Slovakia, Slovenia, Ukraine, Denmark, Norway, Finland, Sweden, Greece, Italy, Portugal, Spain, London Office, United Kingdom, Austria, Belgium, France, Ireland, Netherlands)",
       "remotePolicy": "remote",
-      "postedAt": "2026-04-16T07:30:18.545Z",
+      "postedAt": "2026-04-16T14:36:55.917Z",
       "tags": [
         "TypeScript",
         "Node.js"
@@ -169,246 +110,125 @@
       "source": "watchlist",
       "rawDescription": "Sr AI Engineer | Remote - Europe | TS/Vue/NodeJS The AI orchestration of your wildest imagination. n8n is the open workflow orchestration platform built for the new era of AI. We give technical teams the freedom of code with the speed of no-code, so they can automate faster, smarter, and without limits. Backed by a fiercely inventive community and 500+ builder-approved integrations, we’re changing the way people bring systems together and scale ideas for impact. Since our founding in 2019, we’ve grown into a diverse team of over 220 - working across Europe and the US, connected by a shared builder spirit and with our centre of gravity in Berlin. Along the way, we’ve: Cultivated a community of more than 650,000 active developers and builders Earned 145k+ GitHub stars, making us one of the world’s Top 40 most popular projects Been ranked as one of Europe’s most promising privately held SaaS startups (4th in Sifted’s 2025 B2B SaaS Rising 100) Raised $240m to date, from Sequoia’s first German seed to our recent $180m Series C - bringing us to a $2.5bn valuation That’s the company we’ve built. Now we’d love to see what you can build. If you’re applying, try n8n out - whether you’re technical or not - and share a screenshot of your first workflow with us. The easiest place to start is here: app.n8n.cloud/register . We’re in a defining moment of an incredible journey. Come and build with us. As a Senior AI Engineer, you'll drive intelligent features that redefine how users build automations. You'll build AI-powered capabilities, from natural language input to smart suggestions, that make creating workflows faster and more intuitive. You'll collaborate across engineering, product, and design to bring generative AI and LLM-based enhancements into the core user experience. You'll improve existing AI integrations, develop new ones, and shape how AI powers our product. You’ll work across the entire AI feature lifecycle: Architect and implement AI-powered capabilities : code gen",
       "score": {
-        "overall": 38,
-        "stack_match": 40,
-        "location_ok": true,
-        "seniority_fit": "senior",
-        "reason": "TypeScript and Vue are in the stack, but this is fundamentally an AI/LLM engineering role focused on prompt engineering, embedding models, and generative AI integration—areas outside Alfonso's expertise. His strength is frontend/mobile UI development, not backend AI systems or ML model orchestration.",
-        "red_flags": [
-          "AI/LLM focus, not frontend",
-          "Prompt engineering expertise required",
-          "Embedding models and ML integration",
-          "Backend-heavy AI architecture",
-          "Vue secondary to AI work"
-        ]
-      }
-    },
-    {
-      "id": "f3631b198ab5",
-      "title": "Senior Software Engineer (Node/Vue/TypeScript) - Remote Europe",
-      "company": "Reedsy",
-      "location": "Remote (+ Poland, United Kingdom, Spain, Netherlands, Portugal, France)",
-      "remotePolicy": "remote",
-      "postedAt": "2026-04-16T07:30:24.689Z",
-      "tags": [
-        "TypeScript"
-      ],
-      "applyUrl": "https://jobs.ashbyhq.com/reedsy/835c9c7b-8b0a-499c-95c6-251c9aea3246",
-      "source": "watchlist",
-      "rawDescription": "Senior Software Engineer (Node/Vue/TypeScript) - Remote Europe We welcome applicants based anywhere in Europe. About Reedsy We’re here to give authors the tools and resources they need to create beautiful books. Our marketplace gathers the industry's best publishing professionals — the likes of Neil Gaiman's editor, Nora Roberts' book marketer, and GRRM’s cover designer. We’ve grown to a community of 5,000,000 authors, and transformed the way people write and publish their book. Want to hop on board and help us get to our next destination? Cool, keep reading! Responsibilities You will join and work on our book editing tool. Here's what you'll do: Work closely with our designers and engineers to design, build, and ship new features from scratch; Extend the growing feature set of our cutting-edge, collaborative word processor; Deliver real value to our users by crafting beautiful book templates for their e-readers and for print; Architect and develop highly scalable web applications; Evaluate and improve the performance, durability, and security of applications in production; Take ownership for your tasks and see features through from start to finish; Help teammates improve when reviewing their work and appreciate feedback when they reciprocate. Requirements Professional experience with NodeJS, VueJS, TypeScript and NoSQL (Redis, MongoDB) databases. A good understanding of modern HTML and CSS. Strong test-driven approach to development. Perfectly fluent in English. Enjoy working remotely. Bonus points Professional experience with building and deploying Single Page Apps. Knowledge of ShareDB and LaTeX. Experience with CSS pre-processors, such as SASS or LESS. Experience building production-grade applications integrating LLMs. Experience with build-chain and deployment automation tools, such as Webpack and Github Actions. A good dose of ambition, a willingness to learn, and a great sense of humor. Benefits Work from home; Paid paternal and maternal leave; Annual team re",
-      "score": {
-        "overall": 35,
-        "stack_match": 15,
-        "location_ok": true,
-        "seniority_fit": "senior",
-        "reason": "Strong match for Vue and TypeScript (Alfonso's core strengths) with perfect location and seniority fit. Main blocker is the required MongoDB/Redis database experience, which isn't in his background.",
-        "red_flags": []
-      }
-    },
-    {
-      "id": "77fc4632e4e2",
-      "title": "Fullstack Developer .Net / Vuejs (100% teletrabajo)",
-      "company": "knowmad mood",
-      "location": "Remote · ES",
-      "remotePolicy": "uncertain",
-      "postedAt": "2026-04-16T07:30:07.649Z",
-      "tags": [
-        "Vue.js"
-      ],
-      "applyUrl": "https://knowmadmood.teamtailor.com/jobs/7567428-fullstack-developer-net-vuejs-100-teletrabajo",
-      "source": "jsearch",
-      "rawDescription": "🚀 Únete a nuestro equipo como Programador/a .Net y forma parte de un entorno tecnológico, innovador, colaborativo y en constante evolución. 🚀 Trabajarás en proyecto estable en un cliente del sector bancario ¿Qué es lo que valoramos? • Experiencia en desarrollo Full Stack con .NET y Vue.js. • Conocimientos sólidos en APIs con ASP.NET Core, acceso a datos con Entity Framework Core y Microsoft SQ",
-      "score": {
-        "overall": 25,
-        "stack_match": 15,
-        "location_ok": true,
-        "seniority_fit": "senior",
-        "reason": "Vue matches Alfonso's expertise, but this fullstack role equally demands deep .NET/ASP.NET Core knowledge outside his specialization. Perfect location and 100% remote policy can't overcome the significant backend tech stack gap.",
-        "red_flags": [
-          ".NET/ASP.NET core skill gap",
-          "fullstack backend-heavy",
-          "job description truncated"
-        ]
-      }
-    },
-    {
-      "id": "bddadab24a3f",
-      "title": "Senior PHP Developer (Laravel + VUE)",
-      "company": "TEMPS",
-      "location": "Remote · ES",
-      "remotePolicy": "uncertain",
-      "postedAt": "2026-04-16T07:30:07.649Z",
-      "tags": [],
-      "applyUrl": "https://es.jooble.org/jdp/-4134232197395237667",
-      "source": "jsearch",
-      "rawDescription": "Madrid (Híbrido: 2 días/semana en oficina) Empresa Internacional de SaaS / Software Estamos colaborando con una compañía global de software para incorporar un Senior Fullstack Developer con sólida experiencia en Laravel (8+) y conocimientos prácticos de Vue . Este rol es ideal para ingenieros que valoran la calidad del código, la consistencia arquitectónica y la estabilidad del producto a largo",
-      "score": {
-        "overall": 25,
-        "stack_match": 15,
-        "location_ok": true,
-        "seniority_fit": "senior",
-        "reason": "This is a Laravel-primary backend role (8+ required) with Vue as secondary 'practical knowledge'. Alfonso is a Vue expert but lacks PHP/backend experience—a fundamental skill gap. While the senior level and Spain location are suitable, the tech stack misalignment is critical.",
-        "red_flags": [
-          "Laravel 8+ required (no PHP/backend experience)",
-          "Backend-heavy fullstack role",
-          "Vue secondary, Laravel primary",
-          "2 days/week Madrid office commute"
-        ]
-      }
-    },
-    {
-      "id": "f10baaae7191",
-      "title": "Full Stack Developer: React/Angular/Vue + Java Remote",
-      "company": "Nunegal Consulting",
-      "location": "Remote · ES",
-      "remotePolicy": "uncertain",
-      "postedAt": "2026-04-16T07:29:56.746Z",
-      "tags": [],
-      "applyUrl": "https://es.talent.com/view?id=615316015785384221",
-      "source": "jsearch",
-      "rawDescription": "Una empresa de consultoría en tecnología busca un desarrollador con experiencia en React, Angular, o Vue, y backend en Java Spring Boot. El puesto ofrece 100% teletrabajo y destaca por su cultura de mejora continua y crecimiento profesional. Se valoran conocimientos en tecnologías Cloud (AWS, Azure, GCP) y bases de datos SQL y NoSQL. El candidato ideal debe ser proactivo y tener capacidad de traba",
-      "score": {
-        "overall": 20,
+        "overall": 45,
         "stack_match": 20,
         "location_ok": true,
         "seniority_fit": "senior",
-        "reason": "Vue is listed as an option, which aligns with Alfonso's expertise, but this role requires Java Spring Boot as a core backend technology—a significant gap since his backend depth is basic Node.js. The job posting is incomplete and seniority is unspecified, making it a poor fit for a frontend specialist.",
+        "reason": "Primary focus is AI/LLM capabilities and generative AI features—not frontend UI development. Vue/TypeScript are implementation details. Role requires deep generative AI expertise outside Alfonso's scope.",
         "red_flags": [
-          "Java backend required (no experience)",
-          "Seniority level unspecified",
-          "Job posting truncated/incomplete",
-          "Full-stack backend Java focus"
+          "AI/ML role, not frontend",
+          "Requires LLM/generative AI expertise",
+          "Node.js expertise essential"
         ]
       }
     },
     {
-      "id": "22a46accb117",
-      "title": "Frontend Dev (React/Vue/Angular) - Remote & Flexible",
-      "company": "en NEORIS",
-      "companyLogo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWea3O1wXP4d61BIy6jIKvatHQDwwKG3O7Hb_6&s=0",
-      "location": "Remote · ES",
-      "remotePolicy": "uncertain",
-      "postedAt": "2026-04-16T07:29:56.746Z",
-      "tags": [],
-      "applyUrl": "https://www.recruit.net/job/frontend-dev-react-vue-angular-jobs/5184682A0649F9C0",
-      "source": "jsearch",
-      "rawDescription": "Una empresa de tecnología busca un Desarrollador/a Frontend especializado en React, Vue o Angular para desarrollar aplicaciones web y colaborar en proyectos técnicos. Se valoran habilidades en integración de API REST y buenas prácticas de desarrollo. Ofrecen un contrato indefinido, modalidad flexible, formación continua y un plan de carrera personalizado. Se busca una persona que quiera superarse",
-      "score": {
-        "overall": 20,
-        "stack_match": 30,
-        "location_ok": true,
-        "seniority_fit": "mid",
-        "reason": "Vue is offered as one of three equal frameworks (React/Vue/Angular), not positioned as primary tech. Seniority appears mid-level with no senior positioning, while Alfonso targets senior+. Spanish remote location and indefinite contract are positives.",
-        "red_flags": [
-          "seniority level unclear",
-          "Vue one of three frameworks, not primary",
-          "generic tech stack specification"
-        ]
-      }
-    },
-    {
-      "id": "1a007c956a2b",
-      "title": "Desarrollador Frontend (React / Vue / Angular) New",
-      "company": "Neoris",
-      "companyLogo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl9lCqha_kWhkm_pevDu8Caxq8vpeStpPs7adk&s=0",
-      "location": "Remote · ES",
-      "remotePolicy": "uncertain",
-      "postedAt": "2026-04-16T07:30:07.649Z",
-      "tags": [],
-      "applyUrl": "https://bebee.com/es/jobs/desarrollador-frontend-react-vue-angular-new-neoris-madrid-madrid-provincia--theirstack-663057248",
-      "source": "jsearch",
-      "rawDescription": "En EPAM NEORIS, creemos que la transformación empieza por las personas. Hoy, como parte de EPAM, ampliamos nuestro alcance global y nuestras capacidades, pero mantenemos lo más importante: una cultura donde cada persona puede crecer, aportar y ser protagonista. No buscamos solo cubrir puestos. Buscamos incorporar talento que quiera superarse, aprender constantemente y dejar huella en cada proyect",
-      "score": {
-        "overall": 20,
-        "stack_match": 30,
-        "location_ok": true,
-        "seniority_fit": "mid",
-        "reason": "Vue is listed alongside React and Angular as one of three equal options, not primary—limiting stack fit significantly. Title structure ('Desarrollador' without 'Senior') suggests mid-level, mismatched with Alfonso's senior+ target; seniority not explicitly confirmed in visible posting.",
-        "red_flags": [
-          "Vue secondary (one of three frameworks)",
-          "Seniority not explicitly stated",
-          "Posting appears incomplete",
-          "No salary information provided"
-        ]
-      }
-    },
-    {
-      "id": "4e3b2092148f",
-      "title": "Senior Fullstack Developer - Remote (PHP/Laravel, VueJS)",
-      "company": "Confidential",
-      "location": "Remote · ES",
-      "remotePolicy": "uncertain",
-      "postedAt": "2026-04-16T07:29:56.746Z",
-      "tags": [],
-      "applyUrl": "https://bebee.com/es/jobs/senior-fullstack-developer-remote-php-laravel-vuejs-confidential-madrid--clickajo-111_37084380",
-      "source": "jsearch",
-      "rawDescription": "Una Start-Up del sector Healthcare está buscando un Senior Fullstack Developer para unirse a su equipo en Madrid. Esta posición se centrará en el desarrollo Backend con PHP y Laravel, y Frontend con VueJS, trabajando de manera cercana con el CTO. Se requiere al menos 5 años de experiencia en PHP, Laravel y VueJS. Ofrecen un ambiente en crecimiento, con posibilidad de trabajo remoto más del 90% de",
-      "score": {
-        "overall": 15,
-        "stack_match": 25,
-        "location_ok": true,
-        "seniority_fit": "senior",
-        "reason": "Location (Spain-remote) and seniority (senior) are ideal, and Vue.js matches Alfonso's core expertise, but the role explicitly prioritizes backend development with PHP/Laravel—a stack outside his experience. The backend-primary focus makes this a weak fit despite the Vue component.",
-        "red_flags": [
-          "PHP/Laravel expertise required",
-          "job posting incomplete"
-        ]
-      }
-    },
-    {
-      "id": "732df18c2b8d",
-      "title": "Senior Web Developer",
-      "company": "Singa",
-      "location": "Helsinki, FI",
+      "id": "ca4c956c1650",
+      "title": "Staff LLM Interaction Engineer (Europe remote - TS/Vue/NodeJS)",
+      "company": "n8n",
+      "location": "Berlin Office (+ Albania, Bosnia, Bulgaria, Croatia, Czech Republic, Estonia, Hungary, Kosovo, Latvia, Lithuania, Moldova, Montenegro, Poland, Serbia, Romania, Slovakia, Slovenia, Ukraine, Denmark, Norway, Finland, Sweden, Greece, Italy, Portugal, Spain, London Office, United Kingdom, Austria, Belgium, France, Ireland, Netherlands)",
       "remotePolicy": "remote",
-      "postedAt": "2026-04-13T13:11:52.380685+03:00",
+      "postedAt": "2026-04-16T14:36:55.917Z",
       "tags": [
-        "Vue 3",
         "TypeScript",
-        "Pinia"
+        "Node.js"
       ],
-      "applyUrl": "https://duunitori.fi/tyopaikat/senior-web-developer-stshe-20177985",
-      "source": "duunitori",
-      "rawDescription": "Build sophisticated web applications for a global karaoke platform using modern TypeScript and Vue. You'll work on Nuxt 3 applications serving 2 million+ users across 34 countries and managing a catalog of 100,000+ songs. What You'll Do You'll work on Singa's web applications built with Nuxt 3, handling everything from user-facing experiences to content management workflows. You'll maintain and enhance TypeScript-based applications with SSR/SSG, state management, real-time karaoke features, and sophisticated content workflows. You'll optimize performance for media-heavy features while integrating payment systems, analytics platforms, content management systems, and third-party music APIs. Your responsibilities: Maintain and evolve production Nuxt 3 applications with third-party integrations such as Stripe payments, Storyblok CMS, and analytics platforms Design and build new features using Vue 3 Composition API with both Pinia stores and composable-based state patterns Implement UI components with various frameworks (Reka UI, Vuetify) Collaborate with backend engineers to design clean, versioned API contracts Build server-side API proxies Refactor legacy Options API code to modern Composition API patterns Optimize performance for media playback, audio/lyrics synchronization, and content automation workflows Debug production issues using Sentry crash reports and analytics data Navigate technical debt decisions while maintaining feature velocity Implement features ranging from multi-market i18n to content automation workflows Maintain strict type safety with TypeScript across all applications Leverage AI coding assistants to accelerate development while maintaining code quality Our Tech Stack Frontend Framework: Vue 3 with Composition API, Nuxt 3.12+ (SSR/SSG) Languages: TypeScript 5.9+ (strict mode), Pug templates State Management: Pinia with Composition API, composable-based patterns UI Components: Reka UI (headless), Vuetify 3 (Material Design), custom components St",
+      "applyUrl": "https://jobs.ashbyhq.com/n8n/5c1d1b67-604c-46b3-9c59-cfe0cd703688",
+      "source": "watchlist",
+      "rawDescription": "Staff LLM Interaction Engineer (Europe remote - TS/Vue/NodeJS) The AI orchestration of your wildest imagination. n8n is the open workflow orchestration platform built for the new era of AI. We give technical teams the freedom of code with the speed of no-code, so they can automate faster, smarter, and without limits. Backed by a fiercely inventive community and 500+ builder-approved integrations, we’re changing the way people bring systems together and scale ideas for impact. Since our founding in 2019, we’ve grown into a diverse team of over 220 - working across Europe and the US, connected by a shared builder spirit and with our centre of gravity in Berlin. Along the way, we’ve: Cultivated a community of more than 650,000 active developers and builders Earned 145k+ GitHub stars, making us one of the world’s Top 40 most popular projects Been ranked as one of Europe’s most promising privately held SaaS startups (4th in Sifted’s 2025 B2B SaaS Rising 100) Raised $240m to date, from Sequoia’s first German seed to our recent $180m Series C - bringing us to a $2.5bn valuation That’s the company we’ve built. Now we’d love to see what you can build. If you’re applying, try n8n out - whether you’re technical or not - and share a screenshot of your first workflow with us. The easiest place to start is here: app.n8n.cloud/register . We’re in a defining moment of an incredible journey. Come and build with us. The role As a Staff level LLM Interaction Engineer , you’ll help shape how n8n’s AI Workflow Builder works end-to-end. This staff level engineering role is focused on a critical product challenge: allowing both technical or less-technically proficient users of n8n to turn AI powered automated workflows into something they can rely on every day. That means building systems that consistently generate the right output, stay grounded in the user’s workflow, and improve quickly through iteration and evaluation. You’ll work on the orchestration layer between users, workflows, a",
       "score": {
-        "overall": 15,
-        "stack_match": 20,
+        "overall": 45,
+        "stack_match": 32,
         "location_ok": true,
-        "seniority_fit": "senior",
-        "reason": "Strong Vue, TypeScript, and Pinia skills align, but this role demands production-level Nuxt 3 expertise—a critical gap that CLAUDE.md explicitly warns against. Remote policy undefined.",
+        "seniority_fit": "lead+",
+        "reason": "Staff-level role at well-funded n8n, strong company with Spain coverage in remote policy. However, this is fundamentally an AI/LLM interaction engineer position (AI Workflow Builder, prompt orchestration, evaluation loops)—not Vue UI development. Vue/TS are implementation layers only; core work is LLM systems design.",
         "red_flags": [
-          "Deep Nuxt 3 expertise required",
-          "Remote policy not specified",
-          "Sass/SCSS instead of Tailwind"
+          "AI/ML role, not frontend",
+          "LLM orchestration primary skill, not secondary",
+          "Emphasis on prompt evaluation iteration"
         ]
       }
     },
     {
-      "id": "e1965e8086be",
-      "title": "Full Stack Developer with .Net Skills (remote from Europe)",
-      "company": "AlmavivA de Belgique",
-      "companyLogo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh-5q3HRytj-vJ_CAUVmu_OWcC2j8Puzekpfh2&s=0",
-      "location": "Remote",
+      "id": "762cb6db34b0",
+      "title": "Senior Product Engineer (TS/NodeJS/Vue)",
+      "company": "n8n",
+      "location": "Berlin Office (+ Albania, Bulgaria, Bosnia, Croatia, Czech Republic, Estonia, Hungary, Kosovo, Latvia, Lithuania, Moldova, Montenegro, Poland, Romania, Serbia, Slovakia, Slovenia, Ukraine, Denmark, Finland, Norway, Sweden, Greece, Italy, Portugal, Spain, London Office, United Kingdom, Austria, Belgium, France, Germany, Ireland, Netherlands)",
       "remotePolicy": "remote",
-      "postedAt": "2026-04-14T00:00:00.000Z",
+      "postedAt": "2026-04-16T14:36:55.918Z",
       "tags": [
-        "Vue.js",
-        "TypeScript"
+        "TypeScript",
+        "Node.js"
       ],
-      "applyUrl": "https://jobgether.com/offer/69de2570c646310ee38df1a2-full-stack-developer-with-.net-skills-remote-from-europe",
-      "source": "jsearch",
-      "rawDescription": "This a Full Remote job, the offer is available from: Europe DESCRIPTION OF THE TASKS: • Write and debug web frontend code in SPA frameworks, such as Vue.js and Angular. • Manage the front-end build configuration and the appropriate npm tasks. • Work with Typescript and modern web development. • Write CSS and HTML by using SASS and Semantic UI. • Participate in the .NET implementation of a micro-services solution, being able to write backend code in a reliable, scalable, secure and testable way, implementing resilient integrations, satisfying requirements and service level agreements. • Deploy and manage services on Kubernetes. • Implement validation mechanisms as unit and integration tests for both back-end and front-end code. • Implement OAUTH authentication mechanisms. • Liaise with other technical Teams in order to push new features / changes to production. Write and maintain technical documentation of the solution implemented. Account for secure coding practices, as well as logging and auditing features. REQUIREMENTS: More than 12 years in IT More than 5 years of experience in Software Development More than 3 years of experience in front-end Development with Vuejs and Typescript More than 1 year of experience on debugging Angular codebase More than 5 years of experience in back-end Development in Microsoft .NET (C#) and .NET Core More than 3 years of experience with highly scalable systems and microservices More than 3 years of experience working in a team. following Agile/SCRUM methodology procedures and disciplines. More than 3 years of experience in developing applications that publish and consume messages via AMQP, including handling message routing, queuing, and error handling. More than 3 years of experience on estimating the work to be done upon request. Good knowledge of SDLC best practices Good knowledge of the design, documentation and development of full stack solutions Excellent knowledge of the design and development of back-end components (REST API",
+      "applyUrl": "https://jobs.ashbyhq.com/n8n/896c58a8-0388-4037-b265-82b15633a568",
+      "source": "watchlist",
+      "rawDescription": "Senior Product Engineer (TS/NodeJS/Vue) The AI orchestration of your wildest imagination. n8n is the open workflow orchestration platform built for the new era of AI. We give technical teams the freedom of code with the speed of no-code, so they can automate faster, smarter, and without limits. Backed by a fiercely inventive community and 500+ builder-approved integrations, we’re changing the way people bring systems together and scale ideas for impact. Since our founding in 2019, we’ve grown into a diverse team of over 220 - working across Europe and the US, connected by a shared builder spirit and with our centre of gravity in Berlin. Along the way, we’ve: Cultivated a community of more than 650,000 active developers and builders Earned 145k+ GitHub stars, making us one of the world’s Top 40 most popular projects Been ranked as one of Europe’s most promising privately held SaaS startups (4th in Sifted’s 2025 B2B SaaS Rising 100) Raised $240m to date, from Sequoia’s first German seed to our recent $180m Series C - bringing us to a $2.5bn valuation That’s the company we’ve built. Now we’d love to see what you can build. If you’re applying, try n8n out - whether you’re technical or not - and share a screenshot of your first workflow with us. The easiest place to start is here: app.n8n.cloud/register . We’re in a defining moment of an incredible journey. Come and build with us. 🎯 Your main goal will be to build and ship end-to-end TypeScript product features that customers feel in their workflows the same week - balancing speed, quality, and high security standards. To do so, you’ll own outcomes across the full stack and stay close to users, product, and metrics: End-to-end product ownership Own a product area surface from discovery to delivery, including iteration after launch. Ship high-quality features fast across the TypeScript stack, balancing UX, performance, and maintainability. Partner closely with Product to translate customer problems into clear scopes and ",
       "score": {
-        "overall": 10,
+        "overall": 30,
         "stack_match": 20,
         "location_ok": true,
         "seniority_fit": "senior",
-        "reason": "Strong Vue + TypeScript frontend match. However, this is a .NET-focused backend-heavy role requiring 5+ years C#, Kubernetes, and AMQP expertise Alfonso lacks.",
+        "reason": "Vue and TS are strong matches in a senior role with ideal Spain location. Full-stack ownership of Node-based orchestration platform requires intermediate+ Node expertise; Alfonso's basic Node skills would require substantial ramp-up on backend systems and workflows.",
         "red_flags": [
-          "No .NET/C# backend experience",
-          "Kubernetes expertise required",
-          "AMQP messaging expertise required",
-          "Requires 12+ years IT (has 10+)"
+          "Node expertise gap (basic vs intermediate needed)",
+          "Orchestration platform (backend-heavy, not UI-focused)"
+        ]
+      }
+    },
+    {
+      "id": "e85a5f5bd079",
+      "title": "Engineering Lead (TypeScript /Node.js)",
+      "company": "Voodoo",
+      "location": "Paris",
+      "remotePolicy": "remote",
+      "postedAt": "2026-04-16T14:37:11.334Z",
+      "tags": [
+        "TypeScript",
+        "Node.js"
+      ],
+      "applyUrl": "https://jobs.ashbyhq.com/voodoo/4cb496e1-7f11-4e3c-a93e-2d9221968eae",
+      "source": "watchlist",
+      "rawDescription": "Engineering Lead (TypeScript /Node.js) About Voodoo Founded in 2013, Voodoo is a tech company that creates mobile games and apps with a mission to entertain the world. Gathering 800 employees, 7 billion downloads, and over 200 million active users, Voodoo is the #3 mobile publisher worldwide in terms of downloads after Google and Meta. Our portfolio includes chart-topping games like Mob Control and Block Jam, alongside popular apps such as BeReal and Wizz. Team The Engineering &amp; Data team builds innovative tech products and platforms to support the impressive growth of their gaming and consumer apps which allow Voodoo to stay at the forefront of the mobile gaming industry. Role We’re looking for an Engineering Lead (TypeScript/Node.js) to join our Engineering &amp; Data team. As an Engineering Lead, you'll combine strong individual technical contributions with team leadership. You'll be responsible for the technical direction of your squad, the growth of your engineers, and the delivery of high-impact projects. This is a hybrid IC/manager role — you'll still write code, but your leverage is through the team. Lead the technical direction and architecture for your squad's domain Drive design reviews, set coding standards, and ensure engineering excellence Own the full delivery of complex, cross-team technical initiatives Build, scale and operate Node.js/TypeScript backend services on AWS/EKS Define the infrastructure and reliability strategy for your team's systems Partner with Product and Data to translate business goals into technical roadmaps Grow engineers through 1:1s, code reviews, mentorship and technical coaching Identify systemic risks and drive improvements before they become incidents Be an ambassador for engineering culture: psychological safety, pragmatism, and craft Profile (MUST have) 7+ years of professional software engineering experience 2+ years of experience leading an engineering team (formal or informal) Expert-level proficiency in TypeScript",
+      "score": {
+        "overall": 30,
+        "stack_match": 15,
+        "location_ok": true,
+        "seniority_fit": "lead+",
+        "reason": "Backend infrastructure lead role requiring expert Node.js and AWS; no Vue.js. Alfonso specializes in Vue frontend with basic Node skills—wrong domain entirely.",
+        "red_flags": [
+          "No Vue.js (fundamental gap)",
+          "Backend role, not frontend/UI",
+          "Expert Node.js required vs. basic",
+          "AWS/EKS infrastructure expertise",
+          "Paris location, remote policy unclear"
+        ]
+      }
+    },
+    {
+      "id": "26984fe2eb64",
+      "title": "Fullstack Software Engineer RoR/JS W/M",
+      "company": "Pennylane",
+      "location": "Paris offices",
+      "remotePolicy": "remote",
+      "postedAt": "2026-04-16T14:37:07.687Z",
+      "tags": [
+        "Vite",
+        "Nuxt"
+      ],
+      "applyUrl": "https://jobs.ashbyhq.com/pennylane/18f252a7-7b19-44b6-b175-6dfcaea8b2e8",
+      "source": "watchlist",
+      "rawDescription": "Fullstack Software Engineer RoR/JS W/M Are you looking to have an impact on the daily life of millions of entrepreneurs in France (and tomorrow in Europe)? Are you looking for a work environment that values trust, proactivity, and autonomy? Are our Engineering principles aligned with your vision? Then Pennylane is the right place for you ! Our vision We aim to become the most beloved financial Operating System of French SMEs and Accounting Firms (and soon, European ones). We help entrepreneurs rid themselves of time-consuming tasks related to accounting and finance while providing them with access to key financial information to assist in making the best decisions for their business. About us Pennylane is one of the fastest growing Fintechs in France (and soon to be in Europe!) In 5 years of existence, we’ve managed to : 💻 Make ourselves known as a groundbreaking accounting and financial software for small businesses and their accountants 💰 Raise a total of €400 millions, including from Sequoia, the famous fund from the Silicon Valley who invested early in companies like Google, Facebook, Airbnb, Stripe, Paypal and much more... 👨‍👩‍👧‍👦 Grow from 7 cofounders to 1000 happy Pennylaners : we’re now recognized as one of the greatest places to work in France (and also remotely), with a 4.6/5 rating on Glassdoor . 🌍 Build an international environment with more than 25 nationalities, with a strong remote-friendly culture, where 30% of the employees are already working from all parts of Europe 🤝 Earn the trust of thousands of customers and accounting firms and obtain outstanding ratings 🚀 Already more than 900,000 small and medium-sized enterprises (SMEs) and over 6000 accounting firms use Pennylane in France! Your mission You will join our Growth Team and work collaboratively with Thomas the growth engineer team lead within the Marketign website squad. We are looking for a talented full stack software engineer whose main mission will be to ⏬ Global Scaling: Build ",
+      "score": {
+        "overall": 22,
+        "stack_match": 15,
+        "location_ok": true,
+        "seniority_fit": "mid",
+        "reason": "RoR + JS role without Vue.js (F1 filter violation). Backend-heavy Rails stack; Alfonso specializes in Vue, not Rails backend development.",
+        "red_flags": [
+          "No Vue.js—F1 filter violation",
+          "Ruby on Rails backend focus",
+          "Fullstack implies deep backend required",
+          "Paris offices—remote clarity needed"
         ]
       }
     },
@@ -431,120 +251,261 @@
       "source": "remoteok",
       "rawDescription": "The Company Youâll Join At Rebuy, weâre on a mission to revolutionize shopping with intelligent, personalized experiences that wow customers around the globe. As a fully remote team, we power some of the fastest-growing DTC brands like Aviator Nation, Liquid Death, Magic Spoon, Blenders, Laird Superfoods, Primal Kitchen, and many more. We believe in ownership, drive, and empathy, and strongly uphold that every team member plays a vital role in shaping the future of intelligent commerce. Our culture thrives on collaboration, creativity, and genuine passion. We donât just build great tech - we build lasting partnerships, a strong community, and a place where people love to work. The Problems Youâll Solve Rebuy and its team members continually strive to create a high-spirited, intentional work environment that stresses performance, productivity, collaboration, and merit. As a Sr. Software Engineer, Back-End, youâll own some of the most consequential systems at Rebuy. Your primary anchor is our billing and payments infrastructure â the engine that determines how merchants are charged, how partners get paid, and how financial balances flow across our entire product suite. This is genuinely complex financial engineering. It requires deep PHP and Go expertise, careful architecture, and judgment that no automated tool can replicate. Merchant billing runs daily, touches real revenue, and demands someone who understands both the technical and business dimensions of every decision. Alongside billing, youâll grow into a broader platform portfolio â the partner portal, data ETL pipelines, customer-facing APIs, and reporting infrastructure that power the business. And in the near term, youâll play a critical role in a significant technical migration: moving our legacy Code Igniter 2 codebase to Code Igniter 4, including work tied to increasing our enterprise market share. This migration requires hands-on PHP expertise and cannot be deferred. You wonât be hande",
       "score": {
-        "overall": 8,
+        "overall": 20,
         "stack_match": 0,
         "location_ok": true,
         "seniority_fit": "senior",
-        "reason": "Backend-only PHP/Go role with zero Vue.js presence—fails Alfonso's core requirement for Vue-focused positions. No frontend work, no skill overlap.",
+        "reason": "Backend-focused role requiring deep PHP/Go expertise. Alfonso is a senior frontend engineer specializing in Vue.js—this position has no frontend component, making it unsuitable despite remote location and seniority match.",
         "red_flags": [
-          "Backend-only, Vue.js not required",
-          "Requires deep PHP expertise",
-          "Requires deep Go expertise",
-          "Code Igniter 2/4 expertise required"
+          "Backend-only role, not frontend",
+          "PHP and Go required, lacks expertise",
+          "No Vue.js or TypeScript mentioned",
+          "Code Igniter migration is backend only",
+          "Billing/payments infrastructure, not UI"
         ]
       }
     },
     {
-      "id": "a22a9d0dc978",
-      "title": "Remote Fullstack Engineer (Vue/.NET) - Flexible",
-      "company": "Journi",
-      "location": "Remote · ES",
+      "id": "8a28206594d7",
+      "title": "Remove Javascript Developer Opportunity ($24-48/hr)",
+      "company": "u/Dense-Try-7798",
+      "location": "MUST be in US / EU / CA",
       "remotePolicy": "uncertain",
-      "postedAt": "2026-04-16T07:29:56.746Z",
-      "tags": [],
-      "applyUrl": "https://es.jooble.org/jdp/-5134596894960941816",
-      "source": "jsearch",
-      "rawDescription": "A leading technology consultancy is looking for a Fullstack Developer with expertise in .NET and Vue to join their fully remote team. In this role, you will design and develop web applications, utilizing .NET and VueJS technologies to create user-friendly interfaces. This position requires solid experience with web development and the ability to deliver scalable solutions. The company offers a fle",
+      "postedAt": "2026-04-15T14:32:37.000Z",
+      "tags": [
+        "Node.js"
+      ],
+      "applyUrl": "https://www.reddit.com/r/remotejs/comments/1sm7t64/hiring_remove_javascript_developer_opportunity/",
+      "source": "reddit",
+      "rawDescription": "[Hiring] Remove Javascript Developer Opportunity ($24-48/hr) Looking for a talented JavaScript Developer who can actually build and ship functional, maintainable code, not just talk about it. If you're comfortable working on real projects, writing clean, efficient JavaScript, and solving practical problems, this might be a fit. This is for an active project with real deliverables. Details are confidential for now, but I’ll share more once we connect. Role: JavaScript Developer (Competitive hourly rate) Focus: Frontend &amp; Backend Development • React, Vue, or Angular • Node.js &amp; Express • API Integration • Performance &amp; Optimization Location: MUST be in US / EU / CA Engagement: Flexible / project-based (with room to grow) Expect to work on building features, developing scalable solutions, fixing bugs, and improving systems that truly make an impact. Drop a message with: • Your timezone 👀 Location: MUST be in US / EU / CA",
       "score": {
-        "overall": 5,
-        "stack_match": 0,
+        "overall": 15,
+        "stack_match": 15,
         "location_ok": true,
-        "seniority_fit": "senior",
-        "reason": "Vue is a strong match for Alfonso's expertise, but .NET is a core requirement he lacks. This fullstack role is fundamentally 50% .NET backend, making it a poor fit without that specific stack.",
+        "seniority_fit": "mid",
+        "reason": "Vue is explicitly secondary (one of three), not primary—hard rule violation. Node.js/Express is core (weak area). Mid-level when seeking senior/lead.",
         "red_flags": [
-          ".NET expertise required",
-          "incomplete job description",
-          "backend-heavy for frontend specialist"
+          "Vue secondary, not primary",
+          "Node.js core (weak area)",
+          "No TypeScript",
+          "Mid-level seniority",
+          "Hourly/project-based engagement",
+          "Reddit posting"
         ]
       }
     },
     {
-      "id": "6c6765a9f88d",
-      "title": "Frontend Developer with .Net Skills (remote from Europe)",
-      "company": "Jobgether",
-      "companyLogo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpA0li3hGX7AghPi364e1TuCsIdrVxmfp3CnkM&s=0",
+      "id": "a534a07d076a",
+      "title": "Senior Software Engineer - TypeScript /Node.js",
+      "company": "Voodoo",
+      "location": "Paris",
+      "remotePolicy": "remote",
+      "postedAt": "2026-04-16T14:37:11.335Z",
+      "tags": [
+        "Vue.js",
+        "TypeScript",
+        "Node.js"
+      ],
+      "applyUrl": "https://jobs.ashbyhq.com/voodoo/69707d04-3f72-4174-8429-62e2fbe0ca03",
+      "source": "watchlist",
+      "rawDescription": "Senior Software Engineer - TypeScript /Node.js About Voodoo Founded in 2013, Voodoo is a tech company that creates mobile games and apps with a mission to entertain the world. Gathering 800 employees, 7 billion downloads, and over 200 million active users, Voodoo is the #3 mobile publisher worldwide in terms of downloads after Google and Meta. Our portfolio includes chart-topping games like Mob Control and Block Jam, alongside popular apps such as BeReal and Wizz. Team The Engineering &amp; Data team builds innovative tech products and platforms to support the impressive growth of their gaming and consumer apps which allow Voodoo to stay at the forefront of the mobile gaming industry. You’ll join our Engineering team, working within a dedicated squad of up to 10 members. This role offers a unique chance to collaborate closely, innovate, and drive impactful results end-to-end. Role We’re looking for a Senior Software Engineer to join our Engineering &amp; Data team. In this role, you’ll take full ownership of your scope from solution design to deployment, balancing quality with efficient delivery. Design &amp; build business-focused full-stack applications in a cutting-edge, evolving environment Contribute to our state-of-the-art growth engine, helping scale apps &amp; games to millions of users Participate in business strategy discussions and consistently deliver innovative solutions to business teams Demonstrate technical excellence and help define best practices — write the code others aspire to Develop team tooling and be a driving force behind improvement proposals Support teammates' growth Own features end-to-end: from architecture and implementation to deployment and monitoring Work with event-driven systems (SQS/SNS) to build robust, decoupled services Profile (MUST have) 5+ years of professional software engineering experience Strong proficiency in TypeScript/ Node.js (NestJS) Good knowledge of industry best practices (SOLID, KISS, YAGNI, DDD, TDD...) Extens",
+      "score": {
+        "overall": 15,
+        "stack_match": 15,
+        "location_ok": true,
+        "seniority_fit": "senior",
+        "reason": "No Vue.js (F1 hard filter fails). Node.js/NestJS backend-primary role requires deep expertise Alfonso lacks as a Vue/frontend specialist.",
+        "red_flags": [
+          "No Vue.js required (F1 filter)",
+          "Backend-focused, not frontend",
+          "Deep Node.js expertise required"
+        ]
+      }
+    },
+    {
+      "id": "f3631b198ab5",
+      "title": "Senior Software Engineer (Node/Vue/TypeScript) - Remote Europe",
+      "company": "Reedsy",
+      "location": "Remote (+ Poland, United Kingdom, Spain, Netherlands, Portugal, France)",
+      "remotePolicy": "remote",
+      "postedAt": "2026-04-16T14:37:12.910Z",
+      "tags": [
+        "TypeScript"
+      ],
+      "applyUrl": "https://jobs.ashbyhq.com/reedsy/835c9c7b-8b0a-499c-95c6-251c9aea3246",
+      "source": "watchlist",
+      "rawDescription": "Senior Software Engineer (Node/Vue/TypeScript) - Remote Europe We welcome applicants based anywhere in Europe. About Reedsy We’re here to give authors the tools and resources they need to create beautiful books. Our marketplace gathers the industry's best publishing professionals — the likes of Neil Gaiman's editor, Nora Roberts' book marketer, and GRRM’s cover designer. We’ve grown to a community of 5,000,000 authors, and transformed the way people write and publish their book. Want to hop on board and help us get to our next destination? Cool, keep reading! Responsibilities You will join and work on our book editing tool. Here's what you'll do: Work closely with our designers and engineers to design, build, and ship new features from scratch; Extend the growing feature set of our cutting-edge, collaborative word processor; Deliver real value to our users by crafting beautiful book templates for their e-readers and for print; Architect and develop highly scalable web applications; Evaluate and improve the performance, durability, and security of applications in production; Take ownership for your tasks and see features through from start to finish; Help teammates improve when reviewing their work and appreciate feedback when they reciprocate. Requirements Professional experience with NodeJS, VueJS, TypeScript and NoSQL (Redis, MongoDB) databases. A good understanding of modern HTML and CSS. Strong test-driven approach to development. Perfectly fluent in English. Enjoy working remotely. Bonus points Professional experience with building and deploying Single Page Apps. Knowledge of ShareDB and LaTeX. Experience with CSS pre-processors, such as SASS or LESS. Experience building production-grade applications integrating LLMs. Experience with build-chain and deployment automation tools, such as Webpack and Github Actions. A good dose of ambition, a willingness to learn, and a great sense of humor. Benefits Work from home; Paid paternal and maternal leave; Annual team re",
+      "score": {
+        "overall": 15,
+        "stack_match": 22,
+        "location_ok": true,
+        "seniority_fit": "senior",
+        "reason": "Vue and TypeScript match at senior level with Spain support. However, Node is listed first in the title, emphasizing backend architecture and NoSQL databases where Alfonso's depth is limited—better suited for a full-stack engineer.",
+        "red_flags": [
+          "Node backend core; Alfonso basic depth",
+          "Redis/MongoDB not in skill matrix",
+          "Collaborative editor implies complex infrastructure",
+          "No Tailwind/Capacitor/Ionic domain match"
+        ]
+      }
+    },
+    {
+      "id": "b9991ed70d3b",
+      "title": "Associate Developer – Vue js",
+      "company": "Hireza",
       "location": "Remote",
       "remotePolicy": "remote",
-      "postedAt": "2026-04-16T00:00:00.000Z",
+      "postedAt": "2026-04-15T23:00:00.000Z",
+      "tags": [
+        "Vue.js"
+      ],
+      "applyUrl": "https://hireza.wuaze.com/job/associate-developer-vue-js-2",
+      "source": "jsearch",
+      "rawDescription": "Job Description: • Develop, maintain, and enhance backend functionality using PHP and Laravel. • Build frontend components using Vue.js; ensure responsive, performant, clean UI. • Ability to follow Senior Web Developer's instructions. • Continuously learn and improve: stay updated with Laravel & Vue.js ecosystem, JS, tooling (build tools, bundlers, linting, etc.). • Work with APIs (consuming and building RESTful APIs). • Collaborate with design, QA, and product/UX teams to turn designs/specs into working features. • Debug/troubleshoot issues, write unit or feature tests (as applicable). • Participate in code reviews; adopt best practices (security, performance, scalability). • Use version control (Git) effectively; keep code clean, documented, and maintainable. Requirements: • Bachelor’s degree in Computer Science, Information Technology, or a related field (fresh graduates welcome). • Knowledge of Basic Vue and Laravel programming syntax • General Experience (projects, school assignments, bootcamp, or internships) with Vue.js (Vue 2 or 3) for front-end. • Good understanding of HTML, CSS, and JavaScript fundamentals. • Basic knowledge of relational databases (MySQL or equivalent). • Familiarity with Git and standard development workflows. • Logical thinking & problem-solving skills: ability to break down problems, reason through edge cases, and think algorithmically. • Can work independently under low supervision while maximizing productivity and maintaining elevated quality of work. • Good communication skills (written & verbal), self-motivated, able to follow specifications and participate in team processes. Benefits: Apply tot his job Apply tot his job",
+      "score": {
+        "overall": 10,
+        "stack_match": 20,
+        "location_ok": true,
+        "seniority_fit": "junior",
+        "reason": "Associate-level role for fresh graduates with backend-primary focus (PHP/Laravel). Alfonso is a senior frontend specialist; severe seniority and technical mismatch.",
+        "red_flags": [
+          "Junior/associate level role",
+          "Backend-primary (PHP/Laravel)",
+          "Seniority: junior vs senior"
+        ]
+      }
+    },
+    {
+      "id": "bbd0046f8251",
+      "title": "Senior Go Consultant / Engineer (m/w/d)",
+      "company": "CmdScale GmbH",
+      "location": "Munich",
+      "remotePolicy": "remote",
+      "postedAt": "2026-04-16T11:30:38.000Z",
       "tags": [
         "Vue.js",
         "TypeScript"
       ],
-      "applyUrl": "https://www.recruit.net/job/frontend-developer-net-skills-from-jobs/DB5FB94E69933157",
-      "source": "jsearch",
-      "rawDescription": "Frontend Developer with .Net Skills (remote from Europe) As a Frontend Developer with .Net expertise, you will contribute to designing, developing, and maintaining scalable web applications in a dynamic, agile environment. You will work across both frontend and backend stacks, implementing modern SPA frameworks, microservices, and secure integrations. Collaborating with cross-functional teams, you will ensure code quality, maintainability, and performance while participating in architecture discussions and feature delivery. This role offers the opportunity to work remotely within Europe, engaging in challenging projects that impact end-to-end solutions, from UI development to backend microservices deployment. Responsibilities • Develop, debug, and maintain frontend code using SPA frameworks such as Vue.js and Angular • Manage frontend build configurations and automate tasks with npm • Implement responsive UI with CSS, HTML, SASS, and Semantic UI • Contribute to backend development in .NET (C#/.NET Core), building secure, scalable, and testable microservices • Deploy and manage services on Kubernetes, ensuring resilience and compliance with SLAs • Implement authentication mechanisms (OAUTH) and validation via unit and integration tests • Collaborate with other technical teams to deliver features and improvements to production • Produce and maintain technical documentation, incorporating secure coding practices, logging, and auditing features Requirements • Over 15 years of experience in IT and more than 5 years in software development • At least 3 years of hands-on frontend experience with Vue.js and Typescript • Minimum 1 year experience debugging Angular codebases • 5+ years experience in backend development using Microsoft .NET (C#) and .NET Core • Proven experience with scalable systems, microservices, and message-based architectures (AMQP) • Strong understanding of Agile/SCRUM methodology and collaborative teamwork • Solid knowledge of SDLC best practices, full-",
+      "applyUrl": "https://www.arbeitnow.com/jobs/companies/cmdscale-gmbh/senior-go-consultant-engineer-munich-355477",
+      "source": "arbeitnow",
+      "rawDescription": "Bei CmdScale lösen wir komplexe Probleme an der Schnittstelle von High-Performance Software Engineering und strategischer IT-Beratung. Wir bieten dir die Chance mit namhaften Marktführern und Global Playern zu und diese in der Entwicklung von High-End -Software zu unterstützen und Sie auf C-Level- und Architekturebene zu beraten. Für diese Rolle suchen wir eine Persönlichkeit, die Go nicht nur als Programmiersprache, sondern als Werkzeug für hocheffiziente Infrastrukturen versteht und diese Expertise souverän in Richtung Kunde kommunizieren kann. Aufgaben Was dich bei uns erwartet: High-Impact Projekte: Nach einer fokussierten Onboarding-Phase übernehmen Sie unmittelbar Verantwortung in geschäftskritischen Projekten. Sie agieren auf Augenhöhe mit dem Kunden und setzen Ihre Visionen in skalierbare Architekturen um. Maximale Entscheidungsfreiheit: Wir bieten den Raum für eigenverantwortliches Handeln ohne lähmende Regularien. Bei uns zählt das technische Ergebnis und die wirtschaftliche Nachhaltigkeit der Lösung. Exzellenz-Kultur: Sie arbeiten in einem Umfeld aus Senior Engineers und Gleichgesinnten. Unser Fokus liegt auf leidenschaftlichem technischem Austausch, Open-Source-First und kontinuierlicher Weiterentwicklung auf höchstem Niveau. Professionelles Framework: Wir bieten einen unbefristeten, sicheren Arbeitsplatz mit gelebter Remote-Kultur. Da wir unsere Kunden punktuell auch vor Ort unterstützen, setzen wir eine moderate Reisebereitschaft (ca. 1x pro Quartal) voraus. Qualifikation Deine Skill Checkliste: Go Expertise: Du verfügst über mindestens 5 Jahre nachweisbare Erfahrung in der professionellen Entwicklung mit Rust. Du beherrschtConcurrency-Patterns und das Go-Ökosystem auf Experten-Level. Consulting-Mindset: Du bist es gewohnt, Kunden auf professionellem Niveau zu beraten. Du kannst komplexe Sachverhalte strukturieren und sicher vor Gruppen vertreten - du bist fachlich versiert und rhetorisch sicher. Nachweisbare Ergebnisse: Wir bewerten keine leeren Versp",
       "score": {
-        "overall": 0,
+        "overall": 10,
         "stack_match": 0,
         "location_ok": true,
         "seniority_fit": "senior",
-        "reason": "Vue and TypeScript are required, matching Alfonso's expertise. However, this is fundamentally a full-stack .NET/C# role requiring 5+ years backend development experience with Microsoft stack, which Alfonso lacks entirely.",
+        "reason": "Go backend/infrastructure consulting role. Fails F1 (no Vue.js required). Requires deep Go expertise in Alfonso's non-domain.",
         "red_flags": [
-          "requires 5+ years .NET/C# backend development",
-          "requires Angular debugging experience",
-          "backend-heavy; .NET core requirement",
-          "requires SQL Server expertise"
+          "No Vue.js or frontend stack",
+          "Go expertise required, not Alfonso's specialty",
+          "Backend/infrastructure focus, not frontend",
+          "Travel requirement 1x/quarter",
+          "Fails F1 hard filter"
         ]
       }
     },
     {
-      "id": "23ec1dcf5a44",
-      "title": "Desarrollador Frontend (React / Vue / Angular)_CI/CD New",
-      "company": "Neoris",
-      "companyLogo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7yL7iZ2HD1fCmE9DSu8gyvspflhComW-paBi-&s=0",
-      "location": "Remote · ES",
+      "id": "b95db7e26655",
+      "title": "Free &amp; Beautifully designed Vue Admin Dashboard Template",
+      "company": "u/suniljoshi19",
+      "location": "Remote",
       "remotePolicy": "uncertain",
-      "postedAt": "2026-04-16T07:30:07.649Z",
+      "postedAt": "2026-04-13T13:22:34.000Z",
+      "tags": [
+        "Tailwind"
+      ],
+      "applyUrl": "https://www.reddit.com/r/vuejs/comments/1skap5m/free_beautifully_designed_vue_admin_dashboard/",
+      "source": "reddit",
+      "rawDescription": "Free &amp; Beautifully designed Vue Admin Dashboard Template Free Download : [https://tailwind-admin.com/vue](https://tailwind-admin.com/vue) Live Preview : [https://vue-free.tailwind-admin.com/](https://vue-free.tailwind-admin.com/) Location: Remote",
+      "score": {
+        "overall": 5,
+        "stack_match": 70,
+        "location_ok": true,
+        "seniority_fit": "senior",
+        "reason": "Not a job posting—template announcement only. No role, company hiring, or employment opportunity.",
+        "red_flags": [
+          "Not a job posting",
+          "No hiring company",
+          "No role description",
+          "Product promotion"
+        ]
+      }
+    },
+    {
+      "id": "8dabd7da3254",
+      "title": "Vuejs Hack'n'Tell!",
+      "company": "u/koehr",
+      "location": "Remote",
+      "remotePolicy": "uncertain",
+      "postedAt": "2026-04-14T14:28:08.000Z",
       "tags": [],
-      "applyUrl": "https://www.glassdoor.es/job-listing/desarrollador-frontend-react-vue-angular-ci-cd-new-neoris-JV_IC2664239_KO0,50_KE51,57.htm?jl=1010100009530",
-      "source": "jsearch",
-      "rawDescription": "En EPAM NEORIS, creemos que la transformación empieza por las personas. Hoy, como parte de EPAM, ampliamos nuestro alcance global y nuestras capacidades, pero mantenemos lo más importante: una cultura donde cada persona puede crecer, aportar y ser protagonista. No buscamos solo cubrir puestos. Buscamos incorporar talento que quiera superarse, aprender constantemente y dejar huella en cada proyecto",
+      "applyUrl": "https://www.reddit.com/r/vuejs/comments/1slabou/vuejs_hackntell/",
+      "source": "reddit",
+      "rawDescription": "Vuejs Hack'n'Tell! Dear Vue'sers, Today is the day! Only a few hours until we will sit together at the Vuejs//Berlin meetup and tell each other, what we've been up to lately. With the introduction of this meetup format (I plan to do it once every three months or so) I thought it might be a good idea to open a thread here as well! Please remember: you can talk about literally everything. Projects, Project Ideas, Code findings, cool packages, Code issues, philosophical questions... Everything goes, as long as it is loosely related to Vuejs and front-end development. Keep it short. Use the comment threading for discussion. Stay nice! I'm looking forward to learning something new! Location: Remote",
       "score": {
         "overall": 0,
         "stack_match": 0,
         "location_ok": true,
         "seniority_fit": "senior",
-        "reason": "Heuristic score (claude CLI unavailable). Regex-based skill match; not LLM-judged.",
-        "red_flags": []
-      }
-    },
-    {
-      "id": "09ecdf890b1f",
-      "title": "DESARROLLADOR FULLSTACK .NET/VUE",
-      "company": "knowmad mood",
-      "location": "Las Rozas de Madrid, ES",
-      "remotePolicy": "remote",
-      "postedAt": "2026-04-14T16:05:56.000Z",
-      "tags": [],
-      "applyUrl": "https://vuejobs.com/jobs/knowmad-mood-desarrollador-fullstack-net-vue?utm_source=rssfeed",
-      "source": "vuejobs",
-      "rawDescription": "Employer: knowmad mood Location: Las Rozas de Madrid, ES We are knowmad mood! Somos una compañía líder en transformación digital, en constante evolución y a la vanguardia de la tecnología. Formado por más de 3.000 personas creativas, dig...",
-      "score": {
-        "overall": 0,
-        "stack_match": 0,
-        "location_ok": true,
-        "seniority_fit": "mid",
-        "reason": "Vue is a strong match, but this fullstack role requires significant .NET backend expertise Alfonso lacks. Remote policy and seniority are unclear.",
+        "reason": "Not a job posting—this is a Vue.js community meetup discussion thread, not a hiring opportunity.",
         "red_flags": [
-          "Job description incomplete",
-          "Remote policy unclear",
-          ".NET required (no experience)",
-          "Seniority not specified"
+          "Not a job posting"
         ]
       }
     }
   ],
   "needsReview": [
+    {
+      "id": "732df18c2b8d",
+      "title": "Senior Web Developer",
+      "company": "Singa",
+      "location": "Helsinki, FI",
+      "remotePolicy": "remote",
+      "postedAt": "2026-04-13T13:11:52.380685+03:00",
+      "tags": [
+        "Vue 3",
+        "TypeScript",
+        "Pinia"
+      ],
+      "applyUrl": "https://duunitori.fi/tyopaikat/senior-web-developer-stshe-20177985",
+      "source": "duunitori",
+      "rawDescription": "Build sophisticated web applications for a global karaoke platform using modern TypeScript and Vue. You'll work on Nuxt 3 applications serving 2 million+ users across 34 countries and managing a catalog of 100,000+ songs. What You'll Do You'll work on Singa's web applications built with Nuxt 3, handling everything from user-facing experiences to content management workflows. You'll maintain and enhance TypeScript-based applications with SSR/SSG, state management, real-time karaoke features, and sophisticated content workflows. You'll optimize performance for media-heavy features while integrating payment systems, analytics platforms, content management systems, and third-party music APIs. Your responsibilities: Maintain and evolve production Nuxt 3 applications with third-party integrations such as Stripe payments, Storyblok CMS, and analytics platforms Design and build new features using Vue 3 Composition API with both Pinia stores and composable-based state patterns Implement UI components with various frameworks (Reka UI, Vuetify) Collaborate with backend engineers to design clean, versioned API contracts Build server-side API proxies Refactor legacy Options API code to modern Composition API patterns Optimize performance for media playback, audio/lyrics synchronization, and content automation workflows Debug production issues using Sentry crash reports and analytics data Navigate technical debt decisions while maintaining feature velocity Implement features ranging from multi-market i18n to content automation workflows Maintain strict type safety with TypeScript across all applications Leverage AI coding assistants to accelerate development while maintaining code quality Our Tech Stack Frontend Framework: Vue 3 with Composition API, Nuxt 3.12+ (SSR/SSG) Languages: TypeScript 5.9+ (strict mode), Pug templates State Management: Pinia with Composition API, composable-based patterns UI Components: Reka UI (headless), Vuetify 3 (Material Design), custom components St",
+      "score": {
+        "overall": 10,
+        "stack_match": 20,
+        "location_ok": false,
+        "seniority_fit": "senior",
+        "reason": "Strong Vue 3 and TypeScript fundamentals, but role requires deep Nuxt 3 expertise (SSR/SSG, server-side proxies) which is not in Alfonso's production experience. Location (Helsinki) does not indicate remote/Spain flexibility.",
+        "red_flags": [
+          "Nuxt 3 expertise required",
+          "Location: Helsinki, no remote/Spain flexibility"
+        ]
+      }
+    },
+    {
+      "id": "6bae50f1dce8",
+      "title": "Frontend Developer - Vue.js (Mid)",
+      "company": "Insider One",
+      "location": "Istanbul, TR | Ankara, TR",
+      "remotePolicy": "remote",
+      "postedAt": "2026-04-16T12:51:21.000Z",
+      "tags": [],
+      "applyUrl": "https://vuejobs.com/jobs/insider-one-frontend-developer-vue-js-mid?utm_source=rssfeed",
+      "source": "vuejobs",
+      "rawDescription": "Employer: Insider One Location: Istanbul, TR | Ankara, TR Before jumping into all the information about the role and what you can bring to the table, let us introduce ourselves real quick. About us Insider One is the #1 platform that brin...",
+      "score": {
+        "overall": 5,
+        "stack_match": 15,
+        "location_ok": false,
+        "seniority_fit": "mid",
+        "reason": "Mid-level role (Alfonso is 10+ yrs senior) gated to Turkey. Vue is primary match, but seniority and location are hard dealbreakers.",
+        "red_flags": [
+          "Mid-level, requires senior+",
+          "Location gated to Turkey, not Spain-EU",
+          "Incomplete job posting excerpt"
+        ]
+      }
+    },
     {
       "id": "cacc356c6796",
       "title": "Vue.js developer",
@@ -559,74 +520,44 @@
       "source": "vuejobs",
       "rawDescription": "Employer: ATLANTA SYSTEMS PVT LTD Location: New Delhi, Delhi, IN Key Responsibilities Develop and maintain user-friendly web applications using Vue.js Collaborate with designers, backend developers, and product teams Write clean, reusable, and...",
       "score": {
-        "overall": 15,
-        "stack_match": 20,
+        "overall": 5,
+        "stack_match": 15,
         "location_ok": false,
         "seniority_fit": "mid",
-        "reason": "India-based role incompatible with your Spain/CET timezone and location requirements. Title suggests mid-level seniority (not senior+); description is truncated but mentions only Vue.js with no evidence of TypeScript, Tailwind, or other expert-level skills.",
+        "reason": "Vue is primary, but role is mid-level (not senior+), based in India with timezone incompatibility (±4.5h from CET), and JD lacks TypeScript/modern tooling signals.",
         "red_flags": [
-          "Based in India, CET incompatible",
-          "Seniority not specified",
-          "Truncated description"
+          "India-based, outside EMEA/CET timezone",
+          "Mid-level role, needs senior+",
+          "No TypeScript mentioned",
+          "Truncated job description"
         ]
       }
     },
     {
-      "id": "e85a5f5bd079",
-      "title": "Engineering Lead (TypeScript /Node.js)",
-      "company": "Voodoo",
-      "location": "Paris",
+      "id": "c06bf19545a4",
+      "title": "Senior Rust Consultant / Engineer (m/w/d)",
+      "company": "CmdScale GmbH",
+      "location": "Munich",
       "remotePolicy": "remote",
-      "postedAt": "2026-04-16T07:30:24.130Z",
-      "tags": [
-        "TypeScript",
-        "Node.js"
-      ],
-      "applyUrl": "https://jobs.ashbyhq.com/voodoo/4cb496e1-7f11-4e3c-a93e-2d9221968eae",
-      "source": "watchlist",
-      "rawDescription": "Engineering Lead (TypeScript /Node.js) About Voodoo Founded in 2013, Voodoo is a tech company that creates mobile games and apps with a mission to entertain the world. Gathering 800 employees, 7 billion downloads, and over 200 million active users, Voodoo is the #3 mobile publisher worldwide in terms of downloads after Google and Meta. Our portfolio includes chart-topping games like Mob Control and Block Jam, alongside popular apps such as BeReal and Wizz. Team The Engineering &amp; Data team builds innovative tech products and platforms to support the impressive growth of their gaming and consumer apps which allow Voodoo to stay at the forefront of the mobile gaming industry. Role We’re looking for an Engineering Lead (TypeScript/Node.js) to join our Engineering &amp; Data team. As an Engineering Lead, you'll combine strong individual technical contributions with team leadership. You'll be responsible for the technical direction of your squad, the growth of your engineers, and the delivery of high-impact projects. This is a hybrid IC/manager role — you'll still write code, but your leverage is through the team. Lead the technical direction and architecture for your squad's domain Drive design reviews, set coding standards, and ensure engineering excellence Own the full delivery of complex, cross-team technical initiatives Build, scale and operate Node.js/TypeScript backend services on AWS/EKS Define the infrastructure and reliability strategy for your team's systems Partner with Product and Data to translate business goals into technical roadmaps Grow engineers through 1:1s, code reviews, mentorship and technical coaching Identify systemic risks and drive improvements before they become incidents Be an ambassador for engineering culture: psychological safety, pragmatism, and craft Profile (MUST have) 7+ years of professional software engineering experience 2+ years of experience leading an engineering team (formal or informal) Expert-level proficiency in TypeScript",
-      "score": {
-        "overall": 8,
-        "stack_match": 5,
-        "location_ok": false,
-        "seniority_fit": "lead+",
-        "reason": "Backend infrastructure lead role requiring expert Node.js and AWS/EKS expertise—Alfonso's Node depth is basic and career is frontend-focused (Vue/TypeScript). Hybrid Paris location conflicts with Spain-CET remote-only preference.",
-        "red_flags": [
-          "Backend-heavy (Node.js, AWS/EKS, PostgreSQL)",
-          "Expert Node.js required, Alfonso has basic",
-          "Hybrid Paris location, not fully remote",
-          "Vue only in nice-to-have",
-          "Infrastructure/DevOps focus (EKS, migrations)"
-        ]
-      }
-    },
-    {
-      "id": "a534a07d076a",
-      "title": "Senior Software Engineer - TypeScript /Node.js",
-      "company": "Voodoo",
-      "location": "Paris",
-      "remotePolicy": "remote",
-      "postedAt": "2026-04-16T07:30:24.130Z",
+      "postedAt": "2026-04-16T11:30:37.000Z",
       "tags": [
         "Vue.js",
-        "TypeScript",
-        "Node.js"
+        "TypeScript"
       ],
-      "applyUrl": "https://jobs.ashbyhq.com/voodoo/69707d04-3f72-4174-8429-62e2fbe0ca03",
-      "source": "watchlist",
-      "rawDescription": "Senior Software Engineer - TypeScript /Node.js About Voodoo Founded in 2013, Voodoo is a tech company that creates mobile games and apps with a mission to entertain the world. Gathering 800 employees, 7 billion downloads, and over 200 million active users, Voodoo is the #3 mobile publisher worldwide in terms of downloads after Google and Meta. Our portfolio includes chart-topping games like Mob Control and Block Jam, alongside popular apps such as BeReal and Wizz. Team The Engineering &amp; Data team builds innovative tech products and platforms to support the impressive growth of their gaming and consumer apps which allow Voodoo to stay at the forefront of the mobile gaming industry. You’ll join our Engineering team, working within a dedicated squad of up to 10 members. This role offers a unique chance to collaborate closely, innovate, and drive impactful results end-to-end. Role We’re looking for a Senior Software Engineer to join our Engineering &amp; Data team. In this role, you’ll take full ownership of your scope from solution design to deployment, balancing quality with efficient delivery. Design &amp; build business-focused full-stack applications in a cutting-edge, evolving environment Contribute to our state-of-the-art growth engine, helping scale apps &amp; games to millions of users Participate in business strategy discussions and consistently deliver innovative solutions to business teams Demonstrate technical excellence and help define best practices — write the code others aspire to Develop team tooling and be a driving force behind improvement proposals Support teammates' growth Own features end-to-end: from architecture and implementation to deployment and monitoring Work with event-driven systems (SQS/SNS) to build robust, decoupled services Profile (MUST have) 5+ years of professional software engineering experience Strong proficiency in TypeScript/ Node.js (NestJS) Good knowledge of industry best practices (SOLID, KISS, YAGNI, DDD, TDD...) Extens",
+      "applyUrl": "https://www.arbeitnow.com/jobs/companies/cmdscale-gmbh/senior-rust-consultant-engineer-munich-304255",
+      "source": "arbeitnow",
+      "rawDescription": "Bei CmdScale lösen wir komplexe Probleme an der Schnittstelle von High-Performance Software Engineering und strategischer IT-Beratung. Wir bieten dir die Chance mit namhaften Marktführern und Global Playern zu und diese in der Entwicklung von High-End -Software zu unterstützen und Sie auf C-Level- und Architekturebene zu beraten. Aufgaben Was dich bei uns erwartet: Direkte Einbindung in Projekte: Bei uns startest du nach einer schnellen und angemessenen Onboarding-Phase direkt in spannende Projekte – mit vollem Handlungsspielraum. Dabei steht dir natürlich dein Work-Buddy mit Rat und Tat zur Seite. Du begegnest den Kunden auf Augenhöhe und kannst deine Ideen und Lösungsansätze verwirklichen. Wir setzen auf Eigenverantwortung und klare Strukturen – unser Erfolg basiert auf der Expertise und dem Engagement unserer Mitarbeitenden. Verantwortung &#x26; Freiheit: Du übernimmst beratende Funktionen und entwickelst aktiv Code – vom ersten Kundenkontakt bis zum fertigen Projekt. Dabei hilfst du unseren Kunden, die perfekte Balance zwischen zukunftsorientierten Techniken und wirtschaftlicher Nachhaltigkeit zu finden. Du hast die Möglichkeit, Kunden nach deinen Vorstellungen und Visionen zu beraten. Moderne Technologien und skalierbare Architekturen stehen dabei im Mittelpunkt, während du stets die gängigen Best Practices im Auge behältst. Du hast die Freiheit, eigenständig die beste Lösung zu finden, ohne dabei von Regularien eingeschränkt zu werden. Bei uns zählen vor allem die Ergebnisse – und dass du dich wohlfühlst, um dein volles Potenzial auszuschöpfen. Offene Unternehmenskultur: Du arbeitest in einem Umfeld, das von offener Kommunikation und dem Austausch von Ideen geprägt ist. Wir tauschen uns leidenschaftlich über Technologien und die neuesten Tech-Trends aus und wissen genau, wo wir die nötigen Ressourcen für das nächste Projekt finden. Du bist hier unter Gleichgesinnten, die sich gegenseitig unterstützen und weiterentwickeln, um das Beste aus sich herauszuholen. O",
       "score": {
         "overall": 5,
         "stack_match": 0,
         "location_ok": false,
         "seniority_fit": "senior",
-        "reason": "Backend-heavy Node.js/NestJS role with zero Vue.js—violates your hard stack requirement. Location is Paris with no remote policy stated.",
+        "reason": "Rust backend consultant role with zero Vue/frontend stack. Violates hard requirement #1 (Vue primary); fundamentally misaligned with Alfonso's Vue + Capacitor specialization.",
         "red_flags": [
-          "Backend role, no Vue.js",
-          "Requires NestJS (not in skillset)",
-          "Requires PostgreSQL expertise",
-          "Requires AWS SQS/SNS knowledge",
-          "Location Paris, no remote policy stated"
+          "No Vue/frontend mentioned—backend systems engineering",
+          "Rust primary requirement (not in expertise)",
+          "Munich-based consulting (not remote)",
+          "German language role (German not in language profile)"
         ]
       }
     }

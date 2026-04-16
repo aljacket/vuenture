@@ -31,6 +31,8 @@ export const COMPANIES_WATCHLIST = [
   { name: 'Shift Technology', ats: 'greenhouse', slug: 'shifttechnology' },
   { name: 'Vercel', ats: 'greenhouse', slug: 'vercel' },           // React-dominant; ecosystem signal only
   { name: 'GoDaddy', ats: 'greenhouse', slug: 'godaddy' },         // Mostly React; watch for Vue-specific roles
+  { name: 'Wikimedia', ats: 'greenhouse', slug: 'wikimedia' },
+  { name: 'Lokalise', ats: 'greenhouse', slug: 'lokalise' },
 
   // ─── Ashby ─────────────────────────────────────────────────────
   { name: 'n8n', ats: 'ashby', slug: 'n8n' },
@@ -41,6 +43,13 @@ export const COMPANIES_WATCHLIST = [
   { name: 'Voodoo', ats: 'ashby', slug: 'voodoo' },
   { name: 'Lunar', ats: 'ashby', slug: 'lunar' },
   { name: 'Reedsy', ats: 'ashby', slug: 'reedsy' },
+  { name: 'PostHog', ats: 'ashby', slug: 'posthog' },
+  { name: 'Crisp', ats: 'ashby', slug: 'crisp' },
+  { name: 'Sentry', ats: 'ashby', slug: 'sentry' },
+  { name: 'Preply', ats: 'ashby', slug: 'preply' },
+  { name: 'Fonoa', ats: 'ashby', slug: 'fonoa' },
+  { name: 'Supabase', ats: 'ashby', slug: 'supabase' },
+  { name: 'Resend', ats: 'ashby', slug: 'resend' },
 
   // ─── Lever ─────────────────────────────────────────────────────
   { name: 'Hostinger', ats: 'lever', slug: 'hostinger' },

@@ -687,6 +687,94 @@ async function fetchArbeitnow() {
   }
 }
 
+async function fetchReddit() {
+  // Reddit public JSON API — no auth needed. We search three subreddits
+  // for hiring posts mentioning Vue/frontend, using t=week to bridge
+  // the low-volume gap (Vue-specific hiring posts are ~2-5 per week).
+  const UA = 'vuenture/1.0 (https://github.com/aljacket/vuenture)';
+  const searches = [
+    // r/vuejs: search for hiring/job posts
+    { sub: 'vuejs', q: 'hiring OR job OR developer OR engineer', filter: null },
+    // r/forhire: [Hiring] tagged posts mentioning frontend/vue
+    { sub: 'forhire', q: '[Hiring] vue OR frontend OR front-end OR typescript', filter: /\[hiring\]/i },
+    // r/remotejs: frontend/vue posts
+    { sub: 'remotejs', q: 'vue OR frontend OR front-end', filter: null },
+  ];
+
+  const allJobs = [];
+  for (const { sub, q, filter } of searches) {
+    try {
+      const params = new URLSearchParams({
+        q,
+        sort: 'new',
+        t: 'week',
+        restrict_sr: 'on',
+        limit: '25',
+      });
+      const url = `https://www.reddit.com/r/${sub}/search.json?${params}`;
+      const res = await fetch(url, { headers: { 'User-Agent': UA } });
+      if (!res.ok) {
+        console.warn(`[reddit] r/${sub} → ${res.status}`);
+        continue;
+      }
+      const json = await res.json();
+      const posts = json.data?.children ?? [];
+      for (const p of posts) {
+        const d = p.data;
+        if (!d.selftext) continue; // link-only posts have no JD to score
+        const title = d.title ?? '';
+        // If the subreddit requires a specific flair/tag, enforce it
+        if (filter && !filter.test(title) && !filter.test(d.link_flair_text ?? '')) continue;
+        // Skip [For Hire] posts (people looking for work, not companies hiring)
+        if (/\[for hire\]/i.test(title)) continue;
+        // Skip very short posts — not enough signal to score
+        if (d.selftext.length < 100) continue;
+
+        // Try to extract company from common patterns:
+        // "Company: Acme", "at Acme", or the Reddit author as fallback
+        const companyMatch = d.selftext.match(/(?:company|employer|at)\s*[:—–-]\s*(.+)/i);
+        const company = companyMatch
+          ? companyMatch[1].trim().slice(0, 60)
+          : `u/${d.author}`;
+
+        // Try to extract location from the post
+        const locMatch = d.selftext.match(/(?:location|based in|remote from)\s*[:—–-]\s*(.+)/i)
+          || title.match(/\[(remote|europe|eu|spain|worldwide|global|us|uk)[^\]]*\]/i);
+        const location = locMatch ? locMatch[1].trim() : 'Remote';
+
+        allJobs.push({
+          source: 'reddit',
+          title: title
+            .replace(/\[hiring\]/gi, '')
+            .replace(/\[remote\]/gi, '')
+            .replace(/\[.*?\]/g, '')
+            .trim() || title,
+          company,
+          companyLogo: undefined,
+          location,
+          remotePolicy: /remote/i.test(`${title} ${d.selftext}`) ? 'remote' : 'uncertain',
+          isRemoteStructured: /\[remote\]/i.test(title),
+          postedAt: d.created_utc
+            ? new Date(d.created_utc * 1000).toISOString()
+            : new Date().toISOString(),
+          salaryMin: undefined,
+          salaryMax: undefined,
+          applyUrl: `https://www.reddit.com${d.permalink}`,
+          rawDescription: `${title}\n\n${d.selftext.slice(0, 3000)}\n\nLocation: ${location}`,
+        });
+      }
+    } catch (err) {
+      console.warn(`[reddit] r/${sub} → ${err.message}`);
+    }
+  }
+
+  // Pre-filter for Vue keywords (same as WWR/RemoteOK/Arbeitnow)
+  return allJobs.filter((raw) => {
+    const haystack = `${raw.title} ${stripHtml(raw.rawDescription)}`.toLowerCase();
+    return VUE_KEYWORDS.some((k) => haystack.includes(k));
+  });
+}
+
 // --- Companies watchlist (ATS adapters) --------------------------------------
 
 const FE_TITLE_RE =
@@ -1097,6 +1185,9 @@ async function main() {
   const arbeitnowResults = await fetchArbeitnow();
   console.log(`  arbeitnow vue-filtered → ${arbeitnowResults.length}`);
   rawAll.push(...arbeitnowResults);
+  const redditResults = await fetchReddit();
+  console.log(`  reddit vue-filtered → ${redditResults.length}`);
+  rawAll.push(...redditResults);
   const infojobsResults = await fetchInfoJobs();
   console.log(`  infojobs vue-search → ${infojobsResults.length}`);
   rawAll.push(...infojobsResults);

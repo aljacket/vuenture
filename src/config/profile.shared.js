@@ -147,6 +147,30 @@ export const JUNIOR_TITLE_PATTERNS = [
   /\bgraduate\b/i,
 ];
 
+/**
+ * F5 — non-Vue primary stack. If ANY of these match the title, the role's
+ * core stack is something Alfonso doesn't work with — Vue is just a
+ * secondary mention. Reject before scoring to save Claude tokens.
+ */
+export const NON_VUE_TITLE_PATTERNS = [
+  /\.net\b/i,
+  /\bdotnet\b/i,
+  /\bc#\b/i,
+  /\breact\b/i,
+  /\bangular\b/i,
+  /\bphp\b/i,
+  /\blaravel\b/i,
+  /\bsymfony\b/i,
+  /\bdjango\b/i,
+  /\bruby\b/i,
+  /\brails\b/i,
+  /\bjava\b(?!script)/i,
+  /\bpython\b/i,
+  /\bflutter\b/i,
+  /\bswift\b/i,
+  /\bkotlin\b/i,
+];
+
 /** Tags we want to surface as top-3 on a job card when detected. */
 export const TAG_KEYWORDS = [
   'Vue.js',

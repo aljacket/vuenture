@@ -77,6 +77,7 @@ import {
   LOCATION_COUNTRY_BLOCKERS,
   LOCATION_ACCEPTORS,
   JUNIOR_TITLE_PATTERNS,
+  NON_VUE_TITLE_PATTERNS,
   TAG_KEYWORDS,
 } from '../src/config/profile.shared.js';
 
@@ -878,6 +879,14 @@ function passesHardFilters(raw) {
     return { ok: false, reason: 'junior' };
   }
 
+  // F5: non-Vue primary stack (title-only). Catches jobs like
+  // "Fullstack .NET/Vue" or "Senior PHP Developer (Laravel + VUE)"
+  // where Vue is secondary and the primary stack is outside Alfonso's
+  // expertise. Saves Claude tokens by not scoring obvious mismatches.
+  if (NON_VUE_TITLE_PATTERNS.some((re) => re.test(raw.title))) {
+    return { ok: false, reason: 'non-vue-stack' };
+  }
+
   return { ok: true };
 }
 
@@ -1098,7 +1107,7 @@ async function main() {
   console.log(`  watchlist total → ${watchlistResults.length} FE roles`);
   rawAll.push(...watchlistResults);
   // Stage 1: hard filters
-  const rejected = { 'no-vue': 0, 'blocked-location': 0, 'blocked-country': 0, 'no-remote-signal': 0, stale: 0, junior: 0 };
+  const rejected = { 'no-vue': 0, 'blocked-location': 0, 'blocked-country': 0, 'no-remote-signal': 0, stale: 0, junior: 0, 'non-vue-stack': 0 };
   const survived = [];
   for (const raw of rawAll) {
     const verdict = passesHardFilters(raw);

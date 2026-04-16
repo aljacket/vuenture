@@ -35,6 +35,7 @@ export const LOCATION_BLOCKERS: readonly string[];
 export const LOCATION_COUNTRY_BLOCKERS: readonly string[];
 export const LOCATION_ACCEPTORS: readonly string[];
 export const JUNIOR_TITLE_PATTERNS: readonly RegExp[];
+export const NON_VUE_TITLE_PATTERNS: readonly RegExp[];
 export const TAG_KEYWORDS: readonly string[];
 
 // companies.shared.js

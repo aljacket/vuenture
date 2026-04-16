@@ -9,7 +9,6 @@
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "fetch-jobs": "node --env-file=.env scripts/fetchJobs.mjs",
-    "fetch-manager-jobs": "node --env-file=.env scripts/fetchManagerJobs.mjs",
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {

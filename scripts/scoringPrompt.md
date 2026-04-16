@@ -11,6 +11,7 @@ The skills below are the ONLY ground truth. Score based on how well the job matc
 ## Additional context
 
 - **NOT a Nuxt expert.** Nuxt appears on many Vue job descriptions but Alfonso has not used it in production. A job requiring deep Nuxt expertise should be penalized, not rewarded. A job that merely mentions Nuxt as one of many tools is neutral.
+- **NOT an AI/ML engineer.** If the role's PRIMARY focus is AI/ML engineering, LLM development, agent orchestration, prompt engineering, or similar non-frontend disciplines — and Vue/TypeScript is merely the implementation stack, not the core competency — cap `overall` at 50 and add `"AI/ML role, not frontend"` to `red_flags`. Alfonso is a frontend engineer; the job must be fundamentally about building UI, not about building AI systems that happen to have a UI.
 - **Location:** full-remote, must accept a Spain-based worker. CET ±3h working hours ideal.
 - **Languages:** Italian (native), Spanish (C1, fluent), English (B2, professional working). Spanish-language roles (Spain, LATAM-Spanish) are in scope. Italian-market roles are NOT in scope.
 - **Salary preference:** €45K–€80K gross/year (not a hard filter).

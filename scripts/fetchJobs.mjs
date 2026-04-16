@@ -687,6 +687,78 @@ async function fetchArbeitnow() {
   }
 }
 
+async function fetchLinkedIn() {
+  // LinkedIn guest/public job search API. Returns HTML cards, no auth needed.
+  // Fragile (not an official API) but gives a different perspective than JSearch.
+  // f_WT=2 = remote only. Two queries: Europe + Spain (Spanish).
+  const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36';
+  const queries = [
+    { keywords: 'vue.js frontend developer', location: 'Europe', label: 'EU' },
+    { keywords: 'desarrollador frontend vue', location: 'Spain', label: 'ES' },
+  ];
+
+  const allJobs = [];
+  for (const { keywords, location, label } of queries) {
+    try {
+      const params = new URLSearchParams({
+        keywords,
+        location,
+        f_WT: '2',       // remote
+        sortBy: 'DD',    // date descending
+        start: '0',
+      });
+      const url = `https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?${params}`;
+      const res = await fetch(url, { headers: { 'User-Agent': UA } });
+      if (!res.ok) {
+        console.warn(`[linkedin ${label}] ${res.status}`);
+        continue;
+      }
+      const html = await res.text();
+      const cards = html.split(/data-entity-urn="urn:li:jobPosting:/).slice(1);
+      for (const card of cards) {
+        const titleMatch = card.match(/base-search-card__title[^>]*>\s*([^<]+)/s);
+        const companyMatch = card.match(/base-search-card__subtitle[^>]*>[\s\S]*?<a[^>]*>\s*([^<]+)/s)
+          || card.match(/base-search-card__subtitle[^>]*>\s*([^<]+)/s);
+        const locMatch = card.match(/job-search-card__location[^>]*>\s*([^<]+)/s);
+        const linkMatch = card.match(/href="(https:\/\/[^"]+\/jobs\/view\/[^"?]*)/);
+        const timeMatch = card.match(/datetime="([^"]+)"/);
+
+        const title = titleMatch?.[1]?.trim() ?? '';
+        const company = companyMatch?.[1]?.trim() ?? 'Unknown';
+        const loc = locMatch?.[1]?.trim() ?? 'Remote';
+        if (!title) continue;
+
+        allJobs.push({
+          source: 'linkedin',
+          title,
+          company,
+          companyLogo: undefined,
+          location: loc,
+          remotePolicy: 'remote', // f_WT=2 guarantees remote
+          isRemoteStructured: true,
+          postedAt: timeMatch?.[1] ? new Date(timeMatch[1]).toISOString() : new Date().toISOString(),
+          salaryMin: undefined,
+          salaryMax: undefined,
+          applyUrl: linkMatch?.[1] ?? '',
+          rawDescription: `${title}\n\nCompany: ${company}\nLocation: ${loc}`,
+        });
+      }
+      console.log(`  [linkedin ${label}] "${keywords}" → ${cards.length} cards`);
+    } catch (err) {
+      console.warn(`[linkedin ${label}] ${err.message}`);
+    }
+  }
+
+  // Dedupe within LinkedIn results
+  const seen = new Set();
+  return allJobs.filter((j) => {
+    const key = `${j.company}::${j.title}`.toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
 async function fetchHackerNews() {
   // HN "Ask HN: Who is hiring?" monthly thread. Posted by @whoishiring on
   // the 1st of each month. Algolia HN API is free, no auth needed.
@@ -1275,6 +1347,9 @@ async function main() {
   const arbeitnowResults = await fetchArbeitnow();
   console.log(`  arbeitnow vue-filtered → ${arbeitnowResults.length}`);
   rawAll.push(...arbeitnowResults);
+  const linkedinResults = await fetchLinkedIn();
+  console.log(`  linkedin vue-search → ${linkedinResults.length}`);
+  rawAll.push(...linkedinResults);
   const hnResults = await fetchHackerNews();
   console.log(`  hackernews who-is-hiring → ${hnResults.length}`);
   rawAll.push(...hnResults);

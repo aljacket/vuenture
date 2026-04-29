@@ -82,6 +82,7 @@ import {
 } from '../src/config/profile.shared.js';
 
 import { COMPANIES_WATCHLIST } from '../src/config/companies.shared.js';
+import { parseLinkedInDetailPage, looksGated, parseLinkedInSalary } from './linkedinParser.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -695,6 +696,7 @@ async function fetchLinkedIn() {
   const queries = [
     { keywords: 'vue.js frontend developer', location: 'Europe', label: 'EU' },
     { keywords: 'desarrollador frontend vue', location: 'Spain', label: 'ES' },
+    { keywords: 'vue capacitor ionic mobile', location: 'Europe', label: 'EU-mobile' },
   ];
 
   const allJobs = [];
@@ -1317,6 +1319,82 @@ function scoreWithClaude(raw, scoringInstructions) {
   }
 }
 
+// --- Stage 2.5: LinkedIn enrichment ------------------------------------------
+
+const LINKEDIN_ENRICH_DELAY_MS = 250;
+const LINKEDIN_ENRICH_TIMEOUT_MS = 8000;
+const LINKEDIN_ENRICH_CAP = 50;
+const LINKEDIN_ENRICH_MIN_BODY = 200;
+
+async function enrichLinkedInJobs(jobs) {
+  // After dedupe, replace sparse LinkedIn descriptions with the public
+  // detail-page body. Skip jobs whose dedupe-merged body is already rich
+  // (came from a richer source like JSearch). Sequential to stay under
+  // LinkedIn's guest-tier abuse threshold.
+  const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36';
+  const candidates = jobs.filter(
+    (j) =>
+      j.source === 'linkedin' &&
+      typeof j.applyUrl === 'string' &&
+      j.applyUrl.length > 0 &&
+      (j.rawDescription?.length ?? 0) < LINKEDIN_ENRICH_MIN_BODY
+  );
+
+  let enriched = 0;
+  let skipped = 0;
+  let gated = 0;
+  let processed = 0;
+
+  for (const job of candidates) {
+    if (processed >= LINKEDIN_ENRICH_CAP) {
+      console.log(`  [linkedin enrich] cap reached (${LINKEDIN_ENRICH_CAP})`);
+      break;
+    }
+    processed++;
+    if (processed > 1) {
+      await new Promise((r) => setTimeout(r, LINKEDIN_ENRICH_DELAY_MS));
+    }
+    try {
+      const res = await fetch(job.applyUrl, {
+        headers: { 'User-Agent': UA },
+        signal: AbortSignal.timeout(LINKEDIN_ENRICH_TIMEOUT_MS),
+      });
+      if (!res.ok) {
+        skipped++;
+        continue;
+      }
+      const html = await res.text();
+      if (looksGated(html)) {
+        gated++;
+        console.log('  [linkedin enrich] gated by sign-in, abandoning enrichment');
+        break;
+      }
+      const body = parseLinkedInDetailPage(html);
+      if (!body) {
+        skipped++;
+        continue;
+      }
+      job.rawDescription = `${job.title}\n\nCompany: ${job.company}\nLocation: ${job.location}\n\n${body}`;
+      // Best-effort salary extraction — only fill if both bounds are unknown.
+      if (job.salaryMin == null && job.salaryMax == null) {
+        const salary = parseLinkedInSalary(html);
+        if (salary) {
+          job.salaryMin = salary.min;
+          job.salaryMax = salary.max;
+        }
+      }
+      enriched++;
+    } catch {
+      skipped++;
+    }
+  }
+
+  console.log(
+    `  [linkedin enrich] enriched=${enriched} gated=${gated} skipped=${skipped}`
+  );
+  return jobs;
+}
+
 // --- Main --------------------------------------------------------------------
 
 async function main() {
@@ -1396,6 +1474,11 @@ async function main() {
   }
   const deduped = Array.from(seen.values());
   console.log(`  deduped: ${deduped.length}`);
+
+  // Stage 2.5: enrich LinkedIn-only listings with their public detail-page
+  // body. Runs after dedupe so we don't fetch detail pages for jobs whose
+  // body was already filled in by a richer source (JSearch, vuejobs, …).
+  await enrichLinkedInJobs(deduped);
 
   // Stage 3: score
   const useCli = hasClaudeCli();

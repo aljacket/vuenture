@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useFilterStore } from '@/stores/jobStore';
+import { useInterviewHistory } from '@/composables/useInterviewHistory';
 import type { FilterState } from '@/types/job';
 
 const store = useFilterStore();
+const { count: interviewCount } = useInterviewHistory();
 
 interface Chip {
   key: keyof FilterState;
@@ -18,6 +20,14 @@ const chips = computed<Chip[]>(() => [
   { key: 'aiToolingBonus', label: 'AI tooling', hint: 'Claude / Copilot / LLM mentioned' },
   { key: 'capacitorBonus', label: 'Capacitor / Ionic', hint: 'Mobile stack bonus' },
   { key: 'bookmarkedOnly', label: 'Bookmarked', hint: 'Only saved jobs', icon: 'bookmark' },
+  {
+    key: 'hideInterviewed',
+    label:
+      interviewCount.value > 0
+        ? `Hide interviewed (${interviewCount.value})`
+        : 'Hide interviewed',
+    hint: 'Hide companies you already interviewed with',
+  },
 ]);
 
 const activeKeys = computed(() =>

@@ -16,6 +16,8 @@ Score ONE job posting for fit. Output strict JSON only.
 - **Languages:** Italian (native), Spanish (C1), English (B2). Spanish-language roles in scope. Italian market NOT in scope.
 - **Salary:** €45K–€80K (not a hard filter).
 - **Seniority:** senior / lead+ / staff only.
+- **Employment forms:** direct contractor, freelance, B2B, and self-employed engagements ARE acceptable. Do NOT add `red_flags` solely for the contract / freelance form, and do NOT lower `overall` solely for being non-permanent. Treat them like permanent roles for stack and seniority scoring.
+- **Agency staff augmentation IS a red flag.** Signals: "client-facing consultancy", "we'll match/place you with our clients", "rotating client engagements", "talent network", "body shop", or hiring entity is clearly a staff-aug agency rather than a product company. When detected: add a red flag like `"agency staff augmentation"` and cap `stack_match` at 60 even on a perfect tech match.
 
 ## Output fields
 

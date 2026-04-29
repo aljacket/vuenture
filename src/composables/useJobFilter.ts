@@ -2,9 +2,11 @@ import { computed, type Ref } from 'vue';
 import type { Job, FilterState } from '@/types/job';
 import { PROFILE } from '@/config/profile';
 import { useBookmarks } from '@/composables/useBookmarks';
+import { useInterviewHistory } from '@/composables/useInterviewHistory';
 
 export function useJobFilter(jobs: Ref<Job[]>, filters: Ref<FilterState>) {
   const { isBookmarked } = useBookmarks();
+  const { isInterviewed } = useInterviewHistory();
   return computed<Job[]>(() => {
     return jobs.value.filter((j) => {
       if (filters.value.bookmarkedOnly && !isBookmarked(j.id)) return false;
@@ -30,6 +32,12 @@ export function useJobFilter(jobs: Ref<Job[]>, filters: Ref<FilterState>) {
 
       if (filters.value.capacitorBonus) {
         if (!/capacitor|ionic/.test(desc)) return false;
+      }
+
+      // F9 — hide companies Alfonso has already interviewed with (and didn't
+      // continue). Reactive via useInterviewHistory's shared `entries` ref.
+      if (filters.value.hideInterviewed && isInterviewed(j.company)) {
+        return false;
       }
 
       return true;

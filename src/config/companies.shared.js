@@ -50,6 +50,7 @@ export const COMPANIES_WATCHLIST = [
   { name: 'Fonoa', ats: 'ashby', slug: 'fonoa' },
   { name: 'Supabase', ats: 'ashby', slug: 'supabase' },
   { name: 'Resend', ats: 'ashby', slug: 'resend' },
+  { name: 'Open Home Foundation', ats: 'ashby', slug: 'openhomefoundation' }, // Home Assistant org; frontend is LitElement — F1 filters non-Vue roles automatically
 
   // ─── Lever ─────────────────────────────────────────────────────
   { name: 'Hostinger', ats: 'lever', slug: 'hostinger' },

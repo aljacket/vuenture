@@ -25,7 +25,20 @@ export interface Job {
   salaryMax?: number;
   tags: string[];
   applyUrl: string;
-  source: 'jsearch' | 'arbeitnow' | 'remoteok' | 'jobicy' | 'wwr' | 'vuejobs' | 'duunitori' | 'infojobs' | 'adzuna' | 'watchlist';
+  source:
+    | 'jsearch'
+    | 'arbeitnow'
+    | 'remoteok'
+    | 'jobicy'
+    | 'wwr'
+    | 'vuejobs'
+    | 'duunitori'
+    | 'infojobs'
+    | 'adzuna'
+    | 'watchlist'
+    | 'linkedin'
+    | 'hackernews'
+    | 'reddit';
   rawDescription: string;
   score: JobScore;
   bookmarked?: boolean;
@@ -50,4 +63,10 @@ export interface FilterState {
   aiToolingBonus: boolean;
   capacitorBonus: boolean;
   bookmarkedOnly: boolean;
+  hideInterviewed: boolean;
+}
+
+export interface InterviewEntry {
+  reason: string;
+  markedAt: string;
 }
